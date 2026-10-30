@@ -189,3 +189,7 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
 
 - Full-res still passes, fixes and renders listed in renders.md. Sent both for approval. Noted for the human: the cord in S05–S11 and S12 also begins in midair at the stage's left edge (approved sections, left as is unless asked).
 - Verse 3's master (38.8 MiB; the film grain is costly at CRF 16) exceeds the 30 MiB send limit, so the human got a CRF 21 review copy (10 MiB, scratch only). The master in `renders/m5/` is unchanged.
+
+## 2026-10-30T08:33 — M5: 1979 crowd redrawn; Verse 3 re-rendered
+
+- The human asked for more detail in the "no nukes" photo. Redrawn (details in renders.md); the figures stay faceless pictograms as the brief specifies.
