@@ -49,3 +49,9 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
 - **Output:** `renders/m4/animatic.mp4` (301.9 s); v3 moved to `archive/renders/m4_animatic_v3.mp4`. Contact sheets regenerated.
 - **Test stills before it** (scratch): 9 frames, S48–S50, before and after the change.
 - **Why:** the human's note on S49–S50. Gate: framing and timing.
+
+## 2026-10-30T06:46 — M4 animatic v5 (caret, fan fade-in)
+
+- **Shots:** all, S01–S52 (changed: S01–S04 and S48–S50 caret; the sound from 230 s). **Composition:** `Animatic`, `--scale=0.5 --crf=24`. **Commit:** ffc5b5d.
+- **Output:** `renders/m4/animatic.mp4` (301.9 s); v4 moved to `archive/renders/m4_animatic_v4.mp4`. Contact sheets regenerated.
+- **Check:** RMS by second (video time) 236 s −17.0, 239 s −32.3, 241 s −36.6, 244 s −43.1 dB: the chord decays into the fan with no step at the song's end.
