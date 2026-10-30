@@ -86,6 +86,6 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
   - **Events:** S02 at the guitar stem's first onset (0.14 s); S03 at the intro harmonies (7.31 s, vocal stems above −40 dB; they end 13.14 s); S04 on the downbeat two bars before verse 1 (9.28 s); S20 at span 1's midpoint; S49 at span 2's start (191.18 s); S50 at span 2's end (228.91 s), with the drums out at 227.14 s and the chord ringing to the audio's end (237.84 s at −50 dB).
 - **Findings:**
   - **Tempo:** 4/4 at a median 130.4 bpm (beats 0.44–0.48 s apart: played, not quantized), 125 bars. The mix and the drum stem agree on every beat but one up to the final chord; beat_this's last bars (230–235 s) are out of time, so the grid stops at the last drum hit.
-  - **Alignment:** every line placed in order and within 1 s of the M1 first pass. Low-confidence words (score < 0.3) are mostly held vowels and small words; none moves a shot cue.
+  - **Alignment:** every line placed in order; line starts sit 0.0–1.0 s after the M1 first pass's (whisper's word starts run early), L21 1.04 s. Low-confidence words (score < 0.3) are mostly held vowels and small words; none moves a shot cue.
   - All 50 live shot IDs resolve; none "NOT FOUND". S28–S31 are retired; S51, F1–F7 and S52 play after the audio.
 - **Why:** the brief, M2 ("Build the timing map; attach frame ranges to every shot ID"). Gate: "Check the map by ear".
