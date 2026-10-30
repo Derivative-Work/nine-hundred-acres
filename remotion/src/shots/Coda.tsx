@@ -157,7 +157,10 @@ export const CodaStutter: React.FC = () => {
   const cord = ramp(live, s50 + 40, s50 + 130);
   const plugged = s50 + 130;
   const energy = live >= s50 + 140;
-  const burst = live < s50 ? burstAt(F, fail) : { s: 0, seed: "" };
+  // the failure's first frame tears once (held for the first dropped-frame step), so the span visibly starts on its
+  // frame: before it nothing on screen moves, so the stall and the stutter alone would not show
+  const onset = F === fail ? { s: 0.6, seed: "onset" } : null;
+  const burst = live >= s50 ? { s: 0, seed: "" } : onset ?? burstAt(F, fail);
   const rows = [...ROWS.map((r) => <Tofu key={r} text={boxed(r, boxes)} />), ...(live >= s50 ? [`$ ${exit}`] : []),
     ...(energy ? ["Energy used: ???"] : []), ...(live < s50 ? ["$ "] : [])];
   // the terminal itself jitters a little between bursts while the span runs
