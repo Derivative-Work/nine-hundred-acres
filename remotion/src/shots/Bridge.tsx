@@ -30,7 +30,7 @@ export const BridgeNeedle: React.FC<{ fade?: (k: number) => number; captions?: b
   const swirl = 40 * build * build;
   const drain = ramp(live, lift, lift + 24);
   const infection = interpolate(F, [s42, s44, lift], [0.6, 0.65, 0.75], clamp);
-  const err = interpolate(live, [s43, s43 + 90], [30, 260], clamp);
+  const err = interpolate(live, [s43, s43 + 90], [30, 230], clamp);
   const record = ramp(live, s44 + 20, s44 + 45);
   const arm = interpolate(live, [lift, lift + 8], [0, -24], clamp);
   const card = (k: number): React.CSSProperties => ({ transform: `rotate(${swirl * (k % 2 ? 1 : -1) * (0.6 + 0.2 * k)}deg) scale(${1 - 0.06 * build})`,
@@ -48,10 +48,10 @@ export const BridgeNeedle: React.FC<{ fade?: (k: number) => number; captions?: b
         <Card seed="bchart" style={{ position: "absolute", left: 1080, top: 420, width: 640, height: 470, ...card(1) }}>
           <Body size={22} mono muted>Data center costs to ratepayers</Body>
           <div style={{ position: "relative", height: 300, marginTop: 20, borderLeft: "2px solid #ffffff33", borderBottom: "2px solid #ffffff33" }}>
-            <div style={{ position: "absolute", left: 230, bottom: 0, width: 140, height: 240, background: "linear-gradient(#ffb000, #e2367a)", borderRadius: "10px 10px 0 0" }} />
-            <div style={{ position: "absolute", left: 298, bottom: 240 - err / 2, width: 4, height: err, background: "#fff1dc" }} />
-            {[-1, 1].map((s) => <div key={s} style={{ position: "absolute", left: 280, bottom: 240 + (s * err) / 2, width: 40, height: 4, background: "#fff1dc" }} />)}
-            <Body size={28} style={{ position: "absolute", left: 230, bottom: 250 + err / 2, fontWeight: 600 }}>$29B (est.)</Body>
+            <div style={{ position: "absolute", left: 230, bottom: 0, width: 140, height: 170, background: "linear-gradient(#ffb000, #e2367a)", borderRadius: "10px 10px 0 0" }} />
+            <div style={{ position: "absolute", left: 298, bottom: 170 - err / 2, width: 4, height: err, background: "#fff1dc" }} />
+            {[-1, 1].map((s) => <div key={s} style={{ position: "absolute", left: 280, bottom: 170 + (s * err) / 2, width: 40, height: 4, background: "#fff1dc" }} />)}
+            <Body size={28} style={{ position: "absolute", left: 390, bottom: 150, fontWeight: 600, whiteSpace: "nowrap" }}>$29B (est.)</Body>
           </div>
           <Body size={18} muted style={{ marginTop: 10 }}>PJM ratepayers, ~2 years, per its market monitor</Body>
           <div style={{ position: "absolute", right: 26, top: 22, display: "flex", alignItems: "center", gap: 8, opacity: 1 - fade(3) }}>
@@ -83,7 +83,7 @@ export const BridgeNeedle: React.FC<{ fade?: (k: number) => number; captions?: b
             <Stat at={s43 + 20} label="error bars" value="wide" />
           </StatRow>
           <Cursor keys={[[s41 + 4, 700, 820], [s41 + 30, 820, 360, true], [s41 + 44, 760, 500]]} />
-          <Note at={s42 + 30} x={760} y={150} tx={680} ty={420} until={s44}>sparkle: decorative</Note>
+          <Note at={s42 + 30} x={560} y={150} tx={602} ty={433} until={s44}>sparkle: decorative</Note>
         </AbsoluteFill>
         {captions && <Captions />}
       </AbsoluteFill>
@@ -128,7 +128,7 @@ export const BridgeBill: React.FC = () => {
             <div style={{ position: "absolute", left: 140, top: 140, width: 980, height: 520, borderLeft: "3px solid #ffffff44", borderBottom: "3px solid #ffffff44" }}>
               {[0, 0.5, 1].map((q) => (
                 <div key={q} style={{ position: "absolute", left: -110, bottom: q * 520 - 16, width: 100, textAlign: "right" }}>
-                  <Body size={26} mono muted>${(max * q).toFixed(max < 5 ? 1 : 0)}B</Body></div>
+                  <Body size={26} mono muted>${+(max * q).toFixed(1)}B</Body></div>
               ))}
               <div style={{ position: "absolute", left: 380, bottom: 0, width: 220, height: barH, borderRadius: "12px 12px 0 0", background: "linear-gradient(#ffb000, #e2367a)" }} />
               <Body size={40} style={{ position: "absolute", left: 380, bottom: Math.min(barH, 560) + 10, fontWeight: 700 }}>$29B (est.)</Body>
