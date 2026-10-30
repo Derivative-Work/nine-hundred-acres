@@ -269,3 +269,7 @@ The auditors' outputs go in `log/audits/`, following the sibling repos' layout.
   - F7's 57 turbines are in Southaven, Mississippi, confirmed by N.D. Miss. Doc 51, the primary source.
 - **Verified from the primary source:** F1, from the NBC captions.
 - **Proposed:** text changes to A3, A4, A5, A9, A12 and F1–F7, with F3 retired. These wait on the human's approval; nothing on screen has changed yet.
+
+## 2026-10-30T16:50 — M8: the Southaven case, read to date
+
+The human flagged the F7 finding as especially important. Claude read the docket through 2026-10-26: the state called the turbines exempt; the United States, on the EPA's behalf, moved to dismiss the NAACP's suit (denied 2026-10-19), then filed a crossclaim against the NAACP citing "Super Intelligence" power for the "Department of War". Details are in `log/audits/03_review.md` (addendum). Card options drafted for the human; the naming guardrail is the human's call.

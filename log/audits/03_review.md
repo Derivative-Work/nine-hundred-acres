@@ -38,3 +38,17 @@ The lyrics are part of the master and cannot change. Only the graphics, fact car
 - The brief's Reference facts table (S22–S26 rows) and its F1–F7 table, Status column.
 - The end card's fact list.
 - `assets/LICENSES.md`: no change.
+
+## Addendum, 2026-10-30: the Southaven case after June
+
+Prompted by the human ("some version of that xAI finding actually seems *especially* important to point out in a video like this"), Claude read the rest of the docket. Source: N.D. Miss. No. 3:26-cv-74, RECAP. Saved in `reference/sources/naacp_v_xai_msnd/`.
+
+- **Doc 52 (2026-06-12, the NAACP's brief):**
+  - The turbines "would provide fast power to [the company's] Colossus 2 data center … in Shelby County, Tennessee, a mile away."
+  - On 2025-07-29 the Mississippi Department of Environmental Quality (MDEQ) called them "exempt" because they are "'mobile' as each will remain affixed to a portable unit (i.e., a flatbed trailer) and … 'temporary'."
+  - A PSD permit was issued 2026-03-11 for a *different* turbine fleet.
+- **Docs 75 and 81 (June–July):** the State of Mississippi filed an amicus brief supporting the defendants.
+- **Doc 112 (2026-08-21):** the hearing on the preliminary injunction was "CONTINUED UNTIL FURTHER NOTICE."
+- **Doc 135 (2026-10-19, opinion and order):** "The United States, on behalf of the Administrator of the Environmental Protection Agency, moves to intervene as a plaintiff and dismiss this case. … the United States will be allowed to intervene but will not be allowed to dismiss this case." The court found the government's national-security concerns not relevant, and notes that "the Fifth Circuit denied the United States' motion to stay this litigation."
+- **Doc 136 (2026-10-23, the United States' complaint for declaratory relief, a crossclaim against the NAACP):** "NAACP threatens American national, economic, and energy security by seeking to shut off the power supply for Super Intelligence innovation that is essential to the Department of War's military operations."
+- **Doc 137 (2026-10-26):** a scheduling order. No ruling yet on the injunction or on the defendants' motion to dismiss.
