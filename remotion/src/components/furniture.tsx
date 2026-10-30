@@ -75,7 +75,7 @@ export const RestoreOverlay: React.FC<{ pct: number; state?: RestoreState }> = (
   const icon = { running: "loader-circle", stalled: "loader-circle", error: "triangle-alert", retrying: "rotate-cw", ok: "circle-check", off: "power" }[state];
   const spin = state === "running" || state === "retrying" ? f * 8 : 0;
   return (
-    <div style={{ width: 460, padding: "18px 22px", borderRadius: 14, background: `${alpha(t.c.card, 0.95)}`,
+    <div style={{ minWidth: 460, width: "fit-content", padding: "18px 22px", borderRadius: 14, background: `${alpha(t.c.card, 0.95)}`,
       border: `1px solid ${t.c.border}`, boxShadow: "0 16px 40px -16px #000c" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
         <Icon name={icon} size={24} color={col} style={{ transform: `rotate(${spin}deg)` }} />
@@ -139,29 +139,33 @@ export const Cord: React.FC<{ d: string; progress?: number; width?: number; heig
   </svg>
 );
 
-// The server room: a grid of tiles. Each is corn until `flip` (0..1, row by row) turns it into a rack tile;
-// flowers take the theme's flower count of tiles; one cornstalk (`survivor`) never flips.
-export const TileGrid: React.FC<{ cols: number; rows: number; tile: number; flip?: number; survivor?: [number, number]; heat?: number }> = ({
-  cols, rows, tile, flip = 1, survivor = [rows - 1, cols - 2], heat = 0,
-}) => {
+// The server room: a grid of tiles. Each is corn until its row flips (rowFlip(r): 0 corn, 1 rack tile, a half-turn
+// between) or `flip` (0..1, row by row) has passed it; flowers take the theme's flower count of tiles; one cornstalk
+// (`survivor`) never flips. `heat` (0..1) is the thermal sweep's position: tiles left of it show tie-dye status dots.
+export const TileGrid: React.FC<{ cols: number; rows: number; tile: number; flip?: number; rowFlip?: (r: number) => number;
+  survivor?: [number, number]; heat?: number }> = ({ cols, rows, tile, flip = 1, rowFlip, survivor = [rows - 1, cols - 2], heat = 0 }) => {
   const t = useTheme();
   const f = useCurrentFrame();
   // the theme's flower count, on tiles in a fixed shuffled order so a flower, once there, stays on its tile
   const order = Array.from({ length: rows * cols }, (_, k) => k).sort((a, b) => random(`fl${a}`) - random(`fl${b}`));
   const flowerTiles = order.filter((k) => !(Math.floor(k / cols) === survivor[0] && k % cols === survivor[1])).slice(0, t.flowers);
   return (
-    <div style={{ display: "grid", gridTemplateColumns: `repeat(${cols}, ${tile}px)`, gap: tile * 0.18 }}>
+    <div style={{ display: "grid", gridTemplateColumns: `repeat(${cols}, ${tile}px)`, gap: tile * 0.18, perspective: 600 }}>
       {Array.from({ length: rows * cols }, (_, k) => {
         const r = Math.floor(k / cols), c = k % cols;
         const isSurvivor = r === survivor[0] && c === survivor[1];
-        const flipped = !isSurvivor && r < flip * rows;
+        const p = isSurvivor ? 0 : rowFlip ? rowFlip(r) : r < flip * rows ? 1 : 0;
+        const flipped = p >= 0.5;
         const flower = flipped && flowerTiles.includes(k);
         const blink = 0.4 + 0.6 * (Math.sin(f / 7 + random(`dot${k}`) * 20) > 0 ? 1 : 0.3);
         const hue = (random(`heat${k}`) * 6 + f / 30) % 6;
-        const dot = heat > 0 ? ["#ff5e3a", "#ffb000", "#3bd16f", "#2ea6ff", "#9b5cff", "#ff3d8b"][Math.floor(hue)] : t.c.success;
+        const hot = heat > 0 && c / cols < heat;
+        const dot = hot ? ["#ff5e3a", "#ffb000", "#3bd16f", "#2ea6ff", "#9b5cff", "#ff3d8b"][Math.floor(hue)] : t.c.success;
+        const turn = p * 180 - (flipped ? 180 : 0);
         return (
           <div key={k} style={{ width: tile, height: tile, borderRadius: tile * 0.18, display: "grid", placeItems: "center",
-            background: flipped ? t.c.card : "transparent", border: flipped ? `1px solid ${t.c.border}` : "none", position: "relative" }}>
+            background: flipped ? t.c.card : "transparent", border: flipped ? `1px solid ${t.c.border}` : "none", position: "relative",
+            transform: `rotateX(${turn}deg)` }}>
             {!flipped || flower ? (
               <Emoji name={flower ? ["blossom", "cherry", "sunflower"][k % 3] : "corn"} size={tile * 0.72} />
             ) : (

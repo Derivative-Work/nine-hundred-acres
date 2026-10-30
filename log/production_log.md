@@ -102,3 +102,15 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
 - **Outputs:** `remotion/` (src, public, package.json, package-lock.json), `scripts/{sync_assets.mjs,m3_board.sh}`, `assets/LICENSES.md`, review images (log/renders.md).
 - **Note for release:** Remotion's license is free for individuals and companies of up to 3 people; a larger company needs a company license.
 - **Why:** the brief, M3. Gate: "Approve the look at 0, 0.4 and 0.7".
+
+## 2026-10-30T01:05:00-04:00 — M3: context reel (the look in motion, in real shots)
+
+- **What:** The human: "the infection looks great, but it's a little hard to tell how these will work in context without more scenes". Built seven real shot compositions, one or two per section at their own infection values, driven by the timing map, and cut them into a context reel with the master's audio at their mapped times. These are the first M4 compositions (rough; they will be refined there, not thrown away).
+- **Clips** (audio seconds): S07–S09 Verse 1, infection 0 (22.0–31.79); S16 Chorus 1, 0.15 (57.0–64.95); S17–S22 failure span 1, 0.15 → 0.3 with the haze wipe, jitter, overlay, toast, retry and check (66.5–83.4); S23–S25 Verse 2, 0.3 + haze 0.25 (83.4–95.21); S36–S37 Verse 3, 0.5 (126.5–133.77); S42–S44 Bridge, 0.6 → 0.75 and the needle lift (156.5–176.5); S48–S49 Coda, failure span 2's stutter (185.3–199.0).
+- **Code:** `remotion/src/timing.ts` (the map as the video clock), `remotion/src/shots/{kit,Verse1,Chorus1,Span1,Verse2,Verse3,Bridge,Coda}.tsx`, `remotion/src/compositions/ContextReel.tsx`. TileGrid now flips row by row (`rowFlip`) and takes the thermal sweep's position as `heat`. The master is copied to `remotion/public/audio/master.wav` (git-ignored) for `<Audio>`.
+- **Choices to check:**
+  - The needle lift lands on the last downbeat at least 0.5 s before the coda's first word; the swirl freezes there and drains to gray over 24 frames.
+  - The span-1 haze peaks at 0.45 opacity (0.62 buried the cards in a test still), settling to 0.25.
+  - The bridge's energy meter is a bar meter that grows per token, with no number, so the only footprint number on screen stays "???" (brief).
+  - The Memphis card uses a placeholder grid map until the Natural Earth outlines are added in M4.
+- **Why:** to judge the M3 look in context before the gate.
