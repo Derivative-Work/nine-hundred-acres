@@ -126,7 +126,8 @@ export const ChromeBack: React.FC = () => {
 
 export const ChromeFront: React.FC = () => {
   const F = useCurrentFrame();
-  const p = presence(F);
+  // the header and footer leave over S45, before the capture window comes up (S46); the stage keeps its own timing
+  const p = presence(F) * interpolate(F, [f("S45"), f("S46")], [1, 0], clamp);
   if (p <= 0) return null;
   return (
     <Infected value={infectionAt(F)}>
