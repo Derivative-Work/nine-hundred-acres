@@ -1,12 +1,9 @@
-"""C3: word-level forced alignment of the as-sung lyrics (lyrics/as_sung_draft.txt) against the vocal stems.
+"""M2: word-level forced alignment of the as-sung lyrics (lyrics/as_sung.txt) against the vocal stems.
 
-Method from Not Yet's align_words.py (itself from Sandbox Rhapsody): torchaudio's MMS forced aligner (MMS_FA,
+From Share the Shares (method from Not Yet and Sandbox Rhapsody): torchaudio's MMS forced aligner (MMS_FA,
 multilingual wav2vec2 CTC) aligns each section's words as one continuous sequence inside the section's window, which
 keeps every word in sung order, then splits it back into lines; words are trimmed to where the stem has energy
-(-38 dB). Here each section names its own stem: the soloists are on Vocals, the choir on Backing Vocals.
-
-Section windows come from the first pass (scripts/first_pass.py, faster-whisper medium.en on both vocal stems):
-each runs from just before its first line to just before the next section's.
+(-38 dB). Each section names its stem: the coda is aligned on Backing Vocals, the rest on Lead Vocals.
 
 Usage: .venv/bin/python -I scripts/align_words.py  ->  timing/words.json
 """
@@ -24,45 +21,22 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from song import STEM  # noqa: E402
 
 SR = 16000
-WINDOWS = {  # section: (start s, end s), from the first pass
-    "Intro": (0.0, 19.5),
-    "Verse 1": (19.5, 46.4),
-    "Pre-Chorus": (46.0, 57.9),
-    "Pre-Chorus tag": (57.5, 60.3),
-    "Chorus": (60.0, 98.9),
-    "Verse 2": (98.9, 126.8),
-    "Pre-Chorus 2": (126.0, 132.9),
-    # C4 correction (spectrogram + a re-transcription of 131-141 s): Suno sings the choir's "Through this fund!" first
-    # (132.3 s, "fund" held to ~137 s), then the lead's "through this fund" (134.5 s, a melisma to ~138.5 s); chorus 2
-    # starts at 139.4 s with two "share the shares" (141.2 s; "five" at 142.8 s), not four from 133.3 s
-    "Pre-Chorus 2 tag": (131.9, 137.6),
-    "Pre-Chorus 2 echo": (134.2, 139.1),
-    "Chorus 2": (139.0, 163.2),
-    "Verse 3": (163.2, 191.9),
-    # C4 correction (windowed re-transcriptions of both stems and the mix): "When it's not!" is sung three times
-    # (212.7, 214.8, 216.2 s; their own window, as one section they were squeezed late), and the final chorus opens
-    # with two "share the shares" (220.5, 222.3 s), clear on the choir stem (the lead's is a blur)
-    "Bridge": (191.9, 212.62),
-    "Bridge tag": [(1, 212.5, 214.7), (1, 214.7, 216.3), (1, 216.25, 220.4)],  # per line, from the onsets of both stems;
-    # the last "not!" is held to 220.3 s and "Share" comes in at 220.5 s (spectrogram)
-    "Final Chorus open": (220.3, 223.75),
-    "Final Chorus": (223.6, 247.3),
-    "Outro": (247.3, 263.5),
-    "Tag": (263.5, 283.4),
+WINDOWS = {  # section: (start s, end s), from the M1 first pass (timing/first_pass_*.json)
+    "Verse 1": (12.8, 42.6),
+    "Chorus": (42.4, 75.5),  # "things" held to 73.94 s
+    "Verse 2": (79.0, 108.5),
+    "Verse 3": (108.8, 139.8),
+    "Bridge": (139.8, 169.5),
+    "Coda": (174.0, 191.0),  # "wrote" ends 190.70 s; failure span 2 starts 191.17 s
 }
-# lines the choir doesn't sing, aligned on another stem in their own window (section, line index): (stem, start, end).
-# C4 correction: in chorus 1's "so help us grow" lines the choir holds "the more we give" under the lead, and on the
-# choir stem the line was squeezed 0.5-1 s early (the lead: 78.0 and 91.8 s). The repeat sings "the more we give"
-# twice (86.6, 90.3 s)
-ON_STEM = {("Chorus", 5): ("Vocals", 77.8, 82.6), ("Chorus", 8): ("Vocals", 91.6, 98.4)}
-SPOKEN = {"llc": "l l c", "ipo": "i p o", "tba": "t b a", "isn't": "isnt", "can't": "cant", "we'll": "well",
-          "it's": "its", "i'd": "id", "who's": "whos", "haven't": "havent", "milestone's": "milestones",
-          "holding's": "holdings", "don't": "dont"}
+ON_STEM = {}  # (section, line index): (stem, start, end) for a line aligned on another stem; none needed yet
+SPOKEN = {"it's": "its", "it'll": "itll", "ain't": "aint", "'em": "em", "they're": "theyre", "i'm": "im",
+          "'cause": "cause", "i've": "ive", "you're": "youre", "wasn't": "wasnt"}
 
 
 def sections():
     out, cur = [], None
-    for line in Path("lyrics/as_sung_draft.txt").read_text().splitlines():
+    for line in Path("lyrics/as_sung.txt").read_text().splitlines():
         line = line.strip()
         if not line or line.startswith("#"):
             continue

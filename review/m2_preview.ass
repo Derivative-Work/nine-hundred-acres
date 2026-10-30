@@ -1,0 +1,93 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 640
+PlayResY: 360
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Shot,DejaVu Sans,15,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,0,0,0,0,100,100,0,0,1,1,0,7,12,12,10,1
+Style: Lyric,DejaVu Sans,18,&H0000C8FF,&H00FFFFFF,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,1,0,2,20,20,24,1
+Style: Span,DejaVu Sans,16,&H004040FF,&H004040FF,&H00000000,&H00000000,1,0,0,0,100,100,0,0,1,1,0,5,20,20,20,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.14,0:00:07.31,Shot,,0,0,0,,{\pos(12,10)}S02  First twelve-string strum
+Dialogue: 0,0:00:07.31,0:00:09.28,Shot,,0,0,0,,{\pos(12,10)}S03  Wordless harmonies
+Dialogue: 0,0:00:09.28,0:00:14.16,Shot,,0,0,0,,{\pos(12,10)}S04  End of intro
+Dialogue: 0,0:00:14.16,0:00:17.68,Shot,,0,0,0,,{\pos(12,10)}S05  "Out in Salix, Iowa"
+Dialogue: 0,0:00:17.68,0:00:22.22,Shot,,0,0,0,,{\pos(12,10)}S06  "where the corn grew to the sky"
+Dialogue: 0,0:00:22.22,0:00:24.62,Shot,,0,0,0,,{\pos(12,10)}S07  "They annexed nine hundred acres"
+Dialogue: 0,0:00:24.62,0:00:29.99,Shot,,0,0,0,,{\pos(12,10)}S08  "and they never told us why"
+Dialogue: 0,0:00:29.99,0:00:31.79,Shot,,0,0,0,,{\pos(12,10)}S09  "a building with no windows"
+Dialogue: 0,0:00:31.79,0:00:39.62,Shot,,0,0,0,,{\pos(12,10)}S10  "where my granddad turned the ground"
+Dialogue: 0,0:00:39.62,0:00:44.26,Shot,,0,0,0,,{\pos(12,10)}S11  "a low and endless sound"
+Dialogue: 0,0:00:44.26,0:00:46.98,Shot,,0,0,0,,{\pos(12,10)}S12  "Can you hear it humming, brother?"
+Dialogue: 0,0:00:46.98,0:00:51.78,Shot,,0,0,0,,{\pos(12,10)}S13  "Can you hear it in the corn?"
+Dialogue: 0,0:00:51.78,0:00:54.26,Shot,,0,0,0,,{\pos(12,10)}S14  "the sound of something thinking"
+Dialogue: 0,0:00:54.26,0:00:57.32,Shot,,0,0,0,,{\pos(12,10)}S15  "Since the morning it was born"
+Dialogue: 0,0:00:57.32,0:01:04.95,Shot,,0,0,0,,{\pos(12,10)}S16  "And it never sleeps, and it never stops, / And it's wired to everything"
+Dialogue: 0,0:01:04.95,0:01:08.69,Shot,,0,0,0,,{\pos(12,10)}S17  "the cloud ain't up in heaven"
+Dialogue: 0,0:01:08.69,0:01:20.42,Shot,,0,0,0,,{\pos(12,10)}S18  "It's a field of humming things"
+Dialogue: 1,0:01:12.39,0:01:14.89,Shot,,0,0,0,,{\pos(12,32)}S19  Failure span 1 starts
+Dialogue: 1,0:01:17.52,0:01:20.02,Shot,,0,0,0,,{\pos(12,32)}S20  Mid-span
+Dialogue: 1,0:01:22.64,0:01:25.14,Shot,,0,0,0,,{\pos(12,32)}S21  Failure span 1 ends
+Dialogue: 0,0:01:20.42,0:01:23.40,Shot,,0,0,0,,{\pos(12,10)}S22  "Down in South Memphis, sister"
+Dialogue: 0,0:01:23.40,0:01:27.90,Shot,,0,0,0,,{\pos(12,10)}S23  "they rolled the turbines in"
+Dialogue: 0,0:01:27.90,0:01:30.44,Shot,,0,0,0,,{\pos(12,10)}S24  "Thirty-five of 'em a-burning"
+Dialogue: 0,0:01:30.44,0:01:35.21,Shot,,0,0,0,,{\pos(12,10)}S25  "nobody asked the wind"
+Dialogue: 0,0:01:35.21,0:01:41.66,Shot,,0,0,0,,{\pos(12,10)}S26  "No permit on the paperwork, no notice on the door"
+Dialogue: 0,0:01:41.66,0:01:49.74,Shot,,0,0,0,,{\pos(12,10)}S27  "a haze above the schoolyard, and the lawyers at the door"
+Dialogue: 0,0:01:49.74,0:01:52.46,Shot,,0,0,0,,{\pos(12,10)}S32  "Back in seventy-nine we gathered"
+Dialogue: 0,0:01:52.46,0:01:55.66,Shot,,0,0,0,,{\pos(12,10)}S33  "sang the reactors down"
+Dialogue: 1,0:01:52.46,0:01:55.66,Shot,,0,0,0,,{\pos(12,32)}S33a  "sang the reactors down"
+Dialogue: 0,0:01:55.66,0:01:59.62,Shot,,0,0,0,,{\pos(12,10)}S34  "Now they're waking Three Mile Island"
+Dialogue: 0,0:01:59.62,0:02:06.89,Shot,,0,0,0,,{\pos(12,10)}S35  "in a brand-new name and gown"
+Dialogue: 0,0:02:06.89,0:02:10.93,Shot,,0,0,0,,{\pos(12,10)}S36  "it's built to feed the machines"
+Dialogue: 1,0:02:06.89,0:02:10.93,Shot,,0,0,0,,{\pos(12,32)}S36a  "it's built to feed the machines"
+Dialogue: 0,0:02:10.93,0:02:13.77,Shot,,0,0,0,,{\pos(12,10)}S37  "I'm standing here confused, man"
+Dialogue: 0,0:02:13.77,0:02:21.12,Shot,,0,0,0,,{\pos(12,10)}S38  "'cause it's the cleanest thing I've seen"
+Dialogue: 0,0:02:21.12,0:02:29.20,Shot,,0,0,0,,{\pos(12,10)}S39  "Got my electric bill today, man"
+Dialogue: 0,0:02:29.20,0:02:33.52,Shot,,0,0,0,,{\pos(12,10)}S40  "twenty-nine billion dollars in two years"
+Dialogue: 0,0:02:33.52,0:02:37.33,Shot,,0,0,0,,{\pos(12,10)}S41  "So I asked the machine about it"
+Dialogue: 0,0:02:37.33,0:02:41.71,Shot,,0,0,0,,{\pos(12,10)}S42  "a really great question"
+Dialogue: 0,0:02:41.71,0:02:45.35,Shot,,0,0,0,,{\pos(12,10)}S43  "the numbers are uncertain"
+Dialogue: 0,0:02:45.35,0:02:55.74,Shot,,0,0,0,,{\pos(12,10)}S44  "used a little more electricity telling me"
+Dialogue: 0,0:02:55.74,0:02:58.44,Shot,,0,0,0,,{\pos(12,10)}S45  "And the song you're hearing, brother"
+Dialogue: 0,0:02:58.44,0:03:03.07,Shot,,0,0,0,,{\pos(12,10)}S46  "Wasn't sung by any throat"
+Dialogue: 0,0:03:03.07,0:03:05.53,Shot,,0,0,0,,{\pos(12,10)}S47  "It was hummed out in a field somewhere"
+Dialogue: 0,0:03:05.53,0:03:11.18,Shot,,0,0,0,,{\pos(12,10)}S48  "By the thing of which I wrote"
+Dialogue: 0,0:03:11.18,0:03:48.91,Shot,,0,0,0,,{\pos(12,10)}S49  Failure span 2 (after the last line: the 37.7 s wordless outro)
+Dialogue: 0,0:03:48.91,0:03:58.40,Shot,,0,0,0,,{\pos(12,10)}S50  Sustained chord, fan spin-down
+Dialogue: 0,0:00:07.31,0:00:13.12,Lyric,,0,0,0,,Ooh… ooh-ooh…
+Dialogue: 0,0:00:13.86,0:00:20.79,Lyric,,0,0,0,,{\k0}{\kf97}Out {\k9}{\kf21}in {\k17}{\kf55}Salix, {\k63}{\kf27}Iowa, {\k63}{\kf21}where {\k3}{\kf9}the {\k7}{\kf45}corn {\k27}{\kf23}grew {\k21}{\kf13}to {\k13}{\kf11}the {\k19}{\kf59}sky, 
+Dialogue: 0,0:00:21.92,0:00:28.14,Lyric,,0,0,0,,{\k0}{\kf23}They {\k3}{\kf57}annexed {\k7}{\kf27}nine {\k1}{\kf41}hundred {\k13}{\kf57}acres, {\k11}{\kf23}and {\k9}{\kf41}they {\k27}{\kf41}never {\k25}{\kf51}told {\k9}{\kf20}us {\k13}{\kf53}why. 
+Dialogue: 0,0:00:29.39,0:00:35.48,Lyric,,0,0,0,,{\k0}{\kf27}Soon {\k3}{\kf2}a {\k4}{\kf57}building {\k3}{\kf15}with {\k5}{\kf11}no {\k13}{\kf63}windows {\k7}{\kf27}where {\k15}{\kf31}my {\k13}{\kf101}granddad {\k13}{\kf53}turned {\k0}{\kf6}the {\k10}{\kf61}ground, 
+Dialogue: 0,0:00:35.63,0:00:42.73,Lyric,,0,0,0,,{\k0}{\kf13}And {\k3}{\kf13}the {\k23}{\kf47}only {\k25}{\kf35}crop {\k25}{\kf29}it'll {\k9}{\kf65}raise {\k3}{\kf47}there {\k7}{\kf15}is {\k10}{\kf2}a {\k31}{\kf31}low {\k67}{\kf19}and {\k5}{\kf47}endless {\k9}{\kf60}sound. 
+Dialogue: 0,0:00:43.96,0:00:47.31,Lyric,,0,0,0,,{\k0}{\kf21}Can {\k5}{\kf13}you {\k9}{\kf27}hear {\k9}{\kf23}it {\k9}{\kf75}humming, {\k11}{\kf63}brother? 
+Dialogue: 0,0:00:46.68,0:00:49.71,Lyric,,0,0,0,,{\k0}{\kf21}Can {\k5}{\kf13}you {\k9}{\kf29}hear {\k7}{\kf37}it {\k7}{\kf21}in {\k11}{\kf9}the {\k11}{\kf53}corn? 
+Dialogue: 0,0:00:51.30,0:00:54.61,Lyric,,0,0,0,,{\k0}{\kf13}It's {\k5}{\kf9}the {\k11}{\kf51}sound {\k6}{\kf4}of {\k7}{\kf79}something {\k13}{\kf63}thinking 
+Dialogue: 0,0:00:53.96,0:00:57.59,Lyric,,0,0,0,,{\k0}{\kf25}Since {\k1}{\kf9}the {\k9}{\kf75}morning {\k9}{\kf19}it {\k13}{\kf33}was {\k13}{\kf87}born. 
+Dialogue: 0,0:00:57.02,0:01:01.08,Lyric,,0,0,0,,{\k0}{\kf17}And {\k3}{\kf9}it {\k9}{\kf52}never {\k7}{\kf57}sleeps, {\k67}{\kf9}and {\k3}{\kf6}it {\k4}{\kf29}never {\k5}{\kf59}stops, 
+Dialogue: 0,0:01:01.11,0:01:04.20,Lyric,,0,0,0,,{\k0}{\kf15}And {\k3}{\kf11}it's {\k7}{\kf85}wired {\k5}{\kf15}to {\k19}{\kf79}everything. 
+Dialogue: 0,0:01:04.31,0:01:09.00,Lyric,,0,0,0,,{\k0}{\kf21}Oh, {\k13}{\kf13}the {\k25}{\kf59}cloud {\k9}{\kf35}ain't {\k9}{\kf33}up {\k11}{\kf19}in {\k13}{\kf71}heaven, {\k15}{\kf53}friend, 
+Dialogue: 0,0:01:08.39,0:01:14.48,Lyric,,0,0,0,,{\k0}{\kf15}It's {\k4}{\kf2}a {\k11}{\kf283}field {\k3}{\kf11}of {\k5}{\kf57}humming {\k9}{\kf139}things. 
+Dialogue: 0,0:01:20.12,0:01:26.25,Lyric,,0,0,0,,{\k0}{\kf49}Down {\k7}{\kf13}in {\k19}{\kf39}South {\k9}{\kf77}Memphis, {\k13}{\kf65}sister, {\k7}{\kf17}they {\k7}{\kf55}rolled {\k11}{\kf11}the {\k9}{\kf93}turbines {\k9}{\kf33}in, 
+Dialogue: 0,0:01:27.60,0:01:33.84,Lyric,,0,0,0,,{\k0}{\kf79}Thirty-five {\k3}{\kf17}of {\k7}{\kf13}'em {\k7}{\kf87}a-burning, {\k9}{\kf19}and {\k13}{\kf107}nobody {\k41}{\kf55}asked {\k1}{\kf11}the {\k13}{\kf72}wind. 
+Dialogue: 0,0:01:34.91,0:01:40.52,Lyric,,0,0,0,,{\k0}{\kf11}No {\k33}{\kf51}permit {\k7}{\kf13}on {\k3}{\kf9}the {\k11}{\kf113}paperwork, {\k0}{\kf15}no {\k51}{\kf71}notice {\k9}{\kf33}on {\k5}{\kf9}the {\k11}{\kf37}door, 
+Dialogue: 0,0:01:41.03,0:01:47.88,Lyric,,0,0,0,,{\k0}{\kf27}Just {\k6}{\kf2}a {\k12}{\kf75}haze {\k5}{\kf57}above {\k3}{\kf13}the {\k17}{\kf107}schoolyard, {\k9}{\kf27}and {\k5}{\kf13}the {\k33}{\kf93}lawyers {\k13}{\kf23}at {\k9}{\kf9}the {\k13}{\kf45}door. 
+Dialogue: 0,0:01:49.44,0:01:55.51,Lyric,,0,0,0,,{\k0}{\kf23}Back {\k5}{\kf9}in {\k7}{\kf113}seventy-nine {\k7}{\kf13}we {\k27}{\kf61}gathered, {\k7}{\kf43}sang {\k5}{\kf11}the {\k13}{\kf125}reactors {\k9}{\kf59}down. 
+Dialogue: 0,0:01:55.36,0:02:02.59,Lyric,,0,0,0,,{\k0}{\kf19}Now {\k5}{\kf45}they're {\k21}{\kf51}waking {\k13}{\kf33}Three {\k15}{\kf53}Mile {\k9}{\kf125}Island {\k7}{\kf15}in {\k6}{\kf2}a {\k11}{\kf67}brand-new {\k23}{\kf49}name {\k3}{\kf11}and {\k9}{\kf61}gown. 
+Dialogue: 0,0:02:02.40,0:02:10.04,Lyric,,0,0,0,,{\k0}{\kf11}They {\k9}{\kf29}call {\k7}{\kf19}it {\k10}{\kf66}Crane {\k5}{\kf50}Clean {\k11}{\kf49}Energy, {\k133}{\kf17}and {\k3}{\kf13}it's {\k5}{\kf23}built {\k3}{\kf6}to {\k12}{\kf87}feed {\k7}{\kf11}the {\k11}{\kf97}machines, 
+Dialogue: 0,0:02:10.31,0:02:19.47,Lyric,,0,0,0,,{\k0}{\kf17}And {\k15}{\kf9}I'm {\k11}{\kf65}standing {\k11}{\kf35}here {\k9}{\kf93}confused, {\k3}{\kf37}man, {\k11}{\kf25}'cause {\k3}{\kf17}it's {\k5}{\kf13}the {\k39}{\kf193}cleanest {\k47}{\kf43}thing {\k17}{\kf59}I've {\k15}{\kf54}seen. 
+Dialogue: 0,0:02:20.82,0:02:23.73,Lyric,,0,0,0,,{\k0}{\kf15}Got {\k3}{\kf13}my {\k5}{\kf41}electric {\k5}{\kf19}bill {\k5}{\kf27}today, {\k7}{\kf23}man. {\k7}{\kf11}Up {\k5}{\kf35}again. 
+Dialogue: 0,0:02:25.74,0:02:31.99,Lyric,,0,0,0,,{\k0}{\kf23}Fella {\k7}{\kf6}on {\k2}{\kf6}the {\k7}{\kf35}radio {\k13}{\kf21}says {\k3}{\kf21}these {\k3}{\kf43}places {\k7}{\kf31}cost {\k5}{\kf31}folks {\k11}{\kf13}out {\k5}{\kf19}east {\k3}{\kf59}twenty-nine {\k7}{\kf33}billion {\k5}{\kf41}dollars {\k3}{\kf9}in {\k9}{\kf17}two {\k7}{\kf49}years. 
+Dialogue: 0,0:02:33.22,0:02:35.46,Lyric,,0,0,0,,{\k0}{\kf9}So {\k24}{\kf2}I {\k5}{\kf20}asked {\k0}{\kf6}the {\k1}{\kf47}machine {\k1}{\kf27}about {\k3}{\kf10}it. 
+Dialogue: 0,0:02:36.43,0:02:39.00,Lyric,,0,0,0,,{\k0}{\kf6}It {\k6}{\kf15}said {\k3}{\kf13}that {\k3}{\kf11}was {\k3}{\kf2}a {\k10}{\kf27}really {\k7}{\kf27}great {\k7}{\kf47}question. 
+Dialogue: 0,0:02:40.69,0:02:43.46,Lyric,,0,0,0,,{\k0}{\kf17}Then {\k3}{\kf9}it {\k5}{\kf25}told {\k1}{\kf6}me {\k6}{\kf9}the {\k7}{\kf37}numbers {\k5}{\kf15}are {\k5}{\kf57}uncertain… 
+Dialogue: 0,0:02:44.85,0:02:47.84,Lyric,,0,0,0,,{\k0}{\kf11}and {\k9}{\kf17}used {\k4}{\kf2}a {\k5}{\kf19}little {\k5}{\kf23}more {\k5}{\kf73}electricity {\k15}{\kf33}telling {\k2}{\kf6}me. 
+Dialogue: 0,0:02:55.44,0:02:58.77,Lyric,,0,0,0,,{\k0}{\kf15}And {\k1}{\kf9}the {\k11}{\kf33}song {\k3}{\kf31}you're {\k7}{\kf81}hearing, {\k9}{\kf63}brother, 
+Dialogue: 0,0:02:58.14,0:03:01.07,Lyric,,0,0,0,,{\k0}{\kf37}Wasn't {\k5}{\kf39}sung {\k9}{\kf47}by {\k9}{\kf25}any {\k7}{\kf45}throat. 
+Dialogue: 0,0:03:02.77,0:03:05.80,Lyric,,0,0,0,,{\k0}{\kf13}It {\k3}{\kf17}was {\k5}{\kf27}hummed {\k7}{\kf19}out {\k7}{\kf9}in {\k11}{\kf2}a {\k10}{\kf41}field {\k7}{\kf55}somewhere 
+Dialogue: 0,0:03:05.23,0:03:10.66,Lyric,,0,0,0,,{\k0}{\kf15}By {\k33}{\kf11}the {\k9}{\kf63}thing {\k27}{\kf97}of {\k5}{\kf91}which {\k16}{\kf2}I {\k69}{\kf35}wrote. 
+Dialogue: 0,0:01:12.39,0:01:22.64,Span,,0,0,0,,FAILURE SPAN 1
+Dialogue: 0,0:03:11.18,0:03:48.91,Span,,0,0,0,,FAILURE SPAN 2

@@ -69,3 +69,23 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
 - **Commands:** `python3 -I scripts/doc_to_md.py <read result, rev 52> docs/brief.md`; `sed` on `lyrics/as_sung_draft.txt` to drop the `[?]` marks.
 - **Not changed:** S19–S22 still assume span 1 ends before "Down in South Memphis"; it ends just after "Memphis" (82.64 s). The timing map (M2) cues S22 at its line regardless and puts S21's recovery at the span's end.
 - **Why:** the human's M1 decisions.
+
+## 2026-10-30T00:40:00-04:00 — M2: alignment, beat grid, timing map and the ear-check preview
+
+- **What:** Force-aligned the approved lyrics word by word, tracked beats and downbeats, located the intro, outro and final-chord events from the stems, and joined them with the failure spans and the brief's shot list (rev 52) into `timing/map.json` (the brief's name) and `timing/map.md`. Rendered a preview for the ear check.
+- **Commands:**
+  - `.venv/bin/python -I scripts/align_words.py` (from Share the Shares: new section windows from M1, contractions table, reads `lyrics/as_sung.txt`; the coda on the Backing Vocals stem, the rest on Lead Vocals)
+  - `.venv/bin/python -I scripts/beats_beat_this.py` (from Share the Shares; drum stem renamed)
+  - `.venv/bin/python -I scripts/timing_map.py` (new)
+  - `scripts/m2_preview.sh` (new; ffmpeg + libass)
+- **Outputs:** `lyrics/as_sung.txt`, `timing/{words,beat_this,map}.json`, `timing/map.md`, `review/m2_preview.ass`, `renders/m2/m2_preview.mp4`
+- **Decisions in the map (for the gate):**
+  - **30 fps with a 2 s pre-roll** for S01 (black, blinking cursor, before the first strum). Frame = round((t + 2) × 30); 7,212 frames in all before S51, the fact cards and the end card.
+  - **Overlay shots:** S19–S21 (the restore overlay) are a top-right layer over S18 → S22 and do not end the base shot. That resolves span 1 running into "Down in South Memphis": S22 starts on its line at 80.42 s, and the overlay's green check (S21) lands at the span's end, 82.64 s, on "Memphis".
+  - **Inserts** S33a and S36a play with S33 and S36, from the same word.
+  - **Events:** S02 at the guitar stem's first onset (0.14 s); S03 at the intro harmonies (7.31 s, vocal stems above −40 dB; they end 13.14 s); S04 on the downbeat two bars before verse 1 (9.28 s); S20 at span 1's midpoint; S49 at span 2's start (191.18 s); S50 at span 2's end (228.91 s), with the drums out at 227.14 s and the chord ringing to the audio's end (237.84 s at −50 dB).
+- **Findings:**
+  - **Tempo:** 4/4 at a median 130.4 bpm (beats 0.44–0.48 s apart: played, not quantized), 125 bars. The mix and the drum stem agree on every beat but one up to the final chord; beat_this's last bars (230–235 s) are out of time, so the grid stops at the last drum hit.
+  - **Alignment:** every line placed in order and within 1 s of the M1 first pass. Low-confidence words (score < 0.3) are mostly held vowels and small words; none moves a shot cue.
+  - All 50 live shot IDs resolve; none "NOT FOUND". S28–S31 are retired; S51, F1–F7 and S52 play after the audio.
+- **Why:** the brief, M2 ("Build the timing map; attach frame ranges to every shot ID"). Gate: "Check the map by ear".

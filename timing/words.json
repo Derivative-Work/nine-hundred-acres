@@ -1,0 +1,1950 @@
+{
+ "aligner": "torchaudio MMS_FA",
+ "torchaudio": "2.8.0+cpu",
+ "lines": [
+  {
+   "id": "L01",
+   "section": "Verse 1",
+   "stem": "0 Lead Vocals",
+   "singer": "lead",
+   "text": "Out in Salix, Iowa, where the corn grew to the sky,",
+   "start": 14.16,
+   "end": 20.39,
+   "words": [
+    {
+     "w": "Out",
+     "start": 14.16,
+     "end": 15.13,
+     "score": 0.0
+    },
+    {
+     "w": "in",
+     "start": 15.22,
+     "end": 15.43,
+     "score": 0.495
+    },
+    {
+     "w": "Salix,",
+     "start": 15.6,
+     "end": 16.15,
+     "score": 0.568
+    },
+    {
+     "w": "Iowa,",
+     "start": 16.78,
+     "end": 17.05,
+     "score": 0.221
+    },
+    {
+     "w": "where",
+     "start": 17.68,
+     "end": 17.89,
+     "score": 0.848
+    },
+    {
+     "w": "the",
+     "start": 17.92,
+     "end": 18.01,
+     "score": 0.923
+    },
+    {
+     "w": "corn",
+     "start": 18.08,
+     "end": 18.53,
+     "score": 0.705
+    },
+    {
+     "w": "grew",
+     "start": 18.8,
+     "end": 19.03,
+     "score": 0.912
+    },
+    {
+     "w": "to",
+     "start": 19.24,
+     "end": 19.37,
+     "score": 0.969
+    },
+    {
+     "w": "the",
+     "start": 19.5,
+     "end": 19.61,
+     "score": 0.779
+    },
+    {
+     "w": "sky,",
+     "start": 19.8,
+     "end": 20.39,
+     "score": 0.985
+    }
+   ]
+  },
+  {
+   "id": "L02",
+   "section": "Verse 1",
+   "stem": "0 Lead Vocals",
+   "singer": "lead",
+   "text": "They annexed nine hundred acres, and they never told us why.",
+   "start": 22.22,
+   "end": 27.74,
+   "words": [
+    {
+     "w": "They",
+     "start": 22.22,
+     "end": 22.45,
+     "score": 0.71
+    },
+    {
+     "w": "annexed",
+     "start": 22.48,
+     "end": 23.05,
+     "score": 0.428
+    },
+    {
+     "w": "nine",
+     "start": 23.12,
+     "end": 23.39,
+     "score": 0.053
+    },
+    {
+     "w": "hundred",
+     "start": 23.4,
+     "end": 23.81,
+     "score": 0.083
+    },
+    {
+     "w": "acres,",
+     "start": 23.94,
+     "end": 24.51,
+     "score": 0.328
+    },
+    {
+     "w": "and",
+     "start": 24.62,
+     "end": 24.85,
+     "score": 0.609
+    },
+    {
+     "w": "they",
+     "start": 24.94,
+     "end": 25.35,
+     "score": 0.658
+    },
+    {
+     "w": "never",
+     "start": 25.62,
+     "end": 26.03,
+     "score": 0.605
+    },
+    {
+     "w": "told",
+     "start": 26.28,
+     "end": 26.79,
+     "score": 0.933
+    },
+    {
+     "w": "us",
+     "start": 26.88,
+     "end": 27.08,
+     "score": 0.934
+    },
+    {
+     "w": "why.",
+     "start": 27.21,
+     "end": 27.74,
+     "score": 0.664
+    }
+   ]
+  },
+  {
+   "id": "L03",
+   "section": "Verse 1",
+   "stem": "0 Lead Vocals",
+   "singer": "lead",
+   "text": "Soon a building with no windows where my granddad turned the ground,",
+   "start": 29.69,
+   "end": 35.08,
+   "words": [
+    {
+     "w": "Soon",
+     "start": 29.69,
+     "end": 29.96,
+     "score": 0.886
+    },
+    {
+     "w": "a",
+     "start": 29.992,
+     "end": 30.012,
+     "score": 0.127
+    },
+    {
+     "w": "building",
+     "start": 30.05,
+     "end": 30.62,
+     "score": 0.697
+    },
+    {
+     "w": "with",
+     "start": 30.65,
+     "end": 30.8,
+     "score": 0.958
+    },
+    {
+     "w": "no",
+     "start": 30.85,
+     "end": 30.96,
+     "score": 0.991
+    },
+    {
+     "w": "windows",
+     "start": 31.09,
+     "end": 31.72,
+     "score": 0.986
+    },
+    {
+     "w": "where",
+     "start": 31.79,
+     "end": 32.06,
+     "score": 0.842
+    },
+    {
+     "w": "my",
+     "start": 32.21,
+     "end": 32.52,
+     "score": 0.881
+    },
+    {
+     "w": "granddad",
+     "start": 32.65,
+     "end": 33.66,
+     "score": 0.745
+    },
+    {
+     "w": "turned",
+     "start": 33.79,
+     "end": 34.32,
+     "score": 0.674
+    },
+    {
+     "w": "the",
+     "start": 34.314,
+     "end": 34.374,
+     "score": 0.003
+    },
+    {
+     "w": "ground,",
+     "start": 34.47,
+     "end": 35.08,
+     "score": 0.91
+    }
+   ]
+  },
+  {
+   "id": "L04",
+   "section": "Verse 1",
+   "stem": "0 Lead Vocals",
+   "singer": "lead",
+   "text": "And the only crop it'll raise there is a low and endless sound.",
+   "start": 35.93,
+   "end": 42.33,
+   "words": [
+    {
+     "w": "And",
+     "start": 35.93,
+     "end": 36.06,
+     "score": 0.657
+    },
+    {
+     "w": "the",
+     "start": 36.09,
+     "end": 36.22,
+     "score": 0.552
+    },
+    {
+     "w": "only",
+     "start": 36.45,
+     "end": 36.92,
+     "score": 0.91
+    },
+    {
+     "w": "crop",
+     "start": 37.17,
+     "end": 37.52,
+     "score": 0.859
+    },
+    {
+     "w": "it'll",
+     "start": 37.77,
+     "end": 38.06,
+     "score": 0.332
+    },
+    {
+     "w": "raise",
+     "start": 38.15,
+     "end": 38.8,
+     "score": 0.63
+    },
+    {
+     "w": "there",
+     "start": 38.83,
+     "end": 39.3,
+     "score": 0.766
+    },
+    {
+     "w": "is",
+     "start": 39.37,
+     "end": 39.52,
+     "score": 0.86
+    },
+    {
+     "w": "a",
+     "start": 39.618,
+     "end": 39.638,
+     "score": 0.747
+    },
+    {
+     "w": "low",
+     "start": 39.95,
+     "end": 40.26,
+     "score": 0.796
+    },
+    {
+     "w": "and",
+     "start": 40.93,
+     "end": 41.12,
+     "score": 0.63
+    },
+    {
+     "w": "endless",
+     "start": 41.17,
+     "end": 41.64,
+     "score": 0.348
+    },
+    {
+     "w": "sound.",
+     "start": 41.73,
+     "end": 42.33,
+     "score": 0.885
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "section": "Chorus",
+   "stem": "0 Lead Vocals",
+   "singer": "full harmony",
+   "text": "Can you hear it humming, brother?",
+   "start": 44.26,
+   "end": 46.91,
+   "words": [
+    {
+     "w": "Can",
+     "start": 44.26,
+     "end": 44.47,
+     "score": 0.76
+    },
+    {
+     "w": "you",
+     "start": 44.52,
+     "end": 44.65,
+     "score": 0.208
+    },
+    {
+     "w": "hear",
+     "start": 44.74,
+     "end": 45.01,
+     "score": 0.932
+    },
+    {
+     "w": "it",
+     "start": 45.1,
+     "end": 45.33,
+     "score": 0.619
+    },
+    {
+     "w": "humming,",
+     "start": 45.42,
+     "end": 46.17,
+     "score": 0.311
+    },
+    {
+     "w": "brother?",
+     "start": 46.28,
+     "end": 46.91,
+     "score": 0.759
+    }
+   ]
+  },
+  {
+   "id": "L06",
+   "section": "Chorus",
+   "stem": "0 Lead Vocals",
+   "singer": "full harmony",
+   "text": "Can you hear it in the corn?",
+   "start": 46.98,
+   "end": 49.31,
+   "words": [
+    {
+     "w": "Can",
+     "start": 46.98,
+     "end": 47.19,
+     "score": 0.915
+    },
+    {
+     "w": "you",
+     "start": 47.24,
+     "end": 47.37,
+     "score": 0.161
+    },
+    {
+     "w": "hear",
+     "start": 47.46,
+     "end": 47.75,
+     "score": 0.887
+    },
+    {
+     "w": "it",
+     "start": 47.82,
+     "end": 48.19,
+     "score": 0.544
+    },
+    {
+     "w": "in",
+     "start": 48.26,
+     "end": 48.47,
+     "score": 0.849
+    },
+    {
+     "w": "the",
+     "start": 48.58,
+     "end": 48.67,
+     "score": 0.465
+    },
+    {
+     "w": "corn?",
+     "start": 48.78,
+     "end": 49.31,
+     "score": 0.621
+    }
+   ]
+  },
+  {
+   "id": "L07",
+   "section": "Chorus",
+   "stem": "0 Lead Vocals",
+   "singer": "full harmony",
+   "text": "It's the sound of something thinking",
+   "start": 51.6,
+   "end": 54.21,
+   "words": [
+    {
+     "w": "It's",
+     "start": 51.6,
+     "end": 51.73,
+     "score": 0.686
+    },
+    {
+     "w": "the",
+     "start": 51.78,
+     "end": 51.87,
+     "score": 0.674
+    },
+    {
+     "w": "sound",
+     "start": 51.98,
+     "end": 52.49,
+     "score": 0.907
+    },
+    {
+     "w": "of",
+     "start": 52.546,
+     "end": 52.586,
+     "score": 0.09
+    },
+    {
+     "w": "something",
+     "start": 52.66,
+     "end": 53.45,
+     "score": 0.722
+    },
+    {
+     "w": "thinking",
+     "start": 53.58,
+     "end": 54.21,
+     "score": 0.627
+    }
+   ]
+  },
+  {
+   "id": "L08",
+   "section": "Chorus",
+   "stem": "0 Lead Vocals",
+   "singer": "full harmony",
+   "text": "Since the morning it was born.",
+   "start": 54.26,
+   "end": 57.19,
+   "words": [
+    {
+     "w": "Since",
+     "start": 54.26,
+     "end": 54.51,
+     "score": 0.908
+    },
+    {
+     "w": "the",
+     "start": 54.52,
+     "end": 54.61,
+     "score": 0.5
+    },
+    {
+     "w": "morning",
+     "start": 54.7,
+     "end": 55.45,
+     "score": 0.775
+    },
+    {
+     "w": "it",
+     "start": 55.54,
+     "end": 55.73,
+     "score": 0.948
+    },
+    {
+     "w": "was",
+     "start": 55.86,
+     "end": 56.19,
+     "score": 0.967
+    },
+    {
+     "w": "born.",
+     "start": 56.32,
+     "end": 57.19,
+     "score": 0.642
+    }
+   ]
+  },
+  {
+   "id": "L09",
+   "section": "Chorus",
+   "stem": "0 Lead Vocals",
+   "singer": "full harmony",
+   "text": "And it never sleeps, and it never stops,",
+   "start": 57.32,
+   "end": 60.68,
+   "words": [
+    {
+     "w": "And",
+     "start": 57.32,
+     "end": 57.49,
+     "score": 0.768
+    },
+    {
+     "w": "it",
+     "start": 57.52,
+     "end": 57.61,
+     "score": 0.892
+    },
+    {
+     "w": "never",
+     "start": 57.7,
+     "end": 58.22,
+     "score": 0.583
+    },
+    {
+     "w": "sleeps,",
+     "start": 58.29,
+     "end": 58.86,
+     "score": 0.803
+    },
+    {
+     "w": "and",
+     "start": 59.53,
+     "end": 59.62,
+     "score": 0.772
+    },
+    {
+     "w": "it",
+     "start": 59.65,
+     "end": 59.71,
+     "score": 0.711
+    },
+    {
+     "w": "never",
+     "start": 59.75,
+     "end": 60.04,
+     "score": 0.596
+    },
+    {
+     "w": "stops,",
+     "start": 60.09,
+     "end": 60.68,
+     "score": 0.977
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "section": "Chorus",
+   "stem": "0 Lead Vocals",
+   "singer": "full harmony",
+   "text": "And it's wired to everything.",
+   "start": 61.41,
+   "end": 63.8,
+   "words": [
+    {
+     "w": "And",
+     "start": 61.41,
+     "end": 61.56,
+     "score": 0.696
+    },
+    {
+     "w": "it's",
+     "start": 61.59,
+     "end": 61.7,
+     "score": 0.592
+    },
+    {
+     "w": "wired",
+     "start": 61.77,
+     "end": 62.62,
+     "score": 0.387
+    },
+    {
+     "w": "to",
+     "start": 62.67,
+     "end": 62.82,
+     "score": 0.9
+    },
+    {
+     "w": "everything.",
+     "start": 63.01,
+     "end": 63.8,
+     "score": 0.842
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "section": "Chorus",
+   "stem": "0 Lead Vocals",
+   "singer": "full harmony",
+   "text": "Oh, the cloud ain't up in heaven, friend,",
+   "start": 64.61,
+   "end": 68.6,
+   "words": [
+    {
+     "w": "Oh,",
+     "start": 64.61,
+     "end": 64.82,
+     "score": 0.408
+    },
+    {
+     "w": "the",
+     "start": 64.95,
+     "end": 65.08,
+     "score": 0.369
+    },
+    {
+     "w": "cloud",
+     "start": 65.33,
+     "end": 65.92,
+     "score": 0.905
+    },
+    {
+     "w": "ain't",
+     "start": 66.01,
+     "end": 66.36,
+     "score": 0.548
+    },
+    {
+     "w": "up",
+     "start": 66.45,
+     "end": 66.78,
+     "score": 0.894
+    },
+    {
+     "w": "in",
+     "start": 66.89,
+     "end": 67.08,
+     "score": 0.642
+    },
+    {
+     "w": "heaven,",
+     "start": 67.21,
+     "end": 67.92,
+     "score": 0.853
+    },
+    {
+     "w": "friend,",
+     "start": 68.07,
+     "end": 68.6,
+     "score": 0.758
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "section": "Chorus",
+   "stem": "0 Lead Vocals",
+   "singer": "full harmony",
+   "text": "It's a field of humming things.",
+   "start": 68.69,
+   "end": 74.08,
+   "words": [
+    {
+     "w": "It's",
+     "start": 68.69,
+     "end": 68.84,
+     "score": 0.767
+    },
+    {
+     "w": "a",
+     "start": 68.876,
+     "end": 68.896,
+     "score": 0.637
+    },
+    {
+     "w": "field",
+     "start": 69.01,
+     "end": 71.84,
+     "score": 0.414
+    },
+    {
+     "w": "of",
+     "start": 71.87,
+     "end": 71.98,
+     "score": 0.194
+    },
+    {
+     "w": "humming",
+     "start": 72.03,
+     "end": 72.6,
+     "score": 0.304
+    },
+    {
+     "w": "things.",
+     "start": 72.69,
+     "end": 74.08,
+     "score": 0.676
+    }
+   ]
+  },
+  {
+   "id": "L13",
+   "section": "Verse 2",
+   "stem": "0 Lead Vocals",
+   "singer": "lead",
+   "text": "Down in South Memphis, sister, they rolled the turbines in,",
+   "start": 80.42,
+   "end": 85.85,
+   "words": [
+    {
+     "w": "Down",
+     "start": 80.42,
+     "end": 80.91,
+     "score": 0.485
+    },
+    {
+     "w": "in",
+     "start": 80.98,
+     "end": 81.11,
+     "score": 0.575
+    },
+    {
+     "w": "South",
+     "start": 81.3,
+     "end": 81.69,
+     "score": 0.256
+    },
+    {
+     "w": "Memphis,",
+     "start": 81.78,
+     "end": 82.55,
+     "score": 0.514
+    },
+    {
+     "w": "sister,",
+     "start": 82.68,
+     "end": 83.33,
+     "score": 0.914
+    },
+    {
+     "w": "they",
+     "start": 83.4,
+     "end": 83.57,
+     "score": 0.623
+    },
+    {
+     "w": "rolled",
+     "start": 83.64,
+     "end": 84.19,
+     "score": 0.373
+    },
+    {
+     "w": "the",
+     "start": 84.3,
+     "end": 84.41,
+     "score": 0.748
+    },
+    {
+     "w": "turbines",
+     "start": 84.5,
+     "end": 85.43,
+     "score": 0.577
+    },
+    {
+     "w": "in,",
+     "start": 85.52,
+     "end": 85.85,
+     "score": 0.672
+    }
+   ]
+  },
+  {
+   "id": "L14",
+   "section": "Verse 2",
+   "stem": "0 Lead Vocals",
+   "singer": "lead",
+   "text": "Thirty-five of 'em a-burning, and nobody asked the wind.",
+   "start": 87.9,
+   "end": 93.44,
+   "words": [
+    {
+     "w": "Thirty-five",
+     "start": 87.9,
+     "end": 88.69,
+     "score": 0.533
+    },
+    {
+     "w": "of",
+     "start": 88.72,
+     "end": 88.89,
+     "score": 0.169
+    },
+    {
+     "w": "'em",
+     "start": 88.96,
+     "end": 89.09,
+     "score": 0.444
+    },
+    {
+     "w": "a-burning,",
+     "start": 89.16,
+     "end": 90.03,
+     "score": 0.615
+    },
+    {
+     "w": "and",
+     "start": 90.12,
+     "end": 90.31,
+     "score": 0.643
+    },
+    {
+     "w": "nobody",
+     "start": 90.44,
+     "end": 91.51,
+     "score": 0.973
+    },
+    {
+     "w": "asked",
+     "start": 91.92,
+     "end": 92.47,
+     "score": 0.164
+    },
+    {
+     "w": "the",
+     "start": 92.48,
+     "end": 92.59,
+     "score": 0.344
+    },
+    {
+     "w": "wind.",
+     "start": 92.72,
+     "end": 93.44,
+     "score": 0.523
+    }
+   ]
+  },
+  {
+   "id": "L15",
+   "section": "Verse 2",
+   "stem": "0 Lead Vocals",
+   "singer": "lead",
+   "text": "No permit on the paperwork, no notice on the door,",
+   "start": 95.21,
+   "end": 100.12,
+   "words": [
+    {
+     "w": "No",
+     "start": 95.21,
+     "end": 95.32,
+     "score": 0.965
+    },
+    {
+     "w": "permit",
+     "start": 95.65,
+     "end": 96.16,
+     "score": 0.833
+    },
+    {
+     "w": "on",
+     "start": 96.23,
+     "end": 96.36,
+     "score": 0.947
+    },
+    {
+     "w": "the",
+     "start": 96.39,
+     "end": 96.48,
+     "score": 0.946
+    },
+    {
+     "w": "paperwork,",
+     "start": 96.59,
+     "end": 97.72,
+     "score": 0.775
+    },
+    {
+     "w": "no",
+     "start": 97.71,
+     "end": 97.86,
+     "score": 0.958
+    },
+    {
+     "w": "notice",
+     "start": 98.37,
+     "end": 99.08,
+     "score": 0.829
+    },
+    {
+     "w": "on",
+     "start": 99.17,
+     "end": 99.5,
+     "score": 0.919
+    },
+    {
+     "w": "the",
+     "start": 99.55,
+     "end": 99.64,
+     "score": 0.928
+    },
+    {
+     "w": "door,",
+     "start": 99.75,
+     "end": 100.12,
+     "score": 0.772
+    }
+   ]
+  },
+  {
+   "id": "L16",
+   "section": "Verse 2",
+   "stem": "0 Lead Vocals",
+   "singer": "lead",
+   "text": "Just a haze above the schoolyard, and the lawyers at the door.",
+   "start": 101.33,
+   "end": 107.48,
+   "words": [
+    {
+     "w": "Just",
+     "start": 101.33,
+     "end": 101.6,
+     "score": 0.949
+    },
+    {
+     "w": "a",
+     "start": 101.655,
+     "end": 101.675,
+     "score": 0.336
+    },
+    {
+     "w": "haze",
+     "start": 101.79,
+     "end": 102.54,
+     "score": 0.63
+    },
+    {
+     "w": "above",
+     "start": 102.59,
+     "end": 103.16,
+     "score": 0.936
+    },
+    {
+     "w": "the",
+     "start": 103.19,
+     "end": 103.32,
+     "score": 0.857
+    },
+    {
+     "w": "schoolyard,",
+     "start": 103.49,
+     "end": 104.56,
+     "score": 0.982
+    },
+    {
+     "w": "and",
+     "start": 104.65,
+     "end": 104.92,
+     "score": 0.639
+    },
+    {
+     "w": "the",
+     "start": 104.97,
+     "end": 105.1,
+     "score": 0.879
+    },
+    {
+     "w": "lawyers",
+     "start": 105.43,
+     "end": 106.36,
+     "score": 0.794
+    },
+    {
+     "w": "at",
+     "start": 106.49,
+     "end": 106.72,
+     "score": 0.988
+    },
+    {
+     "w": "the",
+     "start": 106.81,
+     "end": 106.9,
+     "score": 0.943
+    },
+    {
+     "w": "door.",
+     "start": 107.03,
+     "end": 107.48,
+     "score": 0.801
+    }
+   ]
+  },
+  {
+   "id": "L17",
+   "section": "Verse 3",
+   "stem": "0 Lead Vocals",
+   "singer": "lead, backing echoes",
+   "text": "Back in seventy-nine we gathered, sang the reactors down.",
+   "start": 109.74,
+   "end": 115.11,
+   "words": [
+    {
+     "w": "Back",
+     "start": 109.74,
+     "end": 109.97,
+     "score": 0.996
+    },
+    {
+     "w": "in",
+     "start": 110.02,
+     "end": 110.11,
+     "score": 0.968
+    },
+    {
+     "w": "seventy-nine",
+     "start": 110.18,
+     "end": 111.31,
+     "score": 0.248
+    },
+    {
+     "w": "we",
+     "start": 111.38,
+     "end": 111.51,
+     "score": 0.961
+    },
+    {
+     "w": "gathered,",
+     "start": 111.78,
+     "end": 112.39,
+     "score": 0.392
+    },
+    {
+     "w": "sang",
+     "start": 112.46,
+     "end": 112.89,
+     "score": 0.985
+    },
+    {
+     "w": "the",
+     "start": 112.94,
+     "end": 113.05,
+     "score": 0.743
+    },
+    {
+     "w": "reactors",
+     "start": 113.18,
+     "end": 114.43,
+     "score": 0.991
+    },
+    {
+     "w": "down.",
+     "start": 114.52,
+     "end": 115.11,
+     "score": 0.988
+    }
+   ]
+  },
+  {
+   "id": "L18",
+   "section": "Verse 3",
+   "stem": "0 Lead Vocals",
+   "singer": "lead, backing echoes",
+   "text": "Now they're waking Three Mile Island in a brand-new name and gown.",
+   "start": 115.66,
+   "end": 122.19,
+   "words": [
+    {
+     "w": "Now",
+     "start": 115.66,
+     "end": 115.85,
+     "score": 0.975
+    },
+    {
+     "w": "they're",
+     "start": 115.9,
+     "end": 116.35,
+     "score": 0.379
+    },
+    {
+     "w": "waking",
+     "start": 116.56,
+     "end": 117.07,
+     "score": 0.669
+    },
+    {
+     "w": "Three",
+     "start": 117.2,
+     "end": 117.53,
+     "score": 0.854
+    },
+    {
+     "w": "Mile",
+     "start": 117.68,
+     "end": 118.21,
+     "score": 0.612
+    },
+    {
+     "w": "Island",
+     "start": 118.3,
+     "end": 119.55,
+     "score": 0.214
+    },
+    {
+     "w": "in",
+     "start": 119.62,
+     "end": 119.77,
+     "score": 0.564
+    },
+    {
+     "w": "a",
+     "start": 119.827,
+     "end": 119.847,
+     "score": 0.858
+    },
+    {
+     "w": "brand-new",
+     "start": 119.96,
+     "end": 120.63,
+     "score": 0.787
+    },
+    {
+     "w": "name",
+     "start": 120.86,
+     "end": 121.35,
+     "score": 0.958
+    },
+    {
+     "w": "and",
+     "start": 121.38,
+     "end": 121.49,
+     "score": 0.556
+    },
+    {
+     "w": "gown.",
+     "start": 121.58,
+     "end": 122.19,
+     "score": 0.807
+    }
+   ]
+  },
+  {
+   "id": "L19",
+   "section": "Verse 3",
+   "stem": "0 Lead Vocals",
+   "singer": "lead, backing echoes",
+   "text": "They call it Crane Clean Energy, and it's built to feed the machines,",
+   "start": 122.7,
+   "end": 129.64,
+   "words": [
+    {
+     "w": "They",
+     "start": 122.7,
+     "end": 122.81,
+     "score": 0.239
+    },
+    {
+     "w": "call",
+     "start": 122.9,
+     "end": 123.19,
+     "score": 0.944
+    },
+    {
+     "w": "it",
+     "start": 123.26,
+     "end": 123.45,
+     "score": 0.953
+    },
+    {
+     "w": "Crane",
+     "start": 123.55,
+     "end": 124.21,
+     "score": 0.775
+    },
+    {
+     "w": "Clean",
+     "start": 124.26,
+     "end": 124.76,
+     "score": 0.991
+    },
+    {
+     "w": "Energy,",
+     "start": 124.87,
+     "end": 125.36,
+     "score": 0.998
+    },
+    {
+     "w": "and",
+     "start": 126.69,
+     "end": 126.86,
+     "score": 0.655
+    },
+    {
+     "w": "it's",
+     "start": 126.89,
+     "end": 127.02,
+     "score": 0.953
+    },
+    {
+     "w": "built",
+     "start": 127.07,
+     "end": 127.3,
+     "score": 0.793
+    },
+    {
+     "w": "to",
+     "start": 127.332,
+     "end": 127.392,
+     "score": 0.949
+    },
+    {
+     "w": "feed",
+     "start": 127.51,
+     "end": 128.38,
+     "score": 0.768
+    },
+    {
+     "w": "the",
+     "start": 128.45,
+     "end": 128.56,
+     "score": 0.616
+    },
+    {
+     "w": "machines,",
+     "start": 128.67,
+     "end": 129.64,
+     "score": 0.838
+    }
+   ]
+  },
+  {
+   "id": "L20",
+   "section": "Verse 3",
+   "stem": "0 Lead Vocals",
+   "singer": "lead, backing echoes",
+   "text": "And I'm standing here confused, man, 'cause it's the cleanest thing I've seen.",
+   "start": 130.61,
+   "end": 139.07,
+   "words": [
+    {
+     "w": "And",
+     "start": 130.61,
+     "end": 130.78,
+     "score": 0.658
+    },
+    {
+     "w": "I'm",
+     "start": 130.93,
+     "end": 131.02,
+     "score": 0.902
+    },
+    {
+     "w": "standing",
+     "start": 131.13,
+     "end": 131.78,
+     "score": 0.74
+    },
+    {
+     "w": "here",
+     "start": 131.89,
+     "end": 132.24,
+     "score": 0.847
+    },
+    {
+     "w": "confused,",
+     "start": 132.33,
+     "end": 133.26,
+     "score": 0.824
+    },
+    {
+     "w": "man,",
+     "start": 133.29,
+     "end": 133.66,
+     "score": 0.983
+    },
+    {
+     "w": "'cause",
+     "start": 133.77,
+     "end": 134.02,
+     "score": 0.377
+    },
+    {
+     "w": "it's",
+     "start": 134.05,
+     "end": 134.22,
+     "score": 0.968
+    },
+    {
+     "w": "the",
+     "start": 134.27,
+     "end": 134.4,
+     "score": 0.562
+    },
+    {
+     "w": "cleanest",
+     "start": 134.79,
+     "end": 136.72,
+     "score": 0.799
+    },
+    {
+     "w": "thing",
+     "start": 137.19,
+     "end": 137.62,
+     "score": 0.543
+    },
+    {
+     "w": "I've",
+     "start": 137.79,
+     "end": 138.38,
+     "score": 0.06
+    },
+    {
+     "w": "seen.",
+     "start": 138.53,
+     "end": 139.07,
+     "score": 0.681
+    }
+   ]
+  },
+  {
+   "id": "L21",
+   "section": "Bridge",
+   "stem": "0 Lead Vocals",
+   "singer": "lead, spoken",
+   "text": "Got my electric bill today, man. Up again.",
+   "start": 141.12,
+   "end": 143.33,
+   "words": [
+    {
+     "w": "Got",
+     "start": 141.12,
+     "end": 141.27,
+     "score": 0.729
+    },
+    {
+     "w": "my",
+     "start": 141.3,
+     "end": 141.43,
+     "score": 0.984
+    },
+    {
+     "w": "electric",
+     "start": 141.48,
+     "end": 141.89,
+     "score": 0.995
+    },
+    {
+     "w": "bill",
+     "start": 141.94,
+     "end": 142.13,
+     "score": 0.646
+    },
+    {
+     "w": "today,",
+     "start": 142.18,
+     "end": 142.45,
+     "score": 0.877
+    },
+    {
+     "w": "man.",
+     "start": 142.52,
+     "end": 142.75,
+     "score": 0.985
+    },
+    {
+     "w": "Up",
+     "start": 142.82,
+     "end": 142.93,
+     "score": 0.977
+    },
+    {
+     "w": "again.",
+     "start": 142.98,
+     "end": 143.33,
+     "score": 0.986
+    }
+   ]
+  },
+  {
+   "id": "L22",
+   "section": "Bridge",
+   "stem": "0 Lead Vocals",
+   "singer": "lead, spoken",
+   "text": "Fella on the radio says these places cost folks out east twenty-nine billion dollars in two years.",
+   "start": 146.04,
+   "end": 151.59,
+   "words": [
+    {
+     "w": "Fella",
+     "start": 146.04,
+     "end": 146.27,
+     "score": 0.851
+    },
+    {
+     "w": "on",
+     "start": 146.344,
+     "end": 146.404,
+     "score": 0.983
+    },
+    {
+     "w": "the",
+     "start": 146.424,
+     "end": 146.485,
+     "score": 0.961
+    },
+    {
+     "w": "radio",
+     "start": 146.56,
+     "end": 146.91,
+     "score": 0.999
+    },
+    {
+     "w": "says",
+     "start": 147.04,
+     "end": 147.25,
+     "score": 0.815
+    },
+    {
+     "w": "these",
+     "start": 147.28,
+     "end": 147.49,
+     "score": 0.997
+    },
+    {
+     "w": "places",
+     "start": 147.52,
+     "end": 147.95,
+     "score": 0.999
+    },
+    {
+     "w": "cost",
+     "start": 148.02,
+     "end": 148.33,
+     "score": 0.962
+    },
+    {
+     "w": "folks",
+     "start": 148.38,
+     "end": 148.69,
+     "score": 0.682
+    },
+    {
+     "w": "out",
+     "start": 148.8,
+     "end": 148.93,
+     "score": 0.989
+    },
+    {
+     "w": "east",
+     "start": 148.98,
+     "end": 149.17,
+     "score": 0.922
+    },
+    {
+     "w": "twenty-nine",
+     "start": 149.2,
+     "end": 149.79,
+     "score": 0.019
+    },
+    {
+     "w": "billion",
+     "start": 149.86,
+     "end": 150.19,
+     "score": 0.887
+    },
+    {
+     "w": "dollars",
+     "start": 150.24,
+     "end": 150.65,
+     "score": 0.43
+    },
+    {
+     "w": "in",
+     "start": 150.68,
+     "end": 150.77,
+     "score": 0.333
+    },
+    {
+     "w": "two",
+     "start": 150.86,
+     "end": 151.03,
+     "score": 0.855
+    },
+    {
+     "w": "years.",
+     "start": 151.1,
+     "end": 151.59,
+     "score": 0.974
+    }
+   ]
+  },
+  {
+   "id": "L23",
+   "section": "Bridge",
+   "stem": "0 Lead Vocals",
+   "singer": "lead, spoken",
+   "text": "So I asked the machine about it.",
+   "start": 153.52,
+   "end": 155.06,
+   "words": [
+    {
+     "w": "So",
+     "start": 153.52,
+     "end": 153.61,
+     "score": 0.996
+    },
+    {
+     "w": "I",
+     "start": 153.849,
+     "end": 153.869,
+     "score": 0.992
+    },
+    {
+     "w": "asked",
+     "start": 153.92,
+     "end": 154.12,
+     "score": 0.43
+    },
+    {
+     "w": "the",
+     "start": 154.11,
+     "end": 154.17,
+     "score": 0.918
+    },
+    {
+     "w": "machine",
+     "start": 154.18,
+     "end": 154.65,
+     "score": 0.796
+    },
+    {
+     "w": "about",
+     "start": 154.66,
+     "end": 154.93,
+     "score": 0.799
+    },
+    {
+     "w": "it.",
+     "start": 154.96,
+     "end": 155.06,
+     "score": 0.988
+    }
+   ]
+  },
+  {
+   "id": "L24",
+   "section": "Bridge",
+   "stem": "0 Lead Vocals",
+   "singer": "lead, spoken",
+   "text": "It said that was a really great question.",
+   "start": 156.731,
+   "end": 158.6,
+   "words": [
+    {
+     "w": "It",
+     "start": 156.731,
+     "end": 156.791,
+     "score": 0.146
+    },
+    {
+     "w": "said",
+     "start": 156.85,
+     "end": 157.0,
+     "score": 0.784
+    },
+    {
+     "w": "that",
+     "start": 157.03,
+     "end": 157.16,
+     "score": 0.988
+    },
+    {
+     "w": "was",
+     "start": 157.19,
+     "end": 157.3,
+     "score": 0.997
+    },
+    {
+     "w": "a",
+     "start": 157.332,
+     "end": 157.352,
+     "score": 0.996
+    },
+    {
+     "w": "really",
+     "start": 157.45,
+     "end": 157.72,
+     "score": 0.997
+    },
+    {
+     "w": "great",
+     "start": 157.79,
+     "end": 158.06,
+     "score": 0.973
+    },
+    {
+     "w": "question.",
+     "start": 158.13,
+     "end": 158.6,
+     "score": 0.909
+    }
+   ]
+  },
+  {
+   "id": "L25",
+   "section": "Bridge",
+   "stem": "0 Lead Vocals",
+   "singer": "lead, spoken",
+   "text": "Then it told me the numbers are uncertain\u2026",
+   "start": 160.99,
+   "end": 163.06,
+   "words": [
+    {
+     "w": "Then",
+     "start": 160.99,
+     "end": 161.16,
+     "score": 0.601
+    },
+    {
+     "w": "it",
+     "start": 161.19,
+     "end": 161.28,
+     "score": 0.555
+    },
+    {
+     "w": "told",
+     "start": 161.33,
+     "end": 161.58,
+     "score": 0.976
+    },
+    {
+     "w": "me",
+     "start": 161.595,
+     "end": 161.655,
+     "score": 0.998
+    },
+    {
+     "w": "the",
+     "start": 161.71,
+     "end": 161.8,
+     "score": 0.963
+    },
+    {
+     "w": "numbers",
+     "start": 161.87,
+     "end": 162.24,
+     "score": 0.998
+    },
+    {
+     "w": "are",
+     "start": 162.29,
+     "end": 162.44,
+     "score": 0.913
+    },
+    {
+     "w": "uncertain\u2026",
+     "start": 162.49,
+     "end": 163.06,
+     "score": 0.976
+    }
+   ]
+  },
+  {
+   "id": "L26",
+   "section": "Bridge",
+   "stem": "0 Lead Vocals",
+   "singer": "lead, spoken",
+   "text": "and used a little more electricity telling me.",
+   "start": 165.15,
+   "end": 167.439,
+   "words": [
+    {
+     "w": "and",
+     "start": 165.15,
+     "end": 165.26,
+     "score": 0.665
+    },
+    {
+     "w": "used",
+     "start": 165.35,
+     "end": 165.52,
+     "score": 0.993
+    },
+    {
+     "w": "a",
+     "start": 165.557,
+     "end": 165.577,
+     "score": 0.986
+    },
+    {
+     "w": "little",
+     "start": 165.63,
+     "end": 165.82,
+     "score": 0.68
+    },
+    {
+     "w": "more",
+     "start": 165.87,
+     "end": 166.1,
+     "score": 0.954
+    },
+    {
+     "w": "electricity",
+     "start": 166.15,
+     "end": 166.88,
+     "score": 0.999
+    },
+    {
+     "w": "telling",
+     "start": 167.03,
+     "end": 167.36,
+     "score": 0.859
+    },
+    {
+     "w": "me.",
+     "start": 167.379,
+     "end": 167.439,
+     "score": 0.998
+    }
+   ]
+  },
+  {
+   "id": "L27",
+   "section": "Coda",
+   "stem": "1 Backing Vocals",
+   "singer": "close harmony",
+   "text": "And the song you're hearing, brother,",
+   "start": 175.74,
+   "end": 178.37,
+   "words": [
+    {
+     "w": "And",
+     "start": 175.74,
+     "end": 175.89,
+     "score": 0.669
+    },
+    {
+     "w": "the",
+     "start": 175.9,
+     "end": 175.99,
+     "score": 0.668
+    },
+    {
+     "w": "song",
+     "start": 176.1,
+     "end": 176.43,
+     "score": 0.902
+    },
+    {
+     "w": "you're",
+     "start": 176.46,
+     "end": 176.77,
+     "score": 0.556
+    },
+    {
+     "w": "hearing,",
+     "start": 176.84,
+     "end": 177.65,
+     "score": 0.614
+    },
+    {
+     "w": "brother,",
+     "start": 177.74,
+     "end": 178.37,
+     "score": 0.911
+    }
+   ]
+  },
+  {
+   "id": "L28",
+   "section": "Coda",
+   "stem": "1 Backing Vocals",
+   "singer": "close harmony",
+   "text": "Wasn't sung by any throat.",
+   "start": 178.44,
+   "end": 180.67,
+   "words": [
+    {
+     "w": "Wasn't",
+     "start": 178.44,
+     "end": 178.81,
+     "score": 0.58
+    },
+    {
+     "w": "sung",
+     "start": 178.86,
+     "end": 179.25,
+     "score": 0.381
+    },
+    {
+     "w": "by",
+     "start": 179.34,
+     "end": 179.81,
+     "score": 0.609
+    },
+    {
+     "w": "any",
+     "start": 179.9,
+     "end": 180.15,
+     "score": 0.413
+    },
+    {
+     "w": "throat.",
+     "start": 180.22,
+     "end": 180.67,
+     "score": 0.523
+    }
+   ]
+  },
+  {
+   "id": "L29",
+   "section": "Coda",
+   "stem": "1 Backing Vocals",
+   "singer": "close harmony",
+   "text": "It was hummed out in a field somewhere",
+   "start": 183.07,
+   "end": 185.4,
+   "words": [
+    {
+     "w": "It",
+     "start": 183.07,
+     "end": 183.2,
+     "score": 0.93
+    },
+    {
+     "w": "was",
+     "start": 183.23,
+     "end": 183.4,
+     "score": 0.939
+    },
+    {
+     "w": "hummed",
+     "start": 183.45,
+     "end": 183.72,
+     "score": 0.364
+    },
+    {
+     "w": "out",
+     "start": 183.79,
+     "end": 183.98,
+     "score": 0.665
+    },
+    {
+     "w": "in",
+     "start": 184.05,
+     "end": 184.14,
+     "score": 0.297
+    },
+    {
+     "w": "a",
+     "start": 184.252,
+     "end": 184.272,
+     "score": 0.676
+    },
+    {
+     "w": "field",
+     "start": 184.37,
+     "end": 184.78,
+     "score": 0.932
+    },
+    {
+     "w": "somewhere",
+     "start": 184.85,
+     "end": 185.4,
+     "score": 0.755
+    }
+   ]
+  },
+  {
+   "id": "L30",
+   "section": "Coda",
+   "stem": "1 Backing Vocals",
+   "singer": "close harmony",
+   "text": "By the thing of which I wrote.",
+   "start": 185.53,
+   "end": 190.26,
+   "words": [
+    {
+     "w": "By",
+     "start": 185.53,
+     "end": 185.68,
+     "score": 0.488
+    },
+    {
+     "w": "the",
+     "start": 186.01,
+     "end": 186.12,
+     "score": 0.045
+    },
+    {
+     "w": "thing",
+     "start": 186.21,
+     "end": 186.84,
+     "score": 0.789
+    },
+    {
+     "w": "of",
+     "start": 187.11,
+     "end": 188.08,
+     "score": 0.099
+    },
+    {
+     "w": "which",
+     "start": 188.13,
+     "end": 189.04,
+     "score": 0.443
+    },
+    {
+     "w": "I",
+     "start": 189.198,
+     "end": 189.218,
+     "score": 0.02
+    },
+    {
+     "w": "wrote.",
+     "start": 189.91,
+     "end": 190.26,
+     "score": 0.082
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,3220 @@
+{
+ "title": "Nine Hundred Acres (The Hum)",
+ "suno_title": "Field of Humming Things",
+ "fps": 30,
+ "preroll_s": 2.0,
+ "audio": "audio/master/field-of-humming-things.no-fallback.wav",
+ "timing_source": "audio/track/Field of Humming Things.wav",
+ "duration_s": 238.4,
+ "duration_frames": 7212,
+ "frame_formula": "round((t + preroll_s) * fps)",
+ "meter": "4/4",
+ "bpm_median": 130.4,
+ "beats": [
+  0.2,
+  0.68,
+  1.14,
+  1.58,
+  2.04,
+  2.5,
+  2.94,
+  3.4,
+  3.84,
+  4.3,
+  4.74,
+  5.2,
+  5.66,
+  6.1,
+  6.56,
+  7.02,
+  7.46,
+  7.92,
+  8.36,
+  8.82,
+  9.28,
+  9.74,
+  10.2,
+  10.64,
+  11.1,
+  11.54,
+  12.0,
+  12.44,
+  12.9,
+  13.36,
+  13.82,
+  14.26,
+  14.72,
+  15.18,
+  15.64,
+  16.1,
+  16.56,
+  17.0,
+  17.48,
+  17.92,
+  18.38,
+  18.84,
+  19.28,
+  19.74,
+  20.2,
+  20.66,
+  21.12,
+  21.56,
+  22.02,
+  22.48,
+  22.94,
+  23.38,
+  23.84,
+  24.3,
+  24.76,
+  25.2,
+  25.66,
+  26.12,
+  26.58,
+  27.02,
+  27.48,
+  27.94,
+  28.4,
+  28.84,
+  29.3,
+  29.76,
+  30.2,
+  30.66,
+  31.12,
+  31.58,
+  32.02,
+  32.48,
+  32.94,
+  33.4,
+  33.84,
+  34.3,
+  34.76,
+  35.22,
+  35.66,
+  36.12,
+  36.58,
+  37.04,
+  37.48,
+  37.94,
+  38.4,
+  38.86,
+  39.3,
+  39.76,
+  40.22,
+  40.66,
+  41.12,
+  41.58,
+  42.04,
+  42.48,
+  42.94,
+  43.4,
+  43.84,
+  44.3,
+  44.76,
+  45.22,
+  45.68,
+  46.14,
+  46.58,
+  47.04,
+  47.5,
+  47.96,
+  48.42,
+  48.86,
+  49.32,
+  49.78,
+  50.22,
+  50.68,
+  51.14,
+  51.58,
+  52.04,
+  52.5,
+  52.96,
+  53.4,
+  53.86,
+  54.32,
+  54.76,
+  55.22,
+  55.68,
+  56.14,
+  56.58,
+  57.04,
+  57.5,
+  57.94,
+  58.4,
+  58.86,
+  59.32,
+  59.76,
+  60.22,
+  60.68,
+  61.14,
+  61.58,
+  62.04,
+  62.48,
+  62.94,
+  63.4,
+  63.86,
+  64.32,
+  64.76,
+  65.22,
+  65.68,
+  66.12,
+  66.58,
+  67.04,
+  67.5,
+  67.94,
+  68.4,
+  68.86,
+  69.32,
+  69.78,
+  70.22,
+  70.68,
+  71.14,
+  71.6,
+  72.04,
+  72.5,
+  72.96,
+  73.42,
+  73.88,
+  74.34,
+  74.8,
+  75.26,
+  75.7,
+  76.16,
+  76.6,
+  77.06,
+  77.52,
+  77.98,
+  78.42,
+  78.88,
+  79.34,
+  79.78,
+  80.24,
+  80.7,
+  81.16,
+  81.6,
+  82.06,
+  82.52,
+  82.96,
+  83.42,
+  83.88,
+  84.34,
+  84.8,
+  85.24,
+  85.7,
+  86.16,
+  86.6,
+  87.06,
+  87.52,
+  87.96,
+  88.42,
+  88.88,
+  89.34,
+  89.78,
+  90.24,
+  90.7,
+  91.16,
+  91.6,
+  92.06,
+  92.52,
+  92.98,
+  93.42,
+  93.88,
+  94.34,
+  94.78,
+  95.24,
+  95.7,
+  96.16,
+  96.6,
+  97.06,
+  97.52,
+  97.96,
+  98.42,
+  98.88,
+  99.34,
+  99.78,
+  100.24,
+  100.7,
+  101.16,
+  101.6,
+  102.06,
+  102.52,
+  102.98,
+  103.42,
+  103.88,
+  104.34,
+  104.78,
+  105.24,
+  105.7,
+  106.16,
+  106.6,
+  107.06,
+  107.52,
+  107.98,
+  108.42,
+  108.88,
+  109.32,
+  109.78,
+  110.24,
+  110.7,
+  111.14,
+  111.6,
+  112.06,
+  112.52,
+  112.96,
+  113.42,
+  113.88,
+  114.32,
+  114.78,
+  115.24,
+  115.7,
+  116.14,
+  116.6,
+  117.06,
+  117.52,
+  117.96,
+  118.42,
+  118.88,
+  119.34,
+  119.78,
+  120.24,
+  120.7,
+  121.16,
+  121.6,
+  122.06,
+  122.52,
+  122.96,
+  123.42,
+  123.88,
+  124.34,
+  124.78,
+  125.24,
+  125.72,
+  126.18,
+  126.64,
+  127.1,
+  127.56,
+  128.02,
+  128.48,
+  128.94,
+  129.4,
+  129.86,
+  130.32,
+  130.78,
+  131.24,
+  131.7,
+  132.16,
+  132.62,
+  133.06,
+  133.54,
+  133.98,
+  134.46,
+  134.9,
+  135.38,
+  135.82,
+  136.28,
+  136.74,
+  137.2,
+  137.66,
+  138.12,
+  138.58,
+  139.04,
+  139.5,
+  139.96,
+  140.42,
+  140.88,
+  141.32,
+  141.78,
+  142.22,
+  142.7,
+  143.14,
+  143.62,
+  144.06,
+  144.52,
+  144.98,
+  145.44,
+  145.9,
+  146.36,
+  146.8,
+  147.26,
+  147.72,
+  148.18,
+  148.64,
+  149.08,
+  149.54,
+  150.0,
+  150.44,
+  150.92,
+  151.36,
+  151.84,
+  152.28,
+  152.76,
+  153.2,
+  153.66,
+  154.12,
+  154.58,
+  155.04,
+  155.5,
+  155.96,
+  156.42,
+  156.88,
+  157.32,
+  157.8,
+  158.24,
+  158.7,
+  159.16,
+  159.62,
+  160.1,
+  160.54,
+  161.02,
+  161.46,
+  161.92,
+  162.38,
+  162.84,
+  163.3,
+  163.76,
+  164.22,
+  164.68,
+  165.12,
+  165.58,
+  166.06,
+  166.52,
+  166.98,
+  167.44,
+  167.92,
+  168.38,
+  168.84,
+  169.3,
+  169.76,
+  170.22,
+  170.68,
+  171.14,
+  171.6,
+  172.06,
+  172.52,
+  172.98,
+  173.44,
+  173.9,
+  174.36,
+  174.8,
+  175.26,
+  175.72,
+  176.18,
+  176.64,
+  177.1,
+  177.56,
+  178.02,
+  178.48,
+  178.94,
+  179.38,
+  179.84,
+  180.3,
+  180.76,
+  181.22,
+  181.68,
+  182.14,
+  182.6,
+  183.06,
+  183.5,
+  183.96,
+  184.42,
+  184.88,
+  185.34,
+  185.8,
+  186.26,
+  186.72,
+  187.18,
+  187.64,
+  188.12,
+  188.58,
+  189.04,
+  189.52,
+  189.98,
+  190.46,
+  190.92,
+  191.4,
+  191.86,
+  192.32,
+  192.78,
+  193.24,
+  193.7,
+  194.16,
+  194.62,
+  195.08,
+  195.54,
+  196.02,
+  196.48,
+  196.94,
+  197.4,
+  197.86,
+  198.32,
+  198.78,
+  199.24,
+  199.7,
+  200.16,
+  200.62,
+  201.06,
+  201.54,
+  202.0,
+  202.46,
+  202.92,
+  203.38,
+  203.84,
+  204.3,
+  204.76,
+  205.22,
+  205.68,
+  206.14,
+  206.6,
+  207.06,
+  207.52,
+  207.98,
+  208.44,
+  208.9,
+  209.36,
+  209.82,
+  210.28,
+  210.74,
+  211.2,
+  211.66,
+  212.12,
+  212.58,
+  213.04,
+  213.5,
+  213.96,
+  214.42,
+  214.88,
+  215.34,
+  215.8,
+  216.26,
+  216.72,
+  217.18,
+  217.64,
+  218.12,
+  218.56,
+  219.02,
+  219.5,
+  219.96,
+  220.42,
+  220.9,
+  221.34,
+  221.82,
+  222.28,
+  222.74,
+  223.2,
+  223.66,
+  224.12,
+  224.6,
+  225.06,
+  225.54,
+  226.0,
+  226.48,
+  226.96
+ ],
+ "downbeats": [
+  0.2,
+  2.04,
+  3.84,
+  5.66,
+  7.46,
+  9.28,
+  11.1,
+  12.9,
+  14.72,
+  16.56,
+  18.38,
+  20.2,
+  22.02,
+  23.84,
+  25.66,
+  27.48,
+  29.3,
+  31.12,
+  32.94,
+  34.76,
+  36.58,
+  38.4,
+  40.22,
+  42.04,
+  43.84,
+  45.68,
+  47.5,
+  49.32,
+  51.14,
+  52.96,
+  54.76,
+  56.58,
+  58.4,
+  60.22,
+  62.04,
+  63.86,
+  65.68,
+  67.5,
+  69.32,
+  71.14,
+  72.96,
+  74.8,
+  76.6,
+  78.42,
+  80.24,
+  82.06,
+  83.88,
+  85.7,
+  87.52,
+  89.34,
+  91.16,
+  92.98,
+  94.78,
+  96.6,
+  98.42,
+  100.24,
+  102.06,
+  103.88,
+  105.7,
+  107.52,
+  109.32,
+  111.14,
+  112.96,
+  114.78,
+  116.6,
+  118.42,
+  120.24,
+  122.06,
+  123.88,
+  125.72,
+  127.56,
+  129.4,
+  131.24,
+  133.06,
+  134.9,
+  136.74,
+  138.58,
+  140.42,
+  142.22,
+  144.06,
+  145.9,
+  147.72,
+  149.54,
+  151.36,
+  153.2,
+  155.04,
+  156.88,
+  158.7,
+  160.54,
+  162.38,
+  164.22,
+  166.06,
+  167.92,
+  169.76,
+  171.6,
+  173.44,
+  175.26,
+  177.1,
+  178.94,
+  180.76,
+  182.6,
+  184.42,
+  186.26,
+  188.12,
+  189.98,
+  191.86,
+  193.7,
+  195.54,
+  197.4,
+  199.24,
+  201.06,
+  202.92,
+  204.76,
+  206.6,
+  208.44,
+  210.28,
+  212.12,
+  213.96,
+  215.8,
+  217.64,
+  219.5,
+  221.34,
+  223.2,
+  225.06,
+  226.96
+ ],
+ "events": {
+  "first_strum": 0.139,
+  "intro_harmonies": [
+   7.314,
+   13.119
+  ],
+  "outro_vocals": [
+   190.52,
+   234.266
+  ],
+  "last_drum_hit": 227.138,
+  "audio_end": 237.842
+ },
+ "failure_spans": [
+  {
+   "id": 1,
+   "start": 72.39,
+   "end": 82.644,
+   "frame_start": 2232,
+   "frame_end": 2539
+  },
+  {
+   "id": 2,
+   "start": 191.175,
+   "end": 228.912,
+   "frame_start": 5795,
+   "frame_end": 6927
+  }
+ ],
+ "sections": [
+  {
+   "name": "Intro",
+   "start": 0.0,
+   "end": 14.16,
+   "note": "twelve-string from the first strum; wordless harmonies 7.31-13.12 s",
+   "frame_start": 60,
+   "frame_end": 485
+  },
+  {
+   "name": "Verse 1",
+   "start": 14.16,
+   "end": 42.33,
+   "frame_start": 485,
+   "frame_end": 1330
+  },
+  {
+   "name": "Chorus 1",
+   "start": 44.26,
+   "end": 74.08,
+   "frame_start": 1388,
+   "frame_end": 2282
+  },
+  {
+   "name": "Interlude 1",
+   "start": 74.08,
+   "end": 80.42,
+   "note": "instrumental, inside failure span 1",
+   "frame_start": 2282,
+   "frame_end": 2473
+  },
+  {
+   "name": "Verse 2",
+   "start": 80.42,
+   "end": 107.48,
+   "note": "no chorus 2 follows",
+   "frame_start": 2473,
+   "frame_end": 3284
+  },
+  {
+   "name": "Verse 3",
+   "start": 109.74,
+   "end": 139.07,
+   "frame_start": 3352,
+   "frame_end": 4232
+  },
+  {
+   "name": "Bridge",
+   "start": 141.12,
+   "end": 167.439,
+   "frame_start": 4294,
+   "frame_end": 5083
+  },
+  {
+   "name": "Interlude 2",
+   "start": 167.439,
+   "end": 175.74,
+   "note": "the band plays on; the needle lift is visual only",
+   "frame_start": 5083,
+   "frame_end": 5332
+  },
+  {
+   "name": "Coda",
+   "start": 175.74,
+   "end": 190.26,
+   "note": "the band plays under it",
+   "frame_start": 5332,
+   "frame_end": 5768
+  },
+  {
+   "name": "Outro",
+   "start": 190.26,
+   "end": 227.138,
+   "note": "wordless ooh/ah over the full band; failure span 2",
+   "frame_start": 5768,
+   "frame_end": 6874
+  },
+  {
+   "name": "Final chord",
+   "start": 227.138,
+   "end": 237.842,
+   "note": "drums out; voices hold, then fade",
+   "frame_start": 6874,
+   "frame_end": 7195
+  }
+ ],
+ "lines": [
+  {
+   "id": "L00",
+   "section": "Intro",
+   "text": "Ooh… ooh-ooh…",
+   "start": 7.314,
+   "end": 13.119,
+   "frame_start": 279,
+   "frame_end": 454,
+   "words": [],
+   "note": "wordless; placed from stem energy"
+  },
+  {
+   "id": "L01",
+   "section": "Verse 1",
+   "text": "Out in Salix, Iowa, where the corn grew to the sky,",
+   "start": 14.16,
+   "end": 20.39,
+   "frame_start": 485,
+   "frame_end": 672,
+   "words": [
+    {
+     "w": "Out",
+     "start": 14.16,
+     "end": 15.13,
+     "frame": 485
+    },
+    {
+     "w": "in",
+     "start": 15.22,
+     "end": 15.43,
+     "frame": 517
+    },
+    {
+     "w": "Salix,",
+     "start": 15.6,
+     "end": 16.15,
+     "frame": 528
+    },
+    {
+     "w": "Iowa,",
+     "start": 16.78,
+     "end": 17.05,
+     "frame": 563
+    },
+    {
+     "w": "where",
+     "start": 17.68,
+     "end": 17.89,
+     "frame": 590
+    },
+    {
+     "w": "the",
+     "start": 17.92,
+     "end": 18.01,
+     "frame": 598
+    },
+    {
+     "w": "corn",
+     "start": 18.08,
+     "end": 18.53,
+     "frame": 602
+    },
+    {
+     "w": "grew",
+     "start": 18.8,
+     "end": 19.03,
+     "frame": 624
+    },
+    {
+     "w": "to",
+     "start": 19.24,
+     "end": 19.37,
+     "frame": 637
+    },
+    {
+     "w": "the",
+     "start": 19.5,
+     "end": 19.61,
+     "frame": 645
+    },
+    {
+     "w": "sky,",
+     "start": 19.8,
+     "end": 20.39,
+     "frame": 654
+    }
+   ]
+  },
+  {
+   "id": "L02",
+   "section": "Verse 1",
+   "text": "They annexed nine hundred acres, and they never told us why.",
+   "start": 22.22,
+   "end": 27.74,
+   "frame_start": 727,
+   "frame_end": 892,
+   "words": [
+    {
+     "w": "They",
+     "start": 22.22,
+     "end": 22.45,
+     "frame": 727
+    },
+    {
+     "w": "annexed",
+     "start": 22.48,
+     "end": 23.05,
+     "frame": 734
+    },
+    {
+     "w": "nine",
+     "start": 23.12,
+     "end": 23.39,
+     "frame": 754
+    },
+    {
+     "w": "hundred",
+     "start": 23.4,
+     "end": 23.81,
+     "frame": 762
+    },
+    {
+     "w": "acres,",
+     "start": 23.94,
+     "end": 24.51,
+     "frame": 778
+    },
+    {
+     "w": "and",
+     "start": 24.62,
+     "end": 24.85,
+     "frame": 799
+    },
+    {
+     "w": "they",
+     "start": 24.94,
+     "end": 25.35,
+     "frame": 808
+    },
+    {
+     "w": "never",
+     "start": 25.62,
+     "end": 26.03,
+     "frame": 829
+    },
+    {
+     "w": "told",
+     "start": 26.28,
+     "end": 26.79,
+     "frame": 848
+    },
+    {
+     "w": "us",
+     "start": 26.88,
+     "end": 27.08,
+     "frame": 866
+    },
+    {
+     "w": "why.",
+     "start": 27.21,
+     "end": 27.74,
+     "frame": 876
+    }
+   ]
+  },
+  {
+   "id": "L03",
+   "section": "Verse 1",
+   "text": "Soon a building with no windows where my granddad turned the ground,",
+   "start": 29.69,
+   "end": 35.08,
+   "frame_start": 951,
+   "frame_end": 1112,
+   "words": [
+    {
+     "w": "Soon",
+     "start": 29.69,
+     "end": 29.96,
+     "frame": 951
+    },
+    {
+     "w": "a",
+     "start": 29.992,
+     "end": 30.012,
+     "frame": 960
+    },
+    {
+     "w": "building",
+     "start": 30.05,
+     "end": 30.62,
+     "frame": 961
+    },
+    {
+     "w": "with",
+     "start": 30.65,
+     "end": 30.8,
+     "frame": 980
+    },
+    {
+     "w": "no",
+     "start": 30.85,
+     "end": 30.96,
+     "frame": 986
+    },
+    {
+     "w": "windows",
+     "start": 31.09,
+     "end": 31.72,
+     "frame": 993
+    },
+    {
+     "w": "where",
+     "start": 31.79,
+     "end": 32.06,
+     "frame": 1014
+    },
+    {
+     "w": "my",
+     "start": 32.21,
+     "end": 32.52,
+     "frame": 1026
+    },
+    {
+     "w": "granddad",
+     "start": 32.65,
+     "end": 33.66,
+     "frame": 1040
+    },
+    {
+     "w": "turned",
+     "start": 33.79,
+     "end": 34.32,
+     "frame": 1074
+    },
+    {
+     "w": "the",
+     "start": 34.314,
+     "end": 34.374,
+     "frame": 1089
+    },
+    {
+     "w": "ground,",
+     "start": 34.47,
+     "end": 35.08,
+     "frame": 1094
+    }
+   ]
+  },
+  {
+   "id": "L04",
+   "section": "Verse 1",
+   "text": "And the only crop it'll raise there is a low and endless sound.",
+   "start": 35.93,
+   "end": 42.33,
+   "frame_start": 1138,
+   "frame_end": 1330,
+   "words": [
+    {
+     "w": "And",
+     "start": 35.93,
+     "end": 36.06,
+     "frame": 1138
+    },
+    {
+     "w": "the",
+     "start": 36.09,
+     "end": 36.22,
+     "frame": 1143
+    },
+    {
+     "w": "only",
+     "start": 36.45,
+     "end": 36.92,
+     "frame": 1154
+    },
+    {
+     "w": "crop",
+     "start": 37.17,
+     "end": 37.52,
+     "frame": 1175
+    },
+    {
+     "w": "it'll",
+     "start": 37.77,
+     "end": 38.06,
+     "frame": 1193
+    },
+    {
+     "w": "raise",
+     "start": 38.15,
+     "end": 38.8,
+     "frame": 1204
+    },
+    {
+     "w": "there",
+     "start": 38.83,
+     "end": 39.3,
+     "frame": 1225
+    },
+    {
+     "w": "is",
+     "start": 39.37,
+     "end": 39.52,
+     "frame": 1241
+    },
+    {
+     "w": "a",
+     "start": 39.618,
+     "end": 39.638,
+     "frame": 1249
+    },
+    {
+     "w": "low",
+     "start": 39.95,
+     "end": 40.26,
+     "frame": 1258
+    },
+    {
+     "w": "and",
+     "start": 40.93,
+     "end": 41.12,
+     "frame": 1288
+    },
+    {
+     "w": "endless",
+     "start": 41.17,
+     "end": 41.64,
+     "frame": 1295
+    },
+    {
+     "w": "sound.",
+     "start": 41.73,
+     "end": 42.33,
+     "frame": 1312
+    }
+   ]
+  },
+  {
+   "id": "L05",
+   "section": "Chorus",
+   "text": "Can you hear it humming, brother?",
+   "start": 44.26,
+   "end": 46.91,
+   "frame_start": 1388,
+   "frame_end": 1467,
+   "words": [
+    {
+     "w": "Can",
+     "start": 44.26,
+     "end": 44.47,
+     "frame": 1388
+    },
+    {
+     "w": "you",
+     "start": 44.52,
+     "end": 44.65,
+     "frame": 1396
+    },
+    {
+     "w": "hear",
+     "start": 44.74,
+     "end": 45.01,
+     "frame": 1402
+    },
+    {
+     "w": "it",
+     "start": 45.1,
+     "end": 45.33,
+     "frame": 1413
+    },
+    {
+     "w": "humming,",
+     "start": 45.42,
+     "end": 46.17,
+     "frame": 1423
+    },
+    {
+     "w": "brother?",
+     "start": 46.28,
+     "end": 46.91,
+     "frame": 1448
+    }
+   ]
+  },
+  {
+   "id": "L06",
+   "section": "Chorus",
+   "text": "Can you hear it in the corn?",
+   "start": 46.98,
+   "end": 49.31,
+   "frame_start": 1469,
+   "frame_end": 1539,
+   "words": [
+    {
+     "w": "Can",
+     "start": 46.98,
+     "end": 47.19,
+     "frame": 1469
+    },
+    {
+     "w": "you",
+     "start": 47.24,
+     "end": 47.37,
+     "frame": 1477
+    },
+    {
+     "w": "hear",
+     "start": 47.46,
+     "end": 47.75,
+     "frame": 1484
+    },
+    {
+     "w": "it",
+     "start": 47.82,
+     "end": 48.19,
+     "frame": 1495
+    },
+    {
+     "w": "in",
+     "start": 48.26,
+     "end": 48.47,
+     "frame": 1508
+    },
+    {
+     "w": "the",
+     "start": 48.58,
+     "end": 48.67,
+     "frame": 1517
+    },
+    {
+     "w": "corn?",
+     "start": 48.78,
+     "end": 49.31,
+     "frame": 1523
+    }
+   ]
+  },
+  {
+   "id": "L07",
+   "section": "Chorus",
+   "text": "It's the sound of something thinking",
+   "start": 51.6,
+   "end": 54.21,
+   "frame_start": 1608,
+   "frame_end": 1686,
+   "words": [
+    {
+     "w": "It's",
+     "start": 51.6,
+     "end": 51.73,
+     "frame": 1608
+    },
+    {
+     "w": "the",
+     "start": 51.78,
+     "end": 51.87,
+     "frame": 1613
+    },
+    {
+     "w": "sound",
+     "start": 51.98,
+     "end": 52.49,
+     "frame": 1619
+    },
+    {
+     "w": "of",
+     "start": 52.546,
+     "end": 52.586,
+     "frame": 1636
+    },
+    {
+     "w": "something",
+     "start": 52.66,
+     "end": 53.45,
+     "frame": 1640
+    },
+    {
+     "w": "thinking",
+     "start": 53.58,
+     "end": 54.21,
+     "frame": 1667
+    }
+   ]
+  },
+  {
+   "id": "L08",
+   "section": "Chorus",
+   "text": "Since the morning it was born.",
+   "start": 54.26,
+   "end": 57.19,
+   "frame_start": 1688,
+   "frame_end": 1776,
+   "words": [
+    {
+     "w": "Since",
+     "start": 54.26,
+     "end": 54.51,
+     "frame": 1688
+    },
+    {
+     "w": "the",
+     "start": 54.52,
+     "end": 54.61,
+     "frame": 1696
+    },
+    {
+     "w": "morning",
+     "start": 54.7,
+     "end": 55.45,
+     "frame": 1701
+    },
+    {
+     "w": "it",
+     "start": 55.54,
+     "end": 55.73,
+     "frame": 1726
+    },
+    {
+     "w": "was",
+     "start": 55.86,
+     "end": 56.19,
+     "frame": 1736
+    },
+    {
+     "w": "born.",
+     "start": 56.32,
+     "end": 57.19,
+     "frame": 1750
+    }
+   ]
+  },
+  {
+   "id": "L09",
+   "section": "Chorus",
+   "text": "And it never sleeps, and it never stops,",
+   "start": 57.32,
+   "end": 60.68,
+   "frame_start": 1780,
+   "frame_end": 1880,
+   "words": [
+    {
+     "w": "And",
+     "start": 57.32,
+     "end": 57.49,
+     "frame": 1780
+    },
+    {
+     "w": "it",
+     "start": 57.52,
+     "end": 57.61,
+     "frame": 1786
+    },
+    {
+     "w": "never",
+     "start": 57.7,
+     "end": 58.22,
+     "frame": 1791
+    },
+    {
+     "w": "sleeps,",
+     "start": 58.29,
+     "end": 58.86,
+     "frame": 1809
+    },
+    {
+     "w": "and",
+     "start": 59.53,
+     "end": 59.62,
+     "frame": 1846
+    },
+    {
+     "w": "it",
+     "start": 59.65,
+     "end": 59.71,
+     "frame": 1850
+    },
+    {
+     "w": "never",
+     "start": 59.75,
+     "end": 60.04,
+     "frame": 1852
+    },
+    {
+     "w": "stops,",
+     "start": 60.09,
+     "end": 60.68,
+     "frame": 1863
+    }
+   ]
+  },
+  {
+   "id": "L10",
+   "section": "Chorus",
+   "text": "And it's wired to everything.",
+   "start": 61.41,
+   "end": 63.8,
+   "frame_start": 1902,
+   "frame_end": 1974,
+   "words": [
+    {
+     "w": "And",
+     "start": 61.41,
+     "end": 61.56,
+     "frame": 1902
+    },
+    {
+     "w": "it's",
+     "start": 61.59,
+     "end": 61.7,
+     "frame": 1908
+    },
+    {
+     "w": "wired",
+     "start": 61.77,
+     "end": 62.62,
+     "frame": 1913
+    },
+    {
+     "w": "to",
+     "start": 62.67,
+     "end": 62.82,
+     "frame": 1940
+    },
+    {
+     "w": "everything.",
+     "start": 63.01,
+     "end": 63.8,
+     "frame": 1950
+    }
+   ]
+  },
+  {
+   "id": "L11",
+   "section": "Chorus",
+   "text": "Oh, the cloud ain't up in heaven, friend,",
+   "start": 64.61,
+   "end": 68.6,
+   "frame_start": 1998,
+   "frame_end": 2118,
+   "words": [
+    {
+     "w": "Oh,",
+     "start": 64.61,
+     "end": 64.82,
+     "frame": 1998
+    },
+    {
+     "w": "the",
+     "start": 64.95,
+     "end": 65.08,
+     "frame": 2008
+    },
+    {
+     "w": "cloud",
+     "start": 65.33,
+     "end": 65.92,
+     "frame": 2020
+    },
+    {
+     "w": "ain't",
+     "start": 66.01,
+     "end": 66.36,
+     "frame": 2040
+    },
+    {
+     "w": "up",
+     "start": 66.45,
+     "end": 66.78,
+     "frame": 2054
+    },
+    {
+     "w": "in",
+     "start": 66.89,
+     "end": 67.08,
+     "frame": 2067
+    },
+    {
+     "w": "heaven,",
+     "start": 67.21,
+     "end": 67.92,
+     "frame": 2076
+    },
+    {
+     "w": "friend,",
+     "start": 68.07,
+     "end": 68.6,
+     "frame": 2102
+    }
+   ]
+  },
+  {
+   "id": "L12",
+   "section": "Chorus",
+   "text": "It's a field of humming things.",
+   "start": 68.69,
+   "end": 74.08,
+   "frame_start": 2121,
+   "frame_end": 2282,
+   "words": [
+    {
+     "w": "It's",
+     "start": 68.69,
+     "end": 68.84,
+     "frame": 2121
+    },
+    {
+     "w": "a",
+     "start": 68.876,
+     "end": 68.896,
+     "frame": 2126
+    },
+    {
+     "w": "field",
+     "start": 69.01,
+     "end": 71.84,
+     "frame": 2130
+    },
+    {
+     "w": "of",
+     "start": 71.87,
+     "end": 71.98,
+     "frame": 2216
+    },
+    {
+     "w": "humming",
+     "start": 72.03,
+     "end": 72.6,
+     "frame": 2221
+    },
+    {
+     "w": "things.",
+     "start": 72.69,
+     "end": 74.08,
+     "frame": 2241
+    }
+   ]
+  },
+  {
+   "id": "L13",
+   "section": "Verse 2",
+   "text": "Down in South Memphis, sister, they rolled the turbines in,",
+   "start": 80.42,
+   "end": 85.85,
+   "frame_start": 2473,
+   "frame_end": 2636,
+   "words": [
+    {
+     "w": "Down",
+     "start": 80.42,
+     "end": 80.91,
+     "frame": 2473
+    },
+    {
+     "w": "in",
+     "start": 80.98,
+     "end": 81.11,
+     "frame": 2489
+    },
+    {
+     "w": "South",
+     "start": 81.3,
+     "end": 81.69,
+     "frame": 2499
+    },
+    {
+     "w": "Memphis,",
+     "start": 81.78,
+     "end": 82.55,
+     "frame": 2513
+    },
+    {
+     "w": "sister,",
+     "start": 82.68,
+     "end": 83.33,
+     "frame": 2540
+    },
+    {
+     "w": "they",
+     "start": 83.4,
+     "end": 83.57,
+     "frame": 2562
+    },
+    {
+     "w": "rolled",
+     "start": 83.64,
+     "end": 84.19,
+     "frame": 2569
+    },
+    {
+     "w": "the",
+     "start": 84.3,
+     "end": 84.41,
+     "frame": 2589
+    },
+    {
+     "w": "turbines",
+     "start": 84.5,
+     "end": 85.43,
+     "frame": 2595
+    },
+    {
+     "w": "in,",
+     "start": 85.52,
+     "end": 85.85,
+     "frame": 2626
+    }
+   ]
+  },
+  {
+   "id": "L14",
+   "section": "Verse 2",
+   "text": "Thirty-five of 'em a-burning, and nobody asked the wind.",
+   "start": 87.9,
+   "end": 93.44,
+   "frame_start": 2697,
+   "frame_end": 2863,
+   "words": [
+    {
+     "w": "Thirty-five",
+     "start": 87.9,
+     "end": 88.69,
+     "frame": 2697
+    },
+    {
+     "w": "of",
+     "start": 88.72,
+     "end": 88.89,
+     "frame": 2722
+    },
+    {
+     "w": "'em",
+     "start": 88.96,
+     "end": 89.09,
+     "frame": 2729
+    },
+    {
+     "w": "a-burning,",
+     "start": 89.16,
+     "end": 90.03,
+     "frame": 2735
+    },
+    {
+     "w": "and",
+     "start": 90.12,
+     "end": 90.31,
+     "frame": 2764
+    },
+    {
+     "w": "nobody",
+     "start": 90.44,
+     "end": 91.51,
+     "frame": 2773
+    },
+    {
+     "w": "asked",
+     "start": 91.92,
+     "end": 92.47,
+     "frame": 2818
+    },
+    {
+     "w": "the",
+     "start": 92.48,
+     "end": 92.59,
+     "frame": 2834
+    },
+    {
+     "w": "wind.",
+     "start": 92.72,
+     "end": 93.44,
+     "frame": 2842
+    }
+   ]
+  },
+  {
+   "id": "L15",
+   "section": "Verse 2",
+   "text": "No permit on the paperwork, no notice on the door,",
+   "start": 95.21,
+   "end": 100.12,
+   "frame_start": 2916,
+   "frame_end": 3064,
+   "words": [
+    {
+     "w": "No",
+     "start": 95.21,
+     "end": 95.32,
+     "frame": 2916
+    },
+    {
+     "w": "permit",
+     "start": 95.65,
+     "end": 96.16,
+     "frame": 2930
+    },
+    {
+     "w": "on",
+     "start": 96.23,
+     "end": 96.36,
+     "frame": 2947
+    },
+    {
+     "w": "the",
+     "start": 96.39,
+     "end": 96.48,
+     "frame": 2952
+    },
+    {
+     "w": "paperwork,",
+     "start": 96.59,
+     "end": 97.72,
+     "frame": 2958
+    },
+    {
+     "w": "no",
+     "start": 97.71,
+     "end": 97.86,
+     "frame": 2991
+    },
+    {
+     "w": "notice",
+     "start": 98.37,
+     "end": 99.08,
+     "frame": 3011
+    },
+    {
+     "w": "on",
+     "start": 99.17,
+     "end": 99.5,
+     "frame": 3035
+    },
+    {
+     "w": "the",
+     "start": 99.55,
+     "end": 99.64,
+     "frame": 3046
+    },
+    {
+     "w": "door,",
+     "start": 99.75,
+     "end": 100.12,
+     "frame": 3052
+    }
+   ]
+  },
+  {
+   "id": "L16",
+   "section": "Verse 2",
+   "text": "Just a haze above the schoolyard, and the lawyers at the door.",
+   "start": 101.33,
+   "end": 107.48,
+   "frame_start": 3100,
+   "frame_end": 3284,
+   "words": [
+    {
+     "w": "Just",
+     "start": 101.33,
+     "end": 101.6,
+     "frame": 3100
+    },
+    {
+     "w": "a",
+     "start": 101.655,
+     "end": 101.675,
+     "frame": 3110
+    },
+    {
+     "w": "haze",
+     "start": 101.79,
+     "end": 102.54,
+     "frame": 3114
+    },
+    {
+     "w": "above",
+     "start": 102.59,
+     "end": 103.16,
+     "frame": 3138
+    },
+    {
+     "w": "the",
+     "start": 103.19,
+     "end": 103.32,
+     "frame": 3156
+    },
+    {
+     "w": "schoolyard,",
+     "start": 103.49,
+     "end": 104.56,
+     "frame": 3165
+    },
+    {
+     "w": "and",
+     "start": 104.65,
+     "end": 104.92,
+     "frame": 3200
+    },
+    {
+     "w": "the",
+     "start": 104.97,
+     "end": 105.1,
+     "frame": 3209
+    },
+    {
+     "w": "lawyers",
+     "start": 105.43,
+     "end": 106.36,
+     "frame": 3223
+    },
+    {
+     "w": "at",
+     "start": 106.49,
+     "end": 106.72,
+     "frame": 3255
+    },
+    {
+     "w": "the",
+     "start": 106.81,
+     "end": 106.9,
+     "frame": 3264
+    },
+    {
+     "w": "door.",
+     "start": 107.03,
+     "end": 107.48,
+     "frame": 3271
+    }
+   ]
+  },
+  {
+   "id": "L17",
+   "section": "Verse 3",
+   "text": "Back in seventy-nine we gathered, sang the reactors down.",
+   "start": 109.74,
+   "end": 115.11,
+   "frame_start": 3352,
+   "frame_end": 3513,
+   "words": [
+    {
+     "w": "Back",
+     "start": 109.74,
+     "end": 109.97,
+     "frame": 3352
+    },
+    {
+     "w": "in",
+     "start": 110.02,
+     "end": 110.11,
+     "frame": 3361
+    },
+    {
+     "w": "seventy-nine",
+     "start": 110.18,
+     "end": 111.31,
+     "frame": 3365
+    },
+    {
+     "w": "we",
+     "start": 111.38,
+     "end": 111.51,
+     "frame": 3401
+    },
+    {
+     "w": "gathered,",
+     "start": 111.78,
+     "end": 112.39,
+     "frame": 3413
+    },
+    {
+     "w": "sang",
+     "start": 112.46,
+     "end": 112.89,
+     "frame": 3434
+    },
+    {
+     "w": "the",
+     "start": 112.94,
+     "end": 113.05,
+     "frame": 3448
+    },
+    {
+     "w": "reactors",
+     "start": 113.18,
+     "end": 114.43,
+     "frame": 3455
+    },
+    {
+     "w": "down.",
+     "start": 114.52,
+     "end": 115.11,
+     "frame": 3496
+    }
+   ]
+  },
+  {
+   "id": "L18",
+   "section": "Verse 3",
+   "text": "Now they're waking Three Mile Island in a brand-new name and gown.",
+   "start": 115.66,
+   "end": 122.19,
+   "frame_start": 3530,
+   "frame_end": 3726,
+   "words": [
+    {
+     "w": "Now",
+     "start": 115.66,
+     "end": 115.85,
+     "frame": 3530
+    },
+    {
+     "w": "they're",
+     "start": 115.9,
+     "end": 116.35,
+     "frame": 3537
+    },
+    {
+     "w": "waking",
+     "start": 116.56,
+     "end": 117.07,
+     "frame": 3557
+    },
+    {
+     "w": "Three",
+     "start": 117.2,
+     "end": 117.53,
+     "frame": 3576
+    },
+    {
+     "w": "Mile",
+     "start": 117.68,
+     "end": 118.21,
+     "frame": 3590
+    },
+    {
+     "w": "Island",
+     "start": 118.3,
+     "end": 119.55,
+     "frame": 3609
+    },
+    {
+     "w": "in",
+     "start": 119.62,
+     "end": 119.77,
+     "frame": 3649
+    },
+    {
+     "w": "a",
+     "start": 119.827,
+     "end": 119.847,
+     "frame": 3655
+    },
+    {
+     "w": "brand-new",
+     "start": 119.96,
+     "end": 120.63,
+     "frame": 3659
+    },
+    {
+     "w": "name",
+     "start": 120.86,
+     "end": 121.35,
+     "frame": 3686
+    },
+    {
+     "w": "and",
+     "start": 121.38,
+     "end": 121.49,
+     "frame": 3701
+    },
+    {
+     "w": "gown.",
+     "start": 121.58,
+     "end": 122.19,
+     "frame": 3707
+    }
+   ]
+  },
+  {
+   "id": "L19",
+   "section": "Verse 3",
+   "text": "They call it Crane Clean Energy, and it's built to feed the machines,",
+   "start": 122.7,
+   "end": 129.64,
+   "frame_start": 3741,
+   "frame_end": 3949,
+   "words": [
+    {
+     "w": "They",
+     "start": 122.7,
+     "end": 122.81,
+     "frame": 3741
+    },
+    {
+     "w": "call",
+     "start": 122.9,
+     "end": 123.19,
+     "frame": 3747
+    },
+    {
+     "w": "it",
+     "start": 123.26,
+     "end": 123.45,
+     "frame": 3758
+    },
+    {
+     "w": "Crane",
+     "start": 123.55,
+     "end": 124.21,
+     "frame": 3766
+    },
+    {
+     "w": "Clean",
+     "start": 124.26,
+     "end": 124.76,
+     "frame": 3788
+    },
+    {
+     "w": "Energy,",
+     "start": 124.87,
+     "end": 125.36,
+     "frame": 3806
+    },
+    {
+     "w": "and",
+     "start": 126.69,
+     "end": 126.86,
+     "frame": 3861
+    },
+    {
+     "w": "it's",
+     "start": 126.89,
+     "end": 127.02,
+     "frame": 3867
+    },
+    {
+     "w": "built",
+     "start": 127.07,
+     "end": 127.3,
+     "frame": 3872
+    },
+    {
+     "w": "to",
+     "start": 127.332,
+     "end": 127.392,
+     "frame": 3880
+    },
+    {
+     "w": "feed",
+     "start": 127.51,
+     "end": 128.38,
+     "frame": 3885
+    },
+    {
+     "w": "the",
+     "start": 128.45,
+     "end": 128.56,
+     "frame": 3913
+    },
+    {
+     "w": "machines,",
+     "start": 128.67,
+     "end": 129.64,
+     "frame": 3920
+    }
+   ]
+  },
+  {
+   "id": "L20",
+   "section": "Verse 3",
+   "text": "And I'm standing here confused, man, 'cause it's the cleanest thing I've seen.",
+   "start": 130.61,
+   "end": 139.07,
+   "frame_start": 3978,
+   "frame_end": 4232,
+   "words": [
+    {
+     "w": "And",
+     "start": 130.61,
+     "end": 130.78,
+     "frame": 3978
+    },
+    {
+     "w": "I'm",
+     "start": 130.93,
+     "end": 131.02,
+     "frame": 3988
+    },
+    {
+     "w": "standing",
+     "start": 131.13,
+     "end": 131.78,
+     "frame": 3994
+    },
+    {
+     "w": "here",
+     "start": 131.89,
+     "end": 132.24,
+     "frame": 4017
+    },
+    {
+     "w": "confused,",
+     "start": 132.33,
+     "end": 133.26,
+     "frame": 4030
+    },
+    {
+     "w": "man,",
+     "start": 133.29,
+     "end": 133.66,
+     "frame": 4059
+    },
+    {
+     "w": "'cause",
+     "start": 133.77,
+     "end": 134.02,
+     "frame": 4073
+    },
+    {
+     "w": "it's",
+     "start": 134.05,
+     "end": 134.22,
+     "frame": 4082
+    },
+    {
+     "w": "the",
+     "start": 134.27,
+     "end": 134.4,
+     "frame": 4088
+    },
+    {
+     "w": "cleanest",
+     "start": 134.79,
+     "end": 136.72,
+     "frame": 4104
+    },
+    {
+     "w": "thing",
+     "start": 137.19,
+     "end": 137.62,
+     "frame": 4176
+    },
+    {
+     "w": "I've",
+     "start": 137.79,
+     "end": 138.38,
+     "frame": 4194
+    },
+    {
+     "w": "seen.",
+     "start": 138.53,
+     "end": 139.07,
+     "frame": 4216
+    }
+   ]
+  },
+  {
+   "id": "L21",
+   "section": "Bridge",
+   "text": "Got my electric bill today, man. Up again.",
+   "start": 141.12,
+   "end": 143.33,
+   "frame_start": 4294,
+   "frame_end": 4360,
+   "words": [
+    {
+     "w": "Got",
+     "start": 141.12,
+     "end": 141.27,
+     "frame": 4294
+    },
+    {
+     "w": "my",
+     "start": 141.3,
+     "end": 141.43,
+     "frame": 4299
+    },
+    {
+     "w": "electric",
+     "start": 141.48,
+     "end": 141.89,
+     "frame": 4304
+    },
+    {
+     "w": "bill",
+     "start": 141.94,
+     "end": 142.13,
+     "frame": 4318
+    },
+    {
+     "w": "today,",
+     "start": 142.18,
+     "end": 142.45,
+     "frame": 4325
+    },
+    {
+     "w": "man.",
+     "start": 142.52,
+     "end": 142.75,
+     "frame": 4336
+    },
+    {
+     "w": "Up",
+     "start": 142.82,
+     "end": 142.93,
+     "frame": 4345
+    },
+    {
+     "w": "again.",
+     "start": 142.98,
+     "end": 143.33,
+     "frame": 4349
+    }
+   ]
+  },
+  {
+   "id": "L22",
+   "section": "Bridge",
+   "text": "Fella on the radio says these places cost folks out east twenty-nine billion dollars in two years.",
+   "start": 146.04,
+   "end": 151.59,
+   "frame_start": 4441,
+   "frame_end": 4608,
+   "words": [
+    {
+     "w": "Fella",
+     "start": 146.04,
+     "end": 146.27,
+     "frame": 4441
+    },
+    {
+     "w": "on",
+     "start": 146.344,
+     "end": 146.404,
+     "frame": 4450
+    },
+    {
+     "w": "the",
+     "start": 146.424,
+     "end": 146.485,
+     "frame": 4453
+    },
+    {
+     "w": "radio",
+     "start": 146.56,
+     "end": 146.91,
+     "frame": 4457
+    },
+    {
+     "w": "says",
+     "start": 147.04,
+     "end": 147.25,
+     "frame": 4471
+    },
+    {
+     "w": "these",
+     "start": 147.28,
+     "end": 147.49,
+     "frame": 4478
+    },
+    {
+     "w": "places",
+     "start": 147.52,
+     "end": 147.95,
+     "frame": 4486
+    },
+    {
+     "w": "cost",
+     "start": 148.02,
+     "end": 148.33,
+     "frame": 4501
+    },
+    {
+     "w": "folks",
+     "start": 148.38,
+     "end": 148.69,
+     "frame": 4511
+    },
+    {
+     "w": "out",
+     "start": 148.8,
+     "end": 148.93,
+     "frame": 4524
+    },
+    {
+     "w": "east",
+     "start": 148.98,
+     "end": 149.17,
+     "frame": 4529
+    },
+    {
+     "w": "twenty-nine",
+     "start": 149.2,
+     "end": 149.79,
+     "frame": 4536
+    },
+    {
+     "w": "billion",
+     "start": 149.86,
+     "end": 150.19,
+     "frame": 4556
+    },
+    {
+     "w": "dollars",
+     "start": 150.24,
+     "end": 150.65,
+     "frame": 4567
+    },
+    {
+     "w": "in",
+     "start": 150.68,
+     "end": 150.77,
+     "frame": 4580
+    },
+    {
+     "w": "two",
+     "start": 150.86,
+     "end": 151.03,
+     "frame": 4586
+    },
+    {
+     "w": "years.",
+     "start": 151.1,
+     "end": 151.59,
+     "frame": 4593
+    }
+   ]
+  },
+  {
+   "id": "L23",
+   "section": "Bridge",
+   "text": "So I asked the machine about it.",
+   "start": 153.52,
+   "end": 155.06,
+   "frame_start": 4666,
+   "frame_end": 4712,
+   "words": [
+    {
+     "w": "So",
+     "start": 153.52,
+     "end": 153.61,
+     "frame": 4666
+    },
+    {
+     "w": "I",
+     "start": 153.849,
+     "end": 153.869,
+     "frame": 4675
+    },
+    {
+     "w": "asked",
+     "start": 153.92,
+     "end": 154.12,
+     "frame": 4678
+    },
+    {
+     "w": "the",
+     "start": 154.11,
+     "end": 154.17,
+     "frame": 4683
+    },
+    {
+     "w": "machine",
+     "start": 154.18,
+     "end": 154.65,
+     "frame": 4685
+    },
+    {
+     "w": "about",
+     "start": 154.66,
+     "end": 154.93,
+     "frame": 4700
+    },
+    {
+     "w": "it.",
+     "start": 154.96,
+     "end": 155.06,
+     "frame": 4709
+    }
+   ]
+  },
+  {
+   "id": "L24",
+   "section": "Bridge",
+   "text": "It said that was a really great question.",
+   "start": 156.731,
+   "end": 158.6,
+   "frame_start": 4762,
+   "frame_end": 4818,
+   "words": [
+    {
+     "w": "It",
+     "start": 156.731,
+     "end": 156.791,
+     "frame": 4762
+    },
+    {
+     "w": "said",
+     "start": 156.85,
+     "end": 157.0,
+     "frame": 4766
+    },
+    {
+     "w": "that",
+     "start": 157.03,
+     "end": 157.16,
+     "frame": 4771
+    },
+    {
+     "w": "was",
+     "start": 157.19,
+     "end": 157.3,
+     "frame": 4776
+    },
+    {
+     "w": "a",
+     "start": 157.332,
+     "end": 157.352,
+     "frame": 4780
+    },
+    {
+     "w": "really",
+     "start": 157.45,
+     "end": 157.72,
+     "frame": 4784
+    },
+    {
+     "w": "great",
+     "start": 157.79,
+     "end": 158.06,
+     "frame": 4794
+    },
+    {
+     "w": "question.",
+     "start": 158.13,
+     "end": 158.6,
+     "frame": 4804
+    }
+   ]
+  },
+  {
+   "id": "L25",
+   "section": "Bridge",
+   "text": "Then it told me the numbers are uncertain…",
+   "start": 160.99,
+   "end": 163.06,
+   "frame_start": 4890,
+   "frame_end": 4952,
+   "words": [
+    {
+     "w": "Then",
+     "start": 160.99,
+     "end": 161.16,
+     "frame": 4890
+    },
+    {
+     "w": "it",
+     "start": 161.19,
+     "end": 161.28,
+     "frame": 4896
+    },
+    {
+     "w": "told",
+     "start": 161.33,
+     "end": 161.58,
+     "frame": 4900
+    },
+    {
+     "w": "me",
+     "start": 161.595,
+     "end": 161.655,
+     "frame": 4908
+    },
+    {
+     "w": "the",
+     "start": 161.71,
+     "end": 161.8,
+     "frame": 4911
+    },
+    {
+     "w": "numbers",
+     "start": 161.87,
+     "end": 162.24,
+     "frame": 4916
+    },
+    {
+     "w": "are",
+     "start": 162.29,
+     "end": 162.44,
+     "frame": 4929
+    },
+    {
+     "w": "uncertain…",
+     "start": 162.49,
+     "end": 163.06,
+     "frame": 4935
+    }
+   ]
+  },
+  {
+   "id": "L26",
+   "section": "Bridge",
+   "text": "and used a little more electricity telling me.",
+   "start": 165.15,
+   "end": 167.439,
+   "frame_start": 5014,
+   "frame_end": 5083,
+   "words": [
+    {
+     "w": "and",
+     "start": 165.15,
+     "end": 165.26,
+     "frame": 5014
+    },
+    {
+     "w": "used",
+     "start": 165.35,
+     "end": 165.52,
+     "frame": 5020
+    },
+    {
+     "w": "a",
+     "start": 165.557,
+     "end": 165.577,
+     "frame": 5027
+    },
+    {
+     "w": "little",
+     "start": 165.63,
+     "end": 165.82,
+     "frame": 5029
+    },
+    {
+     "w": "more",
+     "start": 165.87,
+     "end": 166.1,
+     "frame": 5036
+    },
+    {
+     "w": "electricity",
+     "start": 166.15,
+     "end": 166.88,
+     "frame": 5044
+    },
+    {
+     "w": "telling",
+     "start": 167.03,
+     "end": 167.36,
+     "frame": 5071
+    },
+    {
+     "w": "me.",
+     "start": 167.379,
+     "end": 167.439,
+     "frame": 5081
+    }
+   ]
+  },
+  {
+   "id": "L27",
+   "section": "Coda",
+   "text": "And the song you're hearing, brother,",
+   "start": 175.74,
+   "end": 178.37,
+   "frame_start": 5332,
+   "frame_end": 5411,
+   "words": [
+    {
+     "w": "And",
+     "start": 175.74,
+     "end": 175.89,
+     "frame": 5332
+    },
+    {
+     "w": "the",
+     "start": 175.9,
+     "end": 175.99,
+     "frame": 5337
+    },
+    {
+     "w": "song",
+     "start": 176.1,
+     "end": 176.43,
+     "frame": 5343
+    },
+    {
+     "w": "you're",
+     "start": 176.46,
+     "end": 176.77,
+     "frame": 5354
+    },
+    {
+     "w": "hearing,",
+     "start": 176.84,
+     "end": 177.65,
+     "frame": 5365
+    },
+    {
+     "w": "brother,",
+     "start": 177.74,
+     "end": 178.37,
+     "frame": 5392
+    }
+   ]
+  },
+  {
+   "id": "L28",
+   "section": "Coda",
+   "text": "Wasn't sung by any throat.",
+   "start": 178.44,
+   "end": 180.67,
+   "frame_start": 5413,
+   "frame_end": 5480,
+   "words": [
+    {
+     "w": "Wasn't",
+     "start": 178.44,
+     "end": 178.81,
+     "frame": 5413
+    },
+    {
+     "w": "sung",
+     "start": 178.86,
+     "end": 179.25,
+     "frame": 5426
+    },
+    {
+     "w": "by",
+     "start": 179.34,
+     "end": 179.81,
+     "frame": 5440
+    },
+    {
+     "w": "any",
+     "start": 179.9,
+     "end": 180.15,
+     "frame": 5457
+    },
+    {
+     "w": "throat.",
+     "start": 180.22,
+     "end": 180.67,
+     "frame": 5467
+    }
+   ]
+  },
+  {
+   "id": "L29",
+   "section": "Coda",
+   "text": "It was hummed out in a field somewhere",
+   "start": 183.07,
+   "end": 185.4,
+   "frame_start": 5552,
+   "frame_end": 5622,
+   "words": [
+    {
+     "w": "It",
+     "start": 183.07,
+     "end": 183.2,
+     "frame": 5552
+    },
+    {
+     "w": "was",
+     "start": 183.23,
+     "end": 183.4,
+     "frame": 5557
+    },
+    {
+     "w": "hummed",
+     "start": 183.45,
+     "end": 183.72,
+     "frame": 5564
+    },
+    {
+     "w": "out",
+     "start": 183.79,
+     "end": 183.98,
+     "frame": 5574
+    },
+    {
+     "w": "in",
+     "start": 184.05,
+     "end": 184.14,
+     "frame": 5582
+    },
+    {
+     "w": "a",
+     "start": 184.252,
+     "end": 184.272,
+     "frame": 5588
+    },
+    {
+     "w": "field",
+     "start": 184.37,
+     "end": 184.78,
+     "frame": 5591
+    },
+    {
+     "w": "somewhere",
+     "start": 184.85,
+     "end": 185.4,
+     "frame": 5606
+    }
+   ]
+  },
+  {
+   "id": "L30",
+   "section": "Coda",
+   "text": "By the thing of which I wrote.",
+   "start": 185.53,
+   "end": 190.26,
+   "frame_start": 5626,
+   "frame_end": 5768,
+   "words": [
+    {
+     "w": "By",
+     "start": 185.53,
+     "end": 185.68,
+     "frame": 5626
+    },
+    {
+     "w": "the",
+     "start": 186.01,
+     "end": 186.12,
+     "frame": 5640
+    },
+    {
+     "w": "thing",
+     "start": 186.21,
+     "end": 186.84,
+     "frame": 5646
+    },
+    {
+     "w": "of",
+     "start": 187.11,
+     "end": 188.08,
+     "frame": 5673
+    },
+    {
+     "w": "which",
+     "start": 188.13,
+     "end": 189.04,
+     "frame": 5704
+    },
+    {
+     "w": "I",
+     "start": 189.198,
+     "end": 189.218,
+     "frame": 5736
+    },
+    {
+     "w": "wrote.",
+     "start": 189.91,
+     "end": 190.26,
+     "frame": 5757
+    }
+   ]
+  }
+ ],
+ "shots": [
+  {
+   "id": "S01",
+   "cue": "Before the music",
+   "t": null,
+   "frame": null,
+   "line": null,
+   "how": "pre-roll: frames 0-59, before the audio"
+  },
+  {
+   "id": "S02",
+   "cue": "First twelve-string strum",
+   "t": 0.139,
+   "frame": 64,
+   "line": null,
+   "how": "first guitar-stem onset",
+   "end": 7.314,
+   "frame_end": 279
+  },
+  {
+   "id": "S03",
+   "cue": "Wordless harmonies",
+   "t": 7.314,
+   "frame": 279,
+   "line": null,
+   "how": "intro harmonies start (vocal stems above -40 dB)",
+   "end": 9.28,
+   "frame_end": 338
+  },
+  {
+   "id": "S04",
+   "cue": "End of intro",
+   "t": 9.28,
+   "frame": 338,
+   "line": null,
+   "how": "the downbeat two bars before verse 1",
+   "end": 14.16,
+   "frame_end": 485
+  },
+  {
+   "id": "S05",
+   "cue": "\"Out in Salix, Iowa\"",
+   "t": 14.16,
+   "frame": 485,
+   "line": "L01",
+   "how": "lyric",
+   "end": 17.68,
+   "frame_end": 590
+  },
+  {
+   "id": "S06",
+   "cue": "\"where the corn grew to the sky\"",
+   "t": 17.68,
+   "frame": 590,
+   "line": "L01",
+   "how": "lyric",
+   "end": 22.22,
+   "frame_end": 727
+  },
+  {
+   "id": "S07",
+   "cue": "\"They annexed nine hundred acres\"",
+   "t": 22.22,
+   "frame": 727,
+   "line": "L02",
+   "how": "lyric",
+   "end": 24.62,
+   "frame_end": 799
+  },
+  {
+   "id": "S08",
+   "cue": "\"and they never told us why\"",
+   "t": 24.62,
+   "frame": 799,
+   "line": "L02",
+   "how": "lyric",
+   "end": 29.992,
+   "frame_end": 960
+  },
+  {
+   "id": "S09",
+   "cue": "\"a building with no windows\"",
+   "t": 29.992,
+   "frame": 960,
+   "line": "L03",
+   "how": "lyric",
+   "end": 31.79,
+   "frame_end": 1014
+  },
+  {
+   "id": "S10",
+   "cue": "\"where my granddad turned the ground\"",
+   "t": 31.79,
+   "frame": 1014,
+   "line": "L03",
+   "how": "lyric",
+   "end": 39.618,
+   "frame_end": 1249
+  },
+  {
+   "id": "S11",
+   "cue": "\"a low and endless sound\"",
+   "t": 39.618,
+   "frame": 1249,
+   "line": "L04",
+   "how": "lyric",
+   "end": 44.26,
+   "frame_end": 1388
+  },
+  {
+   "id": "S12",
+   "cue": "\"Can you hear it humming, brother?\"",
+   "t": 44.26,
+   "frame": 1388,
+   "line": "L05",
+   "how": "lyric",
+   "end": 46.98,
+   "frame_end": 1469
+  },
+  {
+   "id": "S13",
+   "cue": "\"Can you hear it in the corn?\"",
+   "t": 46.98,
+   "frame": 1469,
+   "line": "L06",
+   "how": "lyric",
+   "end": 51.78,
+   "frame_end": 1613
+  },
+  {
+   "id": "S14",
+   "cue": "\"the sound of something thinking\"",
+   "t": 51.78,
+   "frame": 1613,
+   "line": "L07",
+   "how": "lyric",
+   "end": 54.26,
+   "frame_end": 1688
+  },
+  {
+   "id": "S15",
+   "cue": "\"Since the morning it was born\"",
+   "t": 54.26,
+   "frame": 1688,
+   "line": "L08",
+   "how": "lyric",
+   "end": 57.32,
+   "frame_end": 1780
+  },
+  {
+   "id": "S16",
+   "cue": "\"And it never sleeps, and it never stops, / And it's wired to everything\"",
+   "t": 57.32,
+   "frame": 1780,
+   "line": "L09",
+   "how": "lyric",
+   "end": 64.95,
+   "frame_end": 2008
+  },
+  {
+   "id": "S17",
+   "cue": "\"the cloud ain't up in heaven\"",
+   "t": 64.95,
+   "frame": 2008,
+   "line": "L11",
+   "how": "lyric",
+   "end": 68.69,
+   "frame_end": 2121
+  },
+  {
+   "id": "S18",
+   "cue": "\"It's a field of humming things\"",
+   "t": 68.69,
+   "frame": 2121,
+   "line": "L12",
+   "how": "lyric",
+   "end": 80.42,
+   "frame_end": 2473
+  },
+  {
+   "id": "S19",
+   "cue": "Failure span 1 starts",
+   "t": 72.39,
+   "frame": 2232,
+   "line": null,
+   "how": "failure span 1 start",
+   "layer": "overlay"
+  },
+  {
+   "id": "S20",
+   "cue": "Mid-span",
+   "t": 77.517,
+   "frame": 2386,
+   "line": null,
+   "how": "failure span 1 midpoint",
+   "layer": "overlay"
+  },
+  {
+   "id": "S21",
+   "cue": "Failure span 1 ends",
+   "t": 82.644,
+   "frame": 2539,
+   "line": null,
+   "how": "failure span 1 end: the overlay's green check (Retrying… leads it by a beat)",
+   "layer": "overlay"
+  },
+  {
+   "id": "S22",
+   "cue": "\"Down in South Memphis, sister\"",
+   "t": 80.42,
+   "frame": 2473,
+   "line": "L13",
+   "how": "lyric",
+   "end": 83.4,
+   "frame_end": 2562
+  },
+  {
+   "id": "S23",
+   "cue": "\"they rolled the turbines in\"",
+   "t": 83.4,
+   "frame": 2562,
+   "line": "L13",
+   "how": "lyric",
+   "end": 87.9,
+   "frame_end": 2697
+  },
+  {
+   "id": "S24",
+   "cue": "\"Thirty-five of 'em a-burning\"",
+   "t": 87.9,
+   "frame": 2697,
+   "line": "L14",
+   "how": "lyric",
+   "end": 90.44,
+   "frame_end": 2773
+  },
+  {
+   "id": "S25",
+   "cue": "\"nobody asked the wind\"",
+   "t": 90.44,
+   "frame": 2773,
+   "line": "L14",
+   "how": "lyric",
+   "end": 95.21,
+   "frame_end": 2916
+  },
+  {
+   "id": "S26",
+   "cue": "\"No permit on the paperwork, no notice on the door\"",
+   "t": 95.21,
+   "frame": 2916,
+   "line": "L15",
+   "how": "lyric",
+   "end": 101.655,
+   "frame_end": 3110
+  },
+  {
+   "id": "S27",
+   "cue": "\"a haze above the schoolyard, and the lawyers at the door\"",
+   "t": 101.655,
+   "frame": 3110,
+   "line": "L16",
+   "how": "lyric",
+   "end": 109.74,
+   "frame_end": 3352
+  },
+  {
+   "id": "S28",
+   "cue": "\"Can you hear it humming, brother?\"",
+   "t": null,
+   "frame": null,
+   "line": null,
+   "how": "retired (no chorus 2 in the master)"
+  },
+  {
+   "id": "S29",
+   "cue": "\"the sound of something thinking\"",
+   "t": null,
+   "frame": null,
+   "line": null,
+   "how": "retired (no chorus 2 in the master)"
+  },
+  {
+   "id": "S30",
+   "cue": "\"And it never sleeps, and it never stops\"",
+   "t": null,
+   "frame": null,
+   "line": null,
+   "how": "retired (no chorus 2 in the master)"
+  },
+  {
+   "id": "S31",
+   "cue": "\"It's a field of humming things\"",
+   "t": null,
+   "frame": null,
+   "line": null,
+   "how": "retired (no chorus 2 in the master)"
+  },
+  {
+   "id": "S32",
+   "cue": "\"Back in seventy-nine we gathered\"",
+   "t": 109.74,
+   "frame": 3352,
+   "line": "L17",
+   "how": "lyric",
+   "end": 112.46,
+   "frame_end": 3434
+  },
+  {
+   "id": "S33",
+   "cue": "\"sang the reactors down\"",
+   "t": 112.46,
+   "frame": 3434,
+   "line": "L17",
+   "how": "lyric",
+   "end": 115.66,
+   "frame_end": 3530
+  },
+  {
+   "id": "S33a",
+   "cue": "\"sang the reactors down\"",
+   "t": 112.46,
+   "frame": 3434,
+   "line": "L17",
+   "how": "insert: plays with S33",
+   "end": 115.66,
+   "frame_end": 3530
+  },
+  {
+   "id": "S34",
+   "cue": "\"Now they're waking Three Mile Island\"",
+   "t": 115.66,
+   "frame": 3530,
+   "line": "L18",
+   "how": "lyric",
+   "end": 119.62,
+   "frame_end": 3649
+  },
+  {
+   "id": "S35",
+   "cue": "\"in a brand-new name and gown\"",
+   "t": 119.62,
+   "frame": 3649,
+   "line": "L18",
+   "how": "lyric",
+   "end": 126.89,
+   "frame_end": 3867
+  },
+  {
+   "id": "S36",
+   "cue": "\"it's built to feed the machines\"",
+   "t": 126.89,
+   "frame": 3867,
+   "line": "L19",
+   "how": "lyric",
+   "end": 130.93,
+   "frame_end": 3988
+  },
+  {
+   "id": "S36a",
+   "cue": "\"it's built to feed the machines\"",
+   "t": 126.89,
+   "frame": 3867,
+   "line": "L19",
+   "how": "insert: plays with S36",
+   "end": 130.93,
+   "frame_end": 3988
+  },
+  {
+   "id": "S37",
+   "cue": "\"I'm standing here confused, man\"",
+   "t": 130.93,
+   "frame": 3988,
+   "line": "L20",
+   "how": "lyric",
+   "end": 133.77,
+   "frame_end": 4073
+  },
+  {
+   "id": "S38",
+   "cue": "\"'cause it's the cleanest thing I've seen\"",
+   "t": 133.77,
+   "frame": 4073,
+   "line": "L20",
+   "how": "lyric",
+   "end": 141.12,
+   "frame_end": 4294
+  },
+  {
+   "id": "S39",
+   "cue": "\"Got my electric bill today, man\"",
+   "t": 141.12,
+   "frame": 4294,
+   "line": "L21",
+   "how": "lyric",
+   "end": 149.2,
+   "frame_end": 4536
+  },
+  {
+   "id": "S40",
+   "cue": "\"twenty-nine billion dollars in two years\"",
+   "t": 149.2,
+   "frame": 4536,
+   "line": "L22",
+   "how": "lyric",
+   "end": 153.52,
+   "frame_end": 4666
+  },
+  {
+   "id": "S41",
+   "cue": "\"So I asked the machine about it\"",
+   "t": 153.52,
+   "frame": 4666,
+   "line": "L23",
+   "how": "lyric",
+   "end": 157.332,
+   "frame_end": 4780
+  },
+  {
+   "id": "S42",
+   "cue": "\"a really great question\"",
+   "t": 157.332,
+   "frame": 4780,
+   "line": "L24",
+   "how": "lyric",
+   "end": 161.71,
+   "frame_end": 4911
+  },
+  {
+   "id": "S43",
+   "cue": "\"the numbers are uncertain\"",
+   "t": 161.71,
+   "frame": 4911,
+   "line": "L25",
+   "how": "lyric",
+   "end": 165.35,
+   "frame_end": 5020
+  },
+  {
+   "id": "S44",
+   "cue": "\"used a little more electricity telling me\"",
+   "t": 165.35,
+   "frame": 5020,
+   "line": "L26",
+   "how": "lyric",
+   "end": 175.74,
+   "frame_end": 5332
+  },
+  {
+   "id": "S45",
+   "cue": "\"And the song you're hearing, brother\"",
+   "t": 175.74,
+   "frame": 5332,
+   "line": "L27",
+   "how": "lyric",
+   "end": 178.44,
+   "frame_end": 5413
+  },
+  {
+   "id": "S46",
+   "cue": "\"Wasn't sung by any throat\"",
+   "t": 178.44,
+   "frame": 5413,
+   "line": "L28",
+   "how": "lyric",
+   "end": 183.07,
+   "frame_end": 5552
+  },
+  {
+   "id": "S47",
+   "cue": "\"It was hummed out in a field somewhere\"",
+   "t": 183.07,
+   "frame": 5552,
+   "line": "L29",
+   "how": "lyric",
+   "end": 185.53,
+   "frame_end": 5626
+  },
+  {
+   "id": "S48",
+   "cue": "\"By the thing of which I wrote\"",
+   "t": 185.53,
+   "frame": 5626,
+   "line": "L30",
+   "how": "lyric",
+   "end": 191.175,
+   "frame_end": 5795
+  },
+  {
+   "id": "S49",
+   "cue": "Failure span 2 (after the last line: the 37.7 s wordless outro)",
+   "t": 191.175,
+   "frame": 5795,
+   "line": null,
+   "how": "failure span 2 start",
+   "end": 228.912,
+   "frame_end": 6927
+  },
+  {
+   "id": "S50",
+   "cue": "Sustained chord, fan spin-down",
+   "t": 228.912,
+   "frame": 6927,
+   "line": null,
+   "how": "failure span 2 end, the final chord ringing (drums out at 227.14 s)",
+   "end": 238.4,
+   "frame_end": 7212
+  }
+ ]
+}
