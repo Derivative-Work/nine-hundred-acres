@@ -4,8 +4,8 @@
 // crowd, gray-haired, flips its signs: "…OK, FINE."
 import React from "react";
 import { Cursor, Note, Stat, StatRow } from "../components/annotate";
-import { AbsoluteFill, interpolate, random, spring } from "remotion";
-import { Infected } from "../theme/context";
+import { AbsoluteFill, interpolate, random, spring, useCurrentFrame } from "remotion";
+import { Infected, useTheme } from "../theme/context";
 import { Background, Card } from "../components/surface";
 import { Body, Heading, Pill } from "../components/type";
 import { PeaceToPower, Protester, RallyBanner, RallyGround } from "../components/illustrations";
@@ -31,15 +31,42 @@ const Archival: React.FC<{ children: React.ReactNode; width: number; height: num
 
 const SIGNS = ["NO NUKES", "NO NUKES", "NO NUKES!", "NO NUKES", "NO NUKES", "NO NUKES", "NO NUKES", "NO NUKES"];
 
-export const Crowd: React.FC<{ gray?: boolean; flip?: (k: number) => number; banner?: boolean }> = ({ gray = false, flip, banner }) => (
+export const Crowd: React.FC<{ gray?: boolean; flip?: (k: number) => number; banner?: boolean; emblem?: React.ReactNode }> = ({ gray = false, flip, banner, emblem }) => (
   <svg width={960} height={560} viewBox="0 0 960 560">
     <RallyGround gray={gray} />
     {banner && <RallyBanner />}
+    {banner && emblem}
     {SIGNS.map((s, k) => (
       <Protester key={k} x={80 + k * 115} y={430 + (k % 2) * 30} scale={1.05} sign={s} back="…OK, FINE." flip={flip ? flip(k) : 0} gray={gray} seed={`p${k}`} />
     ))}
   </svg>
 );
+
+// Where the sign sits: on the banner it is drawn inside the photo (so it weaves with the film), in the toggle card's
+// slot once landed (so it floats with the card). Only the flight between them is free; its ends follow the same motion
+// as the two containers, so there is no jump at either hand-off.
+const BANNER = [590, 250]; // banner center on the stage, at rest
+const SLOT = [1248, 289]; // the toggle card's icon slot, at rest
+const TOGGLE = { left: 1180, top: 230, w: 600, h: 176, seed: "toggle" };
+const FlyingSign: React.FC<{ travel: number; bleed: number; morph: number; color: string }> = ({ travel, bleed, morph, color }) => {
+  const t = useTheme();
+  const f = useCurrentFrame(); // the Card's own clock
+  const F = useFrame();
+  // the photo's gate weave (same random stream as Archival) and its entry offset
+  const bx = BANNER[0] + (random(`gw${F}`) - 0.5) * 3, by = BANNER[1] + (random(`gh${F}`) - 0.5) * 3 + (1 - bleed) * 10;
+  // the toggle card's float and lean (same formula as Card), applied to the slot
+  const dx = t.drift * Math.sin(f / 45 + random(TOGGLE.seed) * 6), dy = t.drift * Math.cos(f / 53 + random(TOGGLE.seed + "y") * 6);
+  const rot = (t.lean * Math.sin(f / 70 + random(TOGGLE.seed + "r") * 6) * Math.PI) / 180;
+  const cx = TOGGLE.left + TOGGLE.w / 2, cy = TOGGLE.top + TOGGLE.h / 2;
+  const ox = SLOT[0] - cx, oy = SLOT[1] - cy;
+  const sx = cx + dx + ox * Math.cos(rot) - oy * Math.sin(rot), sy = cy + dy + ox * Math.sin(rot) + oy * Math.cos(rot);
+  const x = interpolate(travel, [0, 1], [bx, sx]), y = interpolate(travel, [0, 1], [by, sy]), size = interpolate(travel, [0, 1], [110, 56]);
+  return (
+    <div style={{ position: "absolute", left: x - size / 2, top: y - size / 2, transform: `rotate(${(rot * 180 / Math.PI) * travel}deg)` }}>
+      <PeaceToPower size={size} morph={morph} color={color} />
+    </div>
+  );
+};
 
 export const Verse3Archive: React.FC = () => {
   const F = useFrame();
@@ -51,21 +78,23 @@ export const Verse3Archive: React.FC = () => {
   const line = ramp(F, s33 + 10, s34 + 40);
   const diff = spring({ frame: F - s35, fps: 30, config: { damping: 200 } });
   const pill = F >= s34 + 30 ? "Restoring" : "Deprecated";
-  // the peace sign starts on the banner (over the crowd card) and flies to the toggle on the right
-  const px = interpolate(travel, [0, 1], [590, 1250]), py = interpolate(travel, [0, 1], [250, 297]), ps = interpolate(travel, [0, 1], [110, 56]);
+  // the peace sign starts on the banner and flies to the toggle on the right
+  const flying = F >= s33 + 20 && F < s33 + 50;
+  const landed = F >= s33 + 50;
+  const signColor = travel > 0.9 ? (off ? "#8a93b2" : "#2dd4bf") : travel > 0.05 ? "#fff1dc" : "#3a2a1a";
   return (
     <Infected value={0.5}>
       <AbsoluteFill>
         <Background glowAt={[40, 45]} />
         <div style={{ position: "absolute", left: 90, top: 140, opacity: bleed, transform: `translateY(${(1 - bleed) * 10}px)` }}>
           <Archival width={980} height={580}>
-            <Crowd banner />
+            <Crowd banner emblem={F < s33 + 20 && <g transform="translate(435 45)"><PeaceToPower size={110} morph={morph} color="#3a2a1a" /></g>} />
           </Archival>
           <div style={{ position: "absolute", left: 30, top: -60 }}><Pill tone="accent" size={28}>1979</Pill></div>
         </div>
         <Card seed="toggle" style={{ position: "absolute", left: 1180, top: 230, width: 600, opacity: ramp(F, s33, s33 + 10) }}>
           <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-            <div style={{ width: 70 }} />
+            <div style={{ width: 70, height: 56, display: "grid", placeItems: "center" }}>{landed && <PeaceToPower size={56} morph={1} color={signColor} />}</div>
             <Body size={36} style={{ fontWeight: 600 }}>Reactor</Body>
             <div style={{ marginLeft: "auto", width: 96, height: 52, borderRadius: 26, background: off ? "#ffffff22" : "#2dd4bf", position: "relative" }}>
               <div style={{ position: "absolute", top: 6, left: off ? 6 : 50, width: 40, height: 40, borderRadius: 20, background: "#fff" }} />
@@ -73,9 +102,7 @@ export const Verse3Archive: React.FC = () => {
           </div>
           <div style={{ marginTop: 18 }}><Pill tone={pill === "Restoring" ? "success" : "plain"}>{pill}</Pill></div>
         </Card>
-        <div style={{ position: "absolute", left: px - ps / 2, top: py - ps / 2, opacity: bleed }}>
-          <PeaceToPower size={ps} morph={morph} color={travel > 0.9 ? (off ? "#8a93b2" : "#2dd4bf") : travel > 0.05 ? "#fff1dc" : "#3a2a1a"} />
-        </div>
+        {flying && <FlyingSign travel={travel} bleed={bleed} morph={morph} color={signColor} />}
         <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
           <line x1={140} y1={840} x2={140 + 1640 * line} y2={840} stroke="#fff1dc" strokeWidth={4} />
           {([[1979, 0.05, "Protests"], [2019, 0.62, "Shut down (economic)"], [2027, 0.95, "Restart (planned)"]] as [number, number, string][]).map(([y, at, lab]) =>

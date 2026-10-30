@@ -4,8 +4,9 @@
 // visual beat: the band plays on), the swirl freezes mid-turn and drains of color.
 import React from "react";
 import { Cursor, Note, Stat, StatRow } from "../components/annotate";
-import { AbsoluteFill, interpolate, spring } from "remotion";
+import { AbsoluteFill, Easing, interpolate, spring } from "remotion";
 import { Infected } from "../theme/context";
+import { alpha } from "../theme/infection";
 import { Background, Card } from "../components/surface";
 import { Body, Emoji, Icon } from "../components/type";
 import { downbeats, line, shot } from "../timing";
@@ -92,7 +93,9 @@ export const BridgeNeedle: React.FC<{ fade?: (k: number) => number; captions?: b
 };
 
 // S39-S40 (infection 0.55): a bill card drops in and keeps unrolling downward like a scroll, out of frame; then the
-// "$29B (est.)" bar grows off the top of its chart and the axis rescales three times trying to fit it.
+// "$29B (est.)" bar grows off the top of its chart and the axis rescales three times trying to fit it. Each rescale
+// is an event: the cursor clicks "Fit to data", the axis flashes, the gridlines and their labels slide down and squeeze
+// together as the scale grows, and a toast counts the attempts; the bar only fits on the third.
 export const BridgeBill: React.FC = () => {
   const F = useFrame();
   const s39 = shot("S39").frame, s40 = shot("S40").frame;
@@ -101,9 +104,20 @@ export const BridgeBill: React.FC = () => {
   const chart = ramp(F, s40 - 8, s40 + 4);
   const grow = ramp(F, s40, s40 + 30);
   const scales = [1, 5, 10, 30]; // the axis maximum, $B: three rescales
-  const step = Math.min(3, Math.floor(Math.max(0, F - s40 - 20) / 22));
-  const max = scales[step];
-  const barH = Math.min(1.25, (29 * grow) / max) * 520;
+  const at = [s40 + 34, s40 + 62, s40 + 90]; // each rescale starts here and takes 12 frames
+  const step = at.filter((a) => F >= a).length;
+  const max = interpolate(F, at.flatMap((a) => [a, a + 12]), [1, 5, 5, 10, 10, 30], { ...clamp, easing: Easing.inOut(Easing.cubic) });
+  const fits = 29 / max <= 1.04;
+  const barH = Math.min(1.04, (29 * grow) / max) * 520;
+  const flash = Math.max(0, ...at.map((a) => interpolate(F, [a, a + 4, a + 20], [0, 1, 0], clamp)));
+  const tIn = step ? ramp(F, at[step - 1], at[step - 1] + 12) : 1;
+  const ticks = (m: number) => [0.25, 0.5, 0.75, 1].map((q) => m * q);
+  const allTicks = [...new Set(scales.flatMap(ticks))];
+  const tickOpacity = (v: number) => {
+    const cur = ticks(scales[step]).includes(v), prev = step > 0 && ticks(scales[step - 1]).includes(v);
+    return cur && prev ? 1 : cur ? tIn : prev ? 1 - tIn : 0;
+  };
+  const toast = at.findIndex((a) => F >= a - 4 && F < a + 26);
   return (
     <Infected value={0.55}>
       <AbsoluteFill>
@@ -125,14 +139,38 @@ export const BridgeBill: React.FC = () => {
         <AbsoluteFill style={{ opacity: chart }}>
           <Card seed="bigchart" style={{ position: "absolute", left: 360, top: 120, width: 1200, height: 800 }}>
             <Body size={26} mono muted>Data center costs to ratepayers</Body>
-            <div style={{ position: "absolute", left: 140, top: 140, width: 980, height: 520, borderLeft: "3px solid #ffffff44", borderBottom: "3px solid #ffffff44" }}>
-              {[0, 0.5, 1].map((q) => (
-                <div key={q} style={{ position: "absolute", left: -110, bottom: q * 520 - 16, width: 100, textAlign: "right" }}>
-                  <Body size={26} mono muted>${+(max * q).toFixed(1)}B</Body></div>
-              ))}
-              <div style={{ position: "absolute", left: 380, bottom: 0, width: 220, height: barH, borderRadius: "12px 12px 0 0", background: "linear-gradient(#ffb000, #e2367a)" }} />
-              <Body size={40} style={{ position: "absolute", left: 380, bottom: Math.min(barH, 560) + 10, fontWeight: 700 }}>$29B (est.)</Body>
+            <div style={{ position: "absolute", right: 34, top: 26, padding: "10px 18px", borderRadius: 10, display: "flex", alignItems: "center", gap: 10,
+              background: alpha("#ffb000", 0.15 + 0.5 * flash), border: "1px solid #ffb00088", transform: `scale(${1 - 0.06 * flash})` }}>
+              <Icon name="rotate-cw" size={24} color="#ffb000" /><Body size={24} style={{ fontWeight: 600 }}>Fit to data</Body>
             </div>
+            <div style={{ position: "absolute", left: 140, top: 140, width: 980, height: 520, borderLeft: `3px solid ${flash > 0.05 ? alpha("#ffb000", 0.4 + 0.6 * flash) : "#ffffff44"}`,
+              borderBottom: "3px solid #ffffff44" }}>
+              {allTicks.map((v) => {
+                const y = (v / max) * 520, o = tickOpacity(v);
+                if (y > 540 || o <= 0.01) return null;
+                return (
+                  <React.Fragment key={v}>
+                    <div style={{ position: "absolute", left: 0, right: 0, bottom: y, height: 2, background: "#ffffff", opacity: 0.12 * o }} />
+                    <div style={{ position: "absolute", left: -130, bottom: y - 16, width: 120, textAlign: "right", opacity: o }}>
+                      <Body size={26} mono muted>${+v.toFixed(2)}B</Body></div>
+                  </React.Fragment>
+                );
+              })}
+              <div style={{ position: "absolute", left: 380, bottom: 0, width: 220, height: barH, borderRadius: fits ? "12px 12px 0 0" : 0, background: "linear-gradient(#ffb000, #e2367a)" }}>
+                {!fits && <svg width={220} height={18} viewBox="0 0 220 18" style={{ position: "absolute", top: -17, left: 0 }}>
+                  <path d="M 0 18 L 0 8 L 18 0 L 37 10 L 55 1 L 73 11 L 92 2 L 110 12 L 128 2 L 147 11 L 165 1 L 183 10 L 202 0 L 220 8 L 220 18 Z" fill="#ffb000" /></svg>}
+              </div>
+              <Body size={40} style={{ position: "absolute", left: 620, bottom: Math.min(barH, 500) - 40, fontWeight: 700, whiteSpace: "nowrap" }}>$29B (est.)</Body>
+              {!fits && grow >= 1 && <Body size={24} mono style={{ position: "absolute", left: 620, bottom: Math.min(barH, 500) + 10, color: "#ffb000", whiteSpace: "nowrap" }}>▲ doesn't fit</Body>}
+            </div>
+            {toast >= 0 && (
+              <div style={{ position: "absolute", left: "50%", top: 60, transform: `translateX(-50%) translateY(${(1 - ramp(F, at[toast] - 4, at[toast] + 4)) * -12}px)`,
+                opacity: ramp(F, at[toast] - 4, at[toast] + 2) * (1 - ramp(F, at[toast] + 20, at[toast] + 26)),
+                padding: "10px 20px", borderRadius: 999, background: "#0b0d12ee", border: "1px solid #ffffff22", display: "flex", gap: 10, alignItems: "center" }}>
+                <Icon name="loader-circle" size={22} color="#ffb000" style={{ transform: `rotate(${F * 12}deg)` }} />
+                <Body size={22} mono>Rescaling axis… {toast + 1}/3</Body>
+              </div>
+            )}
             <Body size={24} muted style={{ position: "absolute", left: 40, bottom: 30 }}>PJM ratepayers, ~2 years, per its market monitor</Body>
           </Card>
         </AbsoluteFill>
@@ -142,6 +180,7 @@ export const BridgeBill: React.FC = () => {
           <Stat at={s40 + 20} label="axis rescales" value={`${step}`} />
         </StatRow>
         <Note at={s39 + 40} x={1500} y={300} tx={1200} ty={420} until={s40 - 8}>itemized (very)</Note>
+        <Cursor keys={[[at[0] - 16, 1300, 700], ...at.flatMap((a): [number, number, number, boolean?][] => [[a - 2, 1452, 167, true], [a + 10, 1440, 230]])]} />
         <Captions />
       </AbsoluteFill>
     </Infected>

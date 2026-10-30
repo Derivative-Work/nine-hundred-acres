@@ -81,3 +81,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** "oh one more thing for verse 3: the peace sign/power button are not moving with their apparent containers" and "for the bridge: the graph rescales are not obvious enough".
 - **Rule:** H2 (feedback at the M5 gate; the agent makes the changes).
+
+## 2026-10-30T08:51 — Suno generation capture supplied — H3
+
+- **What:** "I put the Suno screen grab in Downloads. It's not showing the "create" but it is showing the playback at exactly the timestamps from the video, and it includes prompt etc." File: `~/Downloads/Screen Recording 2026-10-30 at 08.49.12.mov`, copied unchanged to `assets/real/suno_generation_capture.mov`.
+- **Rule:** H3 (a real asset listed under Inputs: the capture for S45–S46).
