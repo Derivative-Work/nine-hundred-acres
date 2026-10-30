@@ -76,3 +76,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** "looks good, keep going" (on Verse 2 and Verse 3 v2). The open question on the cord's start in S05–S12 got no answer; left as is.
 - **Rule:** H2.
+
+## 2026-10-30T08:46 — M5 notes on Verse 3 and the Bridge — H2
+
+- **What:** "oh one more thing for verse 3: the peace sign/power button are not moving with their apparent containers" and "for the bridge: the graph rescales are not obvious enough".
+- **Rule:** H2 (feedback at the M5 gate; the agent makes the changes).
