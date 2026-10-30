@@ -212,3 +212,10 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
 ## 2026-10-30T09:20 — M5 gate passed
 
 - All eight sections approved (H2). Starting M6.
+
+## 2026-10-30T09:40 — S51 rebuilt from the post-filter's own output code
+
+- Cloned https://github.com/Derivative-Work/music-deslop to `~/Code/music-deslop` (commit 2469907); not run (no GPU here).
+- How it reports: `postfilter.postprocess.postprocess` logs `  fallback <a>-<e>: model output was noisy there, passed through unprocessed` per fallback passage (times via `fmt_time`, `m:ss.s`), and `infer.main` prints `<in> -> <out> (<len> s, strength <s>, latent null)`. With `--no-fallback` the detector is not run at all, so the no-fallback run prints only the summary: the two spans can only appear in the default run's log.
+- So S51 shows both runs from the human's run folder (`~/Downloads/music-deslop-m6f-10k-2026-10-18`: `with-fallback/` and `no-fallback/`): the default run listing `1:12.4-1:22.6` and `3:11.2-3:48.9` (the repo's `fmt_time` applied to `fallback.json`'s regions; matches the folder's REPORT.md), then the `--no-fallback` run, which made the master. Strength 1.0 (the repo's default for every source), latent null (no latents given), 238.4 s. No clip line (REPORT.md lists no scaling for this song). Command form from the README (`--ckpt m6f_10k.safetensors --source suno`); the exact paths used on the 5090 are not recorded, so the commands use the run folder's layout.
+- S51 lengthened 180 → 270 frames so both timestamps can be read; post-roll 61.5 → 64.5 s, so `postroll.wav` is regenerated after the running M6 render finishes.

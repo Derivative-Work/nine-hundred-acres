@@ -1,6 +1,7 @@
-// After the song: S51 (the real post-filter terminal capture: a placeholder until the human supplies it, H3), a fade
-// to black, the fact cards F1-F7 (plain white type on black, one fact per card, source beneath, about five seconds
-// each, plain cuts, no explainer styling, no emoji), then the end card S52 in plain type.
+// After the song: S51 (the post-filter's terminal output for this song, rebuilt from the music-deslop repo's own
+// print statements and the run's real detected spans; the human chose this over a capture, see production_log.md
+// 2026-10-30T09:40), a fade to black, the fact cards F1-F7 (plain white type on black, one fact per card, source
+// beneath, about five seconds each, plain cuts, no explainer styling, no emoji), then the end card S52 in plain type.
 // Card wording is the brief's; M8 verifies each against a primary source (or cuts it) before release.
 import React from "react";
 import { AbsoluteFill, Sequence } from "remotion";
@@ -17,19 +18,44 @@ export const FACTS: [string, string, string][] = [
   ["F7", "In Memphis, court filings cite 57 trailer-mounted gas turbines.", "Filterbuy explainer"],
 ];
 
-export const S51_LEN = 180, FADE = 15, CARD = 150, END = 600;
+export const S51_LEN = 270, FADE = 15, CARD = 150, END = 600;
 export const postLength = S51_LEN + FADE + FACTS.length * CARD + END;
 
 const plain: React.CSSProperties = { fontFamily: "Inter", color: "#f2f2f2" };
 
-const S51: React.FC = () => (
-  <AbsoluteFill style={{ background: "#0b0d12", justifyContent: "center", alignItems: "center" }}>
-    <div style={{ ...plain, fontFamily: "'JetBrains Mono'", fontSize: 30, color: "#9aa0ad", textAlign: "center", lineHeight: 1.6 }}>
-      [S51: the real terminal capture of the post-filter run on this song,<br />supplied by the human; its log shows the two
-      detected spans:<br />72.39–82.64 s and 191.17–228.91 s, suppression off]
-    </div>
-  </AbsoluteFill>
-);
+// What `postfilter.infer` prints (music-deslop: `postprocess.postprocess` logs one line per fallback passage with
+// `fmt_time`; `infer.main` prints the summary), for the two runs in the human's run folder: the default chain, whose
+// fallback found and bypassed the two spans (fallback.json: 72.39-82.64 s and 191.17-228.91 s), then the same chain
+// with `--no-fallback`, which is the master the video plays. With `--no-fallback` the detector does not run, so that
+// run prints only its summary line. Command form as in the repo's README.
+const CMD = "uv run python -m postfilter.infer --in field-of-humming-things.wav";
+const S51_LINES: [number, string, "cmd" | "out"][] = [
+  [0, `$ ${CMD} --out with-fallback/field-of-humming-things.wav --ckpt m6f_10k.safetensors --source suno`, "cmd"],
+  [18, "  fallback 1:12.4-1:22.6: model output was noisy there, passed through unprocessed", "out"],
+  [24, "  fallback 3:11.2-3:48.9: model output was noisy there, passed through unprocessed", "out"],
+  [30, "field-of-humming-things.wav -> with-fallback/field-of-humming-things.wav (238.4 s, strength 1.0, latent null)", "out"],
+  [54, `$ ${CMD} --out no-fallback/field-of-humming-things.wav --ckpt m6f_10k.safetensors --source suno --no-fallback`, "cmd"],
+  [78, "field-of-humming-things.wav -> no-fallback/field-of-humming-things.wav (238.4 s, strength 1.0, latent null)", "out"],
+  [90, "$ ", "cmd"],
+];
+
+// A plain terminal, full frame, hard cut in: no explainer styling. The lines arrive as a scrollback replay, then it
+// holds so the two timestamps can be read; the cursor blinks after the last prompt.
+const S51: React.FC = () => {
+  const f = useCurrentFrame();
+  const shown = S51_LINES.filter(([at]) => f >= at);
+  return (
+    <AbsoluteFill style={{ background: "#0c0c0c", padding: "70px 80px", fontFamily: "'JetBrains Mono'", fontSize: 25, lineHeight: 1.55, color: "#cfcfcf" }}>
+      {shown.map(([, text, kind], k) => (
+        <div key={k} style={{ whiteSpace: "pre-wrap", wordBreak: "break-all", color: kind === "cmd" ? "#e8e8e8" : "#bdbdbd", marginTop: kind === "cmd" && k ? 18 : 0 }}>
+          {text}
+          {k === shown.length - 1 && f >= 90 && <span style={{ display: "inline-block", width: 14, height: 30, verticalAlign: "middle", background: "#cfcfcf",
+            opacity: Math.floor(f / 15) % 2 ? 0 : 1 }} />}
+        </div>
+      ))}
+    </AbsoluteFill>
+  );
+};
 
 const Fact: React.FC<{ text: string; source: string }> = ({ text, source }) => (
   <AbsoluteFill style={{ background: "#000", justifyContent: "center", alignItems: "center", padding: 220 }}>
