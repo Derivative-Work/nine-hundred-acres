@@ -31,3 +31,8 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
 
 - **Shots:** all, S01–S52. **Composition:** `Animatic`, same settings. **Commit:** 302d37e. **Command:** `cd remotion && npx remotion render src/index.ts Animatic ../renders/m4/animatic.mp4 --scale=0.5 --crf=24` (about 4 min on the GTX 970 box, CPU).
 - **Output:** `renders/m4/animatic.mp4` (301.9 s, 960x540). Contact sheets: `review/<shot>.jpg` for all 57 shot IDs (`scripts/contact_sheets.py`); `review/m4_animatic_overview.jpg` (every 10 s).
+
+## 2026-10-30T02:20 — M4 density sample (Verse 1 and Chorus 1)
+
+- **Shots:** S04–S16 (frames 300–2010). **Composition:** `Animatic` with the new chrome, `--frames=300-2010 --scale=0.5 --crf=24`. **Commit:** 6df6395.
+- **Output:** `renders/m4/density_sample.mp4` (57 s). Test stills before it (scratch): one found a crash (a note with no end time passed Infinity to `interpolate`), one the burn-in colliding with the chapter header.

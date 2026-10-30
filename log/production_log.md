@@ -132,3 +132,12 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
   - **Fact cards and end card** use the brief's wording; F1–F7 statuses are unchanged (M8 verifies or cuts each).
 - **Review aid:** `scripts/contact_sheets.py <video>` writes `review/<shot>.jpg` for every shot (four frames each).
 - **Why:** the brief, M4 ("Animatic of every shot at low resolution, cut to the track"). Gate: "Approve framing and timing".
+
+## 2026-10-30T02:20:00-04:00 — M4: more going on (explainer chrome and annotations), sampled on Verse 1 and Chorus 1
+
+- **What:** The human, on animatic v2: "the gist is good, but I feel like this genre of explainer typically has more going on in them". Added the genre's secondary layers, built so they apply to the whole video, and filled in Verse 1 and Chorus 1 as a sample before rolling out.
+  - **Chrome** (`remotion/src/chrome/`): a chapter header (01 The Land, 02 The Hum, 03 The Air, 04 The Power, 05 The Bill) with progress dots per shot; a headline per shot that types in; an "agent ·" status chip (spinner, then a check) naming what it is building; the source line for factual shots; a thin progress bar; a drifting dot grid and floating particles that turn into tie-dye petals with the infection; each scene scaled under the header with a slow push. The chrome reads the global infection curve, is absent before the title card, and strips away from S45 to S48. During the restore overlay (S19–S21+, S48 on) the agent chip hides so the overlay owns the top right.
+  - **Annotation layer** (`components/annotate.tsx`): leader-line notes, stat tiles that tick, and a pointer cursor with click ripples. In the sample: the map's state/region/crop/height tiles and a click on the pin; acres/reason/windows tiles, "annexation boundary", "1 stalk left"; "family photo · 1 of 1", "archived", "1 hum", "amplitude: constant"; "period: forever", "cricket? no: fan", a hover on "room 0412 · thinking…", a rooms counter; the cursor failing to tick Sleep and Stop ("can't check").
+  - Per-shot text lives in `remotion/src/chrome/script.ts`; every factual line names its source from the Reference facts table (Iowa Public Radio; Oil & Gas Watch, Gas Outlook; Maryland Matters, Enlit; NPR via KUNC).
+- **Fixes:** the hum's label no longer says "60 Hz" (an implied fact with no source); the review burn-in moved to the bottom right.
+- **Why:** the human's note at the M4 gate. Rolling out to the other sections waits on their view of the sample.
