@@ -1,37 +1,167 @@
-// Everything illustrated is SVG drawn here (brief, "Assets and licenses"): faceless pictogram people, the farmhouse
-// photo card, the cobweb, the peace sign that becomes a power button, fireflies, the map card.
+// Everything illustrated is SVG drawn here (brief, "Assets and licenses"): faceless pictogram people and the rally
+// ground, the farmhouse photo card, the cobweb, the peace sign that becomes a power button, fireflies, the map card.
 import React from "react";
 import { random, useCurrentFrame } from "remotion";
 import maps from "../data/maps.json";
 import { useTheme } from "../theme/context";
 import { alpha } from "../theme/infection";
 
-// A faceless pictogram figure holding a hand-lettered sign. `flip` (0..1) turns the sign to show its back.
+// A faceless flat pictogram figure (brief: people are faceless pictograms) holding a hand-lettered sign. 1970s
+// detail lives in the silhouette: hair (long, afro, short with beard, headband, cap), an open jacket, a fringed vest or a
+// striped knit, flared jeans or cords. `flip` (0..1) turns the sign to show its back; `gray` grays the hair.
+const SKIN = ["#e8c9a4", "#c99a72", "#8d5a3b", "#f0d2b6", "#b07a52"];
+const HAIR = ["#3b2617", "#6b4423", "#1f1a17", "#a8672f", "#4a3020"];
+const GRAY_HAIR = ["#d6d3cc", "#bdbab3", "#e6e3dc"];
+const SHIRT = ["#c96b4a", "#5f7f5a", "#b8963e", "#7a5c8f", "#4f6f8f", "#a34a3f", "#d9c9a3"];
+const pick = <T,>(xs: T[], v: number) => xs[Math.floor(v * xs.length)];
 export const Protester: React.FC<{ x: number; y: number; scale?: number; sign: string; back?: string; flip?: number; gray?: boolean; seed: string }> = ({
   x, y, scale = 1, sign, back = "", flip = 0, gray = false, seed,
 }) => {
   const f = useCurrentFrame();
-  const bob = Math.sin(f / 9 + random(seed) * 6) * 3;
-  const body = ["#c96b4a", "#5f7f5a", "#b8963e", "#7a5c8f", "#4f6f8f"][Math.floor(random(seed + "c") * 5)];
+  const r = (k: string) => random(seed + k);
+  const bob = Math.sin(f / 9 + r("") * 6) * 3;
+  const skin = pick(SKIN, r("s")), hair = gray ? pick(GRAY_HAIR, r("h")) : pick(HAIR, r("h")), shirt = pick(SHIRT, r("c"));
+  const style = Math.floor(r("st") * 5); // 0 long, 1 afro, 2 short + beard, 3 long + headband, 4 cap
+  const top = Math.floor(r("t") * 3); // 0 open jacket over a tee, 1 fringed vest, 2 striped knit
+  const jacket = pick(["#6b4a2f", "#4d5f7a", "#7d6a3a"], r("j"));
+  const pants = pick(["#46607e", "#3d5470", "#7a5a3a"], r("p"));
+  const sleeve = top === 0 ? jacket : shirt;
   const showBack = flip > 0.5;
   const squash = Math.abs(Math.cos(flip * Math.PI));
+  const tilt = (r("r") - 0.5) * 8;
+  const longHair = style === 0 || style === 3;
   return (
     <g transform={`translate(${x} ${y + bob}) scale(${scale})`}>
-      <rect x={-22} y={-10} width={44} height={70} rx={20} fill={body} />
-      <circle cx={0} cy={-34} r={20} fill="#e2c9a6" />
-      {gray ? <path d="M -20 -38 Q 0 -66 20 -38 Q 18 -50 0 -54 Q -18 -50 -20 -38 Z" fill="#cfcfcf" />
-        : <path d="M -20 -38 Q 0 -62 20 -38 Q 14 -50 0 -52 Q -14 -50 -20 -38 Z" fill="#5a3b28" />}
-      <line x1={-14} y1={0} x2={-10} y2={-78} stroke="#e2c9a6" strokeWidth={8} strokeLinecap="round" />
-      <line x1={14} y1={0} x2={10} y2={-78} stroke="#e2c9a6" strokeWidth={8} strokeLinecap="round" />
-      <line x1={0} y1={-70} x2={0} y2={-150} stroke="#8a6a48" strokeWidth={5} />
-      <g transform={`translate(0 -150) scale(${squash} 1)`}>
-        <rect x={-74} y={-50} width={148} height={62} rx={4} fill={showBack ? "#f1e6cf" : "#fbf4e2"} stroke="#3a2a1a" strokeWidth={2} />
-        <text x={0} y={-8} textAnchor="middle" fontFamily="Caveat" fontWeight={700} fontSize={showBack ? 22 : 26} fill="#2a1d12"
-          transform={`rotate(${(random(seed + "r") - 0.5) * 6})`}>{showBack ? back : sign}</text>
+      {/* flared legs */}
+      <path d="M -22 54 L -3 54 L -6 100 L -1 150 L -28 150 L -19 100 Z" fill={pants} />
+      <path d="M 22 54 L 3 54 L 6 100 L 1 150 L 28 150 L 19 100 Z" fill={pants} />
+      <path d="M -12 60 L -13 148 M 12 60 L 13 148" stroke="#00000022" strokeWidth={1.5} />
+      {/* hair behind the head */}
+      {longHair && <path d="M -20 -38 Q -25 -4 -17 8 L 17 8 Q 25 -4 20 -38 Z" fill={hair} />}
+      {style === 1 && <circle cx={0} cy={-40} r={28} fill={hair} />}
+      {/* torso */}
+      <path d="M -25 -4 Q 0 -13 25 -4 L 27 58 L -27 58 Z" fill={shirt} />
+      {top === 0 && <>
+        <path d="M -25 -4 Q -12 -9 -8 -6 L -10 58 L -27 58 Z" fill={jacket} />
+        <path d="M 25 -4 Q 12 -9 8 -6 L 10 58 L 27 58 Z" fill={jacket} />
+        <path d="M -8 -6 L -14 14 M 8 -6 L 14 14" stroke="#00000033" strokeWidth={2} />
+      </>}
+      {top === 1 && <>
+        <path d="M -25 -4 Q -14 -9 -9 -6 L -12 50 L -27 50 Z" fill="#a0703f" />
+        <path d="M 25 -4 Q 14 -9 9 -6 L 12 50 L 27 50 Z" fill="#a0703f" />
+        {Array.from({ length: 7 }, (_, k) => <line key={k} x1={-26 + k * 2.5} y1={50} x2={-27 + k * 2.5} y2={62} stroke="#a0703f" strokeWidth={1.4} />)}
+        {Array.from({ length: 7 }, (_, k) => <line key={`r${k}`} x1={11 + k * 2.5} y1={50} x2={12 + k * 2.5} y2={62} stroke="#a0703f" strokeWidth={1.4} />)}
+      </>}
+      {top === 2 && [6, 18, 30, 42].map((yy) => <line key={yy} x1={-26} y1={yy} x2={26} y2={yy} stroke="#ffffff55" strokeWidth={4} />)}
+      <rect x={-6} y={-20} width={12} height={12} fill={skin} />
+      {/* head (faceless) and hair */}
+      <circle cx={0} cy={-34} r={18} fill={skin} />
+      {style === 2 && <path d="M -16 -32 Q -14 -12 0 -11 Q 14 -12 16 -32 Q 8 -24 0 -24 Q -8 -24 -16 -32 Z" fill={hair} />}
+      {style === 4
+        ? <><path d="M -19 -38 Q -18 -57 0 -56 Q 18 -57 19 -38 Z" fill={pick(["#8a3b2a", "#2f4a3a", "#c9a24a"], r("cap"))} />
+            <path d="M -2 -41 L 30 -40 L 28 -35 L -2 -37 Z" fill="#00000055" /></>
+        : <path d={style === 1 ? "M -18 -40 Q 0 -50 18 -40 Q 14 -54 0 -55 Q -14 -54 -18 -40 Z" : "M -19 -36 Q -18 -57 0 -55 Q 18 -57 19 -36 Q 10 -47 1 -46 Q -9 -47 -19 -36 Z"} fill={hair} />}
+      {style === 3 && <rect x={-19} y={-46} width={38} height={5} rx={2} fill={pick(["#c94a3a", "#3a7ac9", "#d9a62a"], r("band"))} />}
+      {/* arms raised to the pole */}
+      <path d="M -22 0 L -31 -40" stroke={sleeve} strokeWidth={11} strokeLinecap="round" />
+      <path d="M 22 0 L 27 -48" stroke={sleeve} strokeWidth={11} strokeLinecap="round" />
+      <path d="M -31 -40 L -4 -80 M 27 -48 L 4 -98" stroke={skin} strokeWidth={8} strokeLinecap="round" />
+      <line x1={0} y1={-62} x2={0} y2={-150} stroke="#8a6a48" strokeWidth={5} />
+      <circle cx={-2} cy={-80} r={5.5} fill={skin} /><circle cx={2} cy={-98} r={5.5} fill={skin} />
+      {/* the sign: corrugated cardboard, tape at the corners, marker lettering */}
+      <g transform={`translate(0 -150) rotate(${tilt}) scale(${squash} 1)`}>
+        <rect x={-74} y={-50} width={148} height={62} rx={3} fill={showBack ? "#f4ecd8" : "#e6d6b2"} stroke="#3a2a1a" strokeWidth={2} />
+        {!showBack && [-38, -26, -14].map((yy) => <line key={yy} x1={-70} y1={yy} x2={70} y2={yy} stroke="#00000010" strokeWidth={3} />)}
+        <rect x={-78} y={-54} width={18} height={8} fill="#f5f0dc" opacity={0.8} transform="rotate(-30 -69 -50)" />
+        <rect x={60} y={-54} width={18} height={8} fill="#f5f0dc" opacity={0.8} transform="rotate(30 69 -50)" />
+        <text x={0} y={-8} textAnchor="middle" fontFamily="Caveat" fontWeight={700} fontSize={showBack ? 22 : 28} fill={showBack ? "#2a1d12" : pick(["#2a1d12", "#8a1f12", "#1f2f5a"], r("ink"))}
+          transform={`rotate(${(r("tr") - 0.5) * 5})`}>{showBack ? back : sign}</text>
+        {!showBack && r("u") < 0.5 && <path d="M -48 2 Q 0 6 48 0" stroke="#2a1d12" strokeWidth={2.5} fill="none" strokeLinecap="round" />}
       </g>
     </g>
   );
 };
+
+// A faceless head-and-shoulders figure for the rows behind the front line, some with a small placard or a raised fist.
+const BackPerson: React.FC<{ x: number; y: number; s: number; seed: string; gray: boolean }> = ({ x, y, s, seed, gray }) => {
+  const f = useCurrentFrame();
+  const r = (k: string) => random(seed + k);
+  const bob = Math.sin(f / 8 + r("") * 6) * 2;
+  const hair = gray ? pick(GRAY_HAIR, r("h")) : pick(HAIR, r("h"));
+  const kind = r("k");
+  return (
+    <g transform={`translate(${x} ${y + bob}) scale(${s})`} opacity={0.92}>
+      {kind < 0.25 && <><line x1={18} y1={0} x2={30} y2={-58} stroke={pick(SKIN, r("s"))} strokeWidth={7} strokeLinecap="round" />
+        <circle cx={31} cy={-62} r={7} fill={pick(SKIN, r("s"))} /></>}
+      {kind > 0.7 && <><line x1={0} y1={-20} x2={0} y2={-80} stroke="#8a6a48" strokeWidth={4} />
+        <rect x={-34} y={-112} width={68} height={36} rx={2} fill="#e6d6b2" stroke="#3a2a1a" strokeWidth={1.5} transform={`rotate(${(r("t") - 0.5) * 10} 0 -94)`} />
+        <text x={0} y={-88} textAnchor="middle" fontFamily="Caveat" fontWeight={700} fontSize={gray ? 15 : 17} fill="#2a1d12" transform={`rotate(${(r("t") - 0.5) * 10} 0 -94)`}>{gray ? "…ok, fine" : "NO NUKES"}</text></>}
+      {r("l") < 0.5 && <path d="M -16 -36 Q -20 -6 -13 4 L 13 4 Q 20 -6 16 -36 Z" fill={hair} />}
+      <path d="M -28 40 Q -28 4 0 2 Q 28 4 28 40 Z" fill={pick(SHIRT, r("c"))} />
+      <circle cx={0} cy={-26} r={16} fill={pick(SKIN, r("s"))} />
+      <path d="M -17 -28 Q -16 -46 0 -45 Q 16 -46 17 -28 Q 8 -38 0 -37 Q -8 -38 -17 -28 Z" fill={hair} />
+    </g>
+  );
+};
+
+const towerPath = (cx: number, b: number, h: number, w: number) =>
+  `M ${cx - w} ${b} C ${cx - 0.48 * w} ${b - 0.5 * h}, ${cx - 0.5 * w} ${b - 0.78 * h}, ${cx - 0.62 * w} ${b - h} L ${cx + 0.62 * w} ${b - h} ` +
+  `C ${cx + 0.5 * w} ${b - 0.78 * h}, ${cx + 0.48 * w} ${b - 0.5 * h}, ${cx + w} ${b} Z`;
+
+// The rally ground behind the crowd (960 x 560): an overcast sky, two generic cooling towers with steam on the far
+// shore, a tree line, the chain-link fence, the lawn, and rows of people behind the front line. Drawn in plain color;
+// the archival card does the sepia, grain and weave.
+export const RallyGround: React.FC<{ gray?: boolean }> = ({ gray = false }) => {
+  const f = useCurrentFrame();
+  return (
+    <g>
+      <defs>
+        <linearGradient id="rg-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#bcc6cc" /><stop offset="1" stopColor="#eceee6" /></linearGradient>
+        <linearGradient id="rg-tower" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stopColor="#d8d6cf" /><stop offset="0.6" stopColor="#b9b6ad" /><stop offset="1" stopColor="#97948b" /></linearGradient>
+        <filter id="rg-soft"><feGaussianBlur stdDeviation="6" /></filter>
+        <radialGradient id="rg-leak" cx="0.95" cy="0.1" r="0.6"><stop offset="0" stopColor="#ffb36b" stopOpacity="0.45" /><stop offset="1" stopColor="#ffb36b" stopOpacity="0" /></radialGradient>
+      </defs>
+      <rect width={960} height={560} fill="url(#rg-sky)" />
+      {[[120, 70, 140], [520, 50, 180], [820, 90, 120]].map(([cx, cy, rx], k) => (
+        <ellipse key={k} cx={cx + ((f * 0.15) % 40)} cy={cy} rx={rx} ry={22} fill="#f6f6f2" opacity={0.7} filter="url(#rg-soft)" />
+      ))}
+      {/* steam, then the towers */}
+      {[[150, 105], [300, 140]].map(([cx, top], k) => Array.from({ length: 6 }, (_, q) => {
+        const ph = ((f / 90 + q / 6 + k * 0.3) % 1);
+        return <ellipse key={`${k}-${q}`} cx={cx + ph * 90} cy={top - 10 - ph * 70} rx={30 + ph * 40} ry={18 + ph * 22} fill="#fbfbf8"
+          opacity={0.85 * (1 - ph)} filter="url(#rg-soft)" />;
+      }))}
+      <path d={towerPath(150, 300, 195, 70)} fill="url(#rg-tower)" />
+      <path d={towerPath(300, 300, 160, 58)} fill="url(#rg-tower)" />
+      <rect x={60} y={286} width={340} height={16} fill="#8d8a80" />
+      {/* river, far shore trees */}
+      <path d="M 0 300 Q 60 282 120 296 Q 180 278 250 294 Q 330 276 410 292 Q 480 274 560 290 Q 640 272 720 288 Q 800 270 880 286 Q 930 278 960 284 L 960 316 L 0 316 Z" fill="#5f6b48" />
+      <rect y={312} width={960} height={12} fill="#9fb0b4" opacity={0.8} />
+      {/* lawn and chain-link fence */}
+      <rect y={322} width={960} height={238} fill={gray ? "#a7a68e" : "#93a064"} />
+      <g opacity={0.55}>
+        <line x1={0} y1={330} x2={960} y2={330} stroke="#6f6f68" strokeWidth={2} />
+        <line x1={0} y1={372} x2={960} y2={372} stroke="#6f6f68" strokeWidth={2} />
+        {Array.from({ length: 49 }, (_, k) => <path key={k} d={`M ${k * 20} 330 l 21 42 M ${k * 20} 372 l 21 -42`} stroke="#8a8a82" strokeWidth={0.8} />)}
+        {Array.from({ length: 9 }, (_, k) => <line key={`p${k}`} x1={k * 120 + 20} y1={324} x2={k * 120 + 20} y2={374} stroke="#5f5f58" strokeWidth={4} />)}
+      </g>
+      {/* rows behind the front line */}
+      {Array.from({ length: 14 }, (_, k) => <BackPerson key={`a${k}`} x={20 + k * 70 + (k % 2) * 12} y={372} s={0.7} seed={`ba${k}`} gray={gray} />)}
+      {Array.from({ length: 12 }, (_, k) => <BackPerson key={`b${k}`} x={50 + k * 80} y={400} s={0.85} seed={`bb${k}`} gray={gray} />)}
+      <rect width={960} height={560} fill="url(#rg-leak)" />
+    </g>
+  );
+};
+
+// The 1979 banner: a bedsheet between two poles, sagging a little, carried over the crowd.
+export const RallyBanner: React.FC = () => (
+  <g>
+    <line x1={344} y1={36} x2={344} y2={360} stroke="#7a5a3a" strokeWidth={6} />
+    <line x1={636} y1={36} x2={636} y2={360} stroke="#7a5a3a" strokeWidth={6} />
+    <path d="M 344 42 Q 490 52 636 42 L 636 158 Q 490 170 344 158 Z" fill="#f1e6cf" stroke="#3a2a1a" strokeWidth={2.5} />
+    <path d="M 380 50 Q 390 100 376 156 M 600 50 Q 588 104 602 160" stroke="#00000014" strokeWidth={6} fill="none" />
+  </g>
+);
 
 // The farmhouse in granddad.jpg: a small illustrated "photo" (house, barn, field rows, sky), not a real photo.
 // granddad.jpg: an old family snapshot of the farm, faded warm, with grain and a vignette. A white farmhouse with a

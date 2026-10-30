@@ -8,7 +8,7 @@ import { AbsoluteFill, interpolate, random, spring } from "remotion";
 import { Infected } from "../theme/context";
 import { Background, Card } from "../components/surface";
 import { Body, Heading, Pill } from "../components/type";
-import { PeaceToPower, Protester } from "../components/illustrations";
+import { PeaceToPower, Protester, RallyBanner, RallyGround } from "../components/illustrations";
 import { shot, word } from "../timing";
 import { Captions, clamp, ramp, useFrame } from "./kit";
 
@@ -31,11 +31,10 @@ const Archival: React.FC<{ children: React.ReactNode; width: number; height: num
 
 const SIGNS = ["NO NUKES", "NO NUKES", "NO NUKES!", "NO NUKES", "NO NUKES", "NO NUKES", "NO NUKES", "NO NUKES"];
 
-export const Crowd: React.FC<{ gray?: boolean; flip?: (k: number) => number; banner?: React.ReactNode }> = ({ gray = false, flip, banner }) => (
+export const Crowd: React.FC<{ gray?: boolean; flip?: (k: number) => number; banner?: boolean }> = ({ gray = false, flip, banner }) => (
   <svg width={960} height={560} viewBox="0 0 960 560">
-    <rect width={960} height={560} fill="#cbb98f" />
-    <rect y={380} width={960} height={180} fill="#a99366" />
-    {banner}
+    <RallyGround gray={gray} />
+    {banner && <RallyBanner />}
     {SIGNS.map((s, k) => (
       <Protester key={k} x={80 + k * 115} y={430 + (k % 2) * 30} scale={1.05} sign={s} back="…OK, FINE." flip={flip ? flip(k) : 0} gray={gray} seed={`p${k}`} />
     ))}
@@ -60,7 +59,7 @@ export const Verse3Archive: React.FC = () => {
         <Background glowAt={[40, 45]} />
         <div style={{ position: "absolute", left: 90, top: 140, opacity: bleed, transform: `translateY(${(1 - bleed) * 10}px)` }}>
           <Archival width={980} height={580}>
-            <Crowd banner={<rect x={340} y={40} width={300} height={120} rx={8} fill="#f1e6cf" stroke="#3a2a1a" strokeWidth={3} />} />
+            <Crowd banner />
           </Archival>
           <div style={{ position: "absolute", left: 30, top: -60 }}><Pill tone="accent" size={28}>1979</Pill></div>
         </div>
