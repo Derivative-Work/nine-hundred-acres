@@ -42,3 +42,10 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
 - **Shots:** all, S01–S52. **Composition:** `Animatic` (chrome on, burn-in at the bottom right), `--scale=0.5 --crf=24`. **Commit:** d4a94a1.
 - **Output:** `renders/m4/animatic.mp4` (301.9 s); v2 moved to `archive/renders/m4_animatic_v2.mp4`. Contact sheets `review/<shot>.jpg` (57) and `review/m4_animatic_overview.jpg` regenerated.
 - **Test stills before it** (scratch): 12 frames, S18–S42. They found the haze stopping short of the right edge (`AbsoluteFill` sets `width: 100%`, which defeated the overhang; also the lava layer) and S26's tiles lingering over S27's buildings; both fixed.
+
+## 2026-10-30T05:51 — M4 animatic v4 (coda corruption)
+
+- **Shots:** all, S01–S52 (changed: S48–S50). **Composition:** `Animatic`, `--scale=0.5 --crf=24`. **Commit:** 2e32c53.
+- **Output:** `renders/m4/animatic.mp4` (301.9 s); v3 moved to `archive/renders/m4_animatic_v3.mp4`. Contact sheets regenerated.
+- **Test stills before it** (scratch): 9 frames, S48–S50, before and after the change.
+- **Why:** the human's note on S49–S50. Gate: framing and timing.

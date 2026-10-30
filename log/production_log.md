@@ -156,3 +156,10 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
   - No annotations from S45 on: the coda strips back to the bare terminal as briefed.
 - **Fixes:** the haze and lava layers now overhang the scaled stage (they stopped short of the right edge); S26's tiles fade before S27.
 - **Why:** the human's M4 notes. Gate: framing and timing.
+
+## 2026-10-30T05:51 — M4: coda corruption reworked; animatic v4
+
+- **Bug:** the glyph boxes ("▯") are not in JetBrains Mono or Inter; the fallback font drew them as thin double slivers. Now drawn as real one-character boxes (`Tofu` in `shots/kit.tsx`).
+- **Interest:** after the letters fail (~5 s) S49 sat static for ~33 s. Now, on the stuttered 6 fps clock, every downbeat tears the frame into shifted bands with a red/cyan split, palette blocks smear across the black (lighter ticks on the other beats), and ghosts of the explainer (title, toasts, chapters 01–05, headlines; on-screen text only, nothing new) flash up half-boxed in order and fail. It builds through the outro, peaks from 222 s, and clears when the drums drop out (227.14 s). The overlay stays OFF; nothing recovers.
+- **S50:** clean frame; after the plug lands a spark, then current runs along the cord into the terminal, slowing to a stop with the fan spin-down.
+- **Commit:** 2e32c53 (code); animatic v4 in renders.md.

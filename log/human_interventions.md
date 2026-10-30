@@ -41,3 +41,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** On animatic v2: "the gist is good, but I feel like this genre of explainer typically has more going on in them". On the density sample: "this is good, keep going".
 - **Rule:** H2 (feedback and approval at the M4 gate; the agent made the changes).
+
+## 2026-10-30T05:51 — M4 note on S49–S50 — H2
+
+- **What:** On animatic v3: "Mostly there, but S50's visual corruption is not rendering right and also could use some more visual interest".
+- **Rule:** H2 (feedback at the M4 gate; the agent made the changes).
