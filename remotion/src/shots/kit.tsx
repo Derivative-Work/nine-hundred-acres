@@ -38,10 +38,11 @@ export const Captions: React.FC<{ glyphBoxes?: number }> = ({ glyphBoxes = 0 }) 
 export const boxed = (s: string, share: number, seed = s) =>
   [...s].map((ch, k) => (ch !== " " && ((k * 7919 + seed.length * 31) % 97) / 97 < share ? "▯" : ch)).join("");
 
-// A failing frame clock: from `start`, animation only advances at 6 fps (holding each frame five times at 30 fps).
-export const useStutter = (start: number) => {
+// A failing frame clock: from `start` to `end`, animation only advances at 6 fps (holding each frame five times at
+// 30 fps); it runs smoothly again after `end`.
+export const useStutter = (start: number, end = Infinity) => {
   const F = useFrame();
-  return F < start ? F : start + Math.floor((F - start) / 5) * 5;
+  return F < start || F >= end ? F : start + Math.floor((F - start) / 5) * 5;
 };
 
 // Small mono label in the corner of the context reel (not part of the final video).
@@ -51,20 +52,22 @@ export const ReelLabel: React.FC<{ children: React.ReactNode }> = ({ children })
 );
 
 // A generic terminal window: plain chrome (three neutral dots), monospace text, a blinking block cursor.
-export const Terminal: React.FC<{ lines: React.ReactNode[]; width?: number; cursor?: boolean; clock?: number; style?: React.CSSProperties }> = ({
-  lines: rows, width = 1100, cursor = true, clock, style,
+// `chrome` fades the window and its text without moving the cursor (S01: the cursor blinks alone on black).
+export const Terminal: React.FC<{ lines: React.ReactNode[]; width?: number; cursor?: boolean; clock?: number; chrome?: number; style?: React.CSSProperties }> = ({
+  lines: rows, width = 1100, cursor = true, clock, chrome = 1, style,
 }) => {
   const t = useTheme();
   const live = useFrame();
   const F = clock ?? live;
   return (
-    <div style={{ width, borderRadius: 12, background: "#0b0d12", border: "1px solid #ffffff1a", boxShadow: "0 30px 80px -30px #000",
-      overflow: "hidden", ...style }}>
-      <div style={{ display: "flex", gap: 8, padding: "12px 16px", background: "#ffffff08", borderBottom: "1px solid #ffffff12" }}>
+    <div style={{ position: "relative", width, borderRadius: 12, overflow: "hidden", ...style }}>
+      <div style={{ position: "absolute", inset: 0, borderRadius: 12, background: "#0b0d12", border: "1px solid #ffffff1a",
+        boxShadow: "0 30px 80px -30px #000", opacity: chrome }} />
+      <div style={{ position: "relative", display: "flex", gap: 8, padding: "12px 16px", background: "#ffffff08", borderBottom: "1px solid #ffffff12", opacity: chrome }}>
         {[0, 1, 2].map((k) => <div key={k} style={{ width: 12, height: 12, borderRadius: 6, background: "#ffffff26" }} />)}
       </div>
-      <div style={{ padding: "22px 26px", fontFamily: t.font.mono, fontSize: 30, lineHeight: 1.6, color: "#d7dbe6", minHeight: 120 }}>
-        {rows.map((r, k) => <div key={k}>{r}</div>)}
+      <div style={{ position: "relative", padding: "22px 26px", fontFamily: t.font.mono, fontSize: 30, lineHeight: 1.6, color: "#d7dbe6", minHeight: 120 }}>
+        {rows.map((r, k) => <div key={k} style={{ opacity: k < rows.length - 1 ? chrome : 1 }}>{r}</div>)}
         {cursor && <span style={{ display: "inline-block", width: 16, height: 34, verticalAlign: "middle", background: "#d7dbe6",
           opacity: Math.floor(F / 15) % 2 ? 0 : 1 }} />}
       </div>

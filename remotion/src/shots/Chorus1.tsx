@@ -5,7 +5,8 @@ import { AbsoluteFill } from "remotion";
 import { Infected } from "../theme/context";
 import { Background, Card } from "../components/surface";
 import { Checklist, Cord, HumWave, TileGrid } from "../components/furniture";
-import { Body, Icon } from "../components/type";
+import { Body, Emoji, Icon, Pill } from "../components/type";
+import { Fireflies } from "../components/illustrations";
 import { beatsBetween, line, shot, word } from "../timing";
 import { Captions, ramp, useFrame } from "./kit";
 
@@ -44,6 +45,64 @@ export const Chorus1Wired: React.FC = () => {
           <Body size={40} mono style={{ marginTop: 8 }}>{hms}</Body>
         </Card>
         <div style={{ position: "absolute", left: 330, top: 760 }}><HumWave width={560} height={110} /></div>
+        <Captions />
+      </AbsoluteFill>
+    </Infected>
+  );
+};
+
+// S12-S15: the hum fills the frame ("Hum: always"); it ripples through the surviving corn, and zooming in, the
+// crickets between the rows are tiny spinning fans; 1,000 room tiles stagger in; "Uptime" starts and a day/night
+// slider sweeps to night, the tiles stay lit, and fireflies blink at exactly the status-dot rate.
+export const Chorus1Hum: React.FC = () => {
+  const F = useFrame();
+  const s12 = shot("S12").frame, s13 = shot("S13").frame, s14 = shot("S14").frame, s15 = shot("S15").frame;
+  const big = 1 - ramp(F, s13 - 6, s13 + 10);
+  const corn = ramp(F, s13, s13 + 10) * (1 - ramp(F, s14 - 6, s14 + 6));
+  const zoom = 1 + 0.7 * ramp(F, s13 + 20, s14 - 10);
+  const tiles = ramp(F, s14 - 4, s14 + 6);
+  const night = ramp(F, s15 + 10, s15 + 50);
+  const up = Math.max(0, Math.floor((F - s15) / 30));
+  return (
+    <Infected value={0.15}>
+      <AbsoluteFill>
+        <Background glowAt={[50, 50]} />
+        <AbsoluteFill style={{ background: "#000", opacity: 0.45 * night }} />
+        <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", opacity: big }}>
+          <HumWave width={1700} height={420} label={false} />
+          <div style={{ position: "absolute", left: 140, top: 140 }}><Pill tone="accent" size={34}>Hum: always</Pill></div>
+        </AbsoluteFill>
+        <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", opacity: corn, transform: `scale(${zoom})` }}>
+          <div style={{ display: "flex", gap: 60, alignItems: "flex-end" }}>
+            {Array.from({ length: 5 }, (_, k) => (
+              <React.Fragment key={k}>
+                <Emoji name="corn" size={130} style={{ transform: `translateY(${10 * Math.sin((F - s13) / 5 - k)}px) rotate(${4 * Math.sin((F - s13) / 7 - k)}deg)` }} />
+                {k < 4 && <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 6, marginBottom: 6 }}>
+                  <Icon name="fan" size={34} color="#8a93b2" style={{ transform: `rotate(${F * 25}deg)` }} />
+                  <Body size={16} mono muted>cricket</Body>
+                </div>}
+              </React.Fragment>
+            ))}
+          </div>
+        </AbsoluteFill>
+        <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", opacity: tiles }}>
+          <div style={{ position: "relative" }}>
+            <TileGrid cols={40} rows={25} tile={26} survivor={[24, 31]} rowFlip={() => 1} />
+            <AbsoluteFill style={{ background: "#0a0f1f", clipPath: `inset(${ramp(F, s14, s14 + 30) * 100}% 0 0 0)` }} />
+            <Fireflies n={22} w={1300} h={800} opacity={night} />
+          </div>
+        </AbsoluteFill>
+        {F >= s15 && (
+          <div style={{ position: "absolute", right: 60, top: 50, display: "flex", flexDirection: "column", gap: 16, opacity: ramp(F, s15, s15 + 10) }}>
+            <Card seed="up"><Body size={22} mono muted>Uptime</Body><Body size={40} mono>{`214d 06:12:${String(5 + up).padStart(2, "0")}`}</Body></Card>
+            <Card seed="dn"><div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <Icon name="sparkles" size={24} color="#ffb000" />
+              <div style={{ position: "relative", width: 200, height: 8, borderRadius: 4, background: "#ffffff22" }}>
+                <div style={{ position: "absolute", top: -10, left: night * 172, width: 28, height: 28, borderRadius: 14, background: "#e8ecf8" }} />
+              </div>
+              <Body size={22} muted>night</Body></div></Card>
+          </div>
+        )}
         <Captions />
       </AbsoluteFill>
     </Infected>

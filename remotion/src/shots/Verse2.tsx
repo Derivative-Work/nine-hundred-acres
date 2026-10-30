@@ -6,8 +6,10 @@ import { AbsoluteFill, interpolate, random, spring } from "remotion";
 import { Infected } from "../theme/context";
 import { Background, Card, Haze } from "../components/surface";
 import { Body, Icon, Pill } from "../components/type";
-import { shot } from "../timing";
-import { Captions, clamp, useFrame } from "./kit";
+import { beatsBetween, shot, word } from "../timing";
+import { Checklist } from "../components/furniture";
+import { Cobweb } from "../components/illustrations";
+import { Captions, clamp, ramp, useFrame } from "./kit";
 
 const Turbine: React.FC<{ born: number; k: number }> = ({ born, k }) => {
   const F = useFrame();
@@ -61,6 +63,57 @@ export const Verse2Turbines: React.FC = () => {
           ))}
         </Card>
         <Haze amount={0.25} />
+        <Captions />
+      </AbsoluteFill>
+    </Infected>
+  );
+};
+
+// S26-S27: the checklist with every box left empty and the permit office's "Back in 5 minutes" under a cobweb; then
+// the haze thickens over a row of buildings, one a schoolhouse, and settles back; three briefcases knock at a door.
+export const Verse2Permit: React.FC = () => {
+  const F = useFrame();
+  const s26 = shot("S26").frame, s27 = shot("S27").frame, s32 = shot("S32").frame;
+  const items = ["Permit", "Notice", "Asked the wind"].filter((_, k) => F >= [word("L15", 1), word("L15", 6), word("L15", 9)][k]);
+  const office = spring({ frame: F - s26 - 20, fps: 30, config: { damping: 200 } });
+  const row = spring({ frame: F - s27, fps: 30, config: { damping: 200 } });
+  const haze = interpolate(F, [s27, s27 + 20, s27 + 90, s32 - 20], [0.25, 0.7, 0.7, 0.25], clamp);
+  const lawyers = word("L16", 8);
+  const beat = beatsBetween(lawyers, lawyers + 120);
+  const knock = beat.some((b) => F >= b && F < b + 5);
+  return (
+    <Infected value={0.3}>
+      <AbsoluteFill>
+        <Background glowAt={[40, 40]} />
+        <AbsoluteFill style={{ opacity: 1 - ramp(F, s27 - 6, s27 + 6) }}>
+          <Card seed="permit" style={{ position: "absolute", left: 160, top: 220, width: 620 }}>
+            <Body size={22} mono muted style={{ marginBottom: 18 }}>before you build</Body>
+            <Checklist items={items} />
+          </Card>
+          <Card seed="office" style={{ position: "absolute", left: 1000, top: 200, width: 640, opacity: office, transform: `translateY(${(1 - office) * 14}px)` }}>
+            <Cobweb size={160} />
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}><Icon name="door-closed" size={34} color="#c8cede" /><Body size={30} style={{ fontWeight: 600 }}>Permit office</Body></div>
+            <div style={{ marginTop: 24, padding: "20px 24px", borderRadius: 10, background: "#fbf4e2", width: "fit-content", transform: "rotate(-2deg)" }}>
+              <div style={{ fontFamily: "Caveat", fontWeight: 700, fontSize: 48, color: "#2a1d12" }}>Back in 5 minutes</div>
+            </div>
+          </Card>
+        </AbsoluteFill>
+        <AbsoluteFill style={{ opacity: ramp(F, s27 - 6, s27 + 6) }}>
+          <div style={{ position: "absolute", left: 140, top: 520, display: "flex", gap: 40, transform: `translateY(${(1 - row) * 20}px)` }}>
+            {["house", "house", "school", "house", "house"].map((ic, k) => (
+              <Card key={k} seed={`b${k}`} style={{ width: 150 }}><Icon name={ic} size={86} color={ic === "school" ? "#ffb000" : "#c8cede"} /></Card>
+            ))}
+          </div>
+          <Card seed="door" style={{ position: "absolute", left: 1320, top: 300, width: 330, height: 440 }}>
+            <Icon name="door-closed" size={200} color="#c8cede" style={{ margin: "40px auto 0", transform: knock ? "translateX(3px)" : undefined }} />
+          </Card>
+          {F >= lawyers && [0, 1, 2].map((k) => {
+            const walk = spring({ frame: F - lawyers - k * 6, fps: 30, config: { damping: 200 } });
+            return <div key={k} style={{ position: "absolute", left: 1000 + k * 95 + (1 - walk) * -300, top: 600 + (k % 2) * 30,
+              transform: `translateY(${knock ? -6 : 0}px)` }}><Icon name="briefcase" size={80} color="#e8ecf8" /></div>;
+          })}
+        </AbsoluteFill>
+        <Haze amount={haze} />
         <Captions />
       </AbsoluteFill>
     </Infected>

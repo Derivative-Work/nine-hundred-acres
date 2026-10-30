@@ -4,7 +4,8 @@ import React from "react";
 import { AbsoluteFill, interpolate, spring } from "remotion";
 import { Infected } from "../theme/context";
 import { Background, Card } from "../components/surface";
-import { Cord, TileGrid } from "../components/furniture";
+import { Cord, HumWave, TileGrid } from "../components/furniture";
+import { Farmhouse, MAP_BOX, MAP_PINS, MapView } from "../components/illustrations";
 import { Body, Emoji, Pill } from "../components/type";
 import { shot, word } from "../timing";
 import { Captions, clamp, ramp, useFrame } from "./kit";
@@ -49,6 +50,89 @@ export const Verse1Annex: React.FC = () => {
             )}
           </div>
         </Card>
+        <Captions />
+      </AbsoluteFill>
+    </Infected>
+  );
+};
+
+// S05-S06: the title card shrinks into the map card, which zooms from the US to northwest Iowa and drops the Salix
+// pin; then the corn grid fades up row by row (bottom up, on the beat) and keeps growing past the top of the frame.
+export const Verse1Map: React.FC = () => {
+  const F = useFrame();
+  const s05 = shot("S05").frame, s06 = shot("S06").frame;
+  const zoom = spring({ frame: F - s05 - 8, fps: 30, config: { damping: 200 }, durationInFrames: 50 });
+  const [sx, sy] = MAP_PINS["Salix, IA"];
+  const view = MAP_BOX.map((v, k) => v + (([sx - 90, sy - 60, 180, 120][k]) - v) * zoom);
+  const enter = spring({ frame: F - s05, fps: 30, config: { damping: 200 } });
+  const aside = spring({ frame: F - s06, fps: 30, config: { damping: 200 } });
+  return (
+    <Infected value={0}>
+      <AbsoluteFill>
+        <Background glowAt={[50, 50]} />
+        <Cord d="M -20 560 C 200 560, 300 520, 470 520" progress={ramp(F, s06, s06 + 30)} />
+        <div style={{ position: "absolute", left: 360, top: 150, transformOrigin: "top left",
+          transform: `translate(${-aside * 270}px, ${-aside * 80}px) scale(${(0.6 + 0.4 * enter) * (1 - 0.6 * aside)})`, opacity: 1 - 0.3 * aside }}>
+          <Card seed="map" glow>
+            <MapView view={view} width={1140} height={700} hi="Iowa" pins={[{ name: "Salix, IA", drop: ramp(F, s05 + 55, s05 + 70) }]} />
+          </Card>
+        </div>
+        {F >= s06 && (
+          <Card seed="v1grid" glow style={{ position: "absolute", left: 470, top: 190, opacity: ramp(F, s06, s06 + 8) }}>
+            <TileGrid cols={12} rows={6} tile={62} rowFlip={() => 0} survivor={[5, 9]} />
+          </Card>
+        )}
+        {F >= s06 && <CornRise from={s06} />}
+        <Captions />
+      </AbsoluteFill>
+    </Infected>
+  );
+};
+
+// The corn rows fade up from the bottom on the beat, and stalks keep climbing out of the top of the frame.
+const CornRise: React.FC<{ from: number }> = ({ from }) => {
+  const F = useFrame();
+  return (
+    <AbsoluteFill style={{ pointerEvents: "none" }}>
+      <div style={{ position: "absolute", left: 495, top: 215, width: 920, height: 470, background: "#111a33",
+        clipPath: `inset(0 0 ${Math.min(100, ramp(F, from, from + 60) * 100)}% 0)` }} />
+      {Array.from({ length: 12 }, (_, k) => {
+        const rise = Math.max(0, F - from - 40 - k * 3) * (3 + (k % 3));
+        return <div key={k} style={{ position: "absolute", left: 503 + k * 73.2, top: 160 - rise, opacity: ramp(F, from + 40, from + 50) }}>
+          {[0, 1, 2, 3].map((q) => <Emoji key={q} name="corn" size={44} style={{ marginBottom: 20, opacity: 0.8 - q * 0.15 }} />)}
+        </div>;
+      })}
+    </AbsoluteFill>
+  );
+};
+
+// S10-S11: granddad.jpg slides in over the server grid and gets an "archived" badge; then "The Hum" runs across the
+// bottom third and stays through the chorus.
+export const Verse1Granddad: React.FC = () => {
+  const F = useFrame();
+  const s10 = shot("S10").frame, s11 = shot("S11").frame;
+  const slide = spring({ frame: F - s10, fps: 30, config: { damping: 200 } });
+  const badge = spring({ frame: F - s10 - 55, fps: 30, config: { damping: 14 } });
+  const hum = spring({ frame: F - s11, fps: 30, config: { damping: 200 } });
+  return (
+    <Infected value={0}>
+      <AbsoluteFill>
+        <Background glowAt={[50, 45]} />
+        <Cord d="M -20 560 C 200 560, 300 520, 470 520" />
+        <div style={{ position: "absolute", left: 470, top: 190, transform: `translateY(${-hum * 90}px) scale(${1 - 0.15 * hum})`, transformOrigin: "top center" }}>
+          <Card seed="v1grid">
+            <TileGrid cols={12} rows={6} tile={62} survivor={[5, 9]} />
+          </Card>
+        </div>
+        <div style={{ position: "absolute", left: 1180, top: 300, transform: `translateX(${(1 - slide) * 700}px) rotate(${4 - 2 * slide}deg)`,
+          transformOrigin: "center", opacity: 1 - 0.4 * hum }}>
+          <div style={{ padding: 14, paddingBottom: 54, background: "#f4f1ea", borderRadius: 18, boxShadow: "0 30px 70px -20px #000" }}>
+            <div style={{ borderRadius: 8, overflow: "hidden", filter: `grayscale(${0.8 * ramp(F, s10 + 55, s10 + 70)})` }}><Farmhouse width={420} /></div>
+            <Body size={24} mono style={{ color: "#333", marginTop: 12 }}>granddad.jpg</Body>
+          </div>
+          <div style={{ position: "absolute", right: -20, top: -20, transform: `scale(${badge})` }}><Pill size={24}>archived</Pill></div>
+        </div>
+        <div style={{ position: "absolute", left: 160, top: 760, opacity: hum }}><HumWave width={1600} height={170} /></div>
         <Captions />
       </AbsoluteFill>
     </Infected>

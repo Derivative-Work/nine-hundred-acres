@@ -31,3 +31,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** The human: "map sounds right, go ahead with M3".
 - **Rule:** H2.
+
+## 2026-10-30T01:15 — M3 gate: look approved (style board and context reel) — H2
+
+- **What:** After the style board the human said: "the infection looks great, but it's a little hard to tell how these will work in context without more scenes". After the context reel: "yes, keep going".
+- **Rule:** H2.
