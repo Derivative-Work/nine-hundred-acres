@@ -130,3 +130,4 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
 | --- | --- | --- | --- | --- |
 | S01–S52, F1–F7b | Animatic | `{"label":false}`, CRF 16 | 148a4ee | `renders/m8/nine_hundred_acres_m8.mp4` (336.5 s) |
 | S12–S27 (vertical) | Vertical | CRF 16 | 148a4ee | `renders/m8/vertical_s12-s27_m8.mp4` (65.5 s) |
+| S01–S52, F1–F7b (v3: fan through S51, louder hum, top-down socket and plug) | Animatic | `{"label":false}`, CRF 16 | ad07639 | `renders/m8/nine_hundred_acres_m8.mp4`; v1 and v2 in `archive/renders/m8/` |
