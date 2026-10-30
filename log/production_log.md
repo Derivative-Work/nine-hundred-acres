@@ -242,3 +242,7 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
 ## 2026-10-30T10:24 — M7: vertical cut, closing; gate
 
 - Rendered (renders.md). Sent the closing, the vertical cut, the end card stills, the thumbnail and both SRTs for the M7 gate (closing and end card). M8 (the fact check by another lab's model) is next after approval.
+
+## 2026-10-30T10:30 — M7 gate passed; draft cut
+
+- Human approved M7 (H2) and will run the M8 audits; rendering a full draft cut for them.

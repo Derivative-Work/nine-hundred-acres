@@ -101,3 +101,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** "these are great, keep going" (on the span-edge clips, the onset tear, and the rebuilt S51).
 - **Rule:** H2 (M6 gate: sync and the reveal).
+
+## 2026-10-30T10:30 — M7 approved; draft cut requested; the human runs the audits — H2
+
+- **What:** "these are great; make a draft cut of the whole thing and then I'll do the audits".
+- **Rule:** H2 (M7 gate: closing and end card approved). The M8 fact check is the human's to run; the agent makes a draft cut first.
