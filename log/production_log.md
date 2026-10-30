@@ -314,3 +314,11 @@ The mirror script splits one bold run in two around the inserted "b", so the mir
 - **Hum:** rises 12 dB as the cards start, from −44 to −32 dBFS. Measured RMS: fan section −33 dBFS, at the cut −42, under the cards −32.
 - **Audio files:** regenerated with `96 8`; v4 → `archive/audio/postroll_v4.wav`.
 - **Outlet (S50):** the plug was a rotated Lucide plug icon, drawn backwards (prongs toward the cord) with no socket. Now a code-drawn wall socket (faceplate, two slots, ground hole) fades in on the terminal's right edge as the cord draws, and an orange plug slides in prongs-first. The spark moved to the socket.
+
+## 2026-10-30T17:55 — S50 outlet redrawn from one viewpoint (human note)
+
+- **Human:** "That outlet still does not read right. Pick an orientation and stick to it for both the outlet and the sockey".
+- **The problem:** the last version mixed views. The socket was drawn face-on (slots and ground hole); the plug was drawn from the side.
+- **The fix:** both are now seen from above. The terminal's right edge is the wall: a mounting plate, with the socket sticking out and its two slots facing right. The plug's two prongs line up with the slots.
+- **Timing:** the plug now appears when the cord arrives (s50 + 130) and slides in over 8 frames. Before, its slide started before it appeared. The spark and the current now start at s50 + 138.
+- **Renders:** the v2 render (rendered with the old outlet) moved to `archive/renders/m8/nine_hundred_acres_m8_v2.mp4`. v1 is there too, superseded by the post-roll sound change.

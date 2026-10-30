@@ -132,25 +132,25 @@ const Ghosts: React.FC<{ G: number; fail: number }> = ({ G, fail }) => {
   );
 };
 
-// A wall socket on the terminal's right edge (two slots and a ground hole), where the cord ends.
+// The socket and plug share one viewpoint, seen from above: the terminal's right edge is the wall, the socket sticks
+// out of it with its two slots facing right, and the plug's two prongs line up with the slots.
+const SLOTS = [-6, 6];
 const Outlet: React.FC<{ opacity: number }> = ({ opacity }) => (
   <g opacity={opacity}>
-    <rect x={1530} y={562} width={40} height={76} rx={8} fill="#e8e4da" stroke="#0008" strokeWidth={2} />
-    <rect x={1541} y={578} width={5} height={16} rx={1.5} fill="#2a2a2a" />
-    <rect x={1554} y={578} width={5} height={20} rx={1.5} fill="#2a2a2a" />
-    <path d="M 1545 616 a 5 5 0 0 1 10 0 v 5 h -10 z" fill="#2a2a2a" />
+    <rect x={1556} y={570} width={8} height={60} rx={2} fill="#bdb8ad" />
+    <rect x={1560} y={582} width={16} height={36} rx={4} fill="#e8e4da" />
+    {SLOTS.map((y) => <rect key={y} x={1569} y={600 + y - 2.5} width={7} height={5} fill="#2a2a2a" />)}
   </g>
 );
 
-// The plug at the cord's end, prongs pointing left into the socket; it slides the last few pixels in (`push` 0 -> 1).
+// The plug at the cord's end, prongs pointing left into the slots; it slides the last few pixels in (`push` 0 -> 1).
 const Plug: React.FC<{ push: number }> = ({ push }) => {
-  const x = 1572 + 14 * (1 - push), prong = 2 + 12 * (1 - push); // the prongs disappear into the socket
+  const x = 1576 + 14 * (1 - push), prong = 7 + 14 * (1 - push); // fully in, the prongs fill the slots
   return (
     <g transform={`translate(${x} 600)`}>
-      <rect x={-prong} y={-8} width={prong} height={4} fill="#c9c9c9" />
-      <rect x={-prong} y={4} width={prong} height={4} fill="#c9c9c9" />
-      <rect x={-2} y={-17} width={26} height={34} rx={6} fill="#ff8a1f" style={{ filter: "drop-shadow(0 0 6px #ff8a1f88)" }} />
-      <rect x={4} y={-11} width={3} height={22} rx={1.5} fill="#0004" />
+      {SLOTS.map((y) => <rect key={y} x={-prong} y={y - 2} width={prong} height={4} fill="#d4d4d4" />)}
+      <rect x={0} y={-16} width={26} height={32} rx={6} fill="#ff8a1f" style={{ filter: "drop-shadow(0 0 6px #ff8a1f88)" }} />
+      <rect x={6} y={-10} width={3} height={20} rx={1.5} fill="#0004" />
     </g>
   );
 };
@@ -178,7 +178,7 @@ export const CodaStutter: React.FC = () => {
   const inn = spring({ frame: F - s48, fps: 30, config: { damping: 200 } });
   const exit = "exit".slice(0, Math.max(0, Math.floor((live - s50 - 10) / 4)));
   const cord = ramp(live, s50 + 40, s50 + 130);
-  const plugged = s50 + 130;
+  const plugged = s50 + 138; // the cord arrives at s50 + 130, then the plug slides in
   const energy = live >= s50 + 140;
   // the failure's first frame tears once (held for the first dropped-frame step), so the span visibly starts on its
   // frame: before it nothing on screen moves, so the stall and the stutter alone would not show
@@ -207,10 +207,10 @@ export const CodaStutter: React.FC = () => {
               strokeDashoffset={1 - cord} style={{ filter: "drop-shadow(0 0 8px #ff8a1f88)" }} />
             <Outlet opacity={ramp(live, s50 + 30, s50 + 45)} />
             <Current live={live} from={plugged} end={end} />
-            {cord >= 1 && <Plug push={ramp(live, s50 + 122, plugged)} />}
+            {cord >= 1 && <Plug push={ramp(live, s50 + 130, plugged)} />}
             {live >= plugged && live < plugged + 12 && Array.from({ length: 8 }, (_, k) => {
               const a = (k / 8) * Math.PI * 2, r0 = 10 + (live - plugged) * 3, r1 = r0 + 14;
-              return <line key={k} x1={1566 + Math.cos(a) * r0} y1={600 + Math.sin(a) * r0} x2={1566 + Math.cos(a) * r1} y2={600 + Math.sin(a) * r1}
+              return <line key={k} x1={1576 + Math.cos(a) * r0} y1={600 + Math.sin(a) * r0} x2={1576 + Math.cos(a) * r1} y2={600 + Math.sin(a) * r1}
                 stroke="#ffe2b8" strokeWidth={3} strokeLinecap="round" opacity={1 - (live - plugged) / 12} />;
             })}
           </svg>
