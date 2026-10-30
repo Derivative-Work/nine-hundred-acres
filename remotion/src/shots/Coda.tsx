@@ -132,6 +132,29 @@ const Ghosts: React.FC<{ G: number; fail: number }> = ({ G, fail }) => {
   );
 };
 
+// A wall socket on the terminal's right edge (two slots and a ground hole), where the cord ends.
+const Outlet: React.FC<{ opacity: number }> = ({ opacity }) => (
+  <g opacity={opacity}>
+    <rect x={1530} y={562} width={40} height={76} rx={8} fill="#e8e4da" stroke="#0008" strokeWidth={2} />
+    <rect x={1541} y={578} width={5} height={16} rx={1.5} fill="#2a2a2a" />
+    <rect x={1554} y={578} width={5} height={20} rx={1.5} fill="#2a2a2a" />
+    <path d="M 1545 616 a 5 5 0 0 1 10 0 v 5 h -10 z" fill="#2a2a2a" />
+  </g>
+);
+
+// The plug at the cord's end, prongs pointing left into the socket; it slides the last few pixels in (`push` 0 -> 1).
+const Plug: React.FC<{ push: number }> = ({ push }) => {
+  const x = 1572 + 14 * (1 - push), prong = 2 + 12 * (1 - push); // the prongs disappear into the socket
+  return (
+    <g transform={`translate(${x} 600)`}>
+      <rect x={-prong} y={-8} width={prong} height={4} fill="#c9c9c9" />
+      <rect x={-prong} y={4} width={prong} height={4} fill="#c9c9c9" />
+      <rect x={-2} y={-17} width={26} height={34} rx={6} fill="#ff8a1f" style={{ filter: "drop-shadow(0 0 6px #ff8a1f88)" }} />
+      <rect x={4} y={-11} width={3} height={22} rx={1.5} fill="#0004" />
+    </g>
+  );
+};
+
 // Current running along the cord into the plug, slowing with the fan until it stops.
 const Current: React.FC<{ live: number; from: number; end: number }> = ({ live, from, end }) => {
   if (live < from) return null;
@@ -182,15 +205,16 @@ export const CodaStutter: React.FC = () => {
           <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
             <path d={CORD} fill="none" stroke="#ff8a1f" strokeWidth={7} strokeLinecap="round" pathLength={1} strokeDasharray={1}
               strokeDashoffset={1 - cord} style={{ filter: "drop-shadow(0 0 8px #ff8a1f88)" }} />
+            <Outlet opacity={ramp(live, s50 + 30, s50 + 45)} />
             <Current live={live} from={plugged} end={end} />
+            {cord >= 1 && <Plug push={ramp(live, s50 + 122, plugged)} />}
             {live >= plugged && live < plugged + 12 && Array.from({ length: 8 }, (_, k) => {
               const a = (k / 8) * Math.PI * 2, r0 = 10 + (live - plugged) * 3, r1 = r0 + 14;
-              return <line key={k} x1={1600 + Math.cos(a) * r0} y1={600 + Math.sin(a) * r0} x2={1600 + Math.cos(a) * r1} y2={600 + Math.sin(a) * r1}
+              return <line key={k} x1={1566 + Math.cos(a) * r0} y1={600 + Math.sin(a) * r0} x2={1566 + Math.cos(a) * r1} y2={600 + Math.sin(a) * r1}
                 stroke="#ffe2b8" strokeWidth={3} strokeLinecap="round" opacity={1 - (live - plugged) / 12} />;
             })}
           </svg>
         )}
-        {cord >= 1 && <div style={{ position: "absolute", left: 1546, top: 572, transform: "rotate(90deg)" }}><Icon name="plug" size={56} color="#ff8a1f" /></div>}
         <Captions />
       </AbsoluteFill>
     </Infected>

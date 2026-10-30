@@ -306,3 +306,11 @@ At the human's request ("Yes update it"), edited the Claude Doc and re-mirrored 
 - **New note:** an "M8 result" paragraph listing the graphics changes.
 
 The mirror script splits one bold run in two around the inserted "b", so the mirror had `F1–F7****b****`. Removed the empty `****` with sed; the doc itself renders correctly.
+
+## 2026-10-30T17:40 — Post-roll sound and the S50 outlet (human notes)
+
+- **Human:** "Make the fan noise last longer -- at least until it switches from the terminal to the fact cards, and then make the hum afterwards louder". Then: "oh also the outlet is not reading correctly".
+- **Fan:** `postroll_audio.py` now runs the fan at full speed through S51 and spins it down over the 2.5 s before the cut to F1 (CUT = 285 frames after the song). Before, it spun down over the first 5 s.
+- **Hum:** rises 12 dB as the cards start, from −44 to −32 dBFS. Measured RMS: fan section −33 dBFS, at the cut −42, under the cards −32.
+- **Audio files:** regenerated with `96 8`; v4 → `archive/audio/postroll_v4.wav`.
+- **Outlet (S50):** the plug was a rotated Lucide plug icon, drawn backwards (prongs toward the cord) with no socket. Now a code-drawn wall socket (faceplate, two slots, ground hole) fades in on the terminal's right edge as the cord draws, and an orange plug slides in prongs-first. The spark moved to the socket.
