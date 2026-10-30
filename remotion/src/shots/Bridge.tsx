@@ -3,6 +3,7 @@
 // record and the cards start to swirl like a lava lamp, building as if toward a solo. Then the needle lifts (a
 // visual beat: the band plays on), the swirl freezes mid-turn and drains of color.
 import React from "react";
+import { Cursor, Note, Stat, StatRow } from "../components/annotate";
 import { AbsoluteFill, interpolate, spring } from "remotion";
 import { Infected } from "../theme/context";
 import { Background, Card } from "../components/surface";
@@ -75,6 +76,15 @@ export const BridgeNeedle: React.FC<{ fade?: (k: number) => number; captions?: b
             </div>
           </div>
         </Card>
+        <AbsoluteFill style={{ opacity: 1 - ramp(F, s44 + 20, s44 + 50) }}>
+          <StatRow x={90} y={640}>
+            <Stat at={s41 + 10} label="tokens" value={`${tokens}`} />
+            <Stat at={s42 + 10} label="confidence" value={live >= s43 ? "uncertain" : "high"} />
+            <Stat at={s43 + 20} label="error bars" value="wide" />
+          </StatRow>
+          <Cursor keys={[[s41 + 4, 700, 820], [s41 + 30, 820, 360, true], [s41 + 44, 760, 500]]} />
+          <Note at={s42 + 30} x={760} y={150} tx={680} ty={420} until={s44}>sparkle: decorative</Note>
+        </AbsoluteFill>
         {captions && <Captions />}
       </AbsoluteFill>
     </Infected>
@@ -126,6 +136,12 @@ export const BridgeBill: React.FC = () => {
             <Body size={24} muted style={{ position: "absolute", left: 40, bottom: 30 }}>PJM ratepayers, ~2 years, per its market monitor</Body>
           </Card>
         </AbsoluteFill>
+        <StatRow x={110} y={260} column>
+          <Stat at={s39 + 20} label="amount due" value="up again" />
+          <Stat at={s39 + 50} label="line items" value={`${Math.min(60, Math.floor(unroll / 34) + 8)}`} />
+          <Stat at={s40 + 20} label="axis rescales" value={`${step}`} />
+        </StatRow>
+        <Note at={s39 + 40} x={1500} y={300} tx={1200} ty={420} until={s40 - 8}>itemized (very)</Note>
         <Captions />
       </AbsoluteFill>
     </Infected>

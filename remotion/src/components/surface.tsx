@@ -32,7 +32,7 @@ export const Background: React.FC<{ glowAt?: [number, number] }> = ({ glowAt = [
   const t = useTheme();
   if (useChrome()) {
     return (
-      <AbsoluteFill style={{ top: -120, bottom: -120, left: -160, right: -160 }}>
+      <AbsoluteFill style={{ top: -120, bottom: -120, left: -160, right: -160, width: "auto", height: "auto" }}>
         {t.lava > 0 && <LavaLamp />}
         <MarbleDefs />
       </AbsoluteFill>
@@ -74,7 +74,7 @@ export const Haze: React.FC<{ amount: number; wipe?: number }> = ({ amount, wipe
   const edge = wipe * 130 - 15;
   const over = useChrome() ? 160 : 0; // inside the scaled stage the haze overhangs the frame so its edges never show
   return (
-    <AbsoluteFill style={{ pointerEvents: "none", opacity: amount, top: -over, bottom: -over, left: -over, right: -over,
+    <AbsoluteFill style={{ pointerEvents: "none", opacity: amount, top: -over, bottom: -over, left: -over, right: -over, width: "auto", height: "auto",
       WebkitMaskImage: `linear-gradient(90deg, #000 ${edge - 15}%, transparent ${edge + 15}%)`,
       maskImage: `linear-gradient(90deg, #000 ${edge - 15}%, transparent ${edge + 15}%)` }}>
       <AbsoluteFill style={{ background: "linear-gradient(180deg, #6b4a2b 0%, #4a3220 60%, #2e2016 100%)", mixBlendMode: "multiply" }} />

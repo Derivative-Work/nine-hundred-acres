@@ -2,6 +2,7 @@
 // the counter runs to 35 and each turbine trails a gray plume; a call sidebar where "Wind" is muted, hand raised,
 // never called on.
 import React from "react";
+import { Cursor, Note, Stat, StatRow } from "../components/annotate";
 import { AbsoluteFill, interpolate, random, spring } from "remotion";
 import { Infected } from "../theme/context";
 import { Background, Card, Haze } from "../components/surface";
@@ -63,6 +64,15 @@ export const Verse2Turbines: React.FC = () => {
           ))}
         </Card>
         <Haze amount={0.25} />
+        <StatRow x={920} y={200} column>
+          <Stat at={s24 + 20} label="air permits" value="0" />
+          <Stat at={s25} label="wind consulted" value="no" emoji="dash" />
+        </StatRow>
+        <Note at={s24 + 30} x={1000} y={640} tx={190} ty={250} until={s25 + 40}>exhaust</Note>
+        <Cursor keys={[[s25 + 20, 1100, 800], [s25 + 45, 1660, 472], [s25 + 70, 1640, 480], [s25 + 90, 1300, 700]]} />
+        <div style={{ position: "absolute", left: 1300, top: 580 }}>
+          <Stat at={s25 + 30} label="hand raised for" value={`${Math.max(0, Math.floor((F - s25 - 30) / 30))} s`} />
+        </div>
         <Captions />
       </AbsoluteFill>
     </Infected>
@@ -114,6 +124,19 @@ export const Verse2Permit: React.FC = () => {
           })}
         </AbsoluteFill>
         <Haze amount={haze} />
+        <AbsoluteFill style={{ opacity: 1 - ramp(F, s27 - 6, s27 + 6) }}>
+          <StatRow x={160} y={560}>
+            <Stat at={word("L15", 1)} label="permits filed" value="0" />
+            <Stat at={word("L15", 6)} label="notices posted" value="0" />
+          </StatRow>
+        </AbsoluteFill>
+        <Cursor keys={[[s26 + 40, 900, 800], [s26 + 64, 1110, 255, true], [s26 + 78, 1112, 257, true], [s27 - 10, 1000, 600]]} />
+        <Note at={s26 + 80} x={1500} y={560} tx={1110} ty={255} until={s27 - 6}>no answer</Note>
+        <Note at={s27 + 20} x={595} y={400} tx={595} ty={560}>schoolhouse</Note>
+        <StatRow x={140} y={240} column>
+          <Stat at={s27 + 10} label="visibility" value="low" emoji="fog" />
+        </StatRow>
+        <div style={{ position: "absolute", left: 1320, top: 790 }}><Stat at={lawyers} label="lawyers at door" value={3} tick={10} /></div>
         <Captions />
       </AbsoluteFill>
     </Infected>

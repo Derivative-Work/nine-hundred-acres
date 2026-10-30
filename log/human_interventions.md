@@ -36,3 +36,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** After the style board the human said: "the infection looks great, but it's a little hard to tell how these will work in context without more scenes". After the context reel: "yes, keep going".
 - **Rule:** H2.
+
+## 2026-10-30T02:25 — M4 note on density; the sample approved — H2
+
+- **What:** On animatic v2: "the gist is good, but I feel like this genre of explainer typically has more going on in them". On the density sample: "this is good, keep going".
+- **Rule:** H2 (feedback and approval at the M4 gate; the agent made the changes).

@@ -2,6 +2,7 @@
 // power pulsing along it; S36a's thermal sweep turns the status dots into a tie-dye heat map (three flower tiles);
 // then the "Against ↔ For" slider ping-pongs beside a "Thinking…" spinner.
 import React from "react";
+import { Cursor, Note, Stat, StatRow } from "../components/annotate";
 import { AbsoluteFill, spring } from "remotion";
 import { Infected } from "../theme/context";
 import { Background, Card } from "../components/surface";
@@ -56,6 +57,12 @@ export const Verse3Feed: React.FC = () => {
             <Body size={24} muted>Thinking…</Body>
           </div>
         </Card>
+        <StatRow x={110} y={540} column>
+          <Stat at={s36 + 10} label="destination" value="the machines" emoji="plug" />
+          <Stat at={s36 + 55} label="heat map" value="tie-dye" />
+        </StatRow>
+        <Note at={s36 + 70} x={1760} y={850} tx={1589} ty={677}>still corn</Note>
+        <Cursor keys={[[s37 + 6, 900, 960], [s37 + 22, 940, 795, true], [s37 + 36, 1080, 798], [s37 + 52, 820, 798], [s37 + 70, 1060, 798]]} />
         <Captions />
       </AbsoluteFill>
     </Infected>

@@ -3,6 +3,7 @@
 // toggle as it flips off (S33a); the timeline 1979 → 2019 → 2027; the rename diff with a bow; later (S38) the same
 // crowd, gray-haired, flips its signs: "…OK, FINE."
 import React from "react";
+import { Cursor, Note, Stat, StatRow } from "../components/annotate";
 import { AbsoluteFill, interpolate, random, spring } from "remotion";
 import { Infected } from "../theme/context";
 import { Background, Card } from "../components/surface";
@@ -98,6 +99,13 @@ export const Verse3Archive: React.FC = () => {
             </svg>
           </Card>
         </div>
+        <StatRow x={1200} y={440} column>
+          <Stat at={s32 + 12} label="year" value="1979" />
+          <Stat at={s33 + 36} label="reactors" value="off" />
+          <Stat at={s34 + 40} label="restart (planned)" value="mid-2027" />
+        </StatRow>
+        <Note at={s32 + 24} x={640} y={95} tx={185} ty={410} until={s35}>hand-lettered, 100% human</Note>
+        <Cursor keys={[[s33 + 10, 1500, 600], [s33 + 32, 1702, 290, true], [s33 + 50, 1600, 450]]} />
         <Captions />
       </AbsoluteFill>
     </Infected>
@@ -121,6 +129,11 @@ export const Verse3Signs: React.FC = () => {
           </div>
         </AbsoluteFill>
         <div style={{ position: "absolute", left: 80, top: 50 }}><Heading size={60}>Public sentiment</Heading></div>
+        <StatRow x={1650} y={260} column>
+          <Stat at={s38 + 10} label="signs" value={8} tick={10} />
+          <Stat at={start + 30} label="message" value="ok, fine" />
+        </StatRow>
+        <Note at={s38 + 20} x={1700} y={140} tx={560} ty={420} until={start}>now gray</Note>
         <Captions />
       </AbsoluteFill>
     </Infected>

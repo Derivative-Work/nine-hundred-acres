@@ -3,6 +3,7 @@
 // start, the cards jitter, "Artifact detected", the overlay stalls, "Retrying…", a green check on the span's end.
 // S22's Memphis pin card arrives on its lyric, inside the span (the span runs to the end of "Memphis").
 import React from "react";
+import { Cursor, Note, Stat, StatRow } from "../components/annotate";
 import { AbsoluteFill, interpolate, random, spring } from "remotion";
 import { Infected } from "../theme/context";
 import { Background, Card, Haze } from "../components/surface";
@@ -62,6 +63,15 @@ export const Span1Haze: React.FC = () => {
             <div style={{ marginTop: 14, opacity: ramp(F, s20, s20 + 8) }}><Toast tone="error">Artifact detected</Toast></div>
           )}
         </div>
+        <StatRow x={110} y={330} column>
+          <Stat at={s18 + 8} label="cloud altitude" value="0 ft" emoji="cloud" />
+          <Stat at={s18 + 22} label="cloud location" value="a field" />
+          <Stat at={s22 + 10} label="state" value="Tennessee" />
+        </StatRow>
+        <Note at={s17 + 8} x={1360} y={150} tx={985} ty={130} until={s19}>cloud.location = ?</Note>
+        <Cursor keys={[[s20 + 10, 1200, 600], [s20 + 34, 1620, 170, true], [s20 + 48, 1625, 172, true], [s20 + 70, 1500, 400]]} />
+        <Note at={s20 + 52} x={1300} y={330} tx={1610} ty={175} until={s21 - 10}>can't dismiss</Note>
+        <Note at={s22 + 20} x={1450} y={420} tx={1030} ty={440}>you are here</Note>
         <Captions />
       </AbsoluteFill>
     </Infected>
