@@ -172,3 +172,7 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
 ## 2026-10-30T06:50 — M5 begun: Intro and Verse 1 final renders
 
 - Final sections are frame ranges of the full cut (`Animatic`, burn-in off) at 1080p, CRF 16; the full release render later is the same composition end to end. Fixed S10's badge and label (see renders.md). Sent both for approval.
+
+## 2026-10-30T06:57 — M5: granddad.jpg redrawn; Verse 1 re-rendered
+
+- The human asked for more detail in the photo. Now an old family snapshot in SVG: sky with clouds, a tree line, a two-story farmhouse with siding, porch, gable window and chimney, a red gambrel barn with hayloft and X door, a silo, a windmill, a tree with a tire swing, a fence and mailbox, corn rows to the horizon; warm fade, grain, vignette, a light leak and a crease. Generic, no people. It still goes gray when archived.

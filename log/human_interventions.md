@@ -51,3 +51,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** On animatic v4: "Both are good. Two nitpicks, then keep going: the terminal caret is in the wrong position for what is typed next, and fade into the fan sound during the end of the song rather than starting it abruptly".
 - **Rule:** H2 (M4 gate approved: framing and timing; the agent made the two fixes).
+
+## 2026-10-30T06:57 — M5 note on S10's photo — H2
+
+- **What:** On the Verse 1 final render: "I feel like that photo could use some more detail".
+- **Rule:** H2 (feedback at the M5 gate; the agent redrew it).

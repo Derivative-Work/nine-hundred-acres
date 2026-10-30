@@ -62,3 +62,8 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
 - **Full-res still pass before it** (scratch, 9 frames): S10's "archived" badge was see-through over the white photo border (unreadable) and the "family photo · 1 of 1" label ran off the right edge; both fixed. Nothing else found.
 - **Contact sheets:** `review/S01.jpg`–`review/S11.jpg` from these renders (`contact_sheets.py` now takes a section offset and length).
 - **Gate:** approve each section.
+
+## 2026-10-30T06:57 — M5 final: Verse 1 v2 (S05–S11)
+
+- **Change:** granddad.jpg (`Farmhouse`, `components/illustrations.tsx`) redrawn in more detail; S10's label now points at the house. **Commit:** 4c45e5a.
+- **Output:** `renders/m5/02_verse1.mp4` (frames 485–1387, 1080p, CRF 16); v1 moved to `archive/renders/m5/02_verse1_v1.mp4`. Sheets `review/S05.jpg`–`S11.jpg` regenerated.
