@@ -55,3 +55,10 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
 - **Shots:** all, S01–S52 (changed: S01–S04 and S48–S50 caret; the sound from 230 s). **Composition:** `Animatic`, `--scale=0.5 --crf=24`. **Commit:** ffc5b5d.
 - **Output:** `renders/m4/animatic.mp4` (301.9 s); v4 moved to `archive/renders/m4_animatic_v4.mp4`. Contact sheets regenerated.
 - **Check:** RMS by second (video time) 236 s −17.0, 239 s −32.3, 241 s −36.6, 244 s −43.1 dB: the chord decays into the fan with no step at the song's end.
+
+## 2026-10-30T06:50 — M5 final: Intro (S01–S04) and Verse 1 (S05–S11)
+
+- **Composition:** `Animatic` with `label: false` (chrome on), full 1920×1080, `--crf=16`, frames 0–484 → `renders/m5/01_intro.mp4` (16.2 s) and 485–1387 → `renders/m5/02_verse1.mp4` (30.1 s). Rendering the final cut's own frame ranges means the approved sections are exactly what the full render will contain. **Commit:** 84fa484.
+- **Full-res still pass before it** (scratch, 9 frames): S10's "archived" badge was see-through over the white photo border (unreadable) and the "family photo · 1 of 1" label ran off the right edge; both fixed. Nothing else found.
+- **Contact sheets:** `review/S01.jpg`–`review/S11.jpg` from these renders (`contact_sheets.py` now takes a section offset and length).
+- **Gate:** approve each section.

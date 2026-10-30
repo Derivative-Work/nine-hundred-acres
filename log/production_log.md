@@ -168,3 +168,7 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
 
 - **Caret:** `Terminal` drew the cursor on its own line below the last row. It now sits at the end of the last row, where the next character is typed (S01–S04, S48–S50). Rows keep their spaces (`white-space: pre`), so "  ok  Explainer ready" shows its indent.
 - **Fan:** `scripts/postroll_audio.py` takes a lead: `postroll_audio.py 61.5 8` starts the file 8 s before the song ends; the fan (at full speed) and the room tone fade in under the final chord (smoothstep, full 1 s before the end), and the spin-down starts where the song ends, as before. The Animatic starts `postroll.wav` 240 frames early. v1 moved to `archive/audio/postroll_v1.wav`.
+
+## 2026-10-30T06:50 — M5 begun: Intro and Verse 1 final renders
+
+- Final sections are frame ranges of the full cut (`Animatic`, burn-in off) at 1080p, CRF 16; the full release render later is the same composition end to end. Fixed S10's badge and label (see renders.md). Sent both for approval.
