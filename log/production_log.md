@@ -34,3 +34,26 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
   - The chat (message 19) places the coda failure *after* "By the thing of which I wrote", and message 21 places the first one in "the lead-up to 'down in South Memphis'". The detector's span 2 (191.2–228.9 s, 37.7 s) is long for "after the last line" of a 238.4 s song; M1 checks it against the as-sung timing.
   - Suno V6 (`chirp-hawk`), created 2026-10-14T03:12:29Z. The submitted lyrics are the brief's word for word; only section tags differ, including the `[Jam]` and `[Final chorus]` tags Suno skipped. No lyric exception.
 - **Why:** House practice (Share the Shares step 2): the planning chat and the take are part of the making-of record.
+
+## 2026-10-30T00:11:30-04:00 — M1: transcription, lyric diff and the failure spans placed
+
+- **What:** Transcribed both vocal stems (faster-whisper medium.en, int8, CPU, unprompted, word timestamps), then re-heard every line that differed from the brief with medium.en and small.en on three sources each (lead stem, backing stem, Suno mix). Measured per-stem loudness in 2 s windows to place the intro, the gaps and the outro. Wrote the as-sung draft.
+- **Commands:** `.venv/bin/python -I scripts/first_pass.py` (from Share the Shares, stem names changed); `.venv/bin/python -I scripts/m1_recheck.py` (new); an inline per-stem RMS table (soundfile + numpy).
+- **Outputs:** `timing/first_pass_{vocals,backing}.json`, `timing/m1_recheck.json`, `lyrics/as_sung_draft.txt`
+- **Findings (structure):**
+  - **Suno skipped chorus 2 as well.** Verse 2 ends at 107.6 s and verse 3 starts at 109.4 s. Shots S28–S31 (and the S27 → S28 transition) have no audio to sit on. The brief already noted the skipped jam and final chorus, not this.
+  - **The coda is not a cappella, and there is no silence before it.** Drums play at about −20 dBFS from the end of the bridge (169 s) through the coda (175.0–190.7 s). The S44 → S45 "needle lifts … in the quiet" has no quiet to land in.
+  - **A 37 s wordless outro follows the last line** (190.7–~228 s, ooh/ah harmonies over the full band), then drums drop out and a final chord holds to ~236 s; silence to 238.4 s.
+- **Findings (failure spans, from `fallback.json`):**
+  - **Span 1, 72.39–82.64 s:** starts on "humming" in the chorus's last line ("things" held to 73.94 s), covers the 6 s instrumental, and ends just after "Memphis" (81.68–82.36 s). So it runs into the first line of verse 2: S22's cue starts inside the span, and S19–S21's "Retrying… ✓" lands mid-line.
+  - **Span 2, 191.17–228.91 s:** starts 0.47 s after "wrote" ends (190.70 s), matching the human's "fails after 'thing of which I wrote'". It covers the whole wordless outro; the final chord (~229–236 s) is outside it. S49's stutter would run 37.7 s.
+- **Findings (words, for the human's ear):** every other line matches the brief. Doubtful, where hearings split or all disagree with the brief:
+  - "they **rolled** the turbines in": 6/6 hear "roll" (the d may be elided).
+  - "nobody asked the **wind**": 6/6 hear "to win" or "the when".
+  - "Three Mile Island **in** a brand-new name": 4/8 "in", 4/8 "and".
+  - "cost folks **out east**": small.en 2/2 "out east"; medium.en 2/2 "at least".
+  - "**It** said that was a really great question": 4/5 "They said", 1 "I said".
+  - "It was **hummed out** in a field": 1 "hummed out", 3 "hung down", 3 "hung out".
+  - "of 'em a-burning" is heard as "of them are burning" everywhere, which is how the written line sounds; "waking" as "awake in" on the lead, "Waking" on the backing stem. Taken as sung as written.
+- **Not done:** a detect-only post-filter run (the brief's wording); `fallback.json`'s regions are the same detector's output, so they are used. M1 gate questions are in the summary to the human.
+- **Why:** the brief, M1.

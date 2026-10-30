@@ -1,6 +1,7 @@
 # As-sung draft (M1). Times in seconds on the Suno mix (= the master; same length, post-filter does not move timing).
 # Text is the brief's wherever the transcriptions split; [?] marks a word for the human's ear (see the M1 log entry).
 # Sources: timing/first_pass_{vocals,backing}.json, timing/m1_recheck.json, per-stem loudness.
+# Line starts with one decimal (46.4, 54.0, 60.5, 160.0) are estimates inside a longer transcribed segment; M2 forced alignment replaces all times.
 
 [Intro 0.0-13.3: twelve-string and band from 0.0; wordless harmonies ~6-13]
 Ooh… ooh-ooh…
