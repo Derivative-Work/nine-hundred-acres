@@ -21,3 +21,13 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
 - **Commit:** 17b921c. **Command:** `cd remotion && npx remotion render src/index.ts ContextReel ../renders/m3/context_reel.mp4 --scale=0.5 --crf=23` (2 min 4 s on the GTX 970 box, CPU).
 - **Output:** `renders/m3/context_reel.mp4` (87.4 s; audio mean −17.9 dB); contact sheet `review/m3_context_reel.jpg` (every 6 s).
 - **Test stills before the render** (scratch, not kept): 14 frames; they led to the haze cap of 0.45 and the overlay widening to fit "Artifact suppression: OFF (by choice)" on one line.
+
+## 2026-10-30T01:45 — M4 animatic v1 (archived)
+
+- **Shots:** all, S01–S52. **Composition:** `Animatic` (1920x1080, 30 fps, 9,057 frames: 60 pre-roll + 7,152 audio + 1,845 post-roll), `--scale=0.5 --crf=24`. **Commit:** the M4 scenes commit before 302d37e.
+- **Output:** `archive/renders/m4_animatic_v1.mp4` (superseded: S33a's power button hid under the toggle card; sign lettering clipped). A/V check: the animatic's audio at 62 s matched the master at 60.000 s (cross-correlation), the 2 s pre-roll exactly.
+
+## 2026-10-30T01:52 — M4 animatic v2
+
+- **Shots:** all, S01–S52. **Composition:** `Animatic`, same settings. **Commit:** 302d37e. **Command:** `cd remotion && npx remotion render src/index.ts Animatic ../renders/m4/animatic.mp4 --scale=0.5 --crf=24` (about 4 min on the GTX 970 box, CPU).
+- **Output:** `renders/m4/animatic.mp4` (301.9 s, 960x540). Contact sheets: `review/<shot>.jpg` for all 57 shot IDs (`scripts/contact_sheets.py`); `review/m4_animatic_overview.jpg` (every 10 s).
