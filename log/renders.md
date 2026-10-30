@@ -77,3 +77,11 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
   - "The Hum · always" sat on the wave's crests (S11, S16); it now sits above the wave (S11's "amplitude" note moved up to clear it). This touches Verse 1, hence v3.
   - S18's cloud tiles lingered beside the Memphis map; they fade as it arrives.
 - **Contact sheets:** `review/S05.jpg`–`S22.jpg` (`contact_sheets.py` now includes every shot that starts inside the section, so S21 gets one).
+
+## 2026-10-30T08:25 — M5 final: Verse 2 (S23–S27) and Verse 3 (S32–S38)
+
+- **Composition:** `Animatic`, `label: false`, 1080p, CRF 16. Frames 2562–3351 → `renders/m5/05_verse2.mp4` (26.3 s; commit b4bd7d0), 3352–4293 → `renders/m5/06_verse3.mp4` (31.4 s; commit ec29062).
+- **Full-res still pass before it** (scratch, 10 frames each) found:
+  - Verse 2: the "exhaust" leader crossed the whole turbine grid to a fan, now short and to a plume; "no answer" sat on the "Permit office" title, now points at the sign (the cursor knocks on the door icon); the lawyers' briefcases overlapped the last house.
+  - Verse 3: the peace sign on the 1979 banner drew no circle (an SVG arc with equal ends draws nothing; `PeaceToPower` now keeps a 1° gap) and sat off-center; the "hand-lettered" leader crossed the banner (label now under the photo); the timeline labels touched the caption bar (moved up 20 px); S36's cord ran behind the stat tiles and began in midair (now enters from the frame edge, below the tiles).
+- **Contact sheets:** `review/S23.jpg`–`S27.jpg`, `review/S32.jpg`–`S38.jpg` (with S33a, S36a).
