@@ -31,7 +31,7 @@ const blackness = (F: number) => interpolate(F, [f("S02"), f("S02") + 24, f("S45
 const baseShots = map.shots.filter((s) => s.frame != null && !/[a-z]$/.test(s.id) && !["S19", "S20", "S21"].includes(s.id));
 const currentShot = (F: number) => [...baseShots].reverse().find((s) => (s.frame as number) <= F);
 
-const Backdrop: React.FC<{ F: number }> = ({ F }) => {
+const Backdrop: React.FC<{ F: number; w?: number; h?: number }> = ({ F, w = 1920, h = 1080 }) => {
   const t = useTheme();
   const drift = F * 0.25;
   return (
@@ -40,11 +40,11 @@ const Backdrop: React.FC<{ F: number }> = ({ F }) => {
       <AbsoluteFill style={{ backgroundImage: `radial-gradient(${alpha(t.c.muted, 0.22)} 1.4px, transparent 1.6px)`, backgroundSize: "36px 36px",
         backgroundPosition: `${drift % 36}px ${(drift * 0.4) % 36}px`, opacity: 0.8,
         WebkitMaskImage: "radial-gradient(ellipse 75% 70% at 50% 50%, #000 30%, transparent 85%)", maskImage: "radial-gradient(ellipse 75% 70% at 50% 50%, #000 30%, transparent 85%)" }} />
-      <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
+      <svg width={w} height={h} style={{ position: "absolute", inset: 0 }}>
         {Array.from({ length: 40 }, (_, k) => {
           const sp = 0.15 + random(`pt${k}`) * 0.35;
-          const x = (random(`px${k}`) * 1920 + F * sp * 0.6) % 1960 - 20;
-          const y = 1100 - ((random(`py${k}`) * 1100 + F * sp) % 1140);
+          const x = (random(`px${k}`) * w + F * sp * 0.6) % (w + 40) - 20;
+          const y = h + 20 - ((random(`py${k}`) * (h + 20) + F * sp) % (h + 60));
           const petal = random(`pp${k}`) < t.tieDye;
           return petal
             ? <ellipse key={k} cx={x} cy={y} rx={7} ry={3.5} fill={TIE_DYE[k % TIE_DYE.length]} opacity={0.55} transform={`rotate(${F * 2 + k * 40} ${x} ${y})`} />
@@ -135,6 +135,70 @@ export const ChromeFront: React.FC = () => {
         <Header F={F} />
         <Footer F={F} />
       </AbsoluteFill>
+    </Infected>
+  );
+};
+
+// The vertical cut's chrome (1080 x 1920): the same backdrop, header and footer, stacked: chapter and status chip on
+// one row, the typed headline under them, the source line and progress bar at the bottom. Captions sit below the
+// header, in the top third (shots/kit.tsx).
+const HeaderTall: React.FC<{ F: number }> = ({ F }) => {
+  const t = useTheme();
+  const cur = currentShot(F);
+  const chapter = [...CHAPTERS].reverse().find((c) => f(c.first) <= F);
+  if (!cur || !chapter) return null;
+  const beat = BEATS[cur.id];
+  const next = CHAPTERS[CHAPTERS.indexOf(chapter) + 1];
+  const inChapter = baseShots.filter((s) => (s.frame as number) >= f(chapter.first) && (!next || (s.frame as number) < f(next.first)) && BEATS[s.id]);
+  const overlayUp = F >= f("S19") && F < f("S21") + 45;
+  const age = F - (cur.frame as number);
+  return (
+    <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 190, padding: "34px 40px 0",
+      background: `linear-gradient(${alpha(t.c.bg, 0.95)} 70%, ${alpha(t.c.bg, 0)})` }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+        <div style={{ fontFamily: t.font.mono, fontSize: 22, color: t.c.accentA, padding: "4px 10px", border: `1px solid ${alpha(t.c.accentA, 0.5)}`, borderRadius: 8 }}>{chapter.num}</div>
+        <Heading size={30}>{chapter.title}</Heading>
+        <div style={{ display: "flex", gap: 6, marginLeft: 6 }}>
+          {inChapter.map((s) => <div key={s.id} style={{ width: s.id === cur.id ? 22 : 8, height: 8, borderRadius: 4,
+            background: (s.frame as number) <= F ? t.c.accentA : alpha(t.c.muted, 0.35) }} />)}
+        </div>
+        {beat && !overlayUp && (
+          <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 8, padding: "6px 14px", borderRadius: 999,
+            background: alpha(t.c.card, 0.85), border: `1px solid ${t.c.border}` }}>
+            {age < 40 ? <Icon name="loader-circle" size={20} color={t.c.accentA} style={{ transform: `rotate(${F * 12}deg)` }} />
+              : <Icon name="circle-check" size={20} color={t.c.success} />}
+            <Body size={18} mono muted>{beat.step}{age < 40 ? "…" : ""}</Body>
+          </div>
+        )}
+      </div>
+      {beat && <Body size={34} style={{ fontWeight: 600, marginTop: 18, whiteSpace: "nowrap" }}><Typed text={beat.headline} since={cur.frame as number} F={F} /></Body>}
+    </div>
+  );
+};
+
+const FooterTall: React.FC<{ F: number; from: number; to: number }> = ({ F, from, to }) => {
+  const t = useTheme();
+  const cur = currentShot(F);
+  const src = cur && BEATS[cur.id]?.source;
+  return (
+    <>
+      {src && <div style={{ position: "absolute", left: 40, right: 40, bottom: 26, opacity: interpolate(F - (cur!.frame as number), [0, 12], [0, 1], clamp) }}>
+        <Body size={19} mono muted>Source: {src}</Body></div>}
+      <div style={{ position: "absolute", left: 0, bottom: 0, height: 5, width: `${((F - from) / (to - from)) * 100}%`, background: t.gradient(90) }} />
+    </>
+  );
+};
+
+export const ChromeBackTall: React.FC = () => {
+  const F = useCurrentFrame();
+  return <Infected value={infectionAt(F)}><Backdrop F={F} w={1080} h={1920} /></Infected>;
+};
+
+export const ChromeFrontTall: React.FC<{ from: number; to: number }> = ({ from, to }) => {
+  const F = useCurrentFrame();
+  return (
+    <Infected value={infectionAt(F)}>
+      <AbsoluteFill><HeaderTall F={F} /><FooterTall F={F} from={from} to={to} /></AbsoluteFill>
     </Infected>
   );
 };

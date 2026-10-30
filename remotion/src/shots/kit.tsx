@@ -15,6 +15,10 @@ export const ShotClock: React.FC<{ from: number; children: React.ReactNode }> = 
 );
 export const useFrame = () => useCurrentFrame() + useContext(Start);
 
+// True in the vertical cut (1080 x 1920, S12-S27): scenes reflow to one column, captions sit in the top third.
+export const Portrait = createContext(false);
+export const usePortrait = () => useContext(Portrait);
+
 export const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 // 0 before frame a, 1 after frame b
 export const ramp = (F: number, a: number, b: number) => interpolate(F, [a, b], [0, 1], clamp);
@@ -23,12 +27,14 @@ export const ramp = (F: number, a: number, b: number) => interpolate(F, [a, b], 
 // letters into empty boxes (S49).
 export const Captions: React.FC<{ glyphBoxes?: number }> = ({ glyphBoxes = 0 }) => {
   const F = useFrame();
+  const tall = usePortrait();
   const ln = lines.find((l) => l.words.length && F >= l.frame_start - 8 && F <= l.frame_end + 10);
   if (!ln) return null;
   const words = ln.words.map((w) => (glyphBoxes ? boxed(w.w, glyphBoxes, w.w) : w.w));
   const current = ln.words.filter((w) => w.frame <= F).length - 1;
   return (
-    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: 48 }}>
+    <AbsoluteFill style={tall ? { justifyContent: "flex-start", alignItems: "center", padding: "196px 40px 0" }
+      : { justifyContent: "flex-end", alignItems: "center", paddingBottom: 48 }}>
       <KaraokeCaption words={words} current={current} />
     </AbsoluteFill>
   );

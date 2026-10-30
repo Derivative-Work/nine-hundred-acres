@@ -10,7 +10,7 @@ import { Body, Icon, Pill } from "../components/type";
 import { beatsBetween, shot, word } from "../timing";
 import { Checklist } from "../components/furniture";
 import { Cobweb } from "../components/illustrations";
-import { Captions, clamp, ramp, useFrame } from "./kit";
+import { Captions, clamp, ramp, useFrame, usePortrait } from "./kit";
 
 const Turbine: React.FC<{ born: number; k: number }> = ({ born, k }) => {
   const F = useFrame();
@@ -35,20 +35,21 @@ export const Verse2Turbines: React.FC = () => {
   const born = (k: number) => (k < 18 ? s23 + (k * (s24 - s23)) / 18 : s24 + ((k - 18) * 45) / 17);
   const side = spring({ frame: F - s25, fps: 30, config: { damping: 200 } });
   const people = ["Operator", "Contractor", "Consultant", "Wind"];
+  const P = usePortrait();
   return (
     <Infected value={0.3}>
       <AbsoluteFill>
         <Background glowAt={[40, 50]} />
-        <div style={{ position: "absolute", left: 90, top: 70, display: "flex", gap: 16 }}>
+        <div style={{ position: "absolute", left: P ? 60 : 90, top: P ? 450 : 70, display: "flex", gap: 16 }}>
           <Pill size={26}><Icon name="map-pin" size={26} color="#ff7a3d" /> South Memphis, TN</Pill>
           <Pill tone="accent" size={26}>Turbines: <span style={{ fontFamily: "'JetBrains Mono'" }}>{n}</span></Pill>
         </div>
-        <Card seed="v2grid" style={{ position: "absolute", left: 90, top: 180 }}>
+        <Card seed="v2grid" style={{ position: "absolute", left: P ? 159 : 90, top: P ? 540 : 180 }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 86px)", gap: 16 }}>
             {Array.from({ length: 35 }, (_, k) => <Turbine key={k} k={k} born={born(k)} />)}
           </div>
         </Card>
-        <Card seed="v2call" style={{ position: "absolute", left: 1300, top: 180, width: 480, opacity: side, transform: `translateX(${(1 - side) * 40}px)` }}>
+        <Card seed="v2call" style={{ position: "absolute", left: P ? 60 : 1300, top: P ? 1150 : 180, width: 480, opacity: side, transform: `translateX(${(1 - side) * 40}px)` }}>
           <Body size={22} mono muted style={{ marginBottom: 18 }}>permit call · 4 participants</Body>
           {people.map((p) => (
             <div key={p} style={{ display: "flex", alignItems: "center", gap: 16, padding: "12px 0", borderTop: "1px solid #ffffff12" }}>
@@ -64,13 +65,18 @@ export const Verse2Turbines: React.FC = () => {
           ))}
         </Card>
         <Haze amount={0.25} />
-        <StatRow x={920} y={200} column>
+        <StatRow x={P ? 580 : 920} y={P ? 1150 : 200} column>
           <Stat at={s24 + 20} label="air permits" value="0" />
           <Stat at={s25} label="wind consulted" value="no" emoji="dash" />
         </StatRow>
-        <Note at={s24 + 30} x={1000} y={640} tx={773} ty={192} until={s25 + 40}>exhaust</Note>
-        <Cursor keys={[[s25 + 20, 1100, 800], [s25 + 45, 1660, 472], [s25 + 70, 1640, 480], [s25 + 90, 1300, 700]]} />
-        <div style={{ position: "absolute", left: 1300, top: 580 }}>
+        {P ? <>
+          <Note at={s24 + 30} x={930} y={480} tx={846} ty={530} until={s25 + 40}>exhaust</Note>
+          <Cursor keys={[[s25 + 20, 700, 1700], [s25 + 45, 420, 1442], [s25 + 70, 440, 1450], [s25 + 90, 700, 1600]]} />
+        </> : <>
+          <Note at={s24 + 30} x={1000} y={640} tx={773} ty={192} until={s25 + 40}>exhaust</Note>
+          <Cursor keys={[[s25 + 20, 1100, 800], [s25 + 45, 1660, 472], [s25 + 70, 1640, 480], [s25 + 90, 1300, 700]]} />
+        </>}
+        <div style={{ position: "absolute", left: P ? 580 : 1300, top: P ? 1400 : 580 }}>
           <Stat at={s25 + 30} label="hand raised for" value={`${Math.max(0, Math.floor((F - s25 - 30) / 30))} s`} />
         </div>
         <Captions />
@@ -91,16 +97,17 @@ export const Verse2Permit: React.FC = () => {
   const lawyers = word("L16", 8);
   const beat = beatsBetween(lawyers, lawyers + 120);
   const knock = beat.some((b) => F >= b && F < b + 5);
+  const P = usePortrait();
   return (
     <Infected value={0.3}>
       <AbsoluteFill>
         <Background glowAt={[40, 40]} />
         <AbsoluteFill style={{ opacity: 1 - ramp(F, s27 - 6, s27 + 6) }}>
-          <Card seed="permit" style={{ position: "absolute", left: 160, top: 220, width: 620 }}>
+          <Card seed="permit" style={{ position: "absolute", left: P ? 60 : 160, top: P ? 600 : 220, width: P ? 960 : 620 }}>
             <Body size={22} mono muted style={{ marginBottom: 18 }}>before you build</Body>
             <Checklist items={items} />
           </Card>
-          <Card seed="office" style={{ position: "absolute", left: 1000, top: 200, width: 640, opacity: office, transform: `translateY(${(1 - office) * 14}px)` }}>
+          <Card seed="office" style={{ position: "absolute", left: P ? 60 : 1000, top: P ? 990 : 200, width: P ? 960 : 640, opacity: office, transform: `translateY(${(1 - office) * 14}px)` }}>
             <Cobweb size={160} />
             <div style={{ display: "flex", alignItems: "center", gap: 14 }}><Icon name="door-closed" size={34} color="#c8cede" /><Body size={30} style={{ fontWeight: 600 }}>Permit office</Body></div>
             <div style={{ marginTop: 24, padding: "20px 24px", borderRadius: 10, background: "#fbf4e2", width: "fit-content", transform: "rotate(-2deg)" }}>
@@ -109,34 +116,41 @@ export const Verse2Permit: React.FC = () => {
           </Card>
         </AbsoluteFill>
         <AbsoluteFill style={{ opacity: ramp(F, s27 - 6, s27 + 6) }}>
-          <div style={{ position: "absolute", left: 140, top: 520, display: "flex", gap: 40, transform: `translateY(${(1 - row) * 20}px)` }}>
+          <div style={{ position: "absolute", left: P ? 85 : 140, top: P ? 880 : 520, display: "flex", gap: 40, transform: `translateY(${(1 - row) * 20}px)` }}>
             {["house", "house", "school", "house", "house"].map((ic, k) => (
               <Card key={k} seed={`b${k}`} style={{ width: 150 }}><Icon name={ic} size={86} color={ic === "school" ? "#ffb000" : "#c8cede"} /></Card>
             ))}
           </div>
-          <Card seed="door" style={{ position: "absolute", left: 1320, top: 300, width: 330, height: 440 }}>
+          <Card seed="door" style={{ position: "absolute", left: P ? 375 : 1320, top: P ? 1240 : 300, width: 330, height: 440 }}>
             <Icon name="door-closed" size={200} color="#c8cede" style={{ margin: "40px auto 0", transform: knock ? "translateX(3px)" : undefined }} />
           </Card>
           {F >= lawyers && [0, 1, 2].map((k) => {
             const walk = spring({ frame: F - lawyers - k * 6, fps: 30, config: { damping: 200 } });
-            return <div key={k} style={{ position: "absolute", left: 1070 + k * 82 + (1 - walk) * -300, top: 600 + (k % 2) * 30,
+            return <div key={k} style={{ position: "absolute", left: (P ? 90 : 1070) + k * 82 + (1 - walk) * -300, top: (P ? 1540 : 600) + (k % 2) * 30,
               transform: `translateY(${knock ? -6 : 0}px)` }}><Icon name="briefcase" size={80} color="#e8ecf8" /></div>;
           })}
         </AbsoluteFill>
         <Haze amount={haze} />
         <AbsoluteFill style={{ opacity: 1 - ramp(F, s27 - 6, s27 + 6) }}>
-          <StatRow x={160} y={560}>
+          <StatRow x={P ? 60 : 160} y={P ? 1290 : 560}>
             <Stat at={word("L15", 1)} label="permits filed" value="0" />
             <Stat at={word("L15", 6)} label="notices posted" value="0" />
           </StatRow>
         </AbsoluteFill>
-        <Cursor keys={[[s26 + 40, 900, 800], [s26 + 64, 1050, 252, true], [s26 + 78, 1052, 254, true], [s27 - 10, 1000, 600]]} />
-        <Note at={s26 + 80} x={1500} y={560} tx={1360} ty={372} until={s27 - 6}>no answer</Note>
-        <Note at={s27 + 20} x={595} y={400} tx={595} ty={560}>schoolhouse</Note>
-        <StatRow x={140} y={240} column>
+        {/* the door icon and the sign's corner, by their offsets in the office card (50, 52 and 360, 172) */}
+        {P ? <>
+          <Cursor keys={[[s26 + 40, 600, 1600], [s26 + 64, 110, 1042, true], [s26 + 78, 112, 1044, true], [s27 - 10, 500, 1400]]} />
+          <Note at={s26 + 80} x={560} y={1290} tx={420} ty={1162} until={s27 - 6}>no answer</Note>
+          <Note at={s27 + 20} x={560} y={800} tx={540} ty={900}>schoolhouse</Note>
+        </> : <>
+          <Cursor keys={[[s26 + 40, 900, 800], [s26 + 64, 1050, 252, true], [s26 + 78, 1052, 254, true], [s27 - 10, 1000, 600]]} />
+          <Note at={s26 + 80} x={1500} y={560} tx={1360} ty={372} until={s27 - 6}>no answer</Note>
+          <Note at={s27 + 20} x={595} y={400} tx={595} ty={560}>schoolhouse</Note>
+        </>}
+        <StatRow x={P ? 735 : 140} y={P ? 1430 : 240} column>
           <Stat at={s27 + 10} label="visibility" value="low" emoji="fog" />
         </StatRow>
-        <div style={{ position: "absolute", left: 1320, top: 790 }}><Stat at={lawyers} label="lawyers at door" value={3} tick={10} /></div>
+        <div style={{ position: "absolute", left: P ? 735 : 1320, top: P ? 1300 : 790 }}><Stat at={lawyers} label="lawyers at door" value={3} tick={10} /></div>
         <Captions />
       </AbsoluteFill>
     </Infected>
