@@ -118,3 +118,8 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
 - **Vertical cut:** composition `Vertical` (1080×1920, 30 fps; S12–S27, frames 1388–3351 of the main timing, the master trimmed to match), CRF 16 → `renders/m7/vertical_s12-s27.mp4` (65.5 s). **Commit:** 33aea1a. Scenes read `usePortrait()` and reflow to one column; the chrome is stacked (chapter and status chip, then the headline; source line and progress bar at the bottom); captions sit in the top third. 1,000 rooms stay 1,000 (25 × 40 tiles). Overview: `review/m7_vertical_overview.jpg`. SRT: `deliverables/nine_hundred_acres_vertical.en.srt` (13 cues, same rule, times from S12).
 - **Still pass before it** (scratch, 19 frames at half scale): the corn row ran wide (scaled down), S16, Span 1 and the permit scene sat high with the bottom third empty (moved down 100–170 px).
 - **Closing:** `Animatic`, `label: false`, frames 7212–9146 (S51, fade, F1–F7, S52) → `renders/m7/closing_s51-s52.mp4` (64.5 s), with the fan and room tone (postroll v3).
+
+## 2026-10-30T11:12 — Draft cut (for the human's audits)
+
+- **Composition:** `Animatic`, `label: false`, 1080p, CRF 16, all 9147 frames → `renders/m7/nine_hundred_acres_draft.mp4` (304.9 s: the song, S51, F1–F7, S52). **Commit:** bc2bb16. Everything approved through M7; the fact cards and on-screen facts are unaudited (M8).
+- **Preview:** a 720p two-pass copy (620 kb/s, 28 MB, scratch only) sent so it fits the upload limit; the 1080p file is the draft.
