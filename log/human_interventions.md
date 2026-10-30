@@ -86,3 +86,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** "I put the Suno screen grab in Downloads. It's not showing the "create" but it is showing the playback at exactly the timestamps from the video, and it includes prompt etc." File: `~/Downloads/Screen Recording 2026-10-30 at 08.49.12.mov`, copied unchanged to `assets/real/suno_generation_capture.mov`.
 - **Rule:** H3 (a real asset listed under Inputs: the capture for S45–S46).
+
+## 2026-10-30T09:20 — M5 approved: Verse 3, Bridge, Coda — H2
+
+- **What:** "these look great, keep going" (on Verse 3 v3, Bridge v2 and the Coda). All eight sections are approved; M5 gate passed.
+- **Rule:** H2.
