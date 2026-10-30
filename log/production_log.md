@@ -197,3 +197,7 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
 ## 2026-10-30T08:40 — M5: Verse 2 and Verse 3 approved
 
 - Human approved (H2). Next: Bridge (S39–S44).
+
+## 2026-10-30T08:43 — M5: Bridge final render
+
+- Still pass, fixes and render in renders.md. Sent for approval; Coda next.

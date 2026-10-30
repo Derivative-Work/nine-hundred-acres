@@ -90,3 +90,12 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
 
 - **Change:** the 1979 crowd photo redrawn in more detail (human note). Still faceless flat pictograms per the brief, with the detail in the scene and silhouettes: overcast sky, two generic cooling towers with drifting steam across the river, a tree line, a chain-link fence, two rows of people behind the front line (placards, raised fists), the peace banner as a bedsheet on two poles; the front line gets 1970s hair (long, afro, beard, headband, cap), open jackets, fringed vests, striped knits, flared jeans and cords, and cardboard signs with tape and marker lettering. S38's gray crowd is the same scene; its back rows' placards read "…ok, fine" too. `RallyGround`, `RallyBanner`, `Protester` in `components/illustrations.tsx`. **Commit:** 375b011.
 - **Output:** `renders/m5/06_verse3.mp4` (frames 3352–4293, 1080p, CRF 16); v1 moved to `archive/renders/m5/06_verse3_v1.mp4`. Sheets `review/S32.jpg`–`S38.jpg` regenerated. Sent as a CRF 21 review copy (upload limit).
+
+## 2026-10-30T08:43 — M5 final: Bridge (S39–S44)
+
+- **Composition:** `Animatic`, `label: false`, 1080p, CRF 16. Frames 4294–5331 → `renders/m5/07_bridge.mp4` (34.6 s). **Commit:** 650683b.
+- **Full-res still pass before it** (scratch, 10 frames) found:
+  - S40's axis midpoint read "$3B" on the $5B scale (rounded to whole billions); now "$2.5B" (and "$0.5B" on the $1B scale). A wrong on-screen number, caught before release.
+  - S42–S44: the "$29B (est.)" label rode the widening error bar up into the chart title; the label now sits beside the bar, and the bar is shorter so the widest error bar stays under the title.
+  - S42: "sparkle: decorative" pointed at "Estimates", with its leader across the user's bubble; it now points at the sparkle from above-left.
+- **Contact sheets:** `review/S39.jpg`–`S44.jpg`.
