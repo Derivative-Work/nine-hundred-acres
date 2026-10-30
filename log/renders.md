@@ -36,3 +36,9 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
 
 - **Shots:** S04–S16 (frames 300–2010). **Composition:** `Animatic` with the new chrome, `--frames=300-2010 --scale=0.5 --crf=24`. **Commit:** 6df6395.
 - **Output:** `renders/m4/density_sample.mp4` (57 s). Test stills before it (scratch): one found a crash (a note with no end time passed Infinity to `interpolate`), one the burn-in colliding with the chapter header.
+
+## 2026-10-30T02:50 — M4 animatic v3 (with the explainer chrome and annotations)
+
+- **Shots:** all, S01–S52. **Composition:** `Animatic` (chrome on, burn-in at the bottom right), `--scale=0.5 --crf=24`. **Commit:** d4a94a1.
+- **Output:** `renders/m4/animatic.mp4` (301.9 s); v2 moved to `archive/renders/m4_animatic_v2.mp4`. Contact sheets `review/<shot>.jpg` (57) and `review/m4_animatic_overview.jpg` regenerated.
+- **Test stills before it** (scratch): 12 frames, S18–S42. They found the haze stopping short of the right edge (`AbsoluteFill` sets `width: 100%`, which defeated the overhang; also the lava layer) and S26's tiles lingering over S27's buildings; both fixed.

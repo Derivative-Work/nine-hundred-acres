@@ -141,3 +141,18 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
   - Per-shot text lives in `remotion/src/chrome/script.ts`; every factual line names its source from the Reference facts table (Iowa Public Radio; Oil & Gas Watch, Gas Outlook; Maryland Matters, Enlit; NPR via KUNC).
 - **Fixes:** the hum's label no longer says "60 Hz" (an implied fact with no source); the review burn-in moved to the bottom right.
 - **Why:** the human's note at the M4 gate. Rolling out to the other sections waits on their view of the sample.
+
+## 2026-10-30T02:50:00-04:00 — M4: the annotation layer rolled out; animatic v3
+
+- **What:** After the human approved the density sample ("this is good, keep going"), added notes, stat tiles and cursor moves to every remaining scene from S17 to S44, and re-rendered the whole animatic.
+  - S17–S22: "cloud.location = ?", cloud altitude "0 ft", location "a field"; the cursor clicking "Artifact detected" twice ("can't dismiss"); "you are here" on Memphis; state "Tennessee".
+  - S23–S25: air permits "0" (sourced on screen), "exhaust" on a plume, "wind consulted: no"; the cursor drifting to Wind's raised hand and away; a "hand raised for" timer.
+  - S26–S27: permits filed "0", notices posted "0"; the cursor knocking on the permit office ("no answer"); "schoolhouse", visibility "low", lawyers at door "3".
+  - S32–S35: "hand-lettered, 100% human", year "1979", reactors "off", restart (planned) "mid-2027" (sourced); the cursor flips the Reactor toggle.
+  - S36–S37: destination "the machines", heat map "tie-dye", "still corn" on the surviving stalk; the cursor chasing the Against/For slider.
+  - S38: signs "8", message "ok, fine", "now gray".
+  - S39–S40: amount due "up again", a line-items counter, an axis-rescales counter, "itemized (very)".
+  - S41–S44: tokens, confidence "high" → "uncertain", error bars "wide", "sparkle: decorative"; the cursor sends the question. These fade out as the swirl builds.
+  - No annotations from S45 on: the coda strips back to the bare terminal as briefed.
+- **Fixes:** the haze and lava layers now overhang the scaled stage (they stopped short of the right edge); S26's tiles fade before S27.
+- **Why:** the human's M4 notes. Gate: framing and timing.
