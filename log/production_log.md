@@ -292,3 +292,17 @@ The human flagged the F7 finding as especially important. Claude read the docket
 - **Audio:** `postroll.wav` regenerated with `postroll_audio.py 96 8` (104 s); v3 moved to `archive/audio/postroll_v3.wav`; manifest updated.
 - **Checked:** stills of every changed frame.
 - **Still owed:** a brief edit (guardrail scope, the Reference facts S22–S26 and S50/S52 rows, the F table, S51 source). `scripts/contact_sheets.py` still hard-codes the old post-roll timings, as it already did before this change; it's unused since M5.
+
+## 2026-10-30T17:25 — Brief updated to match M8 (rev 52 → 54)
+
+At the human's request ("Yes update it"), edited the Claude Doc and re-mirrored it with `scripts/doc_to_md.py` (full view, rev 54):
+- **Guardrail:** the company may be named on the fact cards only.
+- **S51:** the Inputs item, the S51 row and the transitions row now describe the rebuilt S51 (source G); this closes the open S51 flag.
+- **Fact cards:**
+  - The heading and the "Done when" line now cover F1–F7b.
+  - The intro paragraph gives the new card timing and says companies may be named.
+  - The table is rewritten with the M8 wording, primary sources and statuses: F3 is retired; every other card reads Ready.
+- **Reference facts:** the S05–S09, S22–S26 and S50/S52 rows are reworded.
+- **New note:** an "M8 result" paragraph listing the graphics changes.
+
+The mirror script splits one bold run in two around the inserted "b", so the mirror had `F1–F7****b****`. Removed the empty `****` with sed; the doc itself renders correctly.

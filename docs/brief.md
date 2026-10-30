@@ -11,7 +11,7 @@
 - **Build:** almost entirely code-rendered in Remotion by Claude Code, synced to the locked master. No video model is required.
 - **Deliverables:** a 16:9 main video, a 9:16 vertical cut, captions, a thumbnail, and full logs.
 
-** ****The song's origin is withheld until the coda.** Nothing on screen says the music is generated until the song admits it itself ("And the song you're hearing, brother, / Wasn't sung by any throat"). That line brings in the real Suno generation screen. The explainer look can be openly machine-made from the start; only the song's source is the reveal.
+** The song's origin is withheld until the coda.** Nothing on screen says the music is generated until the song admits it itself ("And the song you're hearing, brother, / Wasn't sung by any throat"). That line brings in the real Suno generation screen. The explainer look can be openly machine-made from the start; only the song's source is the reveal.
 
 ## Production rules, guardrails and logging
 
@@ -22,7 +22,7 @@
 **Content guardrails**
 
 - No real company logos, wordmarks or brand colors used as identifiers. No recreation of the real Claude, Claude Code, ChatGPT or Suno interfaces: the chat window and terminal are generic.
-- No recognizable real people. The Memphis company is never named; turbines and "generic suits" only.
+- No recognizable real people. The Memphis company is never named in the song or its graphics; turbines and "generic suits" only. The fact cards after the song may name companies, since naming them is the cards' job (the human's decision in M8).
 - No real protest-movement symbols such as the trademarked smiling-sun badge, and no recreations of famous festival footage, photographs or album covers.
 - On-screen facts must match the Reference facts table exactly. Anything contested is labeled "est." or framed as a claim. The only number on screen for the video's own footprint is "???".
 - Captions and the end card use plain type. Emoji appear only inside the explainer graphics, where they are part of the parody.
@@ -33,7 +33,7 @@
 
 - The locked Suno master (a one-shot, 48 kHz WAV) and the post-filtered version, rendered with artifact suppression off.
 - A screen capture of the real Suno generation for this song, showing the style prompt, lyrics and take list (for the coda reveal, S45–S46).
-- A screen capture of the real post-filter run in a terminal, showing its log (for S51).
+- The post-filter run's detection output (fallback.json) and the music-deslop repo. S51 is rebuilt from them; the human chose this over a screen capture of the run.
 - This doc, the earlier chats about the song, and the post-filter spec.
 
 **Pipeline**
@@ -282,14 +282,14 @@ Every transition lands on a beat or a lyric boundary from the timing map. Defaul
 | S45 → S46 | Push in on the take list | This is the reveal; play it plain, no flourish |
 | S47 → S48 | The new tile winks out, and the grid goes with it | Leaves the terminal alone on black |
 | S48 → S49 | No transition; the frame stutters in place | Hold dropped frames for the whole span |
-| S50 → S51 | Hard cut to the real terminal capture | The fan sound bridges the cut |
+| S50 → S51 | Hard cut to the terminal (S51) | The fan sound bridges the cut |
 | S51 → F1 → S52 | Fade to black, then plain cuts between fact cards | The tone shift is the transition; no motion graphics |
 
 ## Bookends, end card and vertical cut
 
 | ID | Picture | Source |
 | --- | --- | --- |
-| S51 | The real terminal capture of the post-filter run on this song. Its log shows the two detected artifact spans, with suppression off. Hold long enough to read the two timestamps | S |
+| S51 | The post-filter's terminal output for this song, rebuilt in code from the music-deslop repo's own log format and the run's real detected spans: the default run prints the two fallback spans, then the --no-fallback run the video plays. Hold long enough to read the two timestamps | G |
 | S52 | End card (below), set in plain type on black | G |
 
 The real Suno capture is not a bookend in this video; it appears in the coda (S45–S46), where the song admits its own origin.
@@ -302,19 +302,21 @@ The real Suno capture is not a bookend in this video; it appears in the coda (S4
 - "Energy used to make this video: unknown. Nobody publishes a meter."
 - Asset credits from `assets/LICENSES.md`, including the emoji set's attribution if it requires one.
 
-**Fact cards (F1–F7)**
+**Fact cards (F1–F7b)**
 
-These play between S51 and the end card, and they are where the video turns serious. No jokes, no explainer styling, no emoji: plain white type on black, one fact per card, source line beneath, about five seconds each. Audio is room tone with the hum faintly underneath. Never depict children or name private individuals.
+These play between S51 and the end card, and they are where the video turns serious. No jokes, no explainer styling, no emoji: plain white type on black, one fact per card, source line beneath, each held long enough to read (1.5 s plus four words a second, never under five seconds). Audio is room tone with the hum faintly underneath. Never depict children or name private individuals; companies may be named.
 
 | ID | Card | Source | Status |
 | --- | --- | --- | --- |
-| F1 | 11 data centers sit within half a mile of an elementary school in Ashburn, Virginia. NBC News is investigating what their backup generators mean for the air there | [NBC News, Oct 28, 2026](https://www.youtube.com/watch?v=-pjm8epal6o) | Watch the report and confirm wording |
-| F2 | Northern Virginia data centers have about 10,500 diesel backup generators, nearly 27 gigawatts in all | [Sierra Club Virginia, Jul 2026](https://www.sierraclub.org/virginia/blog/2026/07/sierra-club-virginia-reaction-epa-proposes-air-pollution-exemption-deal-data) | Attribute to the Sierra Club investigation |
-| F3 | One backup generator burns about 150 gallons of diesel an hour. One permit allows a single data center up to 10 million gallons a year | [Prince William Times](https://www.princewilliamtimes.com/localnews/lawmakers-debate-how-to-regulate-data-centers-diesel-backup-generators/article_23c7b56b-1a29-4738-86eb-0afb11f5e0f7.html), [Virginia Mercury](https://www.newsfromthestates.com/node/385561) | Ready |
-| F4 | In July 2026 the EPA proposed letting states drop public comment on "minor source" air permits, which cover most data center generators | [Sierra Club Virginia](https://www.sierraclub.org/virginia/blog/2026/07/sierra-club-virginia-reaction-epa-proposes-air-pollution-exemption-deal-data) | Check the proposal's current status |
-| F5 | Neighbors near one Virginia data center measured noise above the county's 60 dB limit. The ordinance exempts air conditioning | [AP via WSLS, 2022](https://www.wsls.com/business/2022/09/13/as-data-centers-proliferate-neighbors-knock-the-noise/) | Check whether the exemption still stands |
-| F6 | Salix, Iowa annexed 900 acres of farmland. The council voted 3–2 against a moratorium; the county has sued over the annexation | [Iowa Public Radio](https://www.iowapublicradio.org/ipr-news/2026-08-21/salix-data-center-moratorium-fails), [KTIV](https://www.ktiv.com/2026/08/22/salix-moves-dismiss-annexation-lawsuit-data-center-moratorium-fails/) | Check for updates since August |
-| F7 | In Memphis, court filings cite 57 trailer-mounted gas turbines | [Filterbuy explainer](https://filterbuy.com/resources/air-quality-aqi/data-centers-and-air-pollution) | Secondary source: find the filing or a primary report, or cut |
+| F1 | 11 data centers sit within half a mile of an elementary school in Loudoun County, Virginia. As many as 264 diesel backup generators are near the school. | [NBC News, Oct 28, 2026](https://www.youtube.com/watch?v=-pjm8epal6o) (analysis of state-issued permits) | Ready: checked against the broadcast's captions |
+| F2 | Virginia had permitted over 10,500 diesel backup generators for data centers by the end of 2025: 27 gigawatts in all. | [Better Data Center Project, Mar 2026](https://betterdatacenterproject.com/wp-content/uploads/2026/03/Diesel-Generators-at-Data-Centers-Status-Impacts-and-Protective-Practices.pdf), from state air permits | Ready |
+| F3 | Retired in M8: the 150 gal/h figure came from a reader comment, and the 10M gal/yr permit was not found | — | Retired |
+| F4 | In July 2026 the EPA proposed ending the federal minimum for public comment on "minor source" air permits, leaving it to each state. It is still a proposal. | [EPA](https://www.epa.gov/newsreleases/epa-proposes-streamline-state-and-local-permitting-process-minor-sources); [Federal Register, Jul 7, 2026](https://www.federalregister.gov/documents/2026/07/07/2026-13667/minor-new-source-review-program-air-permitting-public-participation-requirements-for-state) | Ready: still proposed per EPA's NSR page, Oct 30 |
+| F5 | In 2022, neighbors said noise from one Virginia data center regularly exceeded the county's 60 dB limit. Air conditioning was exempt then; the county has since tightened its rules. | [AP, Sep 2022](https://www.wsls.com/business/2022/09/13/as-data-centers-proliferate-neighbors-knock-the-noise/); Prince William County, [2023](https://www.pwcva.gov/news/prince-william-board-county-supervisors-votes-initiate-amendments-county-code-regarding-data) and [2026](https://www.pwcva.gov/noise) | Ready |
+| F6 | Salix, Iowa annexed about 900 acres of farmland. In August the council voted 3–2 against a moratorium. The county and three landowners are challenging the annexation in court. | [Iowa Public Radio](https://www.iowapublicradio.org/ipr-news/2026-08-21/salix-data-center-moratorium-fails); [KTIV](https://www.ktiv.com/2026/09/03/new-legal-move-made-stop-data-centers-google-sets-up-data-center-website/) | Ready |
+| F7 | In Southaven, Mississippi, xAI's gas plant for a data center a mile away in Tennessee grew to 57 trailer-mounted turbines by May 2026, with no air permit. The state had ruled them exempt. | NAACP v. X.AI Corp., N.D. Miss. No. 3:26-cv-74, [Docs 51–52](https://storage.courtlistener.com/recap/gov.uscourts.msnd.52261/gov.uscourts.msnd.52261.51.0.pdf), Jun 12, 2026 | Ready: primary filing |
+| F7a | When the NAACP sued, the federal government stepped in for the EPA and asked the court to dismiss the case. In October 2026 the judge refused. The case continues. | Same case, [Doc 135](https://storage.courtlistener.com/recap/gov.uscourts.msnd.52261/gov.uscourts.msnd.52261.135.0.pdf), order of Oct 19, 2026 | Ready: primary filing |
+| F7b | The government's filing says the lawsuit threatens "the power supply for Super Intelligence innovation that is essential to the Department of War's military operations." | Same case, [Doc 136](https://storage.courtlistener.com/recap/gov.uscourts.msnd.52261/gov.uscourts.msnd.52261.136.0.pdf), United States' complaint in intervention, Oct 23, 2026 | Ready: primary filing |
 
 Do not reference the threats that postponed a Salix council meeting.
 
@@ -324,14 +326,16 @@ Do not reference the threats that postponed a Salix council meeting.
 
 | Shots | On screen | Source |
 | --- | --- | --- |
-| S05–S09 | Salix, Iowa annexed about 900 acres of farmland; MidAmerican Energy confirmed it is considering the site for a data center. Still proposed, not built | [Iowa Public Radio](https://www.iowapublicradio.org/ipr-news/2026-06-17/potential-data-center-sparks-moratorium-push-in-northwest-iowa) |
-| S22–S26 | 35 portable gas turbines installed without air permits; in Jan 2026 the EPA clarified such turbines need permits | [Oil & Gas Watch](https://news.oilandgaswatch.org/template/brief/elon-musks-xai-plans-massive-power-plant-south-of-memphis-for-supercomputer), [Gas Outlook](https://gasoutlook.com/analysis/xai-data-centre-emits-plumes-of-pollution-new-video-shows/) |
+| S05–S09 | Salix, Iowa annexed about 900 acres of farmland; MidAmerican Energy confirmed it is considering the site for a data center, and the city cited confidential talks with the end user ("End user: confidential"). Still proposed, not built | [Iowa Public Radio](https://www.iowapublicradio.org/ipr-news/2026-06-17/potential-data-center-sparks-moratorium-push-in-northwest-iowa) |
+| S22–S26 | In 2025, 35 portable gas turbines ran without air permits (a permit for 15 was granted in July 2025); in Jan 2026 the EPA revised its turbine rule, which SELC says confirms such turbines need permits | [Oil & Gas Watch](https://news.oilandgaswatch.org/template/brief/elon-musks-xai-plans-massive-power-plant-south-of-memphis-for-supercomputer), [Gas Outlook](https://gasoutlook.com/analysis/xai-data-centre-emits-plumes-of-pollution-new-video-shows/), [SELC](https://www.selc.org/news/inside-memphis-fight-against-xai/) |
 | S34–S35 | TMI Unit 1 renamed Crane Clean Energy Center under a Microsoft power deal; restart on track for mid-2027 | [Maryland Matters](https://marylandmatters.org/2026/07/30/repub/concern-persists-as-former-three-mile-island-nuclear-plant-progresses-toward-2027-restart/) |
 | S35 | Unit 1 was shut down in 2019 for economic reasons | [Enlit](https://www.enlit.world/library/three-mile-island-is-reopening-to-help-power-microsoft-data-centres) |
 | S40 | Data centers cost PJM's 67 million ratepayers about $29B over roughly two years (market monitor estimate) | [NPR via KUNC](https://www.kunc.org/npr-news/2026-10-01/ai-data-centers-how-much-are-ratepayers-on-the-hook-for) |
-| S50, S52 | No public real-time measurement of AI data center energy exists | [gradually.ai](https://www.gradually.ai/en/ai-data-center-consumption/) |
+| S50, S52 | No public meter measures AI data centers' energy use in real time | [gradually.ai](https://www.gradually.ai/en/ai-data-center-consumption/) |
 
 M8 re-checks each row against its source before release; anything that has changed since this doc is updated on screen and logged.
+
+**M8 result (2026-10-30).** Audited by ChatGPT (browsing) and Gemini (no browsing; advisory only), then every flag checked against its source by Claude; see `log/audits/03_review.md`. Changes: the rows above and the fact-card table; S08's headline now reads "End user: confidential", S24's adds "(2025)", S26's stat reads "permits granted: 0", and S36's headline and title read "Restarting to feed the machines" (the lyric is unchanged).
 
 ## Milestones, review gates and acceptance
 
@@ -365,4 +369,4 @@ Each milestone ends at a gate. Claude Code stops there until the human approves.
 - Every on-screen fact matches the Reference facts table.
 - Every human action appears in `log/human_interventions.md`.
 - Every third-party asset in the edit is listed in `assets/LICENSES.md`, and every required credit is on the end card.
-- Every fact card F1–F7 is verified against a primary source in M8, or cut, and its Status column reads "Ready."
+- Every fact card F1–F7b is verified against a primary source in M8, or cut, and its Status column reads "Ready."
