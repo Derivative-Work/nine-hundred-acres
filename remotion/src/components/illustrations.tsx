@@ -145,7 +145,7 @@ export const Cobweb: React.FC<{ size: number }> = ({ size }) => (
 // A generic peace symbol (circle, vertical stroke, two diagonals) that morphs into a power symbol as `morph` goes 0 → 1:
 // the circle opens at the top and the diagonals fold up into the vertical stroke.
 export const PeaceToPower: React.FC<{ size: number; morph: number; color: string }> = ({ size, morph, color }) => {
-  const gap = morph * 70; // degrees of the circle's opening at the top
+  const gap = 1 + morph * 69; // degrees of the circle's opening at the top (never 0: an arc with equal ends draws nothing)
   const a0 = ((-90 + gap / 2) * Math.PI) / 180, a1 = ((270 - gap / 2) * Math.PI) / 180;
   const arc = `M ${50 + 40 * Math.cos(a0)} ${50 + 40 * Math.sin(a0)} A 40 40 0 1 1 ${50 + 40 * Math.cos(a1)} ${50 + 40 * Math.sin(a1)}`;
   const fold = 45 * (1 - morph);

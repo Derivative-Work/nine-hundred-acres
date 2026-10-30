@@ -38,7 +38,7 @@ export const Verse3Feed: React.FC = () => {
           {F > s36 + 20 && <path d={PATH} fill="none" stroke="#fff4c2" strokeWidth={5} strokeLinecap="round" pathLength={1}
             strokeDasharray="0.03 0.17" strokeDashoffset={-(F - s36) / 25} />}
         </svg>
-        <Cord d="M -20 900 C 300 900, 420 700, 600 560" />
+        <Cord d="M -180 950 C 380 950, 600 860, 600 560" />
         <Card seed="v3grid" glow style={{ position: "absolute", left: 960, top: 260 }}>
           <div style={{ position: "relative" }}>
             <TileGrid cols={10} rows={6} tile={60} survivor={[5, 8]} heat={heat} />

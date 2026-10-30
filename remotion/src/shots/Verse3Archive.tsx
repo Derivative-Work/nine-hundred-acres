@@ -53,7 +53,7 @@ export const Verse3Archive: React.FC = () => {
   const diff = spring({ frame: F - s35, fps: 30, config: { damping: 200 } });
   const pill = F >= s34 + 30 ? "Restoring" : "Deprecated";
   // the peace sign starts on the banner (over the crowd card) and flies to the toggle on the right
-  const px = interpolate(travel, [0, 1], [500, 1250]), py = interpolate(travel, [0, 1], [205, 297]), ps = interpolate(travel, [0, 1], [110, 56]);
+  const px = interpolate(travel, [0, 1], [590, 1250]), py = interpolate(travel, [0, 1], [250, 297]), ps = interpolate(travel, [0, 1], [110, 56]);
   return (
     <Infected value={0.5}>
       <AbsoluteFill>
@@ -78,12 +78,12 @@ export const Verse3Archive: React.FC = () => {
           <PeaceToPower size={ps} morph={morph} color={travel > 0.9 ? (off ? "#8a93b2" : "#2dd4bf") : travel > 0.05 ? "#fff1dc" : "#3a2a1a"} />
         </div>
         <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
-          <line x1={140} y1={860} x2={140 + 1640 * line} y2={860} stroke="#fff1dc" strokeWidth={4} />
+          <line x1={140} y1={840} x2={140 + 1640 * line} y2={840} stroke="#fff1dc" strokeWidth={4} />
           {([[1979, 0.05, "Protests"], [2019, 0.62, "Shut down (economic)"], [2027, 0.95, "Restart (planned)"]] as [number, number, string][]).map(([y, at, lab]) =>
             line >= at && (
-              <g key={y}><circle cx={140 + 1640 * at} cy={860} r={12} fill="#ffb000" />
-                <text x={140 + 1640 * at} y={910} textAnchor="middle" fontFamily="Inter" fontWeight={700} fontSize={32} fill="#fff1dc">{y}</text>
-                <text x={140 + 1640 * at} y={945} textAnchor="middle" fontFamily="Inter" fontSize={24} fill="#c9a98a">{lab}</text></g>
+              <g key={y}><circle cx={140 + 1640 * at} cy={840} r={12} fill="#ffb000" />
+                <text x={140 + 1640 * at} y={888} textAnchor="middle" fontFamily="Inter" fontWeight={700} fontSize={32} fill="#fff1dc">{y}</text>
+                <text x={140 + 1640 * at} y={922} textAnchor="middle" fontFamily="Inter" fontSize={24} fill="#c9a98a">{lab}</text></g>
             ))}
         </svg>
         <div style={{ position: "absolute", left: 300, top: 330, opacity: diff, transform: `translateY(${(1 - diff) * 20}px)` }}>
@@ -104,7 +104,7 @@ export const Verse3Archive: React.FC = () => {
           <Stat at={s33 + 36} label="reactors" value="off" />
           <Stat at={s34 + 40} label="restart (planned)" value="mid-2027" />
         </StatRow>
-        <Note at={s32 + 24} x={640} y={95} tx={185} ty={410} until={s35}>hand-lettered, 100% human</Note>
+        <Note at={s32 + 24} x={700} y={790} tx={521} ty={440} until={s35}>hand-lettered, 100% human</Note>
         <Cursor keys={[[s33 + 10, 1500, 600], [s33 + 32, 1702, 290, true], [s33 + 50, 1600, 450]]} />
         <Captions />
       </AbsoluteFill>
