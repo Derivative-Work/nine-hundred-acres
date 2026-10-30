@@ -232,3 +232,9 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
 ## 2026-10-30T10:05 — M6 gate passed
 
 - Human approved (H2). Starting M7.
+
+## 2026-10-30T10:15 — M7: end card, SRT, thumbnail
+
+- **End card (S52)**, two 10 s pages in plain type on black (`remotion/src/shots/Post.tsx`): page 1 is the title, the brief's two statements, the energy line, and one line per on-screen fact with its source (the six rows of the brief's Reference facts, worded as on screen; the fact cards keep their own sources). Page 2 is credits: Suno v6, Remotion and Claude Code, the post-filter (M6f 10k, without its fallback); a disclosure that the Suno screen is the human's recording and the post-filter log is rebuilt (the human's S51 decision, 09:40); then `assets/LICENSES.md`: the Twemoji credit verbatim (required, CC BY 4.0), Lucide, Natural Earth, the four OFL fonts, and the brief's note that the people are original faceless pictograms. The animatic's "draft" line is gone.
+- **SRT:** `scripts/make_srt.py deliverables/nine_hundred_acres.en.srt`: 30 cues, built frame by frame with the burned-in captions' own rule (`Captions` in `shots/kit.tsx`), so the two agree to the frame.
+- **Thumbnail:** S38's "…OK, FINE." signs (brief). `deliverables/thumbnail.jpg` (1280×720, a crop of the S38 photo card from frame 4280) and `deliverables/thumbnail_alt_fullframe.jpg` (the whole frame with the explainer chrome). Never the Suno screen.

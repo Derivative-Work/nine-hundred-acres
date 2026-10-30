@@ -64,35 +64,45 @@ const Fact: React.FC<{ text: string; source: string }> = ({ text, source }) => (
   </AbsoluteFill>
 );
 
+// S52, the end card (brief, "End card contents"), plain type on black in two pages of ten seconds: the statement and
+// one line per on-screen fact with its source (the brief's Reference facts), then the credits from assets/LICENSES.md.
+const ON_SCREEN_FACTS: [string, string][] = [
+  ["Salix, Iowa annexed about 900 acres of farmland for a proposed data center; it is not built.", "Iowa Public Radio"],
+  ["35 portable gas turbines ran in South Memphis without air permits; in January 2026 the EPA clarified that such turbines need them.", "Oil & Gas Watch; Gas Outlook"],
+  ["Three Mile Island Unit 1 was shut down in 2019 for economic reasons.", "Enlit"],
+  ["It is renamed the Crane Clean Energy Center, under a Microsoft power deal; its restart is on track for mid-2027.", "Maryland Matters"],
+  ["Data centers cost PJM’s 67 million ratepayers about $29 billion over roughly two years (market monitor estimate).", "NPR via KUNC"],
+  ["No public real-time measurement of AI data center energy exists.", "gradually.ai"],
+];
+
 const EndCard: React.FC = () => {
   const f = useCurrentFrame();
   const page2 = f >= END / 2;
   return (
-    <AbsoluteFill style={{ background: "#000", padding: "110px 220px", ...plain, fontSize: 30, lineHeight: 1.5 }}>
+    <AbsoluteFill style={{ background: "#000", padding: "90px 200px", ...plain, fontSize: 28, lineHeight: 1.45 }}>
       {!page2 ? (
         <>
-          <div style={{ fontSize: 56, fontWeight: 600, marginBottom: 30 }}>Nine Hundred Acres (The Hum)</div>
+          <div style={{ fontSize: 54, fontWeight: 600, marginBottom: 26 }}>Nine Hundred Acres (The Hum)</div>
           <div>Words, music, animation and audio restoration by machines. Takes chosen and gates approved by a human.</div>
-          <div style={{ marginTop: 20 }}>The two distorted passages are left in on purpose.</div>
-          <div style={{ marginTop: 20 }}>Energy used to make this video: unknown. Nobody publishes a meter.</div>
-          <div style={{ marginTop: 40, fontSize: 24, color: "#aaa" }}>
-            Salix annexation, ~900 acres, proposed (Iowa Public Radio) · Memphis turbines without permits (Oil &amp; Gas Watch; Gas Outlook) ·
-            Crane Clean Energy Center, restart mid-2027 (Maryland Matters) · Unit 1 shut down in 2019 (Enlit) ·
-            $29B est. to PJM ratepayers (NPR via KUNC) · No public real-time meter for AI data center energy (gradually.ai) ·
-            Fact cards: sources as shown on each card.
+          <div style={{ marginTop: 14 }}>The two distorted passages are left in on purpose.</div>
+          <div style={{ marginTop: 14 }}>Energy used to make this video: unknown. Nobody publishes a meter.</div>
+          <div style={{ marginTop: 40, fontSize: 23, color: "#bbb", display: "flex", flexDirection: "column", gap: 10 }}>
+            {ON_SCREEN_FACTS.map(([fact, src]) => <div key={fact}>{fact} <span style={{ color: "#888" }}>({src})</span></div>)}
+            <div style={{ color: "#888" }}>The facts after the song: sources as shown on each card.</div>
           </div>
         </>
       ) : (
         <>
-          <div style={{ fontSize: 40, fontWeight: 600, marginBottom: 24 }}>Credits</div>
-          <div style={{ fontSize: 26, color: "#ddd" }}>
-            Song generated with Suno (V6). Animation code-rendered by Claude Code in Remotion. Audio restoration: the music-deslop post-filter (M6f 10k), artifact suppression off.<br /><br />
-            Emoji graphics by Twemoji (Twitter, Inc. and other contributors), CC BY 4.0.<br />
-            Icons: Lucide (ISC). Map outlines: Natural Earth (public domain).<br />
-            Fonts: Inter, JetBrains Mono, Shrikhand, Caveat (SIL OFL).<br />
-            People, farmhouse and protest crowd: original SVG illustrations.
+          <div style={{ fontSize: 40, fontWeight: 600, marginBottom: 26 }}>Credits</div>
+          <div style={{ fontSize: 25, color: "#ddd", display: "flex", flexDirection: "column", gap: 12 }}>
+            <div>Song generated with Suno (v6). Animation written as code and rendered in Remotion by Claude Code.</div>
+            <div>Audio restoration: the music-deslop post-filter (M6f 10k), run without its fallback.</div>
+            <div>The Suno screen is the human’s own recording. The post-filter log after the song is rebuilt from the post-filter’s code and its detection output.</div>
+            <div style={{ marginTop: 18 }}>Emoji graphics by Twemoji (Twitter, Inc. and other contributors), CC BY 4.0.</div>
+            <div>Icons: Lucide (ISC). Map outlines: Natural Earth (public domain).</div>
+            <div>Fonts: Inter, JetBrains Mono, Shrikhand and Caveat (SIL Open Font License).</div>
+            <div>People, the farmhouse and the protest crowds are original SVG illustrations: faceless pictograms, no real people.</div>
           </div>
-          <div style={{ fontSize: 22, color: "#777", marginTop: 40 }}>[animatic: end-card wording and credits are drafts until M7 and M8]</div>
         </>
       )}
     </AbsoluteFill>
