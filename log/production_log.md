@@ -335,3 +335,8 @@ The mirror script splits one bold run in two around the inserted "b", so the mir
   - Measured RMS: −60 dBFS at the plug-in, −35 after 0.9 s, −33 at full speed.
   - v5 → `archive/audio/postroll_v5.wav`.
 - **Renders:** v3 → `archive/renders/m8/`.
+
+## 2026-10-30T19:30 — 4K render of release candidate v4
+
+- At the human's request ("Do a 4k render"), rendered `Animatic` at `--scale=2` → `renders/m8/nine_hundred_acres_m8_4k.mp4` (3840x2160, 30 fps, H.264, AAC 48 kHz stereo, 336.47 s). Spot-checked a frame at 1:40: sharp. The same cut as the 1080p v4.
+- Known limit: the Suno capture proxy (`remotion/public/real/suno_capture.mp4`, 2400x1176) is enlarged about 1.65x at the push-in's peak. A proxy built from the 3200x1868 original would cut that to about 1.34x. Offered to the human; not done.
