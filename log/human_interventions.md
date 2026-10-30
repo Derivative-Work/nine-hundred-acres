@@ -56,3 +56,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** On the Verse 1 final render: "I feel like that photo could use some more detail".
 - **Rule:** H2 (feedback at the M5 gate; the agent redrew it).
+
+## 2026-10-30T06:58 — M5: Intro and Verse 1 approved — H2
+
+- **What:** "Yes, keep going" (on Intro and Verse 1 v2).
+- **Rule:** H2.
