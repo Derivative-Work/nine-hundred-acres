@@ -149,7 +149,7 @@ export const Verse1Granddad: React.FC = () => {
             boxShadow: "0 8px 20px -6px #000" }}><Pill size={24}>archived</Pill></div>
         </div>
         <div style={{ position: "absolute", left: 160, top: 760, opacity: hum }}><HumWave width={1600} height={170} /></div>
-        <Note at={s10 + 22} x={1560} y={232} tx={1420} ty={340} until={s11}>family photo · 1 of 1</Note>
+        <Note at={s10 + 22} x={1560} y={232} tx={1275} ty={470} until={s11}>family photo · 1 of 1</Note>
         <StatRow x={60} y={220} column>
           <Stat at={s10 + 56} label="status" value="archived" />
           <Stat at={s11 + 6} label="crop yield" value="1 hum" />
