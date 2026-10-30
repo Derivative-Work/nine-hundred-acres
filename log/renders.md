@@ -123,3 +123,10 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
 
 - **Composition:** `Animatic`, `label: false`, 1080p, CRF 16, all 9147 frames → `renders/m7/nine_hundred_acres_draft.mp4` (304.9 s: the song, S51, F1–F7, S52). **Commit:** bc2bb16. Everything approved through M7; the fact cards and on-screen facts are unaudited (M8).
 - **Preview:** a 720p two-pass copy (620 kb/s, 28 MB, scratch only) sent so it fits the upload limit; the 1080p file is the draft.
+
+## 2026-10-30 — M8 release candidate
+
+| Shot | Composition | Props | Commit | Output |
+| --- | --- | --- | --- | --- |
+| S01–S52, F1–F7b | Animatic | `{"label":false}`, CRF 16 | 148a4ee | `renders/m8/nine_hundred_acres_m8.mp4` (336.5 s) |
+| S12–S27 (vertical) | Vertical | CRF 16 | 148a4ee | `renders/m8/vertical_s12-s27_m8.mp4` (65.5 s) |
