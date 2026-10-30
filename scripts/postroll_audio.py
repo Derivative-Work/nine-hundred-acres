@@ -4,8 +4,8 @@ The brief: "The fan sound bridges the cut" (S50 -> S51), and the fact cards play
 underneath". The master has no fan, so this makes one: band-passed noise with a blade-rate whir that runs at full speed
 through S51 and spins down in the 2.5 s before the cut to the fact cards (CUT), under pink room tone (-52 dBFS RMS) and a
 60 Hz hum with its harmonics (-44 dBFS, rising to -32 dBFS as the fact cards start), fading out over the last 4 s. The
-file starts <lead> seconds before the song ends: the fan (and the room tone) fade in under the final chord. 48 kHz
-stereo, 24-bit.
+file starts <lead> seconds before the song ends, on the frame the S50 plug goes in: the fan (and the room tone) switch
+on there and spin up over 1.2 s, under the final chord. 48 kHz stereo, 24-bit.
 Usage: .venv/bin/python -I scripts/postroll_audio.py <seconds after the song> [<lead seconds>]
   -> audio/postroll/postroll.wav (and a copy in remotion/public/audio/)
 """
@@ -35,7 +35,8 @@ def main(seconds, lead=0.0):
     pink = np.cumsum(white, axis=0)
     pink = sosfilt(butter(2, 20, "hp", fs=SR, output="sos"), pink, axis=0)
     pink *= db(-52) / pink.std()
-    spin = np.clip((CUT - np.maximum(t, 0)) / 2.5, 0, 1) ** 1.5  # fan speed: full through S51, 1 -> 0 over the 2.5 s before the cut
+    on = np.clip((t + lead) / 1.2, 0, 1) if lead else np.ones(n)  # the plug goes in at the file's start: spin-up over 1.2 s
+    spin = np.minimum(on, np.clip((CUT - np.maximum(t, 0)) / 2.5, 0, 1)) ** 1.5  # full through S51, 1 -> 0 over the 2.5 s before the cut
     whir_f = 40 + 140 * spin  # blade rate, Hz
     whir = np.sin(2 * np.pi * np.cumsum(whir_f) / SR)
     air = sosfilt(butter(2, [300, 3000], "bp", fs=SR, output="sos"), white, axis=0)
@@ -45,9 +46,7 @@ def main(seconds, lead=0.0):
     hum *= np.clip(t / 3.0, 0, 1)[:, None]  # the hum comes up under the fan
     hum *= db(12 * np.clip((t - CUT + 0.5) / 1.5, 0, 1))[:, None]  # and rises 12 dB (to -32 dBFS) as the fact cards start
     hum *= (t >= 0)[:, None]
-    fade_in = np.clip((t + lead) / max(lead - 1.0, 1e-9), 0, 1) if lead else np.ones(n)
-    fade_in = fade_in * fade_in * (3 - 2 * fade_in)  # smoothstep: barely there at first, full a second before the end
-    y = (pink + fan) * fade_in[:, None] + hum
+    y = pink * on[:, None] + fan + hum
     y *= np.clip((seconds - t) / 4.0, 0, 1)[:, None]
     out = Path("audio/postroll/postroll.wav")
     out.parent.mkdir(parents=True, exist_ok=True)

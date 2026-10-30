@@ -9,6 +9,7 @@
 // it, slowing with the fan, and the last line reads "Energy used: ???".
 import React from "react";
 import { AbsoluteFill, interpolate, random, spring } from "remotion";
+import { getLength, getPointAtLength, getTangentAtLength } from "@remotion/paths";
 import { Infected, useTheme } from "../theme/context";
 import { TIE_DYE, alpha } from "../theme/infection";
 import { useChrome } from "../chrome/context";
@@ -18,7 +19,13 @@ import { at, beats, downbeats, shot, spans } from "../timing";
 import { Captions, Terminal, Tofu, boxed, clamp, ramp, useFrame, useStutter } from "./kit";
 
 const ROWS = ['$ explain --topic "data centers" --style "visual explainer"', "  ok  Explainer ready"];
-const CORD = "M -20 860 C 400 1020, 1300 1040, 1720 880 C 1840 830, 1760 600, 1600 600";
+// The cord ends in a short straight run into the socket: the plug's last PUSH px are the slide in.
+const CORD = "M -20 860 C 400 1020, 1300 1040, 1720 880 C 1840 830, 1760 600, 1616 600 L 1602 600";
+const CORD_LEN = getLength(CORD), PUSH = 14;
+// Frames after S50 starts: the cord heads for the socket, arrives, and the plug is in. The post-roll fan starts at
+// PLUG_IN (Animatic.tsx).
+const CORD_GO = 40, CORD_ARRIVE = 130;
+export const PLUG_IN = 138;
 const DRUMS_OUT = at(227.14);
 const BLOCKS = ["#0a0f1f", "#1b2a55", "#111a33", "#2a1640", "#ff7a3d", ...TIE_DYE];
 
@@ -143,14 +150,19 @@ const Outlet: React.FC<{ opacity: number }> = ({ opacity }) => (
   </g>
 );
 
-// The plug at the cord's end, prongs pointing left into the slots; it slides the last few pixels in (`push` 0 -> 1).
-const Plug: React.FC<{ push: number }> = ({ push }) => {
-  const x = 1576 + 14 * (1 - push), prong = 7 + 14 * (1 - push); // fully in, the prongs fill the slots
+// The plug rides the cord's leading end (`head`, px along CORD), prongs first along the direction of travel, and stays
+// visible all through S50. Over the last PUSH px it slides into the socket: the prongs shorten so their tips stay at the
+// slots' mouth.
+const Plug: React.FC<{ head: number }> = ({ head }) => {
+  const { x, y } = getPointAtLength(CORD, head)!;
+  const tan = getTangentAtLength(CORD, head)!;
+  const angle = (Math.atan2(tan.y, tan.x) * 180) / Math.PI + 180;
+  const prong = 7 + Math.min(PUSH, CORD_LEN - head);
   return (
-    <g transform={`translate(${x} 600)`}>
-      {SLOTS.map((y) => <rect key={y} x={-prong} y={y - 2} width={prong} height={4} fill="#d4d4d4" />)}
-      <rect x={0} y={-16} width={26} height={32} rx={6} fill="#ff8a1f" style={{ filter: "drop-shadow(0 0 6px #ff8a1f88)" }} />
-      <rect x={6} y={-10} width={3} height={20} rx={1.5} fill="#0004" />
+    <g transform={`translate(${x} ${y}) rotate(${angle})`}>
+      {SLOTS.map((dy) => <rect key={dy} x={-26 - prong} y={dy - 2} width={prong} height={4} fill="#d4d4d4" />)}
+      <rect x={-26} y={-16} width={26} height={32} rx={6} fill="#ff8a1f" style={{ filter: "drop-shadow(0 0 6px #ff8a1f88)" }} />
+      <rect x={-20} y={-10} width={3} height={20} rx={1.5} fill="#0004" />
     </g>
   );
 };
@@ -177,8 +189,9 @@ export const CodaStutter: React.FC = () => {
   const boxes = ramp(F, fail + 20, fail + 140) * 0.85;
   const inn = spring({ frame: F - s48, fps: 30, config: { damping: 200 } });
   const exit = "exit".slice(0, Math.max(0, Math.floor((live - s50 - 10) / 4)));
-  const cord = ramp(live, s50 + 40, s50 + 130);
-  const plugged = s50 + 138; // the cord arrives at s50 + 130, then the plug slides in
+  // the plug starts just inside the left edge, travels the cord, then slides in over the last PUSH px
+  const head = interpolate(live, [s50 + CORD_GO, s50 + CORD_ARRIVE, s50 + PLUG_IN], [120, CORD_LEN - PUSH, CORD_LEN], clamp);
+  const plugged = s50 + PLUG_IN;
   const energy = live >= s50 + 140;
   // the failure's first frame tears once (held for the first dropped-frame step), so the span visibly starts on its
   // frame: before it nothing on screen moves, so the stall and the stutter alone would not show
@@ -204,10 +217,10 @@ export const CodaStutter: React.FC = () => {
         {live >= s50 && (
           <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
             <path d={CORD} fill="none" stroke="#ff8a1f" strokeWidth={7} strokeLinecap="round" pathLength={1} strokeDasharray={1}
-              strokeDashoffset={1 - cord} style={{ filter: "drop-shadow(0 0 8px #ff8a1f88)" }} />
+              strokeDashoffset={1 - head / CORD_LEN} style={{ filter: "drop-shadow(0 0 8px #ff8a1f88)" }} />
             <Outlet opacity={ramp(live, s50 + 30, s50 + 45)} />
             <Current live={live} from={plugged} end={end} />
-            {cord >= 1 && <Plug push={ramp(live, s50 + 130, plugged)} />}
+            <Plug head={head} />
             {live >= plugged && live < plugged + 12 && Array.from({ length: 8 }, (_, k) => {
               const a = (k / 8) * Math.PI * 2, r0 = 10 + (live - plugged) * 3, r1 = r0 + 14;
               return <line key={k} x1={1576 + Math.cos(a) * r0} y1={600 + Math.sin(a) * r0} x2={1576 + Math.cos(a) * r1} y2={600 + Math.sin(a) * r1}

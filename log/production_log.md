@@ -322,3 +322,16 @@ The mirror script splits one bold run in two around the inserted "b", so the mir
 - **The fix:** both are now seen from above. The terminal's right edge is the wall: a mounting plate, with the socket sticking out and its two slots facing right. The plug's two prongs line up with the slots.
 - **Timing:** the plug now appears when the cord arrives (s50 + 130) and slides in over 8 frames. Before, its slide started before it appeared. The spark and the current now start at s50 + 138.
 - **Renders:** the v2 render (rendered with the old outlet) moved to `archive/renders/m8/nine_hundred_acres_m8_v2.mp4`. v1 is there too, superseded by the post-roll sound change.
+
+## 2026-10-30T18:10 — S50: the fan starts at the plug-in; the plug rides the cord (human note)
+
+- **Human:** "Make it so that the fan only turns on once plugged in, and so that the plug is visible the whole time".
+- **Plug:** it now rides the cord's leading end for all of S50.
+  - It starts just inside the left edge, travels the cord prongs-first (oriented along the path's tangent), arrives at s50 + 130 and slides the last 14 px into the socket by s50 + 138 (`PLUG_IN`).
+  - The cord path ends in a short straight run (`L 1602 600`) for the slide.
+  - Points along the path come from `@remotion/paths` 4.0.535. It was already installed as a dependency of another package; now pinned in `package.json`.
+- **Fan:** `postroll.wav` now starts on the plug-in frame. `Animatic.tsx` derives `FAN_LEAD` from `PLUG_IN` (147 frames, 4.9 s before the song ends). The fan and room tone switch on there and spin up over 1.2 s; before the plug-in there is no fan.
+  - Regenerated with `postroll_audio.py 96 4.9`.
+  - Measured RMS: −60 dBFS at the plug-in, −35 after 0.9 s, −33 at full speed.
+  - v5 → `archive/audio/postroll_v5.wav`.
+- **Renders:** v3 → `archive/renders/m8/`.

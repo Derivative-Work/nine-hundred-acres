@@ -17,7 +17,7 @@ import { Verse3Archive, Verse3Signs } from "../shots/Verse3Archive";
 import { Verse3Feed } from "../shots/Verse3";
 import { BridgeBill, BridgeNeedle } from "../shots/Bridge";
 import { CodaReveal } from "../shots/CodaReveal";
-import { CodaStutter } from "../shots/Coda";
+import { CodaStutter, PLUG_IN } from "../shots/Coda";
 import { FACTS, END, FADE, PostRoll, S51_LEN, cardStart, postLength } from "../shots/Post";
 
 export const AUDIO_END = at(map.duration_s);
@@ -104,8 +104,9 @@ export const Section: React.FC<{ name: string; label?: boolean; chrome?: boolean
   );
 };
 
-// scripts/postroll_audio.py <seconds> 8
-const FAN_LEAD = 8 * 30;
+// The fan switches on when the plug goes in (S50); postroll.wav starts there:
+// scripts/postroll_audio.py <seconds> <FAN_LEAD / 30>
+const FAN_LEAD = AUDIO_END - (shot("S50").frame + PLUG_IN);
 
 export const Animatic: React.FC<{ label?: boolean; chrome?: boolean }> = ({ label = true, chrome = true }) => (
   <AbsoluteFill style={{ background: "#000" }}>
@@ -114,7 +115,7 @@ export const Animatic: React.FC<{ label?: boolean; chrome?: boolean }> = ({ labe
     {chrome && <Sequence durationInFrames={AUDIO_END}><ChromeFront /></Sequence>}
     <Sequence from={at(0)} durationInFrames={AUDIO_END - at(0)}><Audio src={staticFile("audio/master.wav")} /></Sequence>
     <Sequence from={AUDIO_END} durationInFrames={postLength}><PostRoll /></Sequence>
-    {/* the fan fades in under the final chord: postroll.wav starts FAN_LEAD frames before the song ends */}
+    {/* postroll.wav starts with the plug, FAN_LEAD frames before the song ends */}
     <Sequence from={AUDIO_END - FAN_LEAD} durationInFrames={postLength + FAN_LEAD}><Audio src={staticFile("audio/postroll.wav")} /></Sequence>
     {label && <ShotLabel offset={0} />}
   </AbsoluteFill>
