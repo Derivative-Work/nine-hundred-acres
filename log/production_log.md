@@ -228,3 +228,7 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
   - Span 2 start: 5795 changed almost nothing (per-frame change 0.01): the overlay's stall only stops its spinner, and on the bare terminal there is nothing moving for the 6 fps stutter to hold. Fix: the failure's first frame tears once (red/cyan band shift, palette blocks), held for the first dropped-frame step (5795–5799); 5794 and 5800 are clean (checked on a frame render).
   - Captions: driven by the timing map's word frames, 0 frames off by construction.
 - `postroll.wav` regenerated for S51's new length: `postroll_audio.py 64.5 8` (72.5 s); v2 → `archive/audio/postroll_v2.wav`.
+
+## 2026-10-30T10:05 — M6 gate passed
+
+- Human approved (H2). Starting M7.

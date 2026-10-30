@@ -96,3 +96,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** "the 5090 box is busy doing another video, but you do have access to the deslop repo at https://github.com/Derivative-Work/music-deslop -- even if you can't run it yourself here (it might need more VRAM), you can at least check it out (put it in ~/Code/music-deslop) and inspect the repo for how it outputs status including fallbacks and combine it with where you know the artifacts are".
 - **Rule:** H2 (a human decision on an input: S51's brief source is S, a real capture listed under H3; the human chose a reconstruction instead). Not an EXCEPTION: the human directed it. The brief's S51 row still says S; flagged for a brief edit.
+
+## 2026-10-30T10:05 — M6 approved — H2
+
+- **What:** "these are great, keep going" (on the span-edge clips, the onset tear, and the rebuilt S51).
+- **Rule:** H2 (M6 gate: sync and the reveal).
