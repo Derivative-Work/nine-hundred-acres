@@ -154,7 +154,7 @@ export const Verse1Granddad: React.FC = () => {
           <Stat at={s10 + 56} label="status" value="archived" />
           <Stat at={s11 + 6} label="crop yield" value="1 hum" />
         </StatRow>
-        <Note at={s11 + 16} x={420} y={700} tx={560} ty={845}>amplitude: constant</Note>
+        <Note at={s11 + 16} x={420} y={672} tx={560} ty={845}>amplitude: constant</Note>
         <Captions />
       </AbsoluteFill>
     </Infected>

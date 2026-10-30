@@ -74,7 +74,7 @@ export const Chorus1Hum: React.FC = () => {
     <Infected value={0.15}>
       <AbsoluteFill>
         <Background glowAt={[50, 50]} />
-        <AbsoluteFill style={{ background: "#000", opacity: 0.45 * night }} />
+        <AbsoluteFill style={{ background: "#000", opacity: 0.45 * night, top: -120, bottom: -120, left: -160, right: -160, width: "auto", height: "auto" }} />
         <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", opacity: big }}>
           <HumWave width={1700} height={420} label={false} />
           <div style={{ position: "absolute", left: 140, top: 140 }}><Pill tone="accent" size={34}>Hum: always</Pill></div>

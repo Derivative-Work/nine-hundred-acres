@@ -8,7 +8,8 @@ import { AbsoluteFill, interpolate, random, spring } from "remotion";
 import { Infected } from "../theme/context";
 import { Background, Card, Haze } from "../components/surface";
 import { Callout, RestoreOverlay, RestoreState, TileGrid, Toast } from "../components/furniture";
-import { Body, Emoji, Icon } from "../components/type";
+import { Body, Emoji } from "../components/type";
+import { MapView } from "../components/illustrations";
 import { shot } from "../timing";
 import { Captions, clamp, ramp, useFrame } from "./kit";
 
@@ -47,13 +48,8 @@ export const Span1Haze: React.FC = () => {
           </div>
         </AbsoluteFill>
         <AbsoluteFill style={{ opacity: memphis, justifyContent: "center", alignItems: "center" }}>
-          <Card seed="memphis" glow style={{ width: 760 }}>
-            <div style={{ height: 300, borderRadius: 16, background: "repeating-linear-gradient(0deg, #ffffff08 0 1px, transparent 1px 40px), repeating-linear-gradient(90deg, #ffffff08 0 1px, transparent 1px 40px)",
-              display: "grid", placeItems: "center" }}>
-              <Icon name="map-pin" size={90} color="#ff7a3d" style={{ transform: `translateY(${(1 - spring({ frame: F - s22, fps: 30 })) * -60}px)` }} />
-            </div>
-            <Body size={40} style={{ marginTop: 20, fontWeight: 600 }}>South Memphis, TN</Body>
-            <Body size={22} mono muted>map placeholder: Natural Earth outline in M4</Body>
+          <Card seed="memphis" glow>
+            <MapView view={[24, -40, 236, 118]} width={900} height={450} hi="Tennessee" pins={[{ name: "Memphis, TN", drop: ramp(F, s22, s22 + 15) }]} />
           </Card>
         </AbsoluteFill>
         {F >= s19 && <Haze amount={haze} wipe={ramp(F, s19, s19 + 45)} />}
@@ -64,14 +60,14 @@ export const Span1Haze: React.FC = () => {
           )}
         </div>
         <StatRow x={110} y={330} column>
-          <Stat at={s18 + 8} label="cloud altitude" value="0 ft" emoji="cloud" />
-          <Stat at={s18 + 22} label="cloud location" value="a field" />
+          <div style={{ opacity: 1 - memphis }}><Stat at={s18 + 8} label="cloud altitude" value="0 ft" emoji="cloud" /></div>
+          <div style={{ opacity: 1 - memphis }}><Stat at={s18 + 22} label="cloud location" value="a field" /></div>
           <Stat at={s22 + 10} label="state" value="Tennessee" />
         </StatRow>
         <Note at={s17 + 8} x={1360} y={150} tx={985} ty={130} until={s19}>cloud.location = ?</Note>
         <Cursor keys={[[s20 + 10, 1200, 600], [s20 + 34, 1620, 170, true], [s20 + 48, 1625, 172, true], [s20 + 70, 1500, 400]]} />
         <Note at={s20 + 52} x={1300} y={330} tx={1610} ty={175} until={s21 - 10}>can't dismiss</Note>
-        <Note at={s22 + 20} x={1450} y={420} tx={1030} ty={440}>you are here</Note>
+        <Note at={s22 + 20} x={700} y={880} tx={756} ty={628}>you are here</Note>
         <Captions />
       </AbsoluteFill>
     </Infected>
