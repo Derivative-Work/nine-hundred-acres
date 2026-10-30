@@ -61,3 +61,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** "Yes, keep going" (on Intro and Verse 1 v2).
 - **Rule:** H2.
+
+## 2026-10-30T07:15 — M5: Chorus 1 and Span 1 approved — H2
+
+- **What:** "yes, keep going" (on Chorus 1, Span 1 and Verse 1 v3).
+- **Rule:** H2.

@@ -180,3 +180,7 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
 ## 2026-10-30T07:08 — M5: Chorus 1 and Span 1 final renders (and Verse 1 v3)
 
 - Fixes from the full-res pass listed in renders.md; the S22 map placeholder was an M4 item that had been missed.
+
+## 2026-10-30T07:15 — M5: Chorus 1 and Span 1 approved
+
+- Human approved Chorus 1, Span 1 and Verse 1 v3 (H2). Next: Verse 2 (S23–S27).
