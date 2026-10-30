@@ -1,0 +1,31 @@
+[project]
+name = "nine-hundred-acres"
+version = "0.1.0"
+description = "Audio analysis, timing map and review scripts for the Nine Hundred Acres music video"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pillow",
+    "torch==2.8.*",
+    "torchaudio==2.8.*",
+    "librosa",
+    "soundfile",
+    "faster-whisper",
+    "beat-this",
+]
+
+[tool.uv]
+package = false
+environments = ["sys_platform == 'linux'"]
+
+# CPU PyTorch on the GTX 970 draft box (sm_52 is not in current CUDA builds).
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+torchaudio = { index = "pytorch-cpu" }
+beat-this = { git = "https://github.com/CPJKU/beat_this.git", rev = "b95c8ab0c58c2d9fcfd40508ae8dffbc05ac4f5c" }  # as in Not Yet and Share the Shares
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true

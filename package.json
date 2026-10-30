@@ -1,0 +1,9 @@
+{
+  "name": "nine-hundred-acres",
+  "private": true,
+  "type": "module",
+  "description": "Code-rendered music video (Remotion); page captures with Puppeteer.",
+  "dependencies": {
+    "puppeteer": "24.43.1"
+  }
+}
