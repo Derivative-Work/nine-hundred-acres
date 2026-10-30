@@ -67,3 +67,13 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
 
 - **Change:** granddad.jpg (`Farmhouse`, `components/illustrations.tsx`) redrawn in more detail; S10's label now points at the house. **Commit:** 4c45e5a.
 - **Output:** `renders/m5/02_verse1.mp4` (frames 485–1387, 1080p, CRF 16); v1 moved to `archive/renders/m5/02_verse1_v1.mp4`. Sheets `review/S05.jpg`–`S11.jpg` regenerated.
+
+## 2026-10-30T07:08 — M5 final: Verse 1 v3, Chorus 1 (S12–S16), Span 1 (S17–S22)
+
+- **Composition:** `Animatic`, `label: false`, 1080p, CRF 16. Frames 485–1387 → `renders/m5/02_verse1.mp4` (v2 archived to `archive/renders/m5/02_verse1_v2.mp4`), 1388–2007 → `03_chorus1.mp4` (20.7 s), 2008–2561 → `04_span1.mp4` (18.5 s). **Commit:** a55084d.
+- **Full-res still pass before it** (scratch, 12 frames S12–S22) found:
+  - S22's Memphis card was still the M3 placeholder ("map placeholder: Natural Earth outline in M4"). Now the Natural Earth map (`MapView`, Tennessee highlighted, the existing Memphis pin labeled "South Memphis, TN"); "you are here" points at the pin.
+  - S15's night overlay stopped short of the frame edges under the scaled stage; it now overhangs like the haze.
+  - "The Hum · always" sat on the wave's crests (S11, S16); it now sits above the wave (S11's "amplitude" note moved up to clear it). This touches Verse 1, hence v3.
+  - S18's cloud tiles lingered beside the Memphis map; they fade as it arrives.
+- **Contact sheets:** `review/S05.jpg`–`S22.jpg` (`contact_sheets.py` now includes every shot that starts inside the section, so S21 gets one).

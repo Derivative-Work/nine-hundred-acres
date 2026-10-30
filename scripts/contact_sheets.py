@@ -33,7 +33,7 @@ def main(video, offset=0, length=None):
     Path("review").mkdir(exist_ok=True)
     shots = [(sid, a - offset, b - offset) for sid, a, b in ranges()]
     if length is not None:
-        shots = [(sid, max(a, 0), min(b, length)) for sid, a, b in shots if a < length and b > 0 and min(b, length) - max(a, 0) >= 0.5 * (b - a)]
+        shots = [(sid, max(a, 0), min(b, length)) for sid, a, b in shots if 0 <= a < length]
     for sid, a, b in shots:
         frames = [int(a + (b - a) * q) for q in (0.1, 0.35, 0.65, 0.9)]
         sel = "+".join(f"eq(n\\,{f})" for f in frames)
