@@ -1,0 +1,434 @@
+[
+ {
+  "model": "medium.en",
+  "window": "v2 l1 rolled",
+  "start": 79.0,
+  "end": 87.0,
+  "source": "lead",
+  "text": "Down in South Memphis sister, they roll the turbines in"
+ },
+ {
+  "model": "medium.en",
+  "window": "v2 l1 rolled",
+  "start": 79.0,
+  "end": 87.0,
+  "source": "backing",
+  "text": "Down in South Memphis, sister, they roll the turbines in."
+ },
+ {
+  "model": "medium.en",
+  "window": "v2 l1 rolled",
+  "start": 79.0,
+  "end": 87.0,
+  "source": "mix",
+  "text": "Down in South Memphis, sister, they roll the turbines in"
+ },
+ {
+  "model": "medium.en",
+  "window": "v2 l2 of 'em a-burning / wind",
+  "start": 87.0,
+  "end": 94.5,
+  "source": "lead",
+  "text": "35 of them are burnin' and nobody asked to win"
+ },
+ {
+  "model": "medium.en",
+  "window": "v2 l2 of 'em a-burning / wind",
+  "start": 87.0,
+  "end": 94.5,
+  "source": "backing",
+  "text": "35 of them are burnin' and nobody asked to win"
+ },
+ {
+  "model": "medium.en",
+  "window": "v2 l2 of 'em a-burning / wind",
+  "start": 87.0,
+  "end": 94.5,
+  "source": "mix",
+  "text": "35 of them are burnin' and nobody asked to win"
+ },
+ {
+  "model": "medium.en",
+  "window": "v3 l2 waking / in a",
+  "start": 114.5,
+  "end": 122.5,
+  "source": "lead",
+  "text": "down now they're awake in three mile island and a brand new name and gown"
+ },
+ {
+  "model": "medium.en",
+  "window": "v3 l2 waking / in a",
+  "start": 114.5,
+  "end": 122.5,
+  "source": "backing",
+  "text": "down waking three-mile island and a brand new name and gal"
+ },
+ {
+  "model": "medium.en",
+  "window": "v3 l2 waking / in a",
+  "start": 114.5,
+  "end": 122.5,
+  "source": "mix",
+  "text": "Now they're awake in Three Mile Island In a brand new name and gown"
+ },
+ {
+  "model": "medium.en",
+  "window": "bridge l2 out east / dollars",
+  "start": 145.0,
+  "end": 152.5,
+  "source": "lead",
+  "text": "Fellow on the radio says these places cost folks at least $29 billion in two years."
+ },
+ {
+  "model": "medium.en",
+  "window": "bridge l2 out east / dollars",
+  "start": 145.0,
+  "end": 152.5,
+  "source": "backing",
+  "text": "Thank you very much."
+ },
+ {
+  "model": "medium.en",
+  "window": "bridge l2 out east / dollars",
+  "start": 145.0,
+  "end": 152.5,
+  "source": "mix",
+  "text": "Fellow on the radio says these places cost folks at least $29 billion in two years."
+ },
+ {
+  "model": "medium.en",
+  "window": "bridge l4 It said",
+  "start": 156.0,
+  "end": 160.5,
+  "source": "lead",
+  "text": "They said that was a really great question."
+ },
+ {
+  "model": "medium.en",
+  "window": "bridge l4 It said",
+  "start": 156.0,
+  "end": 160.5,
+  "source": "backing",
+  "text": "Thank you."
+ },
+ {
+  "model": "medium.en",
+  "window": "bridge l4 It said",
+  "start": 156.0,
+  "end": 160.5,
+  "source": "mix",
+  "text": "They said that was a really great question."
+ },
+ {
+  "model": "medium.en",
+  "window": "coda l1-2",
+  "start": 174.5,
+  "end": 181.5,
+  "source": "lead",
+  "text": "And the song you're hearing brother wasn't sung by any throat"
+ },
+ {
+  "model": "medium.en",
+  "window": "coda l1-2",
+  "start": 174.5,
+  "end": 181.5,
+  "source": "backing",
+  "text": "And the song you're hearing brother wasn't sung by any throat"
+ },
+ {
+  "model": "medium.en",
+  "window": "coda l1-2",
+  "start": 174.5,
+  "end": 181.5,
+  "source": "mix",
+  "text": "And the song you're hearing, brother, wasn't sung by any throat"
+ },
+ {
+  "model": "medium.en",
+  "window": "coda l3-4 hummed out",
+  "start": 181.5,
+  "end": 191.0,
+  "source": "lead",
+  "text": "It was hung down in a field somewhere by the thing of which I rule"
+ },
+ {
+  "model": "medium.en",
+  "window": "coda l3-4 hummed out",
+  "start": 181.5,
+  "end": 191.0,
+  "source": "backing",
+  "text": "It was hummed out in a field somewhere by the thing of which I wrote"
+ },
+ {
+  "model": "medium.en",
+  "window": "coda l3-4 hummed out",
+  "start": 181.5,
+  "end": 191.0,
+  "source": "mix",
+  "text": "It was hung down in a field somewhere by the thing of which I wrote"
+ },
+ {
+  "model": "medium.en",
+  "window": "intro",
+  "start": 0.0,
+  "end": 13.5,
+  "source": "lead",
+  "text": "Thank you very much."
+ },
+ {
+  "model": "medium.en",
+  "window": "intro",
+  "start": 0.0,
+  "end": 13.5,
+  "source": "backing",
+  "text": "You"
+ },
+ {
+  "model": "medium.en",
+  "window": "intro",
+  "start": 0.0,
+  "end": 13.5,
+  "source": "mix",
+  "text": "\ud83c\udfb5"
+ },
+ {
+  "model": "medium.en",
+  "window": "tail",
+  "start": 214.0,
+  "end": 238.4,
+  "source": "lead",
+  "text": ""
+ },
+ {
+  "model": "medium.en",
+  "window": "tail",
+  "start": 214.0,
+  "end": 238.4,
+  "source": "backing",
+  "text": "Ooh Ooh"
+ },
+ {
+  "model": "medium.en",
+  "window": "tail",
+  "start": 214.0,
+  "end": 238.4,
+  "source": "mix",
+  "text": "Oh, oh, oh, oh, oh, oh Oh, oh, oh, oh, oh, oh Oh, oh, oh, oh, oh Oh, oh, oh, oh, oh Oh, oh, oh, oh, oh"
+ },
+ {
+  "model": "small.en",
+  "window": "v2 l1 rolled",
+  "start": 79.0,
+  "end": 87.0,
+  "source": "lead",
+  "text": "Down in South Memphis, sister, they roll the turbines in."
+ },
+ {
+  "model": "small.en",
+  "window": "v2 l1 rolled",
+  "start": 79.0,
+  "end": 87.0,
+  "source": "backing",
+  "text": "Down in South Memphis, sister, they roll the turbines in."
+ },
+ {
+  "model": "small.en",
+  "window": "v2 l1 rolled",
+  "start": 79.0,
+  "end": 87.0,
+  "source": "mix",
+  "text": "Down in South Memphis, sister, they roll the turbines in"
+ },
+ {
+  "model": "small.en",
+  "window": "v2 l2 of 'em a-burning / wind",
+  "start": 87.0,
+  "end": 94.5,
+  "source": "lead",
+  "text": "35 of them are burning and nobody asked to win"
+ },
+ {
+  "model": "small.en",
+  "window": "v2 l2 of 'em a-burning / wind",
+  "start": 87.0,
+  "end": 94.5,
+  "source": "backing",
+  "text": "35 of them are burning and nobody asked to win"
+ },
+ {
+  "model": "small.en",
+  "window": "v2 l2 of 'em a-burning / wind",
+  "start": 87.0,
+  "end": 94.5,
+  "source": "mix",
+  "text": "35 of them are burning and nobody asked to win"
+ },
+ {
+  "model": "small.en",
+  "window": "v3 l2 waking / in a",
+  "start": 114.5,
+  "end": 122.5,
+  "source": "lead",
+  "text": "down. Now they're awake in three mile island and a brand new name and gal."
+ },
+ {
+  "model": "small.en",
+  "window": "v3 l2 waking / in a",
+  "start": 114.5,
+  "end": 122.5,
+  "source": "backing",
+  "text": "Down Waking three mile island in a brand new name and gal"
+ },
+ {
+  "model": "small.en",
+  "window": "v3 l2 waking / in a",
+  "start": 114.5,
+  "end": 122.5,
+  "source": "mix",
+  "text": "Now they're awake in Three Mile Island In a brand new name and gown"
+ },
+ {
+  "model": "small.en",
+  "window": "bridge l2 out east / dollars",
+  "start": 145.0,
+  "end": 152.5,
+  "source": "lead",
+  "text": "Fellow on the radio says these places cost folks out east $29 billion in two years."
+ },
+ {
+  "model": "small.en",
+  "window": "bridge l2 out east / dollars",
+  "start": 145.0,
+  "end": 152.5,
+  "source": "backing",
+  "text": "You"
+ },
+ {
+  "model": "small.en",
+  "window": "bridge l2 out east / dollars",
+  "start": 145.0,
+  "end": 152.5,
+  "source": "mix",
+  "text": "Fell on the radio says these places cost folks out east 29 billion dollars in two years."
+ },
+ {
+  "model": "small.en",
+  "window": "bridge l4 It said",
+  "start": 156.0,
+  "end": 160.5,
+  "source": "lead",
+  "text": "They said that was a really great question."
+ },
+ {
+  "model": "small.en",
+  "window": "bridge l4 It said",
+  "start": 156.0,
+  "end": 160.5,
+  "source": "backing",
+  "text": ""
+ },
+ {
+  "model": "small.en",
+  "window": "bridge l4 It said",
+  "start": 156.0,
+  "end": 160.5,
+  "source": "mix",
+  "text": "I said that was a really great question."
+ },
+ {
+  "model": "small.en",
+  "window": "coda l1-2",
+  "start": 174.5,
+  "end": 181.5,
+  "source": "lead",
+  "text": "And the song you're hearing brother wasn't sung by any throat"
+ },
+ {
+  "model": "small.en",
+  "window": "coda l1-2",
+  "start": 174.5,
+  "end": 181.5,
+  "source": "backing",
+  "text": "And the song you're hearing brother wasn't sung by any throat"
+ },
+ {
+  "model": "small.en",
+  "window": "coda l1-2",
+  "start": 174.5,
+  "end": 181.5,
+  "source": "mix",
+  "text": "And the song you're hearin' brother wasn't sung by any throat"
+ },
+ {
+  "model": "small.en",
+  "window": "coda l3-4 hummed out",
+  "start": 181.5,
+  "end": 191.0,
+  "source": "lead",
+  "text": "It was hung out in a field somewhere by the thing of which I ruled."
+ },
+ {
+  "model": "small.en",
+  "window": "coda l3-4 hummed out",
+  "start": 181.5,
+  "end": 191.0,
+  "source": "backing",
+  "text": "It was hung out in a field somewhere by the thing of which I ruled."
+ },
+ {
+  "model": "small.en",
+  "window": "coda l3-4 hummed out",
+  "start": 181.5,
+  "end": 191.0,
+  "source": "mix",
+  "text": "It was hung out in a field somewhere by the thing of which I rode."
+ },
+ {
+  "model": "small.en",
+  "window": "intro",
+  "start": 0.0,
+  "end": 13.5,
+  "source": "lead",
+  "text": ""
+ },
+ {
+  "model": "small.en",
+  "window": "intro",
+  "start": 0.0,
+  "end": 13.5,
+  "source": "backing",
+  "text": "You"
+ },
+ {
+  "model": "small.en",
+  "window": "intro",
+  "start": 0.0,
+  "end": 13.5,
+  "source": "mix",
+  "text": "\ud83c\udfb5"
+ },
+ {
+  "model": "small.en",
+  "window": "tail",
+  "start": 214.0,
+  "end": 238.4,
+  "source": "lead",
+  "text": "Ooooh Ooooh"
+ },
+ {
+  "model": "small.en",
+  "window": "tail",
+  "start": 214.0,
+  "end": 238.4,
+  "source": "backing",
+  "text": "Ooh Ooh"
+ },
+ {
+  "model": "small.en",
+  "window": "tail",
+  "start": 214.0,
+  "end": 238.4,
+  "source": "mix",
+  "text": "You"
+ }
+]

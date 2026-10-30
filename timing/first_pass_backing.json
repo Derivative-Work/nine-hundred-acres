@@ -1,0 +1,1107 @@
+{
+ "model": "faster-whisper medium.en int8",
+ "stem": "1 Backing Vocals",
+ "segments": [
+  {
+   "start": 30.0,
+   "end": 36.98,
+   "text": "building with no windows where my granddad turned the ground and the only",
+   "words": [
+    {
+     "w": "building",
+     "start": 30.0,
+     "end": 30.56,
+     "p": 0.25
+    },
+    {
+     "w": "with",
+     "start": 30.56,
+     "end": 30.78,
+     "p": 0.75
+    },
+    {
+     "w": "no",
+     "start": 30.78,
+     "end": 31.08,
+     "p": 0.99
+    },
+    {
+     "w": "windows",
+     "start": 31.08,
+     "end": 31.72,
+     "p": 0.96
+    },
+    {
+     "w": "where",
+     "start": 31.72,
+     "end": 32.06,
+     "p": 0.92
+    },
+    {
+     "w": "my",
+     "start": 32.06,
+     "end": 32.58,
+     "p": 0.99
+    },
+    {
+     "w": "granddad",
+     "start": 32.58,
+     "end": 33.64,
+     "p": 0.92
+    },
+    {
+     "w": "turned",
+     "start": 33.64,
+     "end": 34.2,
+     "p": 0.92
+    },
+    {
+     "w": "the",
+     "start": 34.2,
+     "end": 34.48,
+     "p": 0.89
+    },
+    {
+     "w": "ground",
+     "start": 34.48,
+     "end": 35.12,
+     "p": 0.97
+    },
+    {
+     "w": "and",
+     "start": 35.12,
+     "end": 36.12,
+     "p": 0.26
+    },
+    {
+     "w": "the",
+     "start": 36.12,
+     "end": 36.38,
+     "p": 1.0
+    },
+    {
+     "w": "only",
+     "start": 36.38,
+     "end": 36.98,
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 36.98,
+   "end": 47.2,
+   "text": "crop that will raise there is a load and endless sound. Can you hear it humming brother can",
+   "words": [
+    {
+     "w": "crop",
+     "start": 36.98,
+     "end": 37.54,
+     "p": 0.92
+    },
+    {
+     "w": "that",
+     "start": 37.54,
+     "end": 37.96,
+     "p": 0.55
+    },
+    {
+     "w": "will",
+     "start": 37.96,
+     "end": 38.26,
+     "p": 0.32
+    },
+    {
+     "w": "raise",
+     "start": 38.26,
+     "end": 38.74,
+     "p": 0.97
+    },
+    {
+     "w": "there",
+     "start": 38.74,
+     "end": 39.24,
+     "p": 0.79
+    },
+    {
+     "w": "is",
+     "start": 39.24,
+     "end": 39.54,
+     "p": 0.97
+    },
+    {
+     "w": "a",
+     "start": 39.54,
+     "end": 40.02,
+     "p": 0.92
+    },
+    {
+     "w": "load",
+     "start": 40.02,
+     "end": 40.4,
+     "p": 0.69
+    },
+    {
+     "w": "and",
+     "start": 40.4,
+     "end": 41.1,
+     "p": 0.38
+    },
+    {
+     "w": "endless",
+     "start": 41.1,
+     "end": 41.6,
+     "p": 0.98
+    },
+    {
+     "w": "sound.",
+     "start": 41.6,
+     "end": 42.9,
+     "p": 0.98
+    },
+    {
+     "w": "Can",
+     "start": 44.0,
+     "end": 44.48,
+     "p": 0.94
+    },
+    {
+     "w": "you",
+     "start": 44.48,
+     "end": 44.74,
+     "p": 1.0
+    },
+    {
+     "w": "hear",
+     "start": 44.74,
+     "end": 45.04,
+     "p": 0.99
+    },
+    {
+     "w": "it",
+     "start": 45.04,
+     "end": 45.46,
+     "p": 0.98
+    },
+    {
+     "w": "humming",
+     "start": 45.46,
+     "end": 45.96,
+     "p": 0.89
+    },
+    {
+     "w": "brother",
+     "start": 45.96,
+     "end": 46.84,
+     "p": 0.75
+    },
+    {
+     "w": "can",
+     "start": 46.84,
+     "end": 47.2,
+     "p": 0.46
+    }
+   ]
+  },
+  {
+   "start": 47.2,
+   "end": 54.64,
+   "text": "you hear it in the corn? It's the sound of something thinking since the",
+   "words": [
+    {
+     "w": "you",
+     "start": 47.2,
+     "end": 47.48,
+     "p": 0.98
+    },
+    {
+     "w": "hear",
+     "start": 47.48,
+     "end": 47.78,
+     "p": 0.99
+    },
+    {
+     "w": "it",
+     "start": 47.78,
+     "end": 48.2,
+     "p": 0.99
+    },
+    {
+     "w": "in",
+     "start": 48.2,
+     "end": 48.6,
+     "p": 1.0
+    },
+    {
+     "w": "the",
+     "start": 48.6,
+     "end": 48.86,
+     "p": 1.0
+    },
+    {
+     "w": "corn?",
+     "start": 48.86,
+     "end": 49.42,
+     "p": 0.83
+    },
+    {
+     "w": "It's",
+     "start": 51.28,
+     "end": 51.8,
+     "p": 0.95
+    },
+    {
+     "w": "the",
+     "start": 51.8,
+     "end": 51.96,
+     "p": 1.0
+    },
+    {
+     "w": "sound",
+     "start": 51.96,
+     "end": 52.44,
+     "p": 1.0
+    },
+    {
+     "w": "of",
+     "start": 52.44,
+     "end": 52.72,
+     "p": 0.99
+    },
+    {
+     "w": "something",
+     "start": 52.72,
+     "end": 53.36,
+     "p": 0.99
+    },
+    {
+     "w": "thinking",
+     "start": 53.36,
+     "end": 54.16,
+     "p": 0.94
+    },
+    {
+     "w": "since",
+     "start": 54.16,
+     "end": 54.46,
+     "p": 0.99
+    },
+    {
+     "w": "the",
+     "start": 54.46,
+     "end": 54.94,
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 54.94,
+   "end": 84.92,
+   "text": "it was born. It's wired to everything. Oh, the cloud ain't up in heaven, friend. It's",
+   "words": [
+    {
+     "w": "it",
+     "start": 54.94,
+     "end": 55.5,
+     "p": 0.02
+    },
+    {
+     "w": "was",
+     "start": 55.5,
+     "end": 56.18,
+     "p": 0.93
+    },
+    {
+     "w": "born.",
+     "start": 56.18,
+     "end": 57.24,
+     "p": 0.4
+    },
+    {
+     "w": "It's",
+     "start": 60.6,
+     "end": 61.72,
+     "p": 0.48
+    },
+    {
+     "w": "wired",
+     "start": 61.72,
+     "end": 62.46,
+     "p": 0.62
+    },
+    {
+     "w": "to",
+     "start": 62.46,
+     "end": 62.94,
+     "p": 0.98
+    },
+    {
+     "w": "everything.",
+     "start": 62.94,
+     "end": 63.66,
+     "p": 0.97
+    },
+    {
+     "w": "Oh,",
+     "start": 64.74,
+     "end": 64.94,
+     "p": 0.92
+    },
+    {
+     "w": "the",
+     "start": 65.02,
+     "end": 65.26,
+     "p": 0.96
+    },
+    {
+     "w": "cloud",
+     "start": 65.26,
+     "end": 65.84,
+     "p": 0.96
+    },
+    {
+     "w": "ain't",
+     "start": 65.84,
+     "end": 66.4,
+     "p": 0.94
+    },
+    {
+     "w": "up",
+     "start": 66.4,
+     "end": 66.82,
+     "p": 0.98
+    },
+    {
+     "w": "in",
+     "start": 66.82,
+     "end": 67.28,
+     "p": 0.98
+    },
+    {
+     "w": "heaven,",
+     "start": 67.28,
+     "end": 67.86,
+     "p": 0.88
+    },
+    {
+     "w": "friend.",
+     "start": 68.24,
+     "end": 68.52,
+     "p": 0.87
+    },
+    {
+     "w": "It's",
+     "start": 83.8,
+     "end": 84.92,
+     "p": 0.96
+    }
+   ]
+  },
+  {
+   "start": 84.92,
+   "end": 102.46,
+   "text": "in. 35 of them are burning and nobody asked the when. No notice on the door. Just a haze",
+   "words": [
+    {
+     "w": "in.",
+     "start": 84.92,
+     "end": 85.84,
+     "p": 0.01
+    },
+    {
+     "w": "35",
+     "start": 87.4,
+     "end": 88.52,
+     "p": 0.5
+    },
+    {
+     "w": "of",
+     "start": 88.52,
+     "end": 88.92,
+     "p": 0.82
+    },
+    {
+     "w": "them",
+     "start": 88.92,
+     "end": 89.14,
+     "p": 0.91
+    },
+    {
+     "w": "are",
+     "start": 89.14,
+     "end": 89.36,
+     "p": 0.81
+    },
+    {
+     "w": "burning",
+     "start": 89.36,
+     "end": 89.82,
+     "p": 0.55
+    },
+    {
+     "w": "and",
+     "start": 89.82,
+     "end": 90.46,
+     "p": 0.73
+    },
+    {
+     "w": "nobody",
+     "start": 90.46,
+     "end": 91.48,
+     "p": 0.97
+    },
+    {
+     "w": "asked",
+     "start": 91.48,
+     "end": 92.44,
+     "p": 0.67
+    },
+    {
+     "w": "the",
+     "start": 92.44,
+     "end": 92.78,
+     "p": 0.89
+    },
+    {
+     "w": "when.",
+     "start": 92.78,
+     "end": 93.78,
+     "p": 0.23
+    },
+    {
+     "w": "No",
+     "start": 96.86,
+     "end": 97.98,
+     "p": 0.59
+    },
+    {
+     "w": "notice",
+     "start": 97.98,
+     "end": 98.98,
+     "p": 0.98
+    },
+    {
+     "w": "on",
+     "start": 98.98,
+     "end": 99.54,
+     "p": 0.98
+    },
+    {
+     "w": "the",
+     "start": 99.54,
+     "end": 99.8,
+     "p": 0.99
+    },
+    {
+     "w": "door.",
+     "start": 99.8,
+     "end": 100.32,
+     "p": 0.99
+    },
+    {
+     "w": "Just",
+     "start": 101.34,
+     "end": 101.58,
+     "p": 0.98
+    },
+    {
+     "w": "a",
+     "start": 101.58,
+     "end": 101.86,
+     "p": 0.95
+    },
+    {
+     "w": "haze",
+     "start": 101.86,
+     "end": 102.46,
+     "p": 1.0
+    }
+   ]
+  },
+  {
+   "start": 102.46,
+   "end": 113.24,
+   "text": "above the school yard and the lawyers at the door. Back in 79 we gathered, sang the",
+   "words": [
+    {
+     "w": "above",
+     "start": 102.46,
+     "end": 103.06,
+     "p": 0.99
+    },
+    {
+     "w": "the",
+     "start": 103.06,
+     "end": 103.54,
+     "p": 1.0
+    },
+    {
+     "w": "school",
+     "start": 103.54,
+     "end": 103.94,
+     "p": 0.61
+    },
+    {
+     "w": "yard",
+     "start": 103.94,
+     "end": 104.44,
+     "p": 0.99
+    },
+    {
+     "w": "and",
+     "start": 104.44,
+     "end": 105.0,
+     "p": 0.94
+    },
+    {
+     "w": "the",
+     "start": 105.0,
+     "end": 105.5,
+     "p": 0.98
+    },
+    {
+     "w": "lawyers",
+     "start": 105.5,
+     "end": 106.04,
+     "p": 0.96
+    },
+    {
+     "w": "at",
+     "start": 106.04,
+     "end": 106.76,
+     "p": 0.99
+    },
+    {
+     "w": "the",
+     "start": 106.76,
+     "end": 107.0,
+     "p": 1.0
+    },
+    {
+     "w": "door.",
+     "start": 107.0,
+     "end": 107.66,
+     "p": 1.0
+    },
+    {
+     "w": "Back",
+     "start": 109.64,
+     "end": 109.98,
+     "p": 0.98
+    },
+    {
+     "w": "in",
+     "start": 109.98,
+     "end": 110.26,
+     "p": 0.99
+    },
+    {
+     "w": "79",
+     "start": 110.26,
+     "end": 111.1,
+     "p": 0.51
+    },
+    {
+     "w": "we",
+     "start": 111.1,
+     "end": 111.66,
+     "p": 0.72
+    },
+    {
+     "w": "gathered,",
+     "start": 111.66,
+     "end": 112.34,
+     "p": 0.68
+    },
+    {
+     "w": "sang",
+     "start": 112.58,
+     "end": 112.84,
+     "p": 0.98
+    },
+    {
+     "w": "the",
+     "start": 112.84,
+     "end": 113.24,
+     "p": 0.98
+    }
+   ]
+  },
+  {
+   "start": 113.24,
+   "end": 115.32,
+   "text": "Reactors down",
+   "words": [
+    {
+     "w": "Reactors",
+     "start": 113.24,
+     "end": 114.48,
+     "p": 0.58
+    },
+    {
+     "w": "down",
+     "start": 114.48,
+     "end": 115.32,
+     "p": 0.92
+    }
+   ]
+  },
+  {
+   "start": 116.48,
+   "end": 118.48,
+   "text": "Waking three-mile island",
+   "words": [
+    {
+     "w": "Waking",
+     "start": 116.28,
+     "end": 116.98,
+     "p": 0.54
+    },
+    {
+     "w": "three",
+     "start": 116.98,
+     "end": 117.64,
+     "p": 0.65
+    },
+    {
+     "w": "-mile",
+     "start": 117.64,
+     "end": 118.2,
+     "p": 0.76
+    },
+    {
+     "w": "island",
+     "start": 118.2,
+     "end": 118.9,
+     "p": 0.84
+    }
+   ]
+  },
+  {
+   "start": 119.44,
+   "end": 121.74,
+   "text": "And a brand-new name and gown",
+   "words": [
+    {
+     "w": "And",
+     "start": 119.44,
+     "end": 119.8,
+     "p": 0.16
+    },
+    {
+     "w": "a",
+     "start": 119.8,
+     "end": 120.1,
+     "p": 0.97
+    },
+    {
+     "w": "brand",
+     "start": 120.1,
+     "end": 120.3,
+     "p": 1.0
+    },
+    {
+     "w": "-new",
+     "start": 120.3,
+     "end": 120.74,
+     "p": 0.67
+    },
+    {
+     "w": "name",
+     "start": 120.74,
+     "end": 121.32,
+     "p": 0.79
+    },
+    {
+     "w": "and",
+     "start": 121.32,
+     "end": 121.62,
+     "p": 0.96
+    },
+    {
+     "w": "gown",
+     "start": 121.62,
+     "end": 122.32,
+     "p": 0.91
+    }
+   ]
+  },
+  {
+   "start": 123.36,
+   "end": 125.66,
+   "text": "Crane clean energy",
+   "words": [
+    {
+     "w": "Crane",
+     "start": 123.36,
+     "end": 124.12,
+     "p": 0.39
+    },
+    {
+     "w": "clean",
+     "start": 124.12,
+     "end": 124.64,
+     "p": 0.86
+    },
+    {
+     "w": "energy",
+     "start": 124.64,
+     "end": 125.66,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 127.2,
+   "end": 129.62,
+   "text": "Feed the machines",
+   "words": [
+    {
+     "w": "Feed",
+     "start": 127.2,
+     "end": 128.14,
+     "p": 0.93
+    },
+    {
+     "w": "the",
+     "start": 128.14,
+     "end": 128.7,
+     "p": 0.99
+    },
+    {
+     "w": "machines",
+     "start": 128.7,
+     "end": 129.62,
+     "p": 0.95
+    }
+   ]
+  },
+  {
+   "start": 131.16,
+   "end": 133.82,
+   "text": "Standing here confuse me",
+   "words": [
+    {
+     "w": "Standing",
+     "start": 130.9,
+     "end": 131.6,
+     "p": 0.85
+    },
+    {
+     "w": "here",
+     "start": 131.6,
+     "end": 132.24,
+     "p": 1.0
+    },
+    {
+     "w": "confuse",
+     "start": 132.24,
+     "end": 133.02,
+     "p": 0.19
+    },
+    {
+     "w": "me",
+     "start": 133.02,
+     "end": 133.82,
+     "p": 0.92
+    }
+   ]
+  },
+  {
+   "start": 135.24,
+   "end": 139.18,
+   "text": "Cleanest thing I've seen",
+   "words": [
+    {
+     "w": "Cleanest",
+     "start": 135.24,
+     "end": 136.64,
+     "p": 0.98
+    },
+    {
+     "w": "thing",
+     "start": 136.64,
+     "end": 137.46,
+     "p": 0.96
+    },
+    {
+     "w": "I've",
+     "start": 137.46,
+     "end": 138.58,
+     "p": 0.98
+    },
+    {
+     "w": "seen",
+     "start": 138.58,
+     "end": 139.18,
+     "p": 0.99
+    }
+   ]
+  },
+  {
+   "start": 156.82,
+   "end": 158.22,
+   "text": "You",
+   "words": [
+    {
+     "w": "You",
+     "start": 156.82,
+     "end": 158.22,
+     "p": 0.06
+    }
+   ]
+  },
+  {
+   "start": 174.96,
+   "end": 180.68,
+   "text": "And the song you're hearing, brother, wasn't sung by any throat",
+   "words": [
+    {
+     "w": "And",
+     "start": 174.96,
+     "end": 175.88,
+     "p": 0.57
+    },
+    {
+     "w": "the",
+     "start": 175.88,
+     "end": 176.12,
+     "p": 0.99
+    },
+    {
+     "w": "song",
+     "start": 176.12,
+     "end": 176.42,
+     "p": 1.0
+    },
+    {
+     "w": "you're",
+     "start": 176.42,
+     "end": 176.9,
+     "p": 0.96
+    },
+    {
+     "w": "hearing,",
+     "start": 176.9,
+     "end": 177.54,
+     "p": 0.86
+    },
+    {
+     "w": "brother,",
+     "start": 178.28,
+     "end": 178.34,
+     "p": 0.98
+    },
+    {
+     "w": "wasn't",
+     "start": 178.34,
+     "end": 178.8,
+     "p": 0.97
+    },
+    {
+     "w": "sung",
+     "start": 178.8,
+     "end": 179.24,
+     "p": 1.0
+    },
+    {
+     "w": "by",
+     "start": 179.24,
+     "end": 179.82,
+     "p": 1.0
+    },
+    {
+     "w": "any",
+     "start": 179.82,
+     "end": 180.22,
+     "p": 1.0
+    },
+    {
+     "w": "throat",
+     "start": 180.22,
+     "end": 180.68,
+     "p": 0.48
+    }
+   ]
+  },
+  {
+   "start": 182.26,
+   "end": 190.7,
+   "text": "It was hung down in a field somewhere by the thing of which I wrote",
+   "words": [
+    {
+     "w": "It",
+     "start": 182.26,
+     "end": 183.18,
+     "p": 0.42
+    },
+    {
+     "w": "was",
+     "start": 183.18,
+     "end": 183.42,
+     "p": 1.0
+    },
+    {
+     "w": "hung",
+     "start": 183.42,
+     "end": 183.66,
+     "p": 0.68
+    },
+    {
+     "w": "down",
+     "start": 183.66,
+     "end": 183.96,
+     "p": 0.93
+    },
+    {
+     "w": "in",
+     "start": 183.96,
+     "end": 184.22,
+     "p": 1.0
+    },
+    {
+     "w": "a",
+     "start": 184.22,
+     "end": 184.44,
+     "p": 0.96
+    },
+    {
+     "w": "field",
+     "start": 184.44,
+     "end": 184.74,
+     "p": 1.0
+    },
+    {
+     "w": "somewhere",
+     "start": 184.74,
+     "end": 185.3,
+     "p": 0.89
+    },
+    {
+     "w": "by",
+     "start": 185.3,
+     "end": 185.9,
+     "p": 0.95
+    },
+    {
+     "w": "the",
+     "start": 185.9,
+     "end": 186.2,
+     "p": 0.99
+    },
+    {
+     "w": "thing",
+     "start": 186.2,
+     "end": 186.88,
+     "p": 0.98
+    },
+    {
+     "w": "of",
+     "start": 186.88,
+     "end": 188.02,
+     "p": 0.93
+    },
+    {
+     "w": "which",
+     "start": 188.02,
+     "end": 189.06,
+     "p": 0.98
+    },
+    {
+     "w": "I",
+     "start": 189.06,
+     "end": 190.0,
+     "p": 0.99
+    },
+    {
+     "w": "wrote",
+     "start": 190.0,
+     "end": 190.7,
+     "p": 0.7
+    }
+   ]
+  },
+  {
+   "start": 195.36,
+   "end": 196.76,
+   "text": "Ooooooh",
+   "words": [
+    {
+     "w": "Ooooooh",
+     "start": 195.36,
+     "end": 196.76,
+     "p": 0.17
+    }
+   ]
+  },
+  {
+   "start": 202.66,
+   "end": 204.06,
+   "text": "Ahhhhhh",
+   "words": [
+    {
+     "w": "Ahhhhhh",
+     "start": 202.66,
+     "end": 204.06,
+     "p": 0.24
+    }
+   ]
+  },
+  {
+   "start": 208.18,
+   "end": 209.58,
+   "text": "Ahhhhhh",
+   "words": [
+    {
+     "w": "Ahhhhhh",
+     "start": 208.18,
+     "end": 209.58,
+     "p": 0.76
+    }
+   ]
+  },
+  {
+   "start": 213.08,
+   "end": 214.48,
+   "text": "Ooooooh",
+   "words": [
+    {
+     "w": "Ooooooh",
+     "start": 213.08,
+     "end": 214.48,
+     "p": 0.74
+    }
+   ]
+  },
+  {
+   "start": 233.3,
+   "end": 238.18,
+   "text": "Thank you very much.",
+   "words": [
+    {
+     "w": "Thank",
+     "start": 233.3,
+     "end": 234.7,
+     "p": 0.01
+    },
+    {
+     "w": "you",
+     "start": 234.7,
+     "end": 234.7,
+     "p": 0.92
+    },
+    {
+     "w": "very",
+     "start": 234.7,
+     "end": 236.1,
+     "p": 0.11
+    },
+    {
+     "w": "much.",
+     "start": 236.1,
+     "end": 238.18,
+     "p": 0.99
+    }
+   ]
+  }
+ ]
+}
