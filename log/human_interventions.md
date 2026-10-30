@@ -66,3 +66,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** "yes, keep going" (on Chorus 1, Span 1 and Verse 1 v3).
 - **Rule:** H2.
+
+## 2026-10-30T08:30 — M5 note on the 1979 crowd photo — H2
+
+- **What:** On the Verse 3 final render: "the "no nukes" photo depiction needs more detail".
+- **Rule:** H2 (feedback at the M5 gate; the agent redraws it).
