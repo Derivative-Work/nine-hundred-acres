@@ -71,8 +71,8 @@ The base style is a deliberately stereotypical agent-built explainer. Play it st
 | Intro, Verse 1 | 0.0 | Pure base style |
 | Chorus 1 | 0.15 | The gradient warms slightly; one flower emoji slips into a server grid |
 | Verse 2 | 0.3 | Brown haze layer from the Memphis lead-in lingers at low opacity |
-| Chorus 2 | 0.4 | Tie-dye heat map in the room tiles; the peace sign morphs into a power button |
-| Verse 3 | 0.5 | Gradients start to marble; the sans gets a groovy swash on headings |
+| Chorus 2 | 0.4 | Retired (no chorus 2); its gags move to verse 3 |
+| Verse 3 | 0.5 | Gradients start to marble; the sans gets a groovy swash on headings; the peace sign morphs into a power button (S33a); tie-dye heat map in the room tiles (S36a) |
 | Bridge | 0.5 → 0.7 | Peaks on the last line: a lava-lamp swirl starts building, then freezes when the needle lifts |
 | Coda | to 0 | Everything strips back to a bare terminal on black |
 
@@ -107,7 +107,7 @@ Every illustrated element is SVG drawn by Claude Code in the Remotion project. N
 
 The master uses the first draft of the lyrics, and is the first generation of the song. Captions must match the master as sung: in M1, transcribe it and diff against the text below, and log any differences.
 
-Suno skipped the planned guitar jam and final chorus: the bridge goes straight into the coda. The shot list follows the master.
+Suno skipped chorus 2, the planned guitar jam and the final chorus: verse 2 runs straight into verse 3, and the bridge into the coda. The band keeps playing under the coda (it is not a cappella), and a 37 s wordless outro follows the last line. The shot list follows the master.
 
 ```
 [Intro – twelve-string, wordless harmonies]
@@ -135,8 +135,6 @@ Thirty-five of 'em a-burning, and nobody asked the wind.
 No permit on the paperwork, no notice on the door,
 Just a haze above the schoolyard, and the lawyers at the door.
 
-[Chorus]
-
 [Verse 3 – one voice]
 Back in seventy-nine we gathered, sang the reactors down.
 Now they're waking Three Mile Island in a brand-new name and gown.
@@ -151,7 +149,7 @@ It said that was a really great question.
 Then it told me the numbers are uncertain…
 and used a little more electricity telling me.
 
-[Coda – a cappella]
+[Coda]
 And the song you're hearing, brother,
 Wasn't sung by any throat.
 It was hummed out in a field somewhere
@@ -220,14 +218,14 @@ Cues are lyric lines; the timing map resolves them to frames. **Source key:** **
 
 ### Chorus 2
 
-Reuse the S12–S18 compositions at infection 0.3, with these changes. Do not re-render them identically; the drift is the point.
+Retired: the master has no chorus 2 (M1). S28–S31 are kept below for the record only. Their two infection gags move to verse 3: the peace sign to S33a, the tie-dye heat map to S36a.
 
 | ID | Cue | Picture | Source |
 | --- | --- | --- | --- |
-| S28 | "Can you hear it humming, brother?" | As S12, but the sine wave has picked up a slight wobble, like a tape warble | G |
-| S29 | "the sound of something thinking" | As S14, but a thermal-camera sweep turns the status dots into a tie-dye heat map. Three tiles now show flower emoji | G |
-| S30 | "And it never sleeps, and it never stops" | As S16; the checkbox outlines are hand-drawn and slightly crooked | G |
-| S31 | "It's a field of humming things" | As S18; the callout's gradient has a faint tie-dye swirl. A peace-sign banner behind it slowly morphs into a power button | G |
+| S28 | "Can you hear it humming, brother?" | Retired. As S12, but the sine wave has picked up a slight wobble, like a tape warble | G |
+| S29 | "the sound of something thinking" | Retired (moved to S36a). As S14, but a thermal-camera sweep turns the status dots into a tie-dye heat map. Three tiles now show flower emoji | G |
+| S30 | "And it never sleeps, and it never stops" | Retired. As S16; the checkbox outlines are hand-drawn and slightly crooked | G |
+| S31 | "It's a field of humming things" | Retired (peace sign moved to S33a). As S18; the callout's gradient has a faint tie-dye swirl. A peace-sign banner behind it slowly morphs into a power button | G |
 
 ### Verse 3
 
@@ -235,9 +233,11 @@ Reuse the S12–S18 compositions at infection 0.3, with these changes. Do not re
 | --- | --- | --- | --- |
 | S32 | "Back in seventy-nine we gathered" | A sepia "archival" card: an illustrated crowd with generic hand-lettered NO NUKES signs. Film grain and a slight gate weave | G |
 | S33 | "sang the reactors down" | A toggle labeled "Reactor" flips off. A horizontal timeline starts drawing; a node appears at 1979 | G |
+| S33a | "sang the reactors down" | From chorus 2's S31: a peace-sign banner over the archival crowd slowly morphs into a power button, and that button becomes S33's Reactor toggle as it flips off | G |
 | S34 | "Now they're waking Three Mile Island" | The timeline extends: 2019 "Shut down (economic)", 2027 "Restart (planned)". A status pill flips from Deprecated to Restoring | G |
 | S35 | "in a brand-new name and gown" | A code-diff panel: red `- Three Mile Island Unit 1`, green `+ Crane Clean Energy Center`. A rename tag with a small bow tied on | G |
 | S36 | "it's built to feed the machines" | The orange extension-cord line runs from the reactor card to the server grid; a power-flow animation pulses along it | G |
+| S36a | "it's built to feed the machines" | From chorus 2's S29: as the power flow reaches the S09 server grid, a thermal-camera sweep turns its status dots into a tie-dye heat map. Three tiles now show flower emoji | G |
 | S37 | "I'm standing here confused, man" | A slider labeled "Against ↔ For" ping-pongs and never settles. A "Thinking…" spinner appears beside it | G |
 | S38 | "'cause it's the cleanest thing I've seen" | Back to the S32 crowd, now gray-haired. They flip their signs; the backs read "…OK, FINE." | G |
 
@@ -256,11 +256,11 @@ Reuse the S12–S18 compositions at infection 0.3, with these changes. Do not re
 
 | ID | Cue | Picture | Source |
 | --- | --- | --- | --- |
-| S45 | "And the song you're hearing, brother" | In the quiet after the needle lifts, infection drops toward 0; cards fade out one per sung word, the last cornstalk last. In the gap they leave, the real Suno generation capture fades up inside a plain window: style prompt, lyrics, take list. First time the video shows where the song came from | G, S |
+| S45 | "And the song you're hearing, brother" | As the needle lifts (a visual beat only: the band plays on under the coda), infection drops toward 0; cards fade out one per sung word, the last cornstalk last. In the gap they leave, the real Suno generation capture fades up inside a plain window: style prompt, lyrics, take list. First time the video shows where the song came from | G, S |
 | S46 | "Wasn't sung by any throat" | Push in on the take list; the first generation, the one you are hearing, is highlighted | S, G |
 | S47 | "It was hummed out in a field somewhere" | The capture window shrinks and drops into the server grid from S09, becoming one more tile | G |
 | S48 | "By the thing of which I wrote" | Everything is gone except a bare terminal on black. The restore overlay returns: "Restoring human warmth… 88%" | G |
-| S49 | Failure span 2 (after the last line) | The overlay climbs to 97% and stalls. Spring animations stutter (drop to 6 fps); text renders as empty glyph boxes. The overlay then reads "Artifact suppression: OFF (by choice)" and does not recover | G, A |
+| S49 | Failure span 2 (after the last line: the 37.7 s wordless outro) | The overlay climbs to 97% and stalls. Spring animations stutter (drop to 6 fps); text renders as empty glyph boxes. The overlay then reads "Artifact suppression: OFF (by choice)" and does not recover | G, A |
 | S50 | Sustained chord, fan spin-down | The terminal types `exit`. The orange extension cord, traced back across the frame, turns out to be plugged into the terminal itself. Last line: "Energy used: ???" | G, A |
 
 ## Transitions
@@ -275,10 +275,10 @@ Every transition lands on a beat or a lyric boundary from the timing map. Defaul
 | S11 → S12 | The sine wave scales up to fill frame | Carries the hum across the section line |
 | S18 → S19 | Haze wipe from the left, starting exactly at failure span 1 | Sync the wipe's leading edge to the span's start frame |
 | S21 → S22 | The haze settles; the map card pans east from Iowa to Memphis | Same map instance as S05, so the cut feels continuous |
-| S27 → S28 | Haze dims to its lingering level as chorus 2 enters |  |
-| S31 → S32 | Sepia bleed: color drains from the frame | The archival card fades up under the grain |
+| S27 → S32 | Haze dims to its lingering level, then the sepia bleed below. No chorus 2: verse 3 starts 1.8 s after verse 2 ends |  |
+| S27 → S32 (cont.) | Sepia bleed: color drains from the frame | The archival card fades up under the grain |
 | S38 → S39 | Signs flip, and the last sign becomes the bill card |  |
-| S44 → S45 | The needle lifts; the swirl freezes mid-turn and drains of color | The build promises a jam that never comes. Land the freeze in the gap before the a cappella entry |
+| S44 → S45 | The needle lifts; the swirl freezes mid-turn and drains of color | The build promises a jam that never comes. The audio has no gap (the band plays on), so the needle lift is a visual beat: land the freeze on a beat between the bridge's last word and the coda's first |
 | S45 → S46 | Push in on the take list | This is the reveal; play it plain, no flourish |
 | S47 → S48 | The new tile winks out, and the grid goes with it | Leaves the terminal alone on black |
 | S48 → S49 | No transition; the frame stutters in place | Hold dropped frames for the whole span |

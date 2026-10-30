@@ -20,3 +20,9 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 - **Why:** Inputs for the project.
 - **Rule:** H3 (inputs); H1 (no-fallback chosen, as the brief already specifies).
 - **Still needed (H3):** the screen capture of the Suno generation (S45–S46) and of the post-filter run in a terminal (S51).
+
+## 2026-10-30T00:20 — M1 gate: lyrics and spans approved; chorus 2 gags moved; needle lift kept — H2
+
+- **What:** The human: "fallback.json is fine; move the chorus 2 gags into verse 3. just keep the needle lift as a visual beat -- I'll play around with the stems once we're on the 5090 box (since it's able to re-run the post-filter). looks like the transcriber is dropping 'd's -- "rolled", "wind", "in", "out east", "it said", "hummed out" are all correct"
+- **Why:** M1 gate (confirm lyrics and span times), plus the shot-list questions M1 raised.
+- **Rule:** H2 (gate approval). Moving the gags and keeping the needle lift are shot-list decisions at a gate; the brief was edited to match (production log). The stems work on the 5090 box is a future human action, to be logged with its own rule when it happens (a re-mix of the audio would be outside H1–H3: an EXCEPTION unless the brief is amended).

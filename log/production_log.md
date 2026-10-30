@@ -57,3 +57,15 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
   - "of 'em a-burning" is heard as "of them are burning" everywhere, which is how the written line sounds; "waking" as "awake in" on the lead, "Waking" on the backing stem. Taken as sung as written.
 - **Not done:** a detect-only post-filter run (the brief's wording); `fallback.json`'s regions are the same detector's output, so they are used. M1 gate questions are in the summary to the human.
 - **Why:** the brief, M1.
+
+## 2026-10-30T00:21:00-04:00 — M1 gate passed; brief updated (rev 36 → 52)
+
+- **What:** The human approved M1 (human_interventions, same time): the lyrics are the brief's word for word (the transcriber dropped final consonants), and `fallback.json` stands as the detection output. Edited the brief to match the master and the human's decisions, then re-mirrored it.
+- **Brief changes** (docs `update` on node `af75491a-3355`, project `86471679-b830-411a-8737-186dcec4751a`; text replaces and two row inserts, nothing deleted):
+  - Lyrics: the note now says Suno also skipped chorus 2 and the coda is not a cappella, with a 37 s wordless outro; the second `[Chorus]` tag is removed from the lyrics block; `[Coda – a cappella]` → `[Coda]`.
+  - Chorus 2: S28–S31 marked **Retired** (IDs kept for the record). New **S33a** ("sang the reactors down": the peace-sign banner over the archival crowd morphs into a power button that becomes S33's Reactor toggle) and **S36a** ("it's built to feed the machines": a thermal sweep turns the S09 grid's status dots into a tie-dye heat map, three flower tiles). Infection table: Chorus 2 row retired; both gags added to the Verse 3 row.
+  - Transitions: "S27 → S28" → "S27 → S32" (haze dims, then the sepia bleed; verse 3 starts 1.8 s after verse 2); "S31 → S32" → "S27 → S32 (cont.)". S44 → S45: the needle lift is a visual beat, since the band plays on.
+  - S45: "In the quiet after the needle lifts" → "As the needle lifts (a visual beat only: the band plays on under the coda)". S49's cue names the 37.7 s wordless outro.
+- **Commands:** `python3 -I scripts/doc_to_md.py <read result, rev 52> docs/brief.md`; `sed` on `lyrics/as_sung_draft.txt` to drop the `[?]` marks.
+- **Not changed:** S19–S22 still assume span 1 ends before "Down in South Memphis"; it ends just after "Memphis" (82.64 s). The timing map (M2) cues S22 at its line regardless and puts S21's recovery at the span's end.
+- **Why:** the human's M1 decisions.

@@ -1,5 +1,5 @@
 # As-sung draft (M1). Times in seconds on the Suno mix (= the master; same length, post-filter does not move timing).
-# Text is the brief's wherever the transcriptions split; [?] marks a word for the human's ear (see the M1 log entry).
+# Text: the brief's, word for word (confirmed by the human at the M1 gate, 2026-10-30).
 # Sources: timing/first_pass_{vocals,backing}.json, timing/m1_recheck.json, per-stem loudness.
 # Line starts with one decimal (46.4, 54.0, 60.5, 160.0) are estimates inside a longer transcribed segment; M2 forced alignment replaces all times.
 
@@ -25,8 +25,8 @@ Ooh… ooh-ooh…
 [Instrumental 73.9-79.8. FAILURE SPAN 1: 72.39-82.64, from "humming" to the end of "Memphis"]
 
 [Verse 2 79.8-107.6]
-79.82 Down in South Memphis, sister, they rolled [?roll] the turbines in,
-87.48 Thirty-five of 'em a-burning, and nobody asked the wind [?].
+79.82 Down in South Memphis, sister, they rolled the turbines in,
+87.48 Thirty-five of 'em a-burning, and nobody asked the wind.
 95.12 No permit on the paperwork, no notice on the door,
 101.24 Just a haze above the schoolyard, and the lawyers at the door.
 
@@ -34,15 +34,15 @@ Ooh… ooh-ooh…
 
 [Verse 3 109.4-139.5; lead with backing echoes]
 109.44 Back in seventy-nine we gathered, sang the reactors down.
-115.08 Now they're waking Three Mile Island in [?and] a brand-new name and gown.
+115.08 Now they're waking Three Mile Island in a brand-new name and gown.
 122.16 They call it Crane Clean Energy, and it's built to feed the machines,
 130.08 And I'm standing here confused, man, 'cause it's the cleanest thing I've seen.
 
 [Bridge 140.1-169.0]
 140.08 Got my electric bill today, man. Up again.
-145.68 Fella on the radio says these places cost folks out east [?at least] twenty-nine billion dollars in two years.
+145.68 Fella on the radio says these places cost folks out east twenty-nine billion dollars in two years.
 153.60 So I asked the machine about it.
-156.72 It [?They] said that was a really great question.
+156.72 It said that was a really great question.
 160.0  Then it told me the numbers are uncertain…
 164.42 and used a little more electricity telling me.
 
@@ -51,7 +51,7 @@ Ooh… ooh-ooh…
 [Coda 175.0-190.7: the band plays under it; not a cappella]
 174.96 And the song you're hearing, brother,
 178.34 Wasn't sung by any throat.
-182.26 It was hummed out [?hung down] in a field somewhere
+182.26 It was hummed out in a field somewhere
 185.30 By the thing of which I wrote.           ("wrote" ends 190.70)
 
 [Outro 190.7-228: wordless ooh/ah over the full band, not in the lyrics. FAILURE SPAN 2: 191.17-228.91]
