@@ -112,3 +112,9 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
 - **Check** (`scripts/m6_check.py`): audio through both spans = the no-fallback master to one 16-bit step; first changed frames 2232, 2539, 5795 (tear, held to 5799, released 5800), 6927, each the span edge from fallback.json. Strips in `review/m6/`.
 - **Review clips:** `renders/m6/m6_span_edges.mp4` (4 × 8 s with audio, ±4 s around each edge, frame counter burned in, a red label from the edge frame on).
 - **Found on S51** (`review/m6/S51.jpg`): JetBrains Mono's ligature drew `->` as an arrow; ligatures are now off in S51 (re-rendered in M7).
+
+## 2026-10-30T10:24 — M7: vertical cut and closing
+
+- **Vertical cut:** composition `Vertical` (1080×1920, 30 fps; S12–S27, frames 1388–3351 of the main timing, the master trimmed to match), CRF 16 → `renders/m7/vertical_s12-s27.mp4` (65.5 s). **Commit:** 33aea1a. Scenes read `usePortrait()` and reflow to one column; the chrome is stacked (chapter and status chip, then the headline; source line and progress bar at the bottom); captions sit in the top third. 1,000 rooms stay 1,000 (25 × 40 tiles). Overview: `review/m7_vertical_overview.jpg`. SRT: `deliverables/nine_hundred_acres_vertical.en.srt` (13 cues, same rule, times from S12).
+- **Still pass before it** (scratch, 19 frames at half scale): the corn row ran wide (scaled down), S16, Span 1 and the permit scene sat high with the bottom third empty (moved down 100–170 px).
+- **Closing:** `Animatic`, `label: false`, frames 7212–9146 (S51, fade, F1–F7, S52) → `renders/m7/closing_s51-s52.mp4` (64.5 s), with the fan and room tone (postroll v3).
