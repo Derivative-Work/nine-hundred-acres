@@ -105,3 +105,10 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
 - **Composition:** `Animatic`, `label: false`, 1080p, CRF 16. **Commit:** 81b55df. Frames 3352–4293 → `renders/m5/06_verse3.mp4` (v2 → `archive/renders/m5/06_verse3_v2.mp4`); 4294–5331 → `07_bridge.mp4` (v1 → `archive/renders/m5/07_bridge_v1.mp4`); 5332–7211 → `08_coda.mp4` (62.7 s, through the song's end, with the fan fading in under the last chord; an earlier coda render with the placeholder, never sent, → `archive/renders/m5/08_coda_v1.mp4`).
 - **Changes:** see production_log.md 09:10 (peace sign in its containers; rescales as events; the real Suno capture synced in S45–S47). Coda still pass before it (scratch, 10 frames + 4 with the capture): the chapter header showed over the S46 window (fixed, commit b3e04fa); the capture window sat on the caption bar (raised 40 px until the push).
 - **Contact sheets:** `review/S32.jpg`–`S50.jpg` regenerated.
+
+## 2026-10-30T09:59 — M6: full render v2 and span-edge review clips
+
+- **Composition:** `Animatic`, `label: false`, 1080p, CRF 16, all 9147 frames (304.9 s) → `renders/m6/nine_hundred_acres_full.mp4`; track as WAV → `renders/m6/audio_check.wav`. **Commit:** c3b0869. v1 (before the span 2 onset tear and the S51 rebuild) → `archive/renders/m6/`.
+- **Check** (`scripts/m6_check.py`): audio through both spans = the no-fallback master to one 16-bit step; first changed frames 2232, 2539, 5795 (tear, held to 5799, released 5800), 6927, each the span edge from fallback.json. Strips in `review/m6/`.
+- **Review clips:** `renders/m6/m6_span_edges.mp4` (4 × 8 s with audio, ±4 s around each edge, frame counter burned in, a red label from the edge frame on).
+- **Found on S51** (`review/m6/S51.jpg`): JetBrains Mono's ligature drew `->` as an arrow; ligatures are now off in S51 (re-rendered in M7).

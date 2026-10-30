@@ -45,7 +45,7 @@ const S51: React.FC = () => {
   const f = useCurrentFrame();
   const shown = S51_LINES.filter(([at]) => f >= at);
   return (
-    <AbsoluteFill style={{ background: "#0c0c0c", padding: "70px 80px", fontFamily: "'JetBrains Mono'", fontSize: 25, lineHeight: 1.55, color: "#cfcfcf" }}>
+    <AbsoluteFill style={{ background: "#0c0c0c", padding: "70px 80px", fontFamily: "'JetBrains Mono'", fontVariantLigatures: "none", fontSize: 25, lineHeight: 1.55, color: "#cfcfcf" }}>
       {shown.map(([, text, kind], k) => (
         <div key={k} style={{ whiteSpace: "pre-wrap", wordBreak: "break-all", color: kind === "cmd" ? "#e8e8e8" : "#bdbdbd", marginTop: kind === "cmd" && k ? 18 : 0 }}>
           {text}
