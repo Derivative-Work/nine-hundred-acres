@@ -99,3 +99,9 @@ Every render: timestamp, shot ID, composition, props, commit hash, output, conta
   - S42–S44: the "$29B (est.)" label rode the widening error bar up into the chart title; the label now sits beside the bar, and the bar is shorter so the widest error bar stays under the title.
   - S42: "sparkle: decorative" pointed at "Estimates", with its leader across the user's bubble; it now points at the sparkle from above-left.
 - **Contact sheets:** `review/S39.jpg`–`S44.jpg`.
+
+## 2026-10-30T09:14 — M5 final: Verse 3 v3, Bridge v2, Coda (S45–S50)
+
+- **Composition:** `Animatic`, `label: false`, 1080p, CRF 16. **Commit:** 81b55df. Frames 3352–4293 → `renders/m5/06_verse3.mp4` (v2 → `archive/renders/m5/06_verse3_v2.mp4`); 4294–5331 → `07_bridge.mp4` (v1 → `archive/renders/m5/07_bridge_v1.mp4`); 5332–7211 → `08_coda.mp4` (62.7 s, through the song's end, with the fan fading in under the last chord; an earlier coda render with the placeholder, never sent, → `archive/renders/m5/08_coda_v1.mp4`).
+- **Changes:** see production_log.md 09:10 (peace sign in its containers; rescales as events; the real Suno capture synced in S45–S47). Coda still pass before it (scratch, 10 frames + 4 with the capture): the chapter header showed over the S46 window (fixed, commit b3e04fa); the capture window sat on the caption bar (raised 40 px until the push).
+- **Contact sheets:** `review/S32.jpg`–`S50.jpg` regenerated.
