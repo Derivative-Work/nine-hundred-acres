@@ -53,7 +53,7 @@ export const Verse1Annex: React.FC = () => {
         </Card>
         <StatRow x={1480} y={200} column>
           <Stat at={s07} label="acres annexed" value={900} tick={word("L02", 4) + 12 - s07} emoji="corn" />
-          <Stat at={s08 + 8} label="reason given" value="—" />
+          <Stat at={s08 + 8} label="end user" value="—" />
           <Stat at={s09 + 4} label="windows" value="0" />
         </StatRow>
         <Note at={s07 + 18} x={420} y={760} tx={600} ty={655} until={s09}>annexation boundary</Note>

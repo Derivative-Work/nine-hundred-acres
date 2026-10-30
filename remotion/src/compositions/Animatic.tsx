@@ -18,7 +18,7 @@ import { Verse3Feed } from "../shots/Verse3";
 import { BridgeBill, BridgeNeedle } from "../shots/Bridge";
 import { CodaReveal } from "../shots/CodaReveal";
 import { CodaStutter } from "../shots/Coda";
-import { FACTS, CARD, END, FADE, PostRoll, S51_LEN, postLength } from "../shots/Post";
+import { FACTS, END, FADE, PostRoll, S51_LEN, cardStart, postLength } from "../shots/Post";
 
 export const AUDIO_END = at(map.duration_s);
 
@@ -79,8 +79,8 @@ const ShotLabel: React.FC<{ offset: number }> = ({ offset }) => {
     label = on.map((s) => s.id).join(" + ") || "S01";
   } else {
     const p = F - AUDIO_END;
-    const k = Math.floor((p - S51_LEN - FADE) / CARD);
-    label = p < S51_LEN + FADE ? "S51" : k < FACTS.length ? FACTS[k][0] : "S52";
+    const k = FACTS.findIndex((_, j) => p < cardStart(j + 1));
+    label = p < S51_LEN + FADE ? "S51" : k >= 0 ? FACTS[k][0] : "S52";
   }
   return (
     <div style={{ position: "absolute", right: 16, bottom: 12, fontFamily: "'JetBrains Mono'", fontSize: 22, color: "#fff", background: "#000a",

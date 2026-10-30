@@ -106,3 +106,9 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** "these are great; make a draft cut of the whole thing and then I'll do the audits".
 - **Rule:** H2 (M7 gate: closing and end card approved). The M8 fact check is the human's to run; the agent makes a draft cut first.
+
+## 2026-10-30T16:55 — Naming guardrail lifted for the fact cards — H2
+
+- **What:** "Lift the guardrail for facts cards, that's the point of them" (answering whether F7–F7b may name the company). Earlier, on the F7 finding: "some version of that xAI finding actually seems *especially* important to point out in a video like this".
+- **Rule:** H2, a human decision on the brief's guardrail ("never name the Memphis company"). It now applies to the song and its graphics only; the fact cards may name companies. The brief needs this edit.
+- **Also taken as direction:** proceed with the resolutions in `log/audits/03_review.md` and all three Southaven cards. The M8 gate (resolve every flag) is approved on the re-render.

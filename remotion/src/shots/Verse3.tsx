@@ -23,7 +23,7 @@ export const Verse3Feed: React.FC = () => {
     <Infected value={0.5}>
       <AbsoluteFill>
         <Background glowAt={[55, 45]} />
-        <div style={{ position: "absolute", left: 110, top: 70 }}><Heading size={84} gradient>Built to feed the machines</Heading></div>
+        <div style={{ position: "absolute", left: 110, top: 70 }}><Heading size={84} gradient>Restarting to feed the machines</Heading></div>
         <Card seed="v3reactor" glow style={{ position: "absolute", left: 110, top: 300, width: 490 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
             <Icon name="zap" size={40} color="#ffb000" />

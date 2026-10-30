@@ -273,3 +273,22 @@ The auditors' outputs go in `log/audits/`, following the sibling repos' layout.
 ## 2026-10-30T16:50 — M8: the Southaven case, read to date
 
 The human flagged the F7 finding as especially important. Claude read the docket through 2026-10-26: the state called the turbines exempt; the United States, on the EPA's behalf, moved to dismiss the NAACP's suit (denied 2026-10-19), then filed a crossclaim against the NAACP citing "Super Intelligence" power for the "Department of War". Details are in `log/audits/03_review.md` (addendum). Card options drafted for the human; the naming guardrail is the human's call.
+
+## 2026-10-30T17:05 — M8: resolutions applied
+
+- **Fact cards** (`Post.tsx`):
+  - F1, F2 and F4–F6 reworded to their verified sources (`log/audits/03_review.md`).
+  - F3 retired: no primary source.
+  - F7 rewritten for Southaven, naming xAI.
+  - F7a and F7b inserted: the U.S. motion to dismiss, denied 2026-10-19, and the 2026-10-23 crossclaim quote.
+  - Each card now holds long enough to read: max(5 s, 1.5 s + words / 4). The eight cards run 8.3 + 6.5 + 8.5 + 8.7 + 8.5 + 9.7 + 8.7 + 7.5 s.
+  - The post-roll is now 2879 frames (96.0 s), and the video 10091 frames (5:36.4).
+- **End card:** the Memphis line and the energy-meter line reworded.
+- **Graphics:**
+  - S08 headline: "End user: confidential". Stat: "end user".
+  - S24 headline: "… (2025)".
+  - S26: stat "permits granted"; source line now cites SELC's reading of the Jan 2026 rule.
+  - S36/S36a: headline and the title art now read "Restarting to feed the machines". The lyric is unchanged.
+- **Audio:** `postroll.wav` regenerated with `postroll_audio.py 96 8` (104 s); v3 moved to `archive/audio/postroll_v3.wav`; manifest updated.
+- **Checked:** stills of every changed frame.
+- **Still owed:** a brief edit (guardrail scope, the Reference facts S22–S26 and S50/S52 rows, the F table, S51 source). `scripts/contact_sheets.py` still hard-codes the old post-roll timings, as it already did before this change; it's unused since M5.

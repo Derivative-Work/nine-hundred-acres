@@ -133,7 +133,7 @@ export const Verse2Permit: React.FC = () => {
         <Haze amount={haze} />
         <AbsoluteFill style={{ opacity: 1 - ramp(F, s27 - 6, s27 + 6) }}>
           <StatRow x={P ? 60 : 160} y={P ? 1290 : 560}>
-            <Stat at={word("L15", 1)} label="permits filed" value="0" />
+            <Stat at={word("L15", 1)} label="permits granted" value="0" />
             <Stat at={word("L15", 6)} label="notices posted" value="0" />
           </StatRow>
         </AbsoluteFill>

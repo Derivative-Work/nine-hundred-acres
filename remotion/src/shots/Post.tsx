@@ -1,25 +1,31 @@
 // After the song: S51 (the post-filter's terminal output for this song, rebuilt from the music-deslop repo's own
 // print statements and the run's real detected spans; the human chose this over a capture, see production_log.md
-// 2026-10-30T09:40), a fade to black, the fact cards F1-F7 (plain white type on black, one fact per card, source
-// beneath, about five seconds each, plain cuts, no explainer styling, no emoji), then the end card S52 in plain type.
-// Card wording is the brief's; M8 verifies each against a primary source (or cuts it) before release.
+// 2026-10-30T09:40), a fade to black, the fact cards (plain white type on black, one fact per card, source
+// beneath, each held long enough to read, plain cuts, no explainer styling, no emoji), then the end card S52 in plain type.
 import React from "react";
 import { AbsoluteFill, Sequence } from "remotion";
 import { ramp } from "./kit";
 import { useCurrentFrame } from "remotion";
 
+// Card wording verified in M8 against a primary source (log/audits/03_review.md). F3 is retired (no primary source); F7a
+// and F7b are inserts. The fact cards name companies (the human lifted that guardrail for the cards, M8).
 export const FACTS: [string, string, string][] = [
-  ["F1", "11 data centers sit within half a mile of an elementary school in Ashburn, Virginia. NBC News is investigating what their backup generators mean for the air there.", "NBC News, Oct 28, 2026"],
-  ["F2", "Northern Virginia data centers have about 10,500 diesel backup generators, nearly 27 gigawatts in all.", "Sierra Club Virginia, Jul 2026"],
-  ["F3", "One backup generator burns about 150 gallons of diesel an hour. One permit allows a single data center up to 10 million gallons a year.", "Prince William Times; Virginia Mercury"],
-  ["F4", "In July 2026 the EPA proposed letting states drop public comment on “minor source” air permits, which cover most data center generators.", "Sierra Club Virginia"],
-  ["F5", "Neighbors near one Virginia data center measured noise above the county’s 60 dB limit. The ordinance exempts air conditioning.", "AP via WSLS, 2022"],
-  ["F6", "Salix, Iowa annexed 900 acres of farmland. The council voted 3–2 against a moratorium; the county has sued over the annexation.", "Iowa Public Radio; KTIV"],
-  ["F7", "In Memphis, court filings cite 57 trailer-mounted gas turbines.", "Filterbuy explainer"],
+  ["F1", "11 data centers sit within half a mile of an elementary school in Loudoun County, Virginia. As many as 264 diesel backup generators are near the school.", "NBC News, Oct 28, 2026 (analysis of state-issued permits)"],
+  ["F2", "Virginia had permitted over 10,500 diesel backup generators for data centers by the end of 2025: 27 gigawatts in all.", "Better Data Center Project, Mar 2026, from state air permits"],
+  ["F4", "In July 2026 the EPA proposed ending the federal minimum for public comment on “minor source” air permits, leaving it to each state. It is still a proposal.", "EPA; Federal Register, Jul 7, 2026"],
+  ["F5", "In 2022, neighbors said noise from one Virginia data center regularly exceeded the county’s 60 dB limit. Air conditioning was exempt then; the county has since tightened its rules.", "AP, Sep 2022; Prince William County, 2023 and 2026"],
+  ["F6", "Salix, Iowa annexed about 900 acres of farmland. In August the council voted 3–2 against a moratorium. The county and three landowners are challenging the annexation in court.", "Iowa Public Radio; KTIV"],
+  ["F7", "In Southaven, Mississippi, xAI’s gas plant for a data center a mile away in Tennessee grew to 57 trailer-mounted turbines by May 2026, with no air permit. The state had ruled them exempt.", "NAACP v. X.AI Corp., N.D. Miss., filings of Jun 12, 2026"],
+  ["F7a", "When the NAACP sued, the federal government stepped in for the EPA and asked the court to dismiss the case. In October 2026 the judge refused. The case continues.", "NAACP v. X.AI Corp., N.D. Miss., order of Oct 19, 2026"],
+  ["F7b", "The government’s filing says the lawsuit threatens “the power supply for Super Intelligence innovation that is essential to the Department of War’s military operations.”", "United States’ complaint in intervention, N.D. Miss., Oct 23, 2026"],
 ];
 
-export const S51_LEN = 270, FADE = 15, CARD = 150, END = 600;
-export const postLength = S51_LEN + FADE + FACTS.length * CARD + END;
+// Each card holds long enough to read: 1.5 s plus four words a second, and never under five seconds.
+export const S51_LEN = 270, FADE = 15, END = 600;
+export const cardLength = (text: string) => Math.max(150, Math.round((1.5 + text.split(/\s+/).length / 4) * 30));
+export const CARDS = FACTS.map(([, text]) => cardLength(text));
+export const cardStart = (k: number) => S51_LEN + FADE + CARDS.slice(0, k).reduce((x, y) => x + y, 0);
+export const postLength = cardStart(FACTS.length) + END;
 
 const plain: React.CSSProperties = { fontFamily: "Inter", color: "#f2f2f2" };
 
@@ -68,11 +74,11 @@ const Fact: React.FC<{ text: string; source: string }> = ({ text, source }) => (
 // one line per on-screen fact with its source (the brief's Reference facts), then the credits from assets/LICENSES.md.
 const ON_SCREEN_FACTS: [string, string][] = [
   ["Salix, Iowa annexed about 900 acres of farmland for a proposed data center; it is not built.", "Iowa Public Radio"],
-  ["35 portable gas turbines ran in South Memphis without air permits; in January 2026 the EPA clarified that such turbines need them.", "Oil & Gas Watch; Gas Outlook"],
+  ["In 2025, 35 portable gas turbines ran in South Memphis without air permits; in January 2026 the EPA revised its turbine rule, which the Southern Environmental Law Center says confirms they need permits.", "Oil & Gas Watch; Gas Outlook; SELC"],
   ["Three Mile Island Unit 1 was shut down in 2019 for economic reasons.", "Enlit"],
   ["It is renamed the Crane Clean Energy Center, under a Microsoft power deal; its restart is on track for mid-2027.", "Maryland Matters"],
   ["Data centers cost PJM’s 67 million ratepayers about $29 billion over roughly two years (market monitor estimate).", "NPR via KUNC"],
-  ["No public real-time measurement of AI data center energy exists.", "gradually.ai"],
+  ["No public meter measures AI data centers’ energy use in real time.", "gradually.ai"],
 ];
 
 const EndCard: React.FC = () => {
@@ -116,9 +122,9 @@ export const PostRoll: React.FC = () => {
       <Sequence durationInFrames={S51_LEN + FADE}><S51 /></Sequence>
       <Sequence from={S51_LEN} durationInFrames={FADE}><AbsoluteFill style={{ background: "#000", opacity: ramp(f, S51_LEN, S51_LEN + FADE) }} /></Sequence>
       {FACTS.map(([id, text, source], k) => (
-        <Sequence key={id} from={S51_LEN + FADE + k * CARD} durationInFrames={CARD}><Fact text={text} source={source} /></Sequence>
+        <Sequence key={id} from={cardStart(k)} durationInFrames={CARDS[k]}><Fact text={text} source={source} /></Sequence>
       ))}
-      <Sequence from={S51_LEN + FADE + FACTS.length * CARD} durationInFrames={END}><EndCard /></Sequence>
+      <Sequence from={cardStart(FACTS.length)} durationInFrames={END}><EndCard /></Sequence>
     </AbsoluteFill>
   );
 };
