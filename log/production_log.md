@@ -114,3 +114,21 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
   - The bridge's energy meter is a bar meter that grows per token, with no number, so the only footprint number on screen stays "???" (brief).
   - The Memphis card uses a placeholder grid map until the Natural Earth outlines are added in M4.
 - **Why:** to judge the M3 look in context before the gate.
+
+## 2026-10-30T01:40:00-04:00 — M3 gate passed; M4: the animatic of every shot
+
+- **Gate:** the human approved the look after the context reel ("yes, keep going"; human_interventions, 01:15).
+- **What:** Built every shot S01–S52 as Remotion scenes driven by the timing map, grouped into one composition per section (Intro, Verse1, Chorus1, Span1, Verse2, Verse3, Bridge, Coda) and chained into `Animatic` with the master (from the end of the 2 s pre-roll) and a post-roll (S51, F1–F7, S52). A burn-in names the shot(s) on screen and the frame. Rendered at 960x540.
+- **New inputs:** Natural Earth 1:50m admin-1 states (lakes) v5.1.2, public domain, downloaded to `assets/naturalearth/` and projected (Albers, lower 48) by `scripts/build_maps.py` into `remotion/src/data/maps.json`; Caveat 5.3.0 (OFL) for the hand-lettered signs. Both are in `assets/LICENSES.md`.
+- **New scenes:** `Intro.tsx` (S01–S04: the cursor never moves; the prompt fades in around it); `Verse1Map`, `Verse1Granddad` (S05–S06, S10–S11); `Chorus1Hum` (S12–S15); `Verse2Permit` (S26–S27); `Verse3Archive.tsx` (S32–S35 with S33a, S38); `BridgeBill` (S39–S40); `BridgeNeedle` gained S41's typing, per-card fades and the last cornstalk (in the chart's legend); `CodaReveal.tsx` (S45–S47); `CodaStutter` gained S50 and the stutter now stops at span 2's end; `Post.tsx` (S51, F1–F7, S52). Illustrations (`components/illustrations.tsx`): protesters, farmhouse photo, cobweb, peace-sign-to-power-button, fireflies, map view.
+- **Placeholders (waiting on H3 inputs):** S45–S46's Suno generation capture and S51's post-filter terminal capture are labeled gray windows. Nothing imitates either real interface.
+- **Departures and choices for the gate:**
+  - **Fireflies are drawn:** Unicode has no firefly emoji, so S15's fireflies are small glowing dots blinking at the status-dot rate.
+  - **Turbines** are Lucide's `fan` icon (Lucide has no turbine).
+  - **S04's title card** holds only 4.9 s (9.28–14.16 s); the terminal typing in S03 runs at 1.8 characters per frame to finish before it.
+  - **S50:** the cord enters from the left, runs along the bottom and plugs into the terminal's right side; the overlay stays at "OFF (by choice)" to the end.
+  - **Post-roll timing:** S51 6 s, a 0.5 s fade, F1–F7 5 s each, S52 20 s in two pages: 61.5 s in all.
+  - **Post-roll sound:** the master has no fan, so `scripts/postroll_audio.py` generates one: a fan spinning down over 5 s (bridging S50 → S51), pink room tone at −52 dBFS and a 60 Hz hum with harmonics at −44 dBFS, fading over the last 4 s.
+  - **Fact cards and end card** use the brief's wording; F1–F7 statuses are unchanged (M8 verifies or cuts each).
+- **Review aid:** `scripts/contact_sheets.py <video>` writes `review/<shot>.jpg` for every shot (four frames each).
+- **Why:** the brief, M4 ("Animatic of every shot at low resolution, cut to the track"). Gate: "Approve framing and timing".

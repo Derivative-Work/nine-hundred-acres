@@ -25,7 +25,7 @@ export const Protester: React.FC<{ x: number; y: number; scale?: number; sign: s
       <line x1={14} y1={0} x2={10} y2={-78} stroke="#e2c9a6" strokeWidth={8} strokeLinecap="round" />
       <line x1={0} y1={-70} x2={0} y2={-150} stroke="#8a6a48" strokeWidth={5} />
       <g transform={`translate(0 -150) scale(${squash} 1)`}>
-        <rect x={-62} y={-50} width={124} height={62} rx={4} fill={showBack ? "#f1e6cf" : "#fbf4e2"} stroke="#3a2a1a" strokeWidth={2} />
+        <rect x={-74} y={-50} width={148} height={62} rx={4} fill={showBack ? "#f1e6cf" : "#fbf4e2"} stroke="#3a2a1a" strokeWidth={2} />
         <text x={0} y={-8} textAnchor="middle" fontFamily="Caveat" fontWeight={700} fontSize={showBack ? 22 : 26} fill="#2a1d12"
           transform={`rotate(${(random(seed + "r") - 0.5) * 6})`}>{showBack ? back : sign}</text>
       </g>

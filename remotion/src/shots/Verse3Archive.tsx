@@ -46,13 +46,13 @@ export const Verse3Archive: React.FC = () => {
   const s32 = shot("S32").frame, s33 = shot("S33").frame, s34 = shot("S34").frame, s35 = shot("S35").frame;
   const bleed = ramp(F, s32 - 4, s32 + 20);
   const morph = ramp(F, s33, s33 + 20);
-  const travel = spring({ frame: F - s33 - 20, fps: 30, config: { damping: 200 } });
+  const travel = spring({ frame: F - s33 - 20, fps: 30, config: { damping: 200 }, durationInFrames: 30 });
   const off = F >= s33 + 34;
   const line = ramp(F, s33 + 10, s34 + 40);
   const diff = spring({ frame: F - s35, fps: 30, config: { damping: 200 } });
   const pill = F >= s34 + 30 ? "Restoring" : "Deprecated";
   // the peace sign starts on the banner (over the crowd card) and flies to the toggle on the right
-  const px = interpolate(travel, [0, 1], [500, 1395]), py = interpolate(travel, [0, 1], [205, 300]), ps = interpolate(travel, [0, 1], [110, 56]);
+  const px = interpolate(travel, [0, 1], [500, 1250]), py = interpolate(travel, [0, 1], [205, 297]), ps = interpolate(travel, [0, 1], [110, 56]);
   return (
     <Infected value={0.5}>
       <AbsoluteFill>
@@ -62,9 +62,6 @@ export const Verse3Archive: React.FC = () => {
             <Crowd banner={<rect x={340} y={40} width={300} height={120} rx={8} fill="#f1e6cf" stroke="#3a2a1a" strokeWidth={3} />} />
           </Archival>
           <div style={{ position: "absolute", left: 30, top: -60 }}><Pill tone="accent" size={28}>1979</Pill></div>
-        </div>
-        <div style={{ position: "absolute", left: px - ps / 2, top: py - ps / 2, opacity: bleed }}>
-          <PeaceToPower size={ps} morph={morph} color={travel > 0.9 ? (off ? "#8a93b2" : "#2dd4bf") : travel > 0.05 ? "#fff1dc" : "#3a2a1a"} />
         </div>
         <Card seed="toggle" style={{ position: "absolute", left: 1180, top: 230, width: 600, opacity: ramp(F, s33, s33 + 10) }}>
           <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
@@ -76,6 +73,9 @@ export const Verse3Archive: React.FC = () => {
           </div>
           <div style={{ marginTop: 18 }}><Pill tone={pill === "Restoring" ? "success" : "plain"}>{pill}</Pill></div>
         </Card>
+        <div style={{ position: "absolute", left: px - ps / 2, top: py - ps / 2, opacity: bleed }}>
+          <PeaceToPower size={ps} morph={morph} color={travel > 0.9 ? (off ? "#8a93b2" : "#2dd4bf") : travel > 0.05 ? "#fff1dc" : "#3a2a1a"} />
+        </div>
         <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
           <line x1={140} y1={860} x2={140 + 1640 * line} y2={860} stroke="#fff1dc" strokeWidth={4} />
           {([[1979, 0.05, "Protests"], [2019, 0.62, "Shut down (economic)"], [2027, 0.95, "Restart (planned)"]] as [number, number, string][]).map(([y, at, lab]) =>
