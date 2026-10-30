@@ -112,3 +112,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 - **What:** "Lift the guardrail for facts cards, that's the point of them" (answering whether F7–F7b may name the company). Earlier, on the F7 finding: "some version of that xAI finding actually seems *especially* important to point out in a video like this".
 - **Rule:** H2, a human decision on the brief's guardrail ("never name the Memphis company"). It now applies to the song and its graphics only; the fact cards may name companies. The brief needs this edit.
 - **Also taken as direction:** proceed with the resolutions in `log/audits/03_review.md` and all three Southaven cards. The M8 gate (resolve every flag) is approved on the re-render.
+
+## 2026-10-30T18:25 — S50 plug and fan approved; 4K render requested — H2
+
+- **What:** "This looks correct" (on v4's closing: the plug riding the cord, the fan starting at the plug-in). Then: "Do a 4k render".
+- **Rule:** H2. This approves the S50 and post-roll fixes. The M8 sign-off for release has been asked about but not yet given.
