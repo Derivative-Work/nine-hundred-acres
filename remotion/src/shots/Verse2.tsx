@@ -68,7 +68,7 @@ export const Verse2Turbines: React.FC = () => {
           <Stat at={s24 + 20} label="air permits" value="0" />
           <Stat at={s25} label="wind consulted" value="no" emoji="dash" />
         </StatRow>
-        <Note at={s24 + 30} x={1000} y={640} tx={190} ty={250} until={s25 + 40}>exhaust</Note>
+        <Note at={s24 + 30} x={1000} y={640} tx={773} ty={192} until={s25 + 40}>exhaust</Note>
         <Cursor keys={[[s25 + 20, 1100, 800], [s25 + 45, 1660, 472], [s25 + 70, 1640, 480], [s25 + 90, 1300, 700]]} />
         <div style={{ position: "absolute", left: 1300, top: 580 }}>
           <Stat at={s25 + 30} label="hand raised for" value={`${Math.max(0, Math.floor((F - s25 - 30) / 30))} s`} />
@@ -119,7 +119,7 @@ export const Verse2Permit: React.FC = () => {
           </Card>
           {F >= lawyers && [0, 1, 2].map((k) => {
             const walk = spring({ frame: F - lawyers - k * 6, fps: 30, config: { damping: 200 } });
-            return <div key={k} style={{ position: "absolute", left: 1000 + k * 95 + (1 - walk) * -300, top: 600 + (k % 2) * 30,
+            return <div key={k} style={{ position: "absolute", left: 1070 + k * 82 + (1 - walk) * -300, top: 600 + (k % 2) * 30,
               transform: `translateY(${knock ? -6 : 0}px)` }}><Icon name="briefcase" size={80} color="#e8ecf8" /></div>;
           })}
         </AbsoluteFill>
@@ -130,8 +130,8 @@ export const Verse2Permit: React.FC = () => {
             <Stat at={word("L15", 6)} label="notices posted" value="0" />
           </StatRow>
         </AbsoluteFill>
-        <Cursor keys={[[s26 + 40, 900, 800], [s26 + 64, 1110, 255, true], [s26 + 78, 1112, 257, true], [s27 - 10, 1000, 600]]} />
-        <Note at={s26 + 80} x={1500} y={560} tx={1110} ty={255} until={s27 - 6}>no answer</Note>
+        <Cursor keys={[[s26 + 40, 900, 800], [s26 + 64, 1050, 252, true], [s26 + 78, 1052, 254, true], [s27 - 10, 1000, 600]]} />
+        <Note at={s26 + 80} x={1500} y={560} tx={1360} ty={372} until={s27 - 6}>no answer</Note>
         <Note at={s27 + 20} x={595} y={400} tx={595} ty={560}>schoolhouse</Note>
         <StatRow x={140} y={240} column>
           <Stat at={s27 + 10} label="visibility" value="low" emoji="fog" />
