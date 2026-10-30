@@ -4,6 +4,7 @@ import { AbsoluteFill, random, useCurrentFrame } from "remotion";
 import { TIE_DYE } from "../theme/infection";
 import { useTheme } from "../theme/context";
 import { alpha } from "../theme/infection";
+import { useChrome } from "../chrome/context";
 
 // One SVG filter per frame: turbulence displacing whatever uses it, at the theme's marble strength.
 export const MarbleDefs: React.FC = () => {
@@ -26,8 +27,17 @@ export const MarbleDefs: React.FC = () => {
 };
 
 // Dark navy (drifting to aubergine), the soft radial glow behind the focal card, the lava lamp near the peak.
+// Inside the chrome only the lava lamp and the filters are drawn here; the chrome owns the rest of the backdrop.
 export const Background: React.FC<{ glowAt?: [number, number] }> = ({ glowAt = [50, 45] }) => {
   const t = useTheme();
+  if (useChrome()) {
+    return (
+      <AbsoluteFill style={{ top: -120, bottom: -120, left: -160, right: -160 }}>
+        {t.lava > 0 && <LavaLamp />}
+        <MarbleDefs />
+      </AbsoluteFill>
+    );
+  }
   return (
     <AbsoluteFill style={{ background: t.c.bg }}>
       <AbsoluteFill style={{ background: `radial-gradient(ellipse 55% 50% at ${glowAt[0]}% ${glowAt[1]}%, ${t.c.glow}, transparent 70%)` }} />
@@ -62,8 +72,9 @@ export const LavaLamp: React.FC = () => {
 export const Haze: React.FC<{ amount: number; wipe?: number }> = ({ amount, wipe = 1 }) => {
   const f = useCurrentFrame();
   const edge = wipe * 130 - 15;
+  const over = useChrome() ? 160 : 0; // inside the scaled stage the haze overhangs the frame so its edges never show
   return (
-    <AbsoluteFill style={{ pointerEvents: "none", opacity: amount,
+    <AbsoluteFill style={{ pointerEvents: "none", opacity: amount, top: -over, bottom: -over, left: -over, right: -over,
       WebkitMaskImage: `linear-gradient(90deg, #000 ${edge - 15}%, transparent ${edge + 15}%)`,
       maskImage: `linear-gradient(90deg, #000 ${edge - 15}%, transparent ${edge + 15}%)` }}>
       <AbsoluteFill style={{ background: "linear-gradient(180deg, #6b4a2b 0%, #4a3220 60%, #2e2016 100%)", mixBlendMode: "multiply" }} />

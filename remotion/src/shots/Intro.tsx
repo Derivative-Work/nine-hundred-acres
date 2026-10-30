@@ -5,6 +5,7 @@
 import React from "react";
 import { AbsoluteFill, spring } from "remotion";
 import { Infected } from "../theme/context";
+import { useChrome } from "../chrome/context";
 import { Background } from "../components/surface";
 import { Cord, Toast } from "../components/furniture";
 import { Emoji, Heading, Icon, Pill } from "../components/type";
@@ -30,7 +31,7 @@ export const IntroTitle: React.FC = () => {
   ];
   return (
     <Infected value={0}>
-      <AbsoluteFill style={{ background: "#000" }}>
+      <AbsoluteFill style={{ background: useChrome() ? "transparent" : "#000" }}>
         <AbsoluteFill style={{ opacity: chrome }}><Background /></AbsoluteFill>
         <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", opacity: 1 - termOut, transform: `translateY(${-termOut * 20}px)` }}>
           <Terminal lines={done ? rows : [<span key="c"><span style={{ color: "#8a93b2", opacity: chrome }}>$ </span>{CMD.slice(0, typed)}</span>]}

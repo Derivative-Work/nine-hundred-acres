@@ -124,7 +124,7 @@ export const HumWave: React.FC<{ width: number; height: number; label?: boolean 
         </defs>
         <path d={pts} fill="none" stroke="url(#hum)" strokeWidth={5} strokeLinecap="round" style={{ filter: `drop-shadow(0 0 12px ${alpha(t.c.accentB, 0.53)})` }} />
       </svg>
-      {label && <Body size={22} mono muted style={{ position: "absolute", left: 0, top: -6 }}>The Hum · 60 Hz · always</Body>}
+      {label && <Body size={22} mono muted style={{ position: "absolute", left: 0, top: -6 }}>The Hum · always</Body>}
     </div>
   );
 };

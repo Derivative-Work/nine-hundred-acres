@@ -6,6 +6,7 @@
 import React from "react";
 import { AbsoluteFill, interpolate, spring } from "remotion";
 import { Infected } from "../theme/context";
+import { useChrome } from "../chrome/context";
 import { RestoreOverlay } from "../components/furniture";
 import { Icon } from "../components/type";
 import { at, shot, spans } from "../timing";
@@ -29,7 +30,7 @@ export const CodaStutter: React.FC = () => {
     ...(live < s50 ? ["$ "] : [])];
   return (
     <Infected value={0}>
-      <AbsoluteFill style={{ background: "#000" }}>
+      <AbsoluteFill style={{ background: useChrome() ? "transparent" : "#000" }}>
         <AbsoluteFill style={{ justifyContent: "center", alignItems: "center" }}>
           <Terminal lines={rows} width={1180} clock={F} cursor={!energy} />
         </AbsoluteFill>

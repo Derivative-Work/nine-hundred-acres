@@ -10,10 +10,10 @@ const board: StyleBoardProps = { infection: 0, label: "", heat: 0 };
 export const Root: React.FC = () => (
   <>
     <Still id="StyleBoard" component={StyleBoard} width={1920} height={1080} defaultProps={board} />
-    <Composition id="Animatic" component={Animatic} width={1920} height={1080} fps={30} durationInFrames={animaticLength} defaultProps={{ label: true }} />
+    <Composition id="Animatic" component={Animatic} width={1920} height={1080} fps={30} durationInFrames={animaticLength} defaultProps={{ label: true, chrome: true }} />
     {SECTIONS.map(([name]) => {
       const [a, b] = sectionRange(name);
-      return <Composition key={name} id={name} component={Section} width={1920} height={1080} fps={30} durationInFrames={b - a} defaultProps={{ name, label: true }} />;
+      return <Composition key={name} id={name} component={Section} width={1920} height={1080} fps={30} durationInFrames={b - a} defaultProps={{ name, label: true, chrome: true }} />;
     })}
     <Composition id="ContextReel" component={ContextReel} width={1920} height={1080} fps={30} durationInFrames={reelLength} />
   </>

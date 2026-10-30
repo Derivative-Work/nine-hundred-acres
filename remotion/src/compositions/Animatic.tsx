@@ -5,7 +5,9 @@ import React from "react";
 import { AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame } from "remotion";
 import map from "../../../timing/map.json";
 import { at, shot } from "../timing";
-import { ShotClock } from "../shots/kit";
+import { ShotClock, useFrame } from "../shots/kit";
+import { ChromeOn } from "../chrome/context";
+import { ChromeBack, ChromeFront, Stage } from "../chrome/Chrome";
 import { IntroTitle } from "../shots/Intro";
 import { Verse1Annex, Verse1Granddad, Verse1Map } from "../shots/Verse1";
 import { Chorus1Hum, Chorus1Wired } from "../shots/Chorus1";
@@ -43,14 +45,28 @@ export const sectionRange = (name: string) => {
   return [startOf(sc[0][0]), sceneEnd(sc[sc.length - 1][0])];
 };
 
-const Scenes: React.FC<{ list: [string | number, React.FC][]; offset: number }> = ({ list, offset }) => (
+const Staged: React.FC<{ since: number; children: React.ReactNode }> = ({ since, children }) => {
+  const F = useFrame();
+  return <Stage F={F} since={since}>{children}</Stage>;
+};
+
+const Scenes: React.FC<{ list: [string | number, React.FC][]; offset: number; chrome: boolean }> = ({ list, offset, chrome }) => (
   <>
     {list.map(([s, Scene]) => (
       <Sequence key={String(s)} from={startOf(s) - offset} durationInFrames={sceneEnd(s) - startOf(s)}>
-        <ShotClock from={startOf(s)}><Scene /></ShotClock>
+        <ShotClock from={startOf(s)}>
+          <ChromeOn.Provider value={chrome}>
+            {chrome ? <Staged since={startOf(s)}><Scene /></Staged> : <Scene />}
+          </ChromeOn.Provider>
+        </ShotClock>
       </Sequence>
     ))}
   </>
+);
+
+// The chrome's layers on the absolute clock (a section composition starts at `offset`).
+const Chrome: React.FC<{ offset: number; layer: "back" | "front" }> = ({ offset, layer }) => (
+  <Sequence from={-offset} layout="none">{layer === "back" ? <ChromeBack /> : <ChromeFront />}</Sequence>
 );
 
 // Review burn-in: the shot (or shots) on screen and the video frame.
@@ -67,17 +83,19 @@ const ShotLabel: React.FC<{ offset: number }> = ({ offset }) => {
     label = p < S51_LEN + FADE ? "S51" : k < FACTS.length ? FACTS[k][0] : "S52";
   }
   return (
-    <div style={{ position: "absolute", left: 16, top: 12, fontFamily: "'JetBrains Mono'", fontSize: 22, color: "#fff", background: "#000a",
+    <div style={{ position: "absolute", right: 16, bottom: 12, fontFamily: "'JetBrains Mono'", fontSize: 22, color: "#fff", background: "#000a",
       padding: "4px 10px", borderRadius: 6 }}>{label} · f{F}</div>
   );
 };
 
-export const Section: React.FC<{ name: string; label?: boolean }> = ({ name, label = true }) => {
+export const Section: React.FC<{ name: string; label?: boolean; chrome?: boolean }> = ({ name, label = true, chrome = true }) => {
   const [a, b] = sectionRange(name);
   const list = SECTIONS.find(([n]) => n === name)![1];
   return (
     <AbsoluteFill style={{ background: "#000" }}>
-      <Scenes list={list} offset={a} />
+      {chrome && <Chrome offset={a} layer="back" />}
+      <Scenes list={list} offset={a} chrome={chrome} />
+      {chrome && <Chrome offset={a} layer="front" />}
       <Sequence from={Math.max(0, at(0) - a)}>
         <Audio src={staticFile("audio/master.wav")} trimBefore={Math.max(0, a - at(0))} trimAfter={b - at(0)} />
       </Sequence>
@@ -86,9 +104,11 @@ export const Section: React.FC<{ name: string; label?: boolean }> = ({ name, lab
   );
 };
 
-export const Animatic: React.FC<{ label?: boolean }> = ({ label = true }) => (
+export const Animatic: React.FC<{ label?: boolean; chrome?: boolean }> = ({ label = true, chrome = true }) => (
   <AbsoluteFill style={{ background: "#000" }}>
-    <Scenes list={scenes} offset={0} />
+    {chrome && <Sequence durationInFrames={AUDIO_END}><ChromeBack /></Sequence>}
+    <Scenes list={scenes} offset={0} chrome={chrome} />
+    {chrome && <Sequence durationInFrames={AUDIO_END}><ChromeFront /></Sequence>}
     <Sequence from={at(0)} durationInFrames={AUDIO_END - at(0)}><Audio src={staticFile("audio/master.wav")} /></Sequence>
     <Sequence from={AUDIO_END} durationInFrames={postLength}>
       <PostRoll />

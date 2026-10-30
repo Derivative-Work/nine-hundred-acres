@@ -7,6 +7,7 @@ import { Background, Card } from "../components/surface";
 import { Checklist, Cord, HumWave, TileGrid } from "../components/furniture";
 import { Body, Emoji, Icon, Pill } from "../components/type";
 import { Fireflies } from "../components/illustrations";
+import { Cursor, Note, Stat, StatRow } from "../components/annotate";
 import { beatsBetween, line, shot, word } from "../timing";
 import { Captions, ramp, useFrame } from "./kit";
 
@@ -45,6 +46,12 @@ export const Chorus1Wired: React.FC = () => {
           <Body size={40} mono style={{ marginTop: 8 }}>{hms}</Body>
         </Card>
         <div style={{ position: "absolute", left: 330, top: 760 }}><HumWave width={560} height={110} /></div>
+        <Cursor keys={[[sleep + 4, 1150, 640], [sleep + 22, 1384, 300, true], [sleep + 34, 1386, 302, true], [stop + 12, 1384, 365, true], [stop + 28, 1390, 370, true]]} />
+        <Note at={stop + 30} x={1700} y={470} tx={1405} ty={365} until={wired + 40}>can't check</Note>
+        <StatRow x={1330} y={820}>
+          <Stat at={sleep} label="sleep" value="0 h" />
+          <Stat at={stop} label="stops" value="0" />
+        </StatRow>
         <Captions />
       </AbsoluteFill>
     </Infected>
@@ -92,6 +99,15 @@ export const Chorus1Hum: React.FC = () => {
             <Fireflies n={22} w={1300} h={800} opacity={night} />
           </div>
         </AbsoluteFill>
+        <Note at={s12 + 12} x={1560} y={250} tx={1340} ty={420} until={s13 - 6}>period: forever</Note>
+        <Note at={s12 + 30} x={360} y={800} tx={520} ty={680} until={s13 - 6}>volume: steady</Note>
+        <Note at={s13 + 6} x={495} y={330} tx={495} ty={505} until={s13 + 22}>cricket? no: fan</Note>
+        <Cursor keys={[[s14 + 24, 1250, 900], [s14 + 48, 705, 425], [s14 + 62, 706, 426, true]]} />
+        <Note at={s14 + 64} x={960} y={330} tx={706} ty={426} until={s15 + 30}>room 0412 · thinking…</Note>
+        <StatRow x={60} y={170} column>
+          <Stat at={s14 + 10} label="rooms" value={1000} tick={30} />
+          <Stat at={s15 + 20} label="sleep scheduled" value="never" />
+        </StatRow>
         {F >= s15 && (
           <div style={{ position: "absolute", right: 60, top: 50, display: "flex", flexDirection: "column", gap: 16, opacity: ramp(F, s15, s15 + 10) }}>
             <Card seed="up"><Body size={22} mono muted>Uptime</Body><Body size={40} mono>{`214d 06:12:${String(5 + up).padStart(2, "0")}`}</Body></Card>

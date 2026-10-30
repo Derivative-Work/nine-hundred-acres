@@ -5,6 +5,7 @@
 import React from "react";
 import { AbsoluteFill, interpolate, spring } from "remotion";
 import { Infected } from "../theme/context";
+import { useChrome } from "../chrome/context";
 import { Card } from "../components/surface";
 import { TileGrid } from "../components/furniture";
 import { Body } from "../components/type";
@@ -47,7 +48,7 @@ export const CodaReveal: React.FC = () => {
   const x = interpolate(drop, [0, 1], [-260 * push, 393]), y = interpolate(drop, [0, 1], [-60 * push, 172]);
   return (
     <Infected value={interpolate(F, [s45, w[5]], [0.75, 0], clamp)}>
-      <AbsoluteFill style={{ background: "#000" }}>
+      <AbsoluteFill style={{ background: useChrome() ? "transparent" : "#000" }}>
         <AbsoluteFill style={{ opacity: 1 - capture }}><BridgeNeedle fade={fade} captions={false} /></AbsoluteFill>
         <AbsoluteFill style={{ justifyContent: "center", alignItems: "center", opacity: gridIn * (1 - wink) }}>
           <Card seed="codagrid"><TileGrid cols={12} rows={6} tile={62} survivor={[-1, -1]} /></Card>

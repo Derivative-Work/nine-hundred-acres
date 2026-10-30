@@ -8,6 +8,7 @@ import { Cord, HumWave, TileGrid } from "../components/furniture";
 import { Farmhouse, MAP_BOX, MAP_PINS, MapView } from "../components/illustrations";
 import { Body, Emoji, Pill } from "../components/type";
 import { shot, word } from "../timing";
+import { Cursor, Note, Stat, StatRow } from "../components/annotate";
 import { Captions, clamp, ramp, useFrame } from "./kit";
 
 const EIGHTH = 7; // frames: an eighth note at ~130 bpm
@@ -50,6 +51,13 @@ export const Verse1Annex: React.FC = () => {
             )}
           </div>
         </Card>
+        <StatRow x={1480} y={200} column>
+          <Stat at={s07} label="acres annexed" value={900} tick={word("L02", 4) + 12 - s07} emoji="corn" />
+          <Stat at={s08 + 8} label="reason given" value="—" />
+          <Stat at={s09 + 4} label="windows" value="0" />
+        </StatRow>
+        <Note at={s07 + 18} x={420} y={760} tx={600} ty={655} until={s09}>annexation boundary</Note>
+        <Note at={s09 + 40} x={1300} y={780} tx={1162} ty={622}>1 stalk left</Note>
         <Captions />
       </AbsoluteFill>
     </Infected>
@@ -83,6 +91,13 @@ export const Verse1Map: React.FC = () => {
           </Card>
         )}
         {F >= s06 && <CornRise from={s06} />}
+        <StatRow x={1540} y={230} column>
+          <Stat at={s05 + 20} label="state" value="Iowa" />
+          <Stat at={s05 + 60} label="region" value="northwest" />
+          <Stat at={s06} label="crop" value="corn" emoji="corn" />
+          <Stat at={word("L01", 10)} label="height" value="the sky" />
+        </StatRow>
+        <Cursor keys={[[s05 + 40, 1300, 800], [s05 + 62, 962, 515, true], [s05 + 80, 975, 530]]} />
         <Captions />
       </AbsoluteFill>
     </Infected>
@@ -133,6 +148,12 @@ export const Verse1Granddad: React.FC = () => {
           <div style={{ position: "absolute", right: -20, top: -20, transform: `scale(${badge})` }}><Pill size={24}>archived</Pill></div>
         </div>
         <div style={{ position: "absolute", left: 160, top: 760, opacity: hum }}><HumWave width={1600} height={170} /></div>
+        <Note at={s10 + 22} x={1720} y={250} tx={1420} ty={340} until={s11}>family photo · 1 of 1</Note>
+        <StatRow x={60} y={220} column>
+          <Stat at={s10 + 56} label="status" value="archived" />
+          <Stat at={s11 + 6} label="crop yield" value="1 hum" />
+        </StatRow>
+        <Note at={s11 + 16} x={420} y={700} tx={560} ty={845}>amplitude: constant</Note>
         <Captions />
       </AbsoluteFill>
     </Infected>
