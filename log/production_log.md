@@ -246,3 +246,15 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
 ## 2026-10-30T10:30 — M7 gate passed; draft cut
 
 - Human approved M7 (H2) and will run the M8 audits; rendering a full draft cut for them.
+
+## 2026-10-30 — M8: audit prompt for the cross-lab fact check
+
+The human asked for the prompt to paste into the other labs' models. Wrote `log/prompts/other/m8_fact_audit.md`:
+- **What it lists:** every on-screen claim from the draft cut, each with its source from the Reference facts table:
+  - A1–A12: graphics, lyrics and the end card.
+  - F1–F7: the fact cards, with their exact text.
+  - Section C: the satirical labels, to flag only if a viewer could take one as fact.
+- **What it asks for:** a verdict per claim, a quote from the source, newer developments as of today, a primary source for each fact card, and a suggested rewording that fits on screen.
+- **Rules for the auditor:** it may not verify a claim from memory, and it may not add names. The Memphis company stays unnamed on screen.
+
+The auditors' outputs go in `log/audits/`, following the sibling repos' layout.
