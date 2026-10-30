@@ -163,3 +163,8 @@ Append-only. One entry per action: timestamp, step (shot ID where relevant), wha
 - **Interest:** after the letters fail (~5 s) S49 sat static for ~33 s. Now, on the stuttered 6 fps clock, every downbeat tears the frame into shifted bands with a red/cyan split, palette blocks smear across the black (lighter ticks on the other beats), and ghosts of the explainer (title, toasts, chapters 01–05, headlines; on-screen text only, nothing new) flash up half-boxed in order and fail. It builds through the outro, peaks from 222 s, and clears when the drums drop out (227.14 s). The overlay stays OFF; nothing recovers.
 - **S50:** clean frame; after the plug lands a spark, then current runs along the cord into the terminal, slowing to a stop with the fan spin-down.
 - **Commit:** 2e32c53 (code); animatic v4 in renders.md.
+
+## 2026-10-30T06:40 — M4 gate approved; caret and fan fixes
+
+- **Caret:** `Terminal` drew the cursor on its own line below the last row. It now sits at the end of the last row, where the next character is typed (S01–S04, S48–S50). Rows keep their spaces (`white-space: pre`), so "  ok  Explainer ready" shows its indent.
+- **Fan:** `scripts/postroll_audio.py` takes a lead: `postroll_audio.py 61.5 8` starts the file 8 s before the song ends; the fan (at full speed) and the room tone fade in under the final chord (smoothstep, full 1 s before the end), and the spin-down starts where the song ends, as before. The Animatic starts `postroll.wav` 240 frames early. v1 moved to `archive/audio/postroll_v1.wav`.

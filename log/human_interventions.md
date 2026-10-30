@@ -46,3 +46,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** On animatic v3: "Mostly there, but S50's visual corruption is not rendering right and also could use some more visual interest".
 - **Rule:** H2 (feedback at the M4 gate; the agent made the changes).
+
+## 2026-10-30T06:40 — M4 approved, with two notes — H2
+
+- **What:** On animatic v4: "Both are good. Two nitpicks, then keep going: the terminal caret is in the wrong position for what is typed next, and fade into the fan sound during the end of the song rather than starting it abruptly".
+- **Rule:** H2 (M4 gate approved: framing and timing; the agent made the two fixes).

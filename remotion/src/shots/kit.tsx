@@ -60,7 +60,8 @@ export const ReelLabel: React.FC<{ children: React.ReactNode }> = ({ children })
     background: "#0008", padding: "4px 10px", borderRadius: 6 }}>{children}</div>
 );
 
-// A generic terminal window: plain chrome (three neutral dots), monospace text, a blinking block cursor.
+// A generic terminal window: plain chrome (three neutral dots), monospace text, a blinking block cursor at the end of the last
+// line, where the next character will be typed.
 // `chrome` fades the window and its text without moving the cursor (S01: the cursor blinks alone on black).
 export const Terminal: React.FC<{ lines: React.ReactNode[]; width?: number; cursor?: boolean; clock?: number; chrome?: number; style?: React.CSSProperties }> = ({
   lines: rows, width = 1100, cursor = true, clock, chrome = 1, style,
@@ -76,9 +77,13 @@ export const Terminal: React.FC<{ lines: React.ReactNode[]; width?: number; curs
         {[0, 1, 2].map((k) => <div key={k} style={{ width: 12, height: 12, borderRadius: 6, background: "#ffffff26" }} />)}
       </div>
       <div style={{ position: "relative", padding: "22px 26px", fontFamily: t.font.mono, fontSize: 30, lineHeight: 1.6, color: "#d7dbe6", minHeight: 120 }}>
-        {rows.map((r, k) => <div key={k} style={{ opacity: k < rows.length - 1 ? chrome : 1 }}>{r}</div>)}
-        {cursor && <span style={{ display: "inline-block", width: 16, height: 34, verticalAlign: "middle", background: "#d7dbe6",
-          opacity: Math.floor(F / 15) % 2 ? 0 : 1 }} />}
+        {rows.map((r, k) => (
+          <div key={k} style={{ opacity: k < rows.length - 1 ? chrome : 1, whiteSpace: "pre" }}>
+            {r}
+            {cursor && k === rows.length - 1 && <span style={{ display: "inline-block", width: 16, height: 34, verticalAlign: "middle",
+              background: "#d7dbe6", opacity: Math.floor(F / 15) % 2 ? 0 : 1 }} />}
+          </div>
+        ))}
       </div>
     </div>
   );

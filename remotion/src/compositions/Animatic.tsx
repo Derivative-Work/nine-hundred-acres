@@ -104,16 +104,18 @@ export const Section: React.FC<{ name: string; label?: boolean; chrome?: boolean
   );
 };
 
+// scripts/postroll_audio.py <seconds> 8
+const FAN_LEAD = 8 * 30;
+
 export const Animatic: React.FC<{ label?: boolean; chrome?: boolean }> = ({ label = true, chrome = true }) => (
   <AbsoluteFill style={{ background: "#000" }}>
     {chrome && <Sequence durationInFrames={AUDIO_END}><ChromeBack /></Sequence>}
     <Scenes list={scenes} offset={0} chrome={chrome} />
     {chrome && <Sequence durationInFrames={AUDIO_END}><ChromeFront /></Sequence>}
     <Sequence from={at(0)} durationInFrames={AUDIO_END - at(0)}><Audio src={staticFile("audio/master.wav")} /></Sequence>
-    <Sequence from={AUDIO_END} durationInFrames={postLength}>
-      <PostRoll />
-      <Audio src={staticFile("audio/postroll.wav")} />
-    </Sequence>
+    <Sequence from={AUDIO_END} durationInFrames={postLength}><PostRoll /></Sequence>
+    {/* the fan fades in under the final chord: postroll.wav starts FAN_LEAD frames before the song ends */}
+    <Sequence from={AUDIO_END - FAN_LEAD} durationInFrames={postLength + FAN_LEAD}><Audio src={staticFile("audio/postroll.wav")} /></Sequence>
     {label && <ShotLabel offset={0} />}
   </AbsoluteFill>
 );
