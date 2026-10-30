@@ -38,6 +38,15 @@ export const Captions: React.FC<{ glyphBoxes?: number }> = ({ glyphBoxes = 0 }) 
 export const boxed = (s: string, share: number, seed = s) =>
   [...s].map((ch, k) => (ch !== " " && ((k * 7919 + seed.length * 31) % 97) / 97 < share ? "▯" : ch)).join("");
 
+// Draws the "▯" marks from `boxed` as real empty boxes one character wide (the fonts have no such glyph, and the
+// fallback draws thin slivers).
+export const Tofu: React.FC<{ text: string }> = ({ text }) => (
+  <>{text.split(/(▯)/).map((p, k) => p === "▯"
+    ? <span key={k} style={{ display: "inline-block", width: "0.46em", height: "0.74em", margin: "0 0.07em", verticalAlign: "-0.06em",
+        border: "0.07em solid currentColor", boxSizing: "border-box", opacity: 0.85 }} />
+    : <React.Fragment key={k}>{p}</React.Fragment>)}</>
+);
+
 // A failing frame clock: from `start` to `end`, animation only advances at 6 fps (holding each frame five times at
 // 30 fps); it runs smoothly again after `end`.
 export const useStutter = (start: number, end = Infinity) => {
