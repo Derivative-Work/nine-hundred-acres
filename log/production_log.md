@@ -258,3 +258,14 @@ The human asked for the prompt to paste into the other labs' models. Wrote `log/
 - **Rules for the auditor:** it may not verify a claim from memory, and it may not add names. The Memphis company stays unnamed on screen.
 
 The auditors' outputs go in `log/audits/`, following the sibling repos' layout.
+
+## 2026-10-30T16:30 — M8: audits filed and checked
+
+- **Received:** the human's two audits (ChatGPT, which browsed; Gemini, which could not browse, so every row is UNVERIFIED) and the NBC report behind F1 (video and captions). Filed in `log/audits/` and `reference/sources/` (git-ignored).
+- **Checked:** every flag against a source Claude opened itself; the results are in `log/audits/03_review.md`.
+- **Findings neither auditor caught:**
+  - F3's "150 gallons an hour" comes from a reader comment on the Prince William Times page.
+  - F2's figure covers all of Virginia, and it counts permitted generators, not Northern Virginia.
+  - F7's 57 turbines are in Southaven, Mississippi, confirmed by N.D. Miss. Doc 51, the primary source.
+- **Verified from the primary source:** F1, from the NBC captions.
+- **Proposed:** text changes to A3, A4, A5, A9, A12 and F1–F7, with F3 retired. These wait on the human's approval; nothing on screen has changed yet.

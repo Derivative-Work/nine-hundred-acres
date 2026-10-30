@@ -19,6 +19,8 @@ transcripts/
 
 # Reference material: never published, never hashed into the manifest.
 reference/inspiration/
+# Third-party source material for the fact check (M8): kept for the record, never published.
+reference/sources/
 
 # Regenerable: never archived; versions and regen commands are logged instead.
 frames/
