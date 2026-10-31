@@ -41,6 +41,7 @@ archive/renders/
 # The human's real screen captures (S45-S46, S51): hashed in the manifest.
 assets/real/
 edit/
-deliverables/
+# The upload-ready videos (large; listed in MANIFEST.sha256). The SRTs and thumbnails are small and kept in git.
+deliverables/*.mp4
 remotion/node_modules/
 remotion/out/

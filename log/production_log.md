@@ -340,3 +340,12 @@ The mirror script splits one bold run in two around the inserted "b", so the mir
 
 - At the human's request ("Do a 4k render"), rendered `Animatic` at `--scale=2` → `renders/m8/nine_hundred_acres_m8_4k.mp4` (3840x2160, 30 fps, H.264, AAC 48 kHz stereo, 336.47 s). Spot-checked a frame at 1:40: sharp. The same cut as the 1080p v4.
 - Known limit: the Suno capture proxy (`remotion/public/real/suno_capture.mp4`, 2400x1176) is enlarged about 1.65x at the push-in's peak. A proxy built from the 3200x1868 original would cut that to about 1.34x. Offered to the human; not done.
+
+## 2026-10-31T07:40 — Release documents: README, licences, YouTube metadata
+
+- **What:** At the human's request (H2, 2026-10-31T07:10), wrote the release documents, following the published sibling repos (Not Yet is the model: https://github.com/Derivative-Work/not-yet).
+  - `README.md`: what the video is, the making-of record, files, rebuild order, licences and credits (the music-deslop training data section as in Not Yet).
+  - `LICENSE` (MIT, code), `LICENSE-media.md` (CC BY-NC-SA 4.0, video and assets, with what it covers and doesn't), `LICENSES/CC-BY-NC-SA-4.0.txt` (from Not Yet), `LICENSES/Lucide-ISC.txt` (from `lucide-static` 1.57.0, for the tracked icons).
+  - `METADATA.md`: titles, descriptions (main 4,845 of 5,000 characters), chapters, tags and settings for the main video and the vertical cut. The titles, opening lines and thumbnails never name Suno (the brief withholds the song's origin until the coda); Suno appears under CREDITS only. The end-screen advice comes from the end card's layout (frames at 5:20 and 5:30 of the 1080p v4: text ends about y = 700).
+- **Deliverables:** `deliverables/nine_hundred_acres_3840x2160.mp4` (copy of `renders/m8/nine_hundred_acres_m8_4k.mp4`) and `deliverables/nine_hundred_acres_vertical_1080x1920.mp4` (copy of `renders/m8/vertical_s12-s27_m8.mp4`), hashed in the manifest. `.gitignore` now ignores only `deliverables/*.mp4`, so the SRTs and thumbnails are in git, as in Not Yet.
+- **Checked before pushing:** no file in git over 2.4 MB (the 50 MiB hook), no credentials. The planning chat (already a public share) and the Suno page data are archived as in the sibling repos. The fact-check sources and the Suno recording stay out of git.
