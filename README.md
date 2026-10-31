@@ -19,8 +19,9 @@ Two other labs' models audited every on-screen claim, and Claude checked each fl
 
 ## Watch
 
-- **YouTube:** link to come.
-- **Files:** the videos, captions and music go in the v1.0 release once it is published.
+- **YouTube:** https://www.youtube.com/watch?v=7OT7Fb6LcP8
+- **Files:** the videos, captions, thumbnail and music are in the
+  [v1.0 release](https://github.com/Derivative-Work/nine-hundred-acres/releases/tag/v1.0).
 
 ## The making-of record
 

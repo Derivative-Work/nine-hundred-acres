@@ -127,3 +127,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** "yes go with A" (of the five text thumbnails in `review/thumbnails/`).
 - **Rule:** H1, a pick among the agent's options. A replaces the plain S38 thumbnail chosen at M7.
+
+## 2026-10-31T09:15 — Main video uploaded to YouTube; release requested — EXCEPTION (publishing)
+
+- **What:** "go ahead and make the release too"; then, while the agent was building it, "youtube link https://www.youtube.com/watch?v=7OT7Fb6LcP8". The human uploaded the main video (not yet public: YouTube's oEmbed returns 403).
+- **Rule:** outside H1–H3: the agent has no access to YouTube, and publishing is the human's call (as R4/R1 in Not Yet). The release request is H2.

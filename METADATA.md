@@ -6,8 +6,8 @@ uploads.
 **Before uploading:**
 - **Intervention count.** Update the number in the main description (`grep -c '^## ' log/human_interventions.md`).
   It was 23 when this file was written (2026-10-31).
-- **Links.** Once the main video is up, put its link in the vertical cut's footer (`MAIN_VIDEO_URL`), set the
-  vertical cut's **Related video** to the main video, and add the link to the README's "Watch" section.
+- **Links.** The main video is https://www.youtube.com/watch?v=7OT7Fb6LcP8 (uploaded by the human, 2026-10-31); it is in the vertical cut's description
+  and the README. In YouTube Studio, set the vertical cut's **Related video** to the main video.
 - **The reveal.** The brief keeps the song's origin back until the coda: nothing on screen says the music is
   generated until the song admits it ("Wasn't sung by any throat"). So the titles, the opening lines of each
   description and the thumbnails never name Suno or say the song is generated. The first line does say
@@ -157,7 +157,7 @@ thumbnail can only be set in the mobile app's upload flow; otherwise choose a fr
 ```
 AI-generated satire about real events. A 1970-style folk protest song about AI data centers, explained by the slickest possible AI explainer. In 2025, 35 portable gas turbines ran in South Memphis without air permits (Oil & Gas Watch; Gas Outlook; SELC). The first chorus and second verse of Nine Hundred Acres (The Hum).
 
-Full video, facts and sources: MAIN_VIDEO_URL
+Full video, facts and sources: https://www.youtube.com/watch?v=7OT7Fb6LcP8
 Production log, with every prompt and every human intervention: https://github.com/Derivative-Work/nine-hundred-acres
 Animation and edit: Claude Code · Words: Claude
 Video and assets CC BY-NC-SA 4.0. Satire; not affiliated with any company named.

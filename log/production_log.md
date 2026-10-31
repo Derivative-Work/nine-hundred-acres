@@ -374,3 +374,9 @@ The mirror script splits one bold run in two around the inserted "b", so the mir
 - **Output:** `deliverables/thumbnail.jpg` = `review/thumbnails/option_A.jpg` (byte for byte, `cmp`), 1920×1080, 455 KB (under YouTube's 2 MB limit).
 - `METADATA.md` (thumbnail row) and `README.md` (rebuild step 6) updated. `thumbnail_alt_fullframe.jpg` stays as the no-text alternative.
 - **Left for the human:** upload it in YouTube Studio.
+
+## 2026-10-31T09:20 — YouTube link added; v1.0 release files staged
+
+- `README.md` ("Watch": the YouTube link and the v1.0 release) and `METADATA.md` (the vertical cut's footer, and the links note) now carry https://www.youtube.com/watch?v=7OT7Fb6LcP8.
+- **Release files** (scratchpad `release/`, symlinks into the repo except the FLACs): both videos, both SRTs, the thumbnail (option A), the Suno WAV, MP3 and stems zip (as downloaded; the zip is `audio/Field of Humming Things Stems.zip`, sha256 `3b08470d…`), and FLACs of the no-fallback master, the with-fallback master and the post-roll audio (ffmpeg, FLAC compression 8, 24-bit; each decodes to its WAV's samples exactly, checked by hashing the decoded PCM).
+- **Not in the release:** the human's Suno screen recording (Suno's interface; not covered by the media licence), the fact-check sources, and, pending the human's decision, the session transcript.
