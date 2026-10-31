@@ -349,3 +349,8 @@ The mirror script splits one bold run in two around the inserted "b", so the mir
   - `METADATA.md`: titles, descriptions (main 4,845 of 5,000 characters), chapters, tags and settings for the main video and the vertical cut. The titles, opening lines and thumbnails never name Suno (the brief withholds the song's origin until the coda); Suno appears under CREDITS only. The end-screen advice comes from the end card's layout (frames at 5:20 and 5:30 of the 1080p v4: text ends about y = 700).
 - **Deliverables:** `deliverables/nine_hundred_acres_3840x2160.mp4` (copy of `renders/m8/nine_hundred_acres_m8_4k.mp4`) and `deliverables/nine_hundred_acres_vertical_1080x1920.mp4` (copy of `renders/m8/vertical_s12-s27_m8.mp4`), hashed in the manifest. `.gitignore` now ignores only `deliverables/*.mp4`, so the SRTs and thumbnails are in git, as in Not Yet.
 - **Checked before pushing:** no file in git over 2.4 MB (the 50 MiB hook), no credentials. The planning chat (already a public share) and the Suno page data are archived as in the sibling repos. The fact-check sources and the Suno recording stay out of git.
+
+## 2026-10-31T07:45 — Pushed to GitHub
+
+- `git remote add origin https://github.com/Derivative-Work/nine-hundred-acres`; `git push -u origin main` (the full history through 3d6ece8). The repo stays private until the human makes it public. Every commit is pushed from here on, as in Sandbox Rhapsody.
+- **Not done (the human's call):** the v1.0 GitHub Release with the videos, captions, music and session transcript (Not Yet's pattern), making the repo public, and the YouTube upload.
