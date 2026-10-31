@@ -75,6 +75,8 @@ inputs, outputs and checks; Python runs as `.venv/bin/python -I scripts/<name>.p
    (add `--scale=2` for 4K), and the composition `Vertical` for the vertical cut. `npm run studio` opens
    the editor.
 5. **Captions:** `scripts/make_srt.py` writes the SRTs from the same rule as the burned-in captions.
+6. **Thumbnail:** render 4K stills of the frames listed in `scripts/thumbnail_options.py` into `renders/thumbs/`,
+   then run it; option A is `deliverables/thumbnail.jpg`.
 
 ## Licences
 

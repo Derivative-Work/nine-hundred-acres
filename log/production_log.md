@@ -367,3 +367,10 @@ The mirror script splits one bold run in two around the inserted "b", so the mir
   - D, S40: "MY BILL: UP AGAIN." / "got my electric bill today, man", beside the $29B (est.) bar.
   - E, S13: "Can you hear it humming?" / "a 1970-style protest song about AI data centers", over the corn and crickets.
 - **Checks:** none shows the Suno screen or says the song is generated (brief). The only factual text, C's, matches S24's on-screen headline ("35 turbines, no air permits (2025)"); D's figure is the frame's own "$29B (est.)". The current thumbnail is unchanged until the human picks one.
+
+## 2026-10-31T08:45 — Thumbnail A made the deliverable (human, H1)
+
+- **Archived:** the M7 thumbnail (S38, no text, 1280×720) → `archive/deliverables/thumbnail_superseded_s38-no-text.jpg` (git mv).
+- **Output:** `deliverables/thumbnail.jpg` = `review/thumbnails/option_A.jpg` (byte for byte, `cmp`), 1920×1080, 455 KB (under YouTube's 2 MB limit).
+- `METADATA.md` (thumbnail row) and `README.md` (rebuild step 6) updated. `thumbnail_alt_fullframe.jpg` stays as the no-text alternative.
+- **Left for the human:** upload it in YouTube Studio.
