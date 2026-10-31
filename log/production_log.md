@@ -354,3 +354,16 @@ The mirror script splits one bold run in two around the inserted "b", so the mir
 
 - `git remote add origin https://github.com/Derivative-Work/nine-hundred-acres`; `git push -u origin main` (the full history through 3d6ece8). The repo stays private until the human makes it public. Every commit is pushed from here on, as in Sandbox Rhapsody.
 - **Not done (the human's call):** the v1.0 GitHub Release with the videos, captions, music and session transcript (Not Yet's pattern), making the repo public, and the YouTube upload.
+
+## 2026-10-31T08:30 — Thumbnail options with text
+
+- **Why:** the human asked for "more thumbnail options, with text on them (as seems to be the winning strategy for the other videos in the project)". Not Yet's text thumbnail replaced a plain frame that underperformed.
+- **Plates:** 4K stills of `Animatic` (`--props='{"label":false}' --scale=2`, one at a time) at frames 1200 (S10), 1600 (S13), 2900 (S25), 3960 (S36, not used), 4280 (S38), 4640 (S40), 6500 (S49, not used: mostly black) → `renders/thumbs/f_<frame>.png` (in the manifest). Commit bef0d7d.
+- **Script:** `scripts/thumbnail_options.py` (new, after Not Yet's `thumbnail.py`): crop, a dark gradient behind the text, then Inter Black headlines and a Caveat line with blurred shadows (option E: Shrikhand). Fonts from the Remotion project's Fontsource packages.
+- **Options** (`review/thumbnails/option_{A..E}.jpg`, 1920×1080; side by side with the current thumbnail in `options_sheet.jpg`):
+  - A, S38: "1979: NO NUKES." / "2026:" over the crowd whose signs read "…OK, FINE."
+  - B, S10: "FAMILY FARM: ARCHIVED" / "nine hundred acres of Iowa corn", beside granddad.jpg.
+  - C, S25: "NOBODY ASKED THE WIND" / "35 gas turbines, no air permits (2025)", over the turbines in the smog.
+  - D, S40: "MY BILL: UP AGAIN." / "got my electric bill today, man", beside the $29B (est.) bar.
+  - E, S13: "Can you hear it humming?" / "a 1970-style protest song about AI data centers", over the corn and crickets.
+- **Checks:** none shows the Suno screen or says the song is generated (brief). The only factual text, C's, matches S24's on-screen headline ("35 turbines, no air permits (2025)"); D's figure is the frame's own "$29B (est.)". The current thumbnail is unchanged until the human picks one.
