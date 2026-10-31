@@ -132,3 +132,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** "go ahead and make the release too"; then, while the agent was building it, "youtube link https://www.youtube.com/watch?v=7OT7Fb6LcP8". The human uploaded the main video (not yet public: YouTube's oEmbed returns 403).
 - **Rule:** outside H1–H3: the agent has no access to YouTube, and publishing is the human's call (as R4/R1 in Not Yet). The release request is H2.
+
+## 2026-10-31T09:50 — Session transcript published verbatim — H2
+
+- **What:** Asked whether the session transcript should go in the release, given it holds their email address (from the context Claude Code adds) and text from the fact-check sources and the other models' audits, the human chose "Verbatim" over a redacted copy or leaving it out.
+- **Rule:** H2 (a decision on what is published), as in Not Yet.

@@ -387,3 +387,9 @@ The mirror script splits one bold run in two around the inserted "b", so the mir
 - Uploaded the 11 staged files and `SHA256SUMS.txt` (12 assets). GitHub's sha256 digest for every asset matches the local file.
 - **Pending:** the session transcript. Not Yet published its transcript verbatim only after asking the human (it holds their email address from Claude Code's context and the full text of retrieved sources). This one also holds the email address, and parts of the NBC captions, court filings, the Better Data Center Project report and the other models' audits, so the human decides again.
 - **Left for the human:** publishing the draft (which creates the tag), making the repo public, and the vertical cut on YouTube.
+
+## 2026-10-31T10:00 — Transcript added to the draft release (human: "Verbatim")
+
+- `scripts/export_transcripts.sh` (copied from Not Yet) → `transcripts/claude-code/`: session 73766c55, 5,880 lines, 97 MB, plus its side directory (git-ignored; in the manifest). A snapshot: the session continues past it.
+- Archived with tar (sorted names, fixed mtime, numeric owner 0) and `gzip -n -9` → `transcripts_claude_code.tar.gz`, 67 MB, sha256 `8571af93…`.
+- Uploaded; `SHA256SUMS.txt` regenerated and replaced (`--clobber`, sha256 `1013a663…`); the notes' table lists the transcript. 13 assets, GitHub's digests match. Still a draft.
