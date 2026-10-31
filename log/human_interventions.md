@@ -117,3 +117,8 @@ Every human action: timestamp, what, why, and which rule allows it. The brief al
 
 - **What:** "This looks correct" (on v4's closing: the plug riding the cord, the fan starting at the plug-in). Then: "Do a 4k render".
 - **Rule:** H2. This approves the S50 and post-roll fixes. The M8 sign-off for release has been asked about but not yet given.
+
+## 2026-10-31T07:10 — 4K render approved; release prep requested — H2
+
+- **What:** "This is great. I gave you write access to https://github/Derivative-Work/nine-hundred-acres for you to push to and prepare to publish -- see the adjacent projects in the organization (prerelease drafts of which are also in the parent directory). In particular, you'll need to write a README.md, license documentation, and the YouTube METADATA.md"
+- **Rule:** H2. Approves the 4K render, and with it the M8 gate (release). The human created the GitHub repo (private) and granted push access; the agent pushes and writes the release documents. Uploading to YouTube stays with the human.
