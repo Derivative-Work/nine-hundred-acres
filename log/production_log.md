@@ -380,3 +380,10 @@ The mirror script splits one bold run in two around the inserted "b", so the mir
 - `README.md` ("Watch": the YouTube link and the v1.0 release) and `METADATA.md` (the vertical cut's footer, and the links note) now carry https://www.youtube.com/watch?v=7OT7Fb6LcP8.
 - **Release files** (scratchpad `release/`, symlinks into the repo except the FLACs): both videos, both SRTs, the thumbnail (option A), the Suno WAV, MP3 and stems zip (as downloaded; the zip is `audio/Field of Humming Things Stems.zip`, sha256 `3b08470d…`), and FLACs of the no-fallback master, the with-fallback master and the post-roll audio (ffmpeg, FLAC compression 8, 24-bit; each decodes to its WAV's samples exactly, checked by hashing the decoded PCM).
 - **Not in the release:** the human's Suno screen recording (Suno's interface; not covered by the media licence), the fact-check sources, and, pending the human's decision, the session transcript.
+
+## 2026-10-31T09:40 — Draft GitHub Release v1.0
+
+- `gh release create v1.0 --draft --target main` (title "Nine Hundred Acres (The Hum) v1.0"; notes in scratchpad `release_notes.md`, absolute links, after Not Yet's). The tag is created when the human publishes it.
+- Uploaded the 11 staged files and `SHA256SUMS.txt` (12 assets). GitHub's sha256 digest for every asset matches the local file.
+- **Pending:** the session transcript. Not Yet published its transcript verbatim only after asking the human (it holds their email address from Claude Code's context and the full text of retrieved sources). This one also holds the email address, and parts of the NBC captions, court filings, the Better Data Center Project report and the other models' audits, so the human decides again.
+- **Left for the human:** publishing the draft (which creates the tag), making the repo public, and the vertical cut on YouTube.
